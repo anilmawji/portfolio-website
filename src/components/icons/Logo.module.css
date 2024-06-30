@@ -1,24 +1,23 @@
 .logo {
   display: flex;
   align-items: center;
-  justify-content: center;
   width: var(--icon-size);
   height: var(--icon-size);
 }
 
 .logo img {
   width: 100%;
-  height: auto;
+  height: 100%;
 }
 
 .linkedin-bg {
   background-color: white;
   border-radius: var(--icon-size);
-  /* No clue why this is off by 1 pixel... might be the svg itself */
-  height: calc(var(--icon-size) - 1px);
 }
 
 .github-bg {
   filter: invert(1);
   -webkit-filter: invert(1);
+  background-color: white;
+  border-radius: var(--icon-size);
 }

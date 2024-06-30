@@ -1,4 +1,4 @@
-const FoxSvg = ({ ...svgStyle }) => (
+const SvgFox = ({ ...svgStyle }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     xmlSpace="preserve"
@@ -26,4 +26,4 @@ const FoxSvg = ({ ...svgStyle }) => (
   </svg>
 );
 
-export default FoxSvg;
+export default SvgFox;
