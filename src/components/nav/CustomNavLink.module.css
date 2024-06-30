@@ -1,0 +1,31 @@
+nav div {
+  height: 100%;
+}
+
+/* Nav links have colored text when hovered over */
+nav a:hover {
+  color: var(--neon-green);
+}
+
+/* Nav links have colored text when selected */
+nav a[class*="active"] {
+  color: var(--neon-green);
+}
+
+/* Underline starts collapsed by default */
+.hover-line {
+  width: 0;
+  height: 1px;
+  background-color: var(--neon-green);
+  transition: width 0.1s ease-out;
+}
+
+nav div[class*="mouseDown"] .hover-line {
+  width: 100%;
+  transition-duration: 3s;
+}
+
+/* Underline remains expanded when nav link is selected */
+nav a[class*="active"] + .hover-line {
+  width: 100%;
+}

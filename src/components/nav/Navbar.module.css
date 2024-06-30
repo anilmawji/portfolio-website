@@ -1,0 +1,37 @@
+:root {
+  --navbar-thickness: 56px;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: var(--navbar-thickness);
+  font-weight: bold;
+  font-size: 14px;
+  background-color: var(--main-fg-color);
+  border-bottom: 4px solid var(--main-bg-color);
+  z-index: 10000;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  list-style-type: none;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+}
+
+nav li {
+  height: 100%;
+}
+
+nav a {
+  display: flex;
+  align-items: center;
+  color: white;
+  height: 100%;
+  padding: .5em;
+  text-decoration: none;
+}
