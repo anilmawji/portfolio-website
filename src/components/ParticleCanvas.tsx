@@ -1,10 +1,10 @@
 import { useRef, useEffect } from 'react';
 
-const PARTICLE_COUNT = 30;
 const PARTICLE_RADIUS = 4;
 const PARTICLE_COLOR = "rgb(108, 250, 132)";
 const MOUSE_PUSH_RADIUS = 5;
 const RESET_PARTICLE_DELAY = 500;
+const MIN_CONNECT_DISTANCE = 20000;
 
 interface Mouse {
   x: number,
@@ -102,10 +102,10 @@ class Particle {
   }
 }
 
-const initParticleArray = (maxX: number, maxY: number): Particle[] => {
-  let particles: Particle[] = [];
+const initParticleArray = (numParticles: number, maxX: number, maxY: number): Particle[] => {
+  const particles: Particle[] = [];
 
-  for (let i = 0; i < PARTICLE_COUNT; i++) {
+  for (let i = 0; i < numParticles; i++) {
     const particle = new Particle(0, 0, 0, 0, PARTICLE_RADIUS, PARTICLE_COLOR);
 
     particle.randomVelocity();
@@ -137,6 +137,15 @@ const connectParticles = (particles: Particle[], context: CanvasRenderingContext
   }
 }
 
+const getParticleCount = (canvas: HTMLCanvasElement): number => {
+  return canvas.height * canvas.width / 15000;
+}
+
+const getMinConnectDistance = (canvas: HTMLCanvasElement): number => {
+  let distance = (canvas.width/4) * (canvas.height/4);
+  return distance < MIN_CONNECT_DISTANCE ? MIN_CONNECT_DISTANCE : distance;
+}
+
 interface PropTypes {
   className?: string;
 }
@@ -152,6 +161,9 @@ const ParticleCanvas = ({ className }: PropTypes) => {
     if (!context) return;
 
     let timeoutId: number | undefined;
+    let particleCount = getParticleCount(canvas);
+    let minConnectDistance = getMinConnectDistance(canvas);
+    let particles = initParticleArray(particleCount, canvas.width, canvas.height);
 
     const resizeCanvas = () => {
       if (!canvas.parentElement) return;
@@ -162,6 +174,10 @@ const ParticleCanvas = ({ className }: PropTypes) => {
       clearTimeout(timeoutId);
 
       timeoutId = setTimeout(() => {
+        particleCount = getParticleCount(canvas);
+        minConnectDistance = getMinConnectDistance(canvas);
+        particles = initParticleArray(particleCount, canvas.width, canvas.height);
+
         particles.forEach(p => {
           if (p.x >= canvas.width || p.y >= canvas.height) {
             p.randomPosition(canvas.width, canvas.height);
@@ -170,8 +186,6 @@ const ParticleCanvas = ({ className }: PropTypes) => {
       }, RESET_PARTICLE_DELAY);
     };
 
-    const particles = initParticleArray(canvas.width, canvas.height);
-    const minConnectDistance = (canvas.width/4) * (canvas.height/4);
     const mouse: Mouse = {
       x: 0,
       y: 0,
