@@ -20,6 +20,7 @@
   top: -50px;
   left: 20%;
   fill: var(--main-bg-color);
+  opacity: 0.5;
   z-index: 1;
 }
 

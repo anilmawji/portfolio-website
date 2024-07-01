@@ -74,6 +74,28 @@ class Particle {
     context.fillStyle = this.color;
     context.fill();
   }
+
+  randomVelocity() {
+    let velocityX = Math.random() * 0.5 + 0.5;
+    let velocityY = Math.random() * 0.5 + 0.5;
+    const negateX = Math.random() < 0.5;
+    const negateY = Math.random() < 0.5;
+
+    if (negateX) {
+      velocityX = -velocityX;
+    }
+    if (negateY) {
+      velocityY = -velocityY;
+    }
+
+    this.velocityX = velocityX;
+    this.velocityY = velocityY;
+  }
+
+  randomPosition(maxX: number, maxY: number) {
+    this.x = Math.random() * (maxX - this.radius * 2) + this.radius;
+    this.y = Math.random() * (maxY - this.radius * 2) + this.radius;
+  }
 }
 
 const initParticleArray = (maxX: number, maxY: number): Particle[] => {
@@ -84,12 +106,11 @@ const initParticleArray = (maxX: number, maxY: number): Particle[] => {
   const color = "rgb(108, 250, 132)";
 
   for (let i = 0; i < numParticles; i++) {
-    const x = Math.random() * ((maxX - radius * 2) - (radius * 2)) + radius * 2;
-    const y = Math.random() * ((maxY - radius * 2) - (radius * 2)) + radius * 2;
-    const velocityX = Math.random() * 0.5 + 0.5;
-    const velocityY = Math.random() * 0.5 + 0.5;
+    const particle = new Particle(0, 0, 0, 0, radius, color);
 
-    particles.push(new Particle(x, y, velocityX, velocityY, radius, color));
+    particle.randomVelocity();
+    particle.randomPosition(maxX, maxY);
+    particles.push(particle);
   }
 
   return particles;
@@ -120,6 +141,8 @@ const connectParticles = (
   }
 }
 
+const MOUSE_PUSH_RADIUS = 5;
+
 interface PropTypes {
   className?: string;
 }
@@ -129,48 +152,60 @@ const ParticleCanvas = ({ className }: PropTypes) => {
 
   useEffect(() => {
     const canvas = canvasRef.current;
-    if (!canvas || !canvas.parentElement) return;
+    if (!canvas) return;
 
     const context = canvas.getContext("2d");
     if (!context) return;
 
-    // Resize canvas to match the size of its parent
-    canvas.width = canvas.parentElement.clientWidth;
-    canvas.height = canvas.parentElement.clientHeight;
+    const resizeCanvas = () => {
+      if (!canvas.parentElement) return;
+
+      canvas.width = canvas.parentElement.clientWidth;
+      canvas.height = canvas.parentElement.clientHeight;
+
+      particles.forEach(p => {
+        if (p.x >= canvas.width || p.y >= canvas.height) {
+          p.randomPosition(canvas.width, canvas.height);
+        }
+      });
+    };
 
     const particles = initParticleArray(canvas.width, canvas.height);
     const minConnectDistance = (canvas.width/4) * (canvas.height/4);
-
-    let animationFrameId: number;
-    let mouse: Mouse = {
+    const mouse: Mouse = {
       x: 0,
       y: 0,
       radius: (canvas.height/80) * (canvas.width/80)
     }
+    let animationFrameId: number;
 
     const animate = () => {
       animationFrameId = requestAnimationFrame(animate);
       context.clearRect(0, 0, canvas.width, canvas.height);
 
       particles.forEach(p => {
-        p.tick(canvas, mouse, 5);
+        p.tick(canvas, mouse, MOUSE_PUSH_RADIUS);
         p.render(context);
       });
       
       connectParticles(particles, context, minConnectDistance);
     };
 
-    animate();
-
     const handleMouseMove = (event: MouseEvent) => {
       mouse.x = event.clientX;
       mouse.y = event.clientY;
     };
 
+    resizeCanvas();
+    animate();
+
+    window.addEventListener("resize", resizeCanvas);
     window.addEventListener("mousemove", handleMouseMove);
 
     return () => {
+      window.removeEventListener("resize", resizeCanvas);
       window.removeEventListener("mousemove", handleMouseMove);
+
       cancelAnimationFrame(animationFrameId);
     };
   }, []);
