@@ -1,5 +1,11 @@
 import { useRef, useEffect } from 'react';
 
+const PARTICLE_COUNT = 30;
+const PARTICLE_RADIUS = 4;
+const PARTICLE_COLOR = "rgb(108, 250, 132)";
+const MOUSE_PUSH_RADIUS = 5;
+const RESET_PARTICLE_DELAY = 500;
+
 interface Mouse {
   x: number,
   y: number,
@@ -49,16 +55,14 @@ class Particle {
       if (mouse.x < this.x && this.x < canvas.width - this.radius * pushRadius) {
         this.x += this.pushForce;
         this.velocityX = -this.velocityX;
-      }
-      if (mouse.x > this.x && this.x > this.radius * pushRadius) {
+      } else if (mouse.x > this.x && this.x > this.radius * pushRadius) {
         this.x -= this.pushForce;
         this.velocityX = -this.velocityX;
       }
       if (mouse.y < this.y && this.y < canvas.height - this.radius * pushRadius) {
         this.y += this.pushForce;
         this.velocityY = -this.velocityY;
-      }
-      if (mouse.y > this.y && this.y > this.radius * pushRadius) {
+      } else if (mouse.y > this.y && this.y > this.radius * pushRadius) {
         this.y -= this.pushForce;
         this.velocityY = -this.velocityY;
       }
@@ -101,12 +105,8 @@ class Particle {
 const initParticleArray = (maxX: number, maxY: number): Particle[] => {
   let particles: Particle[] = [];
 
-  const numParticles = 20;
-  const radius = 4;
-  const color = "rgb(108, 250, 132)";
-
-  for (let i = 0; i < numParticles; i++) {
-    const particle = new Particle(0, 0, 0, 0, radius, color);
+  for (let i = 0; i < PARTICLE_COUNT; i++) {
+    const particle = new Particle(0, 0, 0, 0, PARTICLE_RADIUS, PARTICLE_COLOR);
 
     particle.randomVelocity();
     particle.randomPosition(maxX, maxY);
@@ -116,22 +116,18 @@ const initParticleArray = (maxX: number, maxY: number): Particle[] => {
   return particles;
 };
 
-// TODO: Implement spatial hashing instead of brute force O(n^2) approach
-const connectParticles = (
-  particles: Particle[],
-  context: CanvasRenderingContext2D,
-  minDistance: number
-) => {
+const connectParticles = (particles: Particle[], context: CanvasRenderingContext2D, minDistance: number) => {
+  context.lineWidth = 1;
+  
   for (let i = 0; i < particles.length; i++) {
     for (let j = i; j < particles.length; j++) {
       const dx = particles[i].x - particles[j].x;
       const dy = particles[i].y - particles[j].y;
       const distance = dx*dx + dy*dy;
-      const opacity = 1 - distance / minDistance;
 
       if (distance <= minDistance) {
+        const opacity = 1 - distance / minDistance;
         context.strokeStyle = `rgba(108, 250, 132, ${opacity})`;
-        context.lineWidth = 1;
         context.beginPath();
         context.moveTo(particles[i].x, particles[i].y);
         context.lineTo(particles[j].x, particles[j].y);
@@ -140,8 +136,6 @@ const connectParticles = (
     }
   }
 }
-
-const MOUSE_PUSH_RADIUS = 5;
 
 interface PropTypes {
   className?: string;
@@ -157,17 +151,23 @@ const ParticleCanvas = ({ className }: PropTypes) => {
     const context = canvas.getContext("2d");
     if (!context) return;
 
+    let timeoutId: number | undefined;
+
     const resizeCanvas = () => {
       if (!canvas.parentElement) return;
 
       canvas.width = canvas.parentElement.clientWidth;
       canvas.height = canvas.parentElement.clientHeight;
 
-      particles.forEach(p => {
-        if (p.x >= canvas.width || p.y >= canvas.height) {
-          p.randomPosition(canvas.width, canvas.height);
-        }
-      });
+      clearTimeout(timeoutId);
+
+      timeoutId = setTimeout(() => {
+        particles.forEach(p => {
+          if (p.x >= canvas.width || p.y >= canvas.height) {
+            p.randomPosition(canvas.width, canvas.height);
+          }
+        });
+      }, RESET_PARTICLE_DELAY);
     };
 
     const particles = initParticleArray(canvas.width, canvas.height);
@@ -187,7 +187,7 @@ const ParticleCanvas = ({ className }: PropTypes) => {
         p.tick(canvas, mouse, MOUSE_PUSH_RADIUS);
         p.render(context);
       });
-      
+
       connectParticles(particles, context, minConnectDistance);
     };
 
@@ -207,6 +207,7 @@ const ParticleCanvas = ({ className }: PropTypes) => {
       window.removeEventListener("mousemove", handleMouseMove);
 
       cancelAnimationFrame(animationFrameId);
+      clearTimeout(timeoutId);
     };
   }, []);
 
