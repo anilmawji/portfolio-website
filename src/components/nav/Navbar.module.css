@@ -1,11 +1,23 @@
 :root {
   --navbar-thickness: 60px;
-  --navbar-thickness-mobile: 42px;
+  --navbar-thickness-tablet: 50px;
+  --navbar-thickness-phone: 42px;
   --navbar-gap-mobile: 20px;
-  --navbar-height-mobile:
-      var(--navbar-gap-mobile) * var(--navbar-count) +
-      var(--navbar-thickness-mobile) * var(--navbar-count);
-  --navbar-count: 5;
+  
+  --navlink-offset-y-mobile: 20px;
+  --navlink-count: 5;
+
+  --navbar-height-tablet: calc(
+    var(--navbar-gap-mobile) * var(--navlink-count) +
+    var(--navbar-thickness-tablet) * var(--navlink-count) +
+    var(--navlink-offset-y-mobile)
+  );
+
+  --navbar-height-phone: calc(
+    var(--navbar-gap-mobile) * var(--navlink-count) +
+    var(--navbar-thickness-phone) * var(--navlink-count) +
+    var(--navlink-offset-y-mobile)
+  );
 }
 
 nav {
@@ -33,12 +45,12 @@ nav li {
   height: 100%;
 }
 
-nav a {
+nav li a {
   display: flex;
   align-items: center;
   color: white;
   height: 100%;
-  padding: .5em;
+  padding: 0.5em;
   text-decoration: none;
 }
 
@@ -48,47 +60,67 @@ nav a {
 
 /* Tablet styling */
 @media(max-width:980px) {
-  nav ul {
-    justify-content: flex-start;
-    overflow: hidden;
-    height: 0;
-    transform: height 200ms ease-in-out;
-  }
-
-  nav li {
-    width: 100%;
-    height: calc(var(--navbar-thickness-mobile) * 1.25);
-    border-radius: 4px;
-    background-color: var(--main-bg-color);
-  }
-
   .hamburger {
     display: flex;
   }
 
-  .hamburger[class*="open"] ~ ul {
-    display: flex;
+  nav ul {
     flex-direction: column;
-    background-color: var(--main-fg-color);
-    transform: translateY(var(--navbar-thickness));
-    height: var(--navbar-height-mobile);
+    justify-content: flex-start;
+    overflow: hidden;
+    height: 0;
+    padding: 0 20px;
     gap: var(--navbar-gap-mobile);
-    padding: 20px;
-    outline: 4px solid var(--main-bg-color);
+    transform: translateY(var(--navbar-thickness));
+    background-color: var(--main-fg-color);
+    transition: height 300ms ease-in-out;
   }
 
-  .hamburger[class*="open"] ~ ul a {
+  nav li {
+    width: 100%;
+    overflow: hidden;
+    height: var(--navbar-thickness-tablet);
+    transform: translateY(var(--navlink-offset-y-mobile));
+    background-color: var(--main-bg-color);
+  }
+
+  nav li a {
+    display: none;
+    overflow: hidden;
     justify-content: center;
+    padding: 1em;
+  }
+
+  /* Targets the hover line of the navlink */
+  li div div {
+    display: none;
+  }
+
+  .hamburger[class*="open"] ~ ul {
+    height: var(--navbar-height-tablet);
+  }
+
+  .hamburger[class*="open"] ~ ul li a {
+    display: flex;
+  }
+
+  /* Targets the hover line of the navlink */
+  .hamburger[class*="open"] ~ ul li div div {
+    display: block;
   }
 }
 
 /* Phone styling */
 @media(max-width:540px) {
-  .hamburger[class*="open"] ~ ul a {
+  nav li {
+    height: var(--navbar-thickness-phone);
+  }
+
+  nav li a {
     justify-content: left;
   }
 
-  nav li {
-    height: var(--navbar-thickness-mobile);
+  .hamburger[class*="open"] ~ ul {
+    height: var(--navbar-height-phone);
   }
 }

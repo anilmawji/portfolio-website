@@ -2,7 +2,9 @@
   --ham-bar-width: 25px;
   --ham-bar-height: 2px;
   --ham-gap: 6px;
-  --ham-margin: calc((var(--navbar-thickness) - 3 * var(--ham-bar-height) - 2 * var(--ham-gap)) / 2);
+  --ham-margin: calc(
+    (var(--navbar-thickness) - var(--ham-bar-height) * 3 - var(--ham-gap) * 2) / 2
+  );
   --animation-timing: 200ms ease-in-out;
 }
 

@@ -6,12 +6,12 @@ nav div {
   height: calc(100% - var(--hover-line-thickness));
 }
 
-/* Nav links have colored text when hovered over */
+/* Nav link has colored text when hovered over */
 nav a:hover {
   color: var(--neon-green);
 }
 
-/* Nav links have colored text when selected */
+/* Nav link has colored text when selected */
 nav a[class*="active"] {
   color: var(--neon-green);
 }
