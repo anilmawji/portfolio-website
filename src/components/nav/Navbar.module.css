@@ -1,24 +1,26 @@
 :root {
+  /* General navbar styles */
   --navbar-thickness: 60px;
   --navbar-thickness-tablet: 50px;
   --navbar-thickness-phone: 42px;
   --navbar-border-thickness: 4px;
   --navbar-gap-mobile: 20px;
-
   --navlink-offset-y-mobile: 20px;
   --navlink-count: 5;
 
+  /* Calculate drawer height based on nav properties */
   --navbar-height-tablet: calc(
-    var(--navbar-gap-mobile) * var(--navlink-count) +
     var(--navbar-thickness-tablet) * var(--navlink-count) +
-    var(--navlink-offset-y-mobile) +
+    var(--navbar-gap-mobile)       * var(--navlink-count) +
+    var(--navlink-offset-y-mobile)                        +
     var(--navbar-border-thickness)
   );
 
+  /* Calculate drawer height based on nav properties */
   --navbar-height-phone: calc(
-    var(--navbar-gap-mobile) * var(--navlink-count) +
     var(--navbar-thickness-phone) * var(--navlink-count) +
-    var(--navlink-offset-y-mobile) +
+    var(--navbar-gap-mobile)      * var(--navlink-count) +
+    var(--navlink-offset-y-mobile)                       +
     var(--navbar-border-thickness)
   );
 }
