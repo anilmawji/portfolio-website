@@ -2,21 +2,24 @@
   --navbar-thickness: 60px;
   --navbar-thickness-tablet: 50px;
   --navbar-thickness-phone: 42px;
+  --navbar-border-thickness: 4px;
   --navbar-gap-mobile: 20px;
-  
+
   --navlink-offset-y-mobile: 20px;
   --navlink-count: 5;
 
   --navbar-height-tablet: calc(
     var(--navbar-gap-mobile) * var(--navlink-count) +
     var(--navbar-thickness-tablet) * var(--navlink-count) +
-    var(--navlink-offset-y-mobile)
+    var(--navlink-offset-y-mobile) +
+    var(--navbar-border-thickness)
   );
 
   --navbar-height-phone: calc(
     var(--navbar-gap-mobile) * var(--navlink-count) +
     var(--navbar-thickness-phone) * var(--navlink-count) +
-    var(--navlink-offset-y-mobile)
+    var(--navlink-offset-y-mobile) +
+    var(--navbar-border-thickness)
   );
 }
 
@@ -28,7 +31,7 @@ nav {
   font-weight: bold;
   font-size: 14px;
   background-color: var(--main-fg-color);
-  border-bottom: 4px solid var(--main-bg-color);
+  border-bottom: var(--navbar-border-thickness) solid var(--main-bg-color);
   z-index: 10000;
 }
 
@@ -98,6 +101,7 @@ nav li a {
 
   .hamburger[class*="open"] ~ ul {
     height: var(--navbar-height-tablet);
+    border-bottom: var(--navbar-border-thickness) solid var(--main-bg-color);
   }
 
   .hamburger[class*="open"] ~ ul li a {

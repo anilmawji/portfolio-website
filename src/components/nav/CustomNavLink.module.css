@@ -6,12 +6,12 @@ nav div {
   height: calc(100% - var(--hover-line-thickness));
 }
 
-/* Nav link has colored text when hovered over */
+/* Navlink has colored text when hovered over */
 nav a:hover {
   color: var(--neon-green);
 }
 
-/* Nav link has colored text when selected */
+/* Navlink has colored text when selected */
 nav a[class*="active"] {
   color: var(--neon-green);
 }
@@ -30,7 +30,7 @@ nav div[class*="mouseDown"] .hover-line {
   transition-duration: 3s;
 }
 
-/* Underline remains expanded when nav link is selected */
+/* Underline remains expanded when navlink is selected */
 nav a[class*="active"] + .hover-line {
   width: 100%;
 }
