@@ -111,7 +111,7 @@ const ClickEventListener = (
   }
 
   const combinedClassName = (
-    `${className || ''}
+    `${className ?? ''}
      ${trackMouseDown ? (isMouseDown ? "mouseDown" : "mouseUp"): ''}
      ${isClicked ? "clicked" : ''}`
   ).trim();

@@ -8,8 +8,13 @@ const Home = () => {
   return (
     <div className="page">
       <div className={styles.background}>
-        <SvgFox className={styles.fox} />
-        <ParticleCanvas className={styles.canvas}/>
+        {/* <SvgFox className={styles.fox} /> */}
+        <ParticleCanvas
+          className={styles.canvas}
+          particleRadius={3}
+          particleColor="rgb(108, 250, 132)"
+          particleGlowLevel={5}
+        />
         <div className={styles.curve} />
       </div>
       <div className={styles.container}>

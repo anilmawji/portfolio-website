@@ -1,122 +1,36 @@
 import { useRef, useEffect } from 'react';
+import { Particle, MouseState } from './Particle'
 
-const PARTICLE_RADIUS = 4;
-const PARTICLE_COLOR = "rgb(108, 250, 132)";
-const MOUSE_PUSH_RADIUS = 5;
 const RESET_PARTICLE_DELAY = 500;
-const MIN_CONNECT_DISTANCE = 20000;
+const MIN_CONNECT_DISTANCE = 40000;
+const MOUSE_PUSH_RADIUS = 5;
+const MOUSE_MOVING_DELAY = 200;
+const MAX_ALPHA = 0.8;
 
-interface Mouse {
-  x: number,
-  y: number,
-  radius: number
-}
-
-class Particle {
-  x: number;
-  y: number;
-  velocityX: number;
-  velocityY: number;
-  radius: number;
-  pushForce: number;
-  color: string;
-
-  constructor(
-    x: number,
-    y: number,
-    velocityX: number,
-    velocityY: number,
-    radius: number,
-    color: string
-  ) {
-    this.x = x;
-    this.y = y;
-    this.velocityX = velocityX;
-    this.velocityY = velocityY;
-    this.radius = radius;
-    this.color = color;
-    this.pushForce = this.radius/2;
-  }
-
-  tick(canvas: HTMLCanvasElement, mouse: Mouse, pushRadius: number = 10) {
-    // Bounding box collision detection
-    if (this.x + this.radius >= canvas.width || this.x - this.radius <= 0) {
-      this.velocityX = -this.velocityX;
-    }
-    if (this.y + this.radius >= canvas.height || this.y - this.radius <= 0) {
-      this.velocityY = -this.velocityY;
-    }
-
-    const dx = mouse.x - this.x;
-    const dy = mouse.y - this.y;
-    const distance = Math.sqrt(dx * dx + dy * dy);
-
-    if (distance < mouse.radius + this.radius) {
-      if (mouse.x < this.x && this.x < canvas.width - this.radius * pushRadius) {
-        this.x += this.pushForce;
-        this.velocityX = -this.velocityX;
-      } else if (mouse.x > this.x && this.x > this.radius * pushRadius) {
-        this.x -= this.pushForce;
-        this.velocityX = -this.velocityX;
-      }
-      if (mouse.y < this.y && this.y < canvas.height - this.radius * pushRadius) {
-        this.y += this.pushForce;
-        this.velocityY = -this.velocityY;
-      } else if (mouse.y > this.y && this.y > this.radius * pushRadius) {
-        this.y -= this.pushForce;
-        this.velocityY = -this.velocityY;
-      }
-    }
-
-    this.x += this.velocityX;
-    this.y += this.velocityY;
-  }
-
-  render(context: CanvasRenderingContext2D) {
-    context.beginPath();
-    context.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-    context.fillStyle = this.color;
-    context.fill();
-  }
-
-  randomVelocity() {
-    let velocityX = Math.random() * 0.5 + 0.5;
-    let velocityY = Math.random() * 0.5 + 0.5;
-    const negateX = Math.random() < 0.5;
-    const negateY = Math.random() < 0.5;
-
-    if (negateX) {
-      velocityX = -velocityX;
-    }
-    if (negateY) {
-      velocityY = -velocityY;
-    }
-
-    this.velocityX = velocityX;
-    this.velocityY = velocityY;
-  }
-
-  randomPosition(maxX: number, maxY: number) {
-    this.x = Math.random() * (maxX - this.radius * 2) + this.radius;
-    this.y = Math.random() * (maxY - this.radius * 2) + this.radius;
-  }
-}
-
-const initParticleArray = (numParticles: number, maxX: number, maxY: number): Particle[] => {
+const initParticleArray = (
+  numParticles: number,
+  particleRadius: number, 
+  particleColor: string,
+  maxX: number,
+  maxY: number
+): Particle[] => {
   const particles: Particle[] = [];
 
   for (let i = 0; i < numParticles; i++) {
-    const particle = new Particle(0, 0, 0, 0, PARTICLE_RADIUS, PARTICLE_COLOR);
-
-    particle.randomVelocity();
-    particle.randomPosition(maxX, maxY);
-    particles.push(particle);
+    const p = new Particle(0, 0, 0, 0, particleRadius, particleColor);
+    p.randomVelocity();
+    p.randomPosition(maxX, maxY);
+    particles.push(p);
   }
 
   return particles;
-};
+}
 
-const connectParticles = (particles: Particle[], context: CanvasRenderingContext2D, minDistance: number) => {
+const connectParticles = (
+  particles: Particle[],
+  context: CanvasRenderingContext2D,
+  minDistance: number
+) => {
   context.lineWidth = 1;
   
   for (let i = 0; i < particles.length; i++) {
@@ -126,7 +40,7 @@ const connectParticles = (particles: Particle[], context: CanvasRenderingContext
       const distance = dx*dx + dy*dy;
 
       if (distance <= minDistance) {
-        const opacity = 1 - distance / minDistance;
+        const opacity = MAX_ALPHA - distance / minDistance;
         context.strokeStyle = `rgba(108, 250, 132, ${opacity})`;
         context.beginPath();
         context.moveTo(particles[i].x, particles[i].y);
@@ -138,19 +52,29 @@ const connectParticles = (particles: Particle[], context: CanvasRenderingContext
 }
 
 const getParticleCount = (canvas: HTMLCanvasElement): number => {
-  return canvas.height * canvas.width / 15000;
+  return canvas.height * canvas.width / 20000;
 }
 
 const getMinConnectDistance = (canvas: HTMLCanvasElement): number => {
-  let distance = (canvas.width/4) * (canvas.height/4);
+  let distance = (canvas.width/3) * (canvas.height/3);
   return distance < MIN_CONNECT_DISTANCE ? MIN_CONNECT_DISTANCE : distance;
 }
 
 interface PropTypes {
   className?: string;
+  particleRadius: number;
+  particleColor: string;
+  particleGlowLevel?: number;
+  blurLevel?: number;
 }
 
-const ParticleCanvas = ({ className }: PropTypes) => {
+const ParticleCanvas = ({
+  className,
+  particleRadius,
+  particleColor,
+  particleGlowLevel = 0,
+  blurLevel = 0
+}: PropTypes) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
@@ -160,10 +84,15 @@ const ParticleCanvas = ({ className }: PropTypes) => {
     const context = canvas.getContext("2d");
     if (!context) return;
 
-    let timeoutId: number | undefined;
+    canvas.style.filter = "url(#particleGaussian)";
+
+    let particleResetTimeoutId: number | undefined;
     let particleCount = getParticleCount(canvas);
     let minConnectDistance = getMinConnectDistance(canvas);
-    let particles = initParticleArray(particleCount, canvas.width, canvas.height);
+    let particles = initParticleArray(
+      particleCount, particleRadius, particleColor,
+      canvas.width, canvas.height
+    );
 
     const resizeCanvas = () => {
       if (!canvas.parentElement) return;
@@ -171,44 +100,70 @@ const ParticleCanvas = ({ className }: PropTypes) => {
       canvas.width = canvas.parentElement.clientWidth;
       canvas.height = canvas.parentElement.clientHeight;
 
-      clearTimeout(timeoutId);
+      clearTimeout(particleResetTimeoutId);
 
-      timeoutId = setTimeout(() => {
+      particleResetTimeoutId = setTimeout(() => {
         particleCount = getParticleCount(canvas);
         minConnectDistance = getMinConnectDistance(canvas);
-        particles = initParticleArray(particleCount, canvas.width, canvas.height);
 
+        particles = initParticleArray(
+          particleCount, particleRadius, particleColor,
+          canvas.width, canvas.height
+        );
         particles.forEach(p => {
           if (p.x >= canvas.width || p.y >= canvas.height) {
             p.randomPosition(canvas.width, canvas.height);
           }
         });
       }, RESET_PARTICLE_DELAY);
-    };
+    }
 
-    const mouse: Mouse = {
+    const clearCanvas = () => {
+      context.clearRect(0, 0, canvas.width, canvas.height);
+      context.globalAlpha = MAX_ALPHA;
+    }
+
+    let animationFrameId: number;
+    const mouse: MouseState = {
       x: 0,
       y: 0,
-      radius: (canvas.height/80) * (canvas.width/80)
+      radius: (canvas.height/80) * (canvas.width/80),
+      moving: false
     }
-    let animationFrameId: number;
 
     const animate = () => {
       animationFrameId = requestAnimationFrame(animate);
-      context.clearRect(0, 0, canvas.width, canvas.height);
+      clearCanvas();
+
+      context.shadowBlur = particleGlowLevel;
+      context.shadowColor = particleColor;
 
       particles.forEach(p => {
         p.tick(canvas, mouse, MOUSE_PUSH_RADIUS);
         p.render(context);
+        //drawQuarterCircle(canvas);
       });
 
-      connectParticles(particles, context, minConnectDistance);
-    };
+      context.shadowBlur = 0;
+      context.shadowColor = "";
 
-    const handleMouseMove = (event: MouseEvent) => {
-      mouse.x = event.clientX;
-      mouse.y = event.clientY;
-    };
+      connectParticles(particles, context, minConnectDistance);
+    }
+
+    let mouseMoveTimeoutId: number | undefined;
+
+    const handleMouseMove = (e: MouseEvent) => {
+      e.preventDefault();
+
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
+      mouse.moving = true;
+
+      clearTimeout(mouseMoveTimeoutId);
+      mouseMoveTimeoutId = setTimeout(() => {
+        mouse.moving = false;
+      }, MOUSE_MOVING_DELAY);
+    }
 
     resizeCanvas();
     animate();
@@ -221,12 +176,20 @@ const ParticleCanvas = ({ className }: PropTypes) => {
       window.removeEventListener("mousemove", handleMouseMove);
 
       cancelAnimationFrame(animationFrameId);
-      clearTimeout(timeoutId);
-    };
+      clearTimeout(particleResetTimeoutId);
+      clearTimeout(mouseMoveTimeoutId);
+    }
   }, []);
 
   return (
-    <canvas ref={canvasRef} className={className} />
+    <>
+      <svg xmlns="http://www.w3.org/2000/svg">
+        <filter id="particleGaussian">
+            <feGaussianBlur stdDeviation={blurLevel} />
+        </filter>
+      </svg>
+      <canvas ref={canvasRef} className={className} />
+    </>
   )
 };
 

@@ -5,13 +5,14 @@
 }
 
 :root {
-  --main-fg-color: #161616;
-  --main-bg-color: #1e1e1e;
+  --main-fg-color: #191919;
+  --main-bg-color: #212121;
   --neon-green: rgb(108, 250, 132);
 }
 
 body {
   font-family: Arial, sans-serif;
+  background-color: var(--main-bg-color);
   color: white;
 }
 

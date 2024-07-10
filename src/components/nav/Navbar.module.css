@@ -1,5 +1,11 @@
 :root {
-  --navbar-thickness: 56px;
+  --navbar-thickness: 60px;
+  --navbar-thickness-mobile: 42px;
+  --navbar-gap-mobile: 20px;
+  --navbar-height-mobile:
+      var(--navbar-gap-mobile) * var(--navbar-count) +
+      var(--navbar-thickness-mobile) * var(--navbar-count);
+  --navbar-count: 5;
 }
 
 nav {
@@ -16,11 +22,11 @@ nav {
 
 nav ul {
   display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 100%;
   list-style: none;
   list-style-type: none;
-  justify-content: space-around;
-  align-items: center;
-  height: 100%;
 }
 
 nav li {
@@ -34,4 +40,55 @@ nav a {
   height: 100%;
   padding: .5em;
   text-decoration: none;
+}
+
+.hamburger {
+  display: none;
+}
+
+/* Tablet styling */
+@media(max-width:980px) {
+  nav ul {
+    justify-content: flex-start;
+    overflow: hidden;
+    height: 0;
+    transform: height 200ms ease-in-out;
+  }
+
+  nav li {
+    width: 100%;
+    height: calc(var(--navbar-thickness-mobile) * 1.25);
+    border-radius: 4px;
+    background-color: var(--main-bg-color);
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .hamburger[class*="open"] ~ ul {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--main-fg-color);
+    transform: translateY(var(--navbar-thickness));
+    height: var(--navbar-height-mobile);
+    gap: var(--navbar-gap-mobile);
+    padding: 20px;
+    outline: 4px solid var(--main-bg-color);
+  }
+
+  .hamburger[class*="open"] ~ ul a {
+    justify-content: center;
+  }
+}
+
+/* Phone styling */
+@media(max-width:540px) {
+  .hamburger[class*="open"] ~ ul a {
+    justify-content: left;
+  }
+
+  nav li {
+    height: var(--navbar-thickness-mobile);
+  }
 }

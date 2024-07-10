@@ -1,5 +1,9 @@
+:root {
+  --hover-line-thickness: 0.8px;
+}
+
 nav div {
-  height: 100%;
+  height: calc(100% - var(--hover-line-thickness));
 }
 
 /* Nav links have colored text when hovered over */
@@ -15,11 +19,12 @@ nav a[class*="active"] {
 /* Underline starts collapsed by default */
 .hover-line {
   width: 0;
-  height: 1px;
+  height: var(--hover-line-thickness);
   background-color: var(--neon-green);
-  transition: width 0.1s ease-out;
+  transition: 0.1s ease-out;
 }
 
+/* Start expanding underline on mouse down */
 nav div[class*="mouseDown"] .hover-line {
   width: 100%;
   transition-duration: 3s;

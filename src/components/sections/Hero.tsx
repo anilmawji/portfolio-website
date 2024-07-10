@@ -7,7 +7,9 @@ import { LogoType } from '../icons/Logo'
 const HeroSection = () => {
   return (
     <div className={styles.container}>
-      {"<ANIL MAWJI>"}
+      <div>
+        {"<ANIL MAWJI>"}
+      </div>
       <div className={styles.bio}>
         Computer Science student and aspiring cyber security professional with a passion for all things technology.
       </div>

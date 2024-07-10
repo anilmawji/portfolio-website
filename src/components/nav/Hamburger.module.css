@@ -1,0 +1,53 @@
+:root {
+  --ham-bar-width: 25px;
+  --ham-bar-height: 2px;
+  --ham-gap: 6px;
+  --ham-margin: calc((var(--navbar-thickness) - 3 * var(--ham-bar-height) - 2 * var(--ham-gap)) / 2);
+  --animation-timing: 200ms ease-in-out;
+}
+
+.hamburger {
+  flex-direction: column;
+  position: absolute;
+  gap: var(--ham-gap);
+  top: var(--ham-margin);
+  left: var(--ham-margin);
+  z-index: 2;
+  cursor: pointer;
+}
+
+.hamburger input {
+  display: none;
+  appearance: none;
+  pointer-events: none;
+  outline: none;
+}
+
+.bar1, .bar2, .bar3 {
+  width: var(--ham-bar-width);
+  height: var(--ham-bar-height);
+  background-color: white;
+  border-radius: 9999px;
+}
+
+.bar2 {
+  transition: width var(--animation-timing), opacity var(--animation-timing);
+}
+
+.bar1, .bar3 {
+  transform-origin: center center;
+  transition: transform var(--animation-timing);
+}
+
+.hamburger input:checked ~ .bar1 {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger input:checked ~ .bar2 {
+  width: 0;
+  opacity: 0;
+}
+
+.hamburger input:checked ~ .bar3 {
+  transform: translateY(-8px) rotate(-45deg);
+}
