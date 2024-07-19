@@ -1,20 +1,22 @@
-import style from './Featured.module.css'
-import PostCard from '../PostCard'
+import styles from './Featured.module.css'
+import Card from '../card/Card'
+import arch_desktop from '../../assets/arch_desktop.png'
+import CardContainer from '../card/CardContainer'
 
-const Featured = () => {
+const FeaturedSection = () => {
   return (
-    <>
-      <div className={style.title}>
+    <div className={styles.container}>
+      <div className={styles.title}>
         Featured Posts
       </div>
-      <div className={style.posts}>
-        <PostCard title="Template Post" src="" />
-        <PostCard title="Template Post" src="" />
-        <PostCard title="Template Post" src="" />
-        <PostCard title="Template Post" src="" />
-      </div>
-    </>
+      <CardContainer>
+        <Card image={arch_desktop} title="Template Post" description={"ok"} tags={["tag1"]} />
+        <Card image={arch_desktop} title="Template Post" description={"ok"} tags={["tag1"]} />
+        <Card image={arch_desktop} title="Template Post" description={"ok"} tags={["tag1"]} />
+        <Card image={arch_desktop} title="Template Post" description={"ok"} tags={["tag1"]} />
+      </CardContainer>
+    </div>
   )
 }
 
-export default Featured
+export default FeaturedSection

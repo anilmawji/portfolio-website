@@ -1,22 +1,21 @@
 import styles from './Hamburger.module.css'
-import useBoolean from "../../hooks/useBoolean";
 
 interface PropTypes {
   className?: string;
+  isOpen: boolean;
+  onToggle?: React.ChangeEventHandler<HTMLInputElement>;
 }
 
-const HamburgerButton = (props: PropTypes) => {
-  const { value: isChecked, toggle } = useBoolean(false);
-
+const HamburgerButton = ({ className, isOpen, onToggle }: PropTypes) => {
   const combinedClassName: string = (`
     ${styles.hamburger}
-    ${props.className ?? ''}
-    ${isChecked ? "open" : "closed"}
+    ${className ?? ''}
+    ${isOpen ? "open" : ""}
   `).trim();
 
   return (
     <label className={combinedClassName}>
-      <input type="checkbox" onChange={toggle}/>
+      <input type="checkbox" checked={isOpen} onChange={onToggle} />
       <span className={styles.bar1} />
       <span className={styles.bar2} />
       <span className={styles.bar3} />

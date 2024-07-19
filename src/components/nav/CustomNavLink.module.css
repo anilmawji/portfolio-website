@@ -2,7 +2,7 @@
   --hover-line-thickness: 0.8px;
 }
 
-nav div {
+nav li div {
   height: calc(100% - var(--hover-line-thickness));
 }
 

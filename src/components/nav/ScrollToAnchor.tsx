@@ -27,4 +27,4 @@ const ScrollToAnchor = ({ delay }: PropTypes) => {
   return null;
 }
 
-export default ScrollToAnchor;
+export default ScrollToAnchor

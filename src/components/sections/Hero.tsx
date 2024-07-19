@@ -1,24 +1,43 @@
 import styles from './Hero.module.css'
-import iconstyles from '../icons/Logo.module.css'
-import thmLogo from '../../assets/icons/thm-logo.png'
-import Logo from '../icons/Logo'
-import { LogoType } from '../icons/Logo'
+import IconLink, { IconType } from '../icons/IconLink'
 
 const HeroSection = () => {
   return (
     <div className={styles.container}>
-      <div>
-        {"<ANIL MAWJI>"}
+      <div className={styles.name}>
+        <svg className={styles.bracket} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z"/></svg>
+        {"Anil Mawji"}
+        <svg className={styles.bracket} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"/></svg>
+      </div>
+      <div className={styles.title}>
+        {"Cybersecurity Analyst"}
       </div>
       <div className={styles.bio}>
-        Computer Science student and aspiring cyber security professional with a passion for all things technology.
+        Final year Computer Science student at the University of Calgary.
+        <br />
+        Cybersecurity professional with a passion for all things technology.
       </div>
-      <div className={styles.logos}>
-        <Logo type={LogoType.LINKEDIN} href="https://ca.linkedin.com/in/anil-mawji" className={iconstyles["linkedin-bg"]} />
-        <Logo type={LogoType.HACKTHEBOX} href="https://www.hackthebox.com/" />
-        <Logo src={thmLogo} href="https://tryhackme.com/" alt="tryhackme logo" />
-        <Logo type={LogoType.GITHUB} href="https://github.com/anilmawji" className={iconstyles["github-bg"]} />
-        <Logo type={LogoType.STACKOVERFLOW} href="https://stackoverflow.com/users/8902167/anil-m"/>
+      <div className={styles.icons}>
+        <IconLink iconSize={24}
+                  type={IconType.LINKEDIN}
+                  href="https://ca.linkedin.com/in/anil-mawji"
+                  className={styles.icon} />
+        <IconLink iconSize={24}
+                  type={IconType.HACKTHEBOX}
+                  href="https://www.hackthebox.com/"
+                  className={styles.icon} />
+        <IconLink iconSize={24}
+                  type={IconType.TRYHACKME}
+                  href="https://tryhackme.com/"
+                  className={styles.icon} />
+        <IconLink iconSize={24}
+                  type={IconType.GITHUB}
+                  href="https://github.com/anilmawji"
+                  className={styles.icon} />
+        <IconLink iconSize={24}
+                  type={IconType.STACKOVERFLOW}
+                  href="https://stackoverflow.com/users/8902167/anil-m"
+                  className={styles.icon} />
       </div>
     </div>
   )

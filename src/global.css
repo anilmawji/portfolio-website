@@ -1,23 +1,37 @@
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection,
+::-moz-selection {
+  color: white;
+  background-color: var(--btn-color);
 }
 
 :root {
   --main-fg-color: #191919;
-  --main-bg-color: #212121;
+  --main-fg-shadow-color: #191919;
+  --main-bg-color: #252525;
   --neon-green: rgb(108, 250, 132);
+  --btn-color: rgb(68, 210, 92);
+  --ff-sans: "Segoe UI Adjusted", "Segoe UI", "Liberation Sans", sans-serif;
+  --dotted-bg-color: #262626;
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: var(--ff-sans);
   background-color: var(--main-bg-color);
   color: white;
 }
 
 /* Temp: target less broadly in the future since blog post images should be draggable */
-img {  
+img, .noselect {  
   user-select: none;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -27,14 +41,10 @@ img {
   -webkit-user-drag: none;
 }
 
-.noselect {
-  user-select: none;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  -webkit-user-drag: none;
+.dotted-bg {
+  background-image: radial-gradient(var(--dotted-bg-color) 1px, transparent 0);
+  background-size: 20px 20px;
+  background-position: -19px -19px;
 }
 
 .page {

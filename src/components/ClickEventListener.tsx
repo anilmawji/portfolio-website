@@ -123,6 +123,6 @@ const ClickEventListener = (
   )
 }
 
-export default ClickEventListener;
+export default ClickEventListener
 
-export { MouseState, TouchState };
+export { MouseState, TouchState }

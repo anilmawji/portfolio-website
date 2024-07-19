@@ -1,5 +1,5 @@
 import styles from './SearchBar.module.css'
-import logo from '../assets/icons/32px-magnifying-glass.png'
+import logo from '../assets/32px-magnifying-glass.png'
 
 const SearchBar = () => {
   return (

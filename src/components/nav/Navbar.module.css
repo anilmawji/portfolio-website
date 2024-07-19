@@ -1,27 +1,28 @@
 :root {
   /* General navbar styles */
   --navbar-thickness: 60px;
-  --navbar-thickness-tablet: 50px;
-  --navbar-thickness-phone: 42px;
-  --navbar-border-thickness: 4px;
+  --navbar-thickness-tablet: 46px;
+  --navbar-thickness-phone: 36px;
+  --navbar-border-thickness: 3px;
   --navbar-gap-mobile: 20px;
+  --navbar-font-weight: 600;
   --navlink-offset-y-mobile: 20px;
-  --navlink-count: 5;
+  --navlink-count: 6;
 
   /* Calculate drawer height based on nav properties */
   --navbar-height-tablet: calc(
     var(--navbar-thickness-tablet) * var(--navlink-count) +
     var(--navbar-gap-mobile)       * var(--navlink-count) +
-    var(--navlink-offset-y-mobile)                        +
-    var(--navbar-border-thickness)
+    var(--navbar-border-thickness)                        +
+    var(--navlink-offset-y-mobile)                        
   );
 
   /* Calculate drawer height based on nav properties */
   --navbar-height-phone: calc(
     var(--navbar-thickness-phone) * var(--navlink-count) +
     var(--navbar-gap-mobile)      * var(--navlink-count) +
-    var(--navlink-offset-y-mobile)                       +
-    var(--navbar-border-thickness)
+    var(--navbar-border-thickness)                       +
+    var(--navlink-offset-y-mobile)
   );
 }
 
@@ -30,8 +31,8 @@ nav {
   top: 0;
   width: 100%;
   height: var(--navbar-thickness);
-  font-weight: bold;
   font-size: 14px;
+  font-weight: var(--navbar-font-weight);
   background-color: var(--main-fg-color);
   border-bottom: var(--navbar-border-thickness) solid var(--main-bg-color);
   z-index: 10000;
@@ -53,10 +54,29 @@ nav li {
 nav li a {
   display: flex;
   align-items: center;
+  text-decoration: none;
   color: white;
   height: 100%;
   padding: 0.5em;
-  text-decoration: none;
+}
+
+.resume_btn_container {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+}
+
+.resume_btn {
+  width: 100px;
+  height: 40px;
+  font-family: var(--ff-sans);
+  font-weight: var(--navbar-font-weight);
+  background-color: var(--main-fg-color);
+  border: 2px solid var(--btn-color);
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  justify-content: center;
 }
 
 .hamburger {
@@ -87,6 +107,8 @@ nav li a {
     height: var(--navbar-thickness-tablet);
     transform: translateY(var(--navlink-offset-y-mobile));
     background-color: var(--main-bg-color);
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
   }
 
   nav li a {
@@ -96,18 +118,28 @@ nav li a {
     padding: 1em;
   }
 
+  .resume_btn {
+    display: none;
+    width: 200px;
+  }
+
   /* Targets the hover line of the navlink */
   li div div {
     display: none;
   }
 
   .hamburger[class*="open"] ~ ul {
+    visibility: visible;
     height: var(--navbar-height-tablet);
     border-bottom: var(--navbar-border-thickness) solid var(--main-bg-color);
   }
 
   .hamburger[class*="open"] ~ ul li a {
     display: flex;
+  }
+
+  .hamburger[class*="open"] ~ ul li button {
+    display: block;
   }
 
   /* Targets the hover line of the navlink */
@@ -124,6 +156,14 @@ nav li a {
 
   nav li a {
     justify-content: left;
+  }
+
+  .resume_btn_container {
+    justify-content: left;
+  }
+
+  .resume_btn {
+    width: 100px;
   }
 
   .hamburger[class*="open"] ~ ul {

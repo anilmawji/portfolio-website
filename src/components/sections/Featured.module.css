@@ -1,19 +1,9 @@
-section {
-  height: 100px;
+.container {
+  margin-top: 400px;
 }
 
 .title {
   font-size: 24px;
   margin-bottom: 40px;
-  padding: 10px;
-}
-
-.posts {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  width: 100%;
-  gap: 30px;
   padding: 10px;
 }

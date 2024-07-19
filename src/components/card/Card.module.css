@@ -1,0 +1,29 @@
+.container {
+  box-shadow: 0 0 10px 4px var(--main-fg-shadow-color);
+  min-width: 28rem;
+  display: flex;
+}
+
+.container img {
+  width: 14rem;
+  height: 11rem;
+  object-fit: cover;
+}
+
+.body {
+  margin: 2rem;
+}
+
+.title {
+  line-height: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.description {
+  line-height: 1.2rem;
+}
+
+.tags {
+  font-size: 0.6rem;
+  margin-top: 0.6rem;
+}
