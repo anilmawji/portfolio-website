@@ -1,11 +1,5 @@
 import { randRange } from "../../Utils";
-
-interface MouseState {
-  x: number,
-  y: number,
-  radius: number,
-  moving: boolean
-}
+import { MouseState } from "../../hooks/useMouse";
 
 class Particle {
   x: number;
@@ -43,9 +37,7 @@ class Particle {
 
   applyMousePush(canvas: HTMLCanvasElement, mouse: MouseState, pushRadius: number) {
     const rect = canvas.getBoundingClientRect();
-    const isMouseInCanvas = Particle.isMouseInRect(mouse, rect);
-
-    if (!isMouseInCanvas || !mouse.moving || pushRadius < 0) return;
+    if (!Particle.isMouseInRect(mouse, rect) || !mouse.moving || pushRadius < 0) return;
 
     // Calculate mouse position relative to the canvas
     const canvasMouseX = mouse.x - rect.left;
@@ -115,7 +107,5 @@ class Particle {
     this.y = Math.random() * (maxY - this.radius * 2) + this.radius;
   }
 }
-
-export type { MouseState }
 
 export { Particle }

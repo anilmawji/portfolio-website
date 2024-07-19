@@ -1,10 +1,25 @@
 import { useState, useEffect } from 'react';
 
+interface MouseState {
+  x: number,
+  y: number,
+  radius: number,
+  moving: boolean
+}
+
 const useMouse = () => {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [mousePosition, setMousePosition] = useState({
+    x: 0,
+    y: 0,
+    moving: false
+  });
 
   const updateMousePosition = (e: MouseEvent) => {
-    setMousePosition({ x: e.clientX, y: e.clientY });
+    setMousePosition({
+      x: e.clientX,
+      y: e.clientY,
+      moving: true
+    });
   };
 
   useEffect(() => {
@@ -19,3 +34,5 @@ const useMouse = () => {
 };
 
 export default useMouse;
+
+export type { MouseState }

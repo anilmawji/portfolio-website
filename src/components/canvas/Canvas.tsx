@@ -24,7 +24,7 @@ const Canvas = ({ draw, resize, establishContext, className, fps = 30, ...restPr
     if (!canvasRef.current) return;
     const ctx: CanvasRenderingContext2D | null = canvasRef.current.getContext('2d');
     if (!ctx) {
-      console.warn("Canvas context is null. The component is not being rendered.");
+      console.warn("Canvas context is null. The component will not be rendered.");
       return;
     }
     if (establishContext) {

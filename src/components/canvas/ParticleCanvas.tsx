@@ -1,6 +1,6 @@
 import Canvas from "./Canvas";
 import { useState, useEffect } from 'react';
-import { MouseState } from './Particle';
+import { MouseState } from "../../hooks/useMouse";
 import { Particle } from "./Particle";
 import { clampMin, isValidCssColor, getColorValues } from '../../Utils';
 
@@ -17,7 +17,7 @@ const initParticles = (
   const particleCount = clampMin(context.canvas.height * context.canvas.width / 25000, 20);
 
   for (let i = 0; i < particleCount; i++) {
-    const p = new Particle(0, 0, 0, 0, particleRadius, particleRgbColor, 2);
+    const p = new Particle(0, 0, 0, 0, particleRadius, particleRgbColor, 1);
     p.randomVelocity(0.45, 0.5);
     p.randomPosition(context.canvas.width, context.canvas.height);
     particles.push(p);
@@ -31,10 +31,10 @@ const connectParticles = (
   particleLinkColor: string,
   maxOpacity: number
 ) => {
-  context.lineWidth = 1;
-
   const connectDistance = clampMin((context.canvas.width/3) * (context.canvas.height/3), MIN_CONNECT_DISTANCE);
   const colorValues = getColorValues(particleLinkColor);
+
+  context.lineWidth = 1;
 
   for (let i = 0; i < particles.length; i++) {
     for (let j = i; j < particles.length; j++) {

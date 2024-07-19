@@ -13,7 +13,7 @@ const HeroSection = () => {
         {"Cybersecurity Analyst"}
       </div>
       <div className={styles.bio}>
-        Final year Computer Science student at the University of Calgary.
+        Fifth year Computer Science student at the University of Calgary.
         <br />
         Cybersecurity professional with a passion for all things technology.
       </div>
