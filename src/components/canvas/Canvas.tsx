@@ -5,31 +5,22 @@ interface PropTypes {
   resize: (ctx: CanvasRenderingContext2D) => void;
   establishContext?: (ctx: CanvasRenderingContext2D | null) => void;
   className?: string;
+  style?: React.CSSProperties;
   fps?: number;
 }
 
-const Canvas = ({ draw, resize, establishContext, className, fps = 30, ...restProps}: PropTypes) => {
+const Canvas = ({ draw, resize, establishContext, className, style, fps = 30, ...restProps}: PropTypes) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-
-  const resizeCanvas = (ctx: CanvasRenderingContext2D) => {
-    const parent = ctx.canvas.parentElement;
-    if (!parent) return;
-
-    ctx.canvas.width = parent.clientWidth;
-    ctx.canvas.height = parent.clientHeight;
-    resize(ctx);
-  }
 
   useEffect(() => {
     if (!canvasRef.current) return;
-    const ctx: CanvasRenderingContext2D | null = canvasRef.current.getContext('2d');
+    const ctx: CanvasRenderingContext2D | null = canvasRef.current.getContext("2d");
+
     if (!ctx) {
       console.warn("Canvas context is null. The component will not be rendered.");
       return;
     }
-    if (establishContext) {
-      establishContext(ctx);
-    }
+    establishContext?.(ctx);
 
     let animationFrameId: number;
     let fpsInterval: number;
@@ -37,8 +28,8 @@ const Canvas = ({ draw, resize, establishContext, className, fps = 30, ...restPr
     let then: number;
     let elapsed: number;
 
-    const render = () => {
-      animationFrameId = window.requestAnimationFrame(render);
+    const drawCanvas = () => {
+      animationFrameId = window.requestAnimationFrame(drawCanvas);
       now = Date.now();
       elapsed = now - then;
       if (elapsed > fpsInterval) {
@@ -46,20 +37,29 @@ const Canvas = ({ draw, resize, establishContext, className, fps = 30, ...restPr
         draw(ctx);
       }
     }
+
+    const resizeCanvas = () => {
+      const parent = ctx.canvas.parentElement;
+      if (!parent) return;
+  
+      ctx.canvas.width = parent.clientWidth;
+      ctx.canvas.height = parent.clientHeight;
+      resize(ctx);
+    }
+
     fpsInterval = 1000 / fps;
     then = Date.now();
-    render();
-
-    resizeCanvas(ctx);
-    window.addEventListener("resize", () => resizeCanvas(ctx));
+    drawCanvas();
+    resizeCanvas();
+    window.addEventListener("resize", resizeCanvas);
 
     return () => {
       window.cancelAnimationFrame(animationFrameId);
-      window.removeEventListener("resize", () => resizeCanvas(ctx));
+      window.removeEventListener("resize", resizeCanvas);
     }
-  }, [canvasRef, draw, resize, resizeCanvas]);
+  }, [canvasRef, fps, draw, resize]);
 
-  return <canvas ref={canvasRef} className={className} {...restProps} />
+  return <canvas ref={canvasRef} className={className} style={style} {...restProps} />
 };
 
 export default Canvas

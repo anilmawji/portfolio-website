@@ -56,6 +56,7 @@ const connectParticles = (
 
 interface PropTypes {
   className?: string;
+  style?: React.CSSProperties;
   particleRadius: number;
   particleRgbColor: string;
   mousePushRadius?: number;
@@ -64,6 +65,7 @@ interface PropTypes {
 
 const ParticleCanvas = ({
   className,
+  style,
   particleRadius,
   particleRgbColor,
   mousePushRadius = 0,
@@ -140,6 +142,7 @@ const ParticleCanvas = ({
       draw={draw}
       resize={resize}
       className={className}
+      style={style}
       fps={60}
       establishContext={(ctx: CanvasRenderingContext2D | null) => setContext(ctx)}
     />
