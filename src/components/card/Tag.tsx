@@ -1,3 +1,5 @@
+import styles from './Tag.module.css'
+
 interface PropTypes {
   label: string,
   color?: string
@@ -5,7 +7,7 @@ interface PropTypes {
 
 const Tag = ({ label, color }: PropTypes) => {
   return (
-    <div>{label}</div>
+    <div className={styles.tag}>{label}</div>
   )
 }
 

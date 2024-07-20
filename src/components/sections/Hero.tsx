@@ -1,5 +1,5 @@
 import styles from './Hero.module.css'
-import IconLink, { IconType } from '../icons/IconLink'
+import IconLink, { IconType } from '../icon/IconLink'
 
 const HeroSection = () => {
   return (

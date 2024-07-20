@@ -1,29 +1,42 @@
 .container {
-  box-shadow: 0 0 10px 4px var(--main-fg-shadow-color);
-  min-width: 28rem;
   display: flex;
+  height: 500px;
+  background-color: var(--main-fg-color);
+  outline: 2px solid black;
+}
+
+.container:hover {
+  transform: translateY(-4px);
+  cursor: pointer;
 }
 
 .container img {
-  width: 14rem;
-  height: 11rem;
   object-fit: cover;
 }
 
 .body {
-  margin: 2rem;
+  padding: 0 20px;
 }
 
 .title {
+  font-size: 20px;
   line-height: 1.4rem;
-  margin-bottom: 0.5rem;
+  height: 50px;
+  margin-top: 40px;
+}
+
+.container:hover .title {
+  text-decoration: underline;
 }
 
 .description {
+  font-size: 16px;
   line-height: 1.2rem;
+  height: 80px;
+  margin-top: 20px;
 }
 
 .tags {
   font-size: 0.6rem;
-  margin-top: 0.6rem;
+  margin-top: 20px;
 }

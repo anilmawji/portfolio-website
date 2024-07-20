@@ -1,17 +1,17 @@
 import styles from './Card.module.css'
 import Tag from './Tag';
-import CustomButton from '../CustomButton';
 
 interface PropTypes {
   image: string;
   title: string;
   description: string;
   tags: string[];
+  link: string;
 }
 
-const Card = ({ image, title, description, tags }: PropTypes) => {
+const Card = ({ image, title, description, tags, link }: PropTypes) => {
   return (
-    <div className={styles.container}>
+    <a className={styles.container} href={link} target="_blank">
       <img src={image} />
       <div className={styles.body}>
         <h2 className={styles.title}>
@@ -21,13 +21,12 @@ const Card = ({ image, title, description, tags }: PropTypes) => {
           {description}
         </div>
         <h3 className={styles.tags}>
-          {tags.map((tag) =>
-            <Tag label="tag" />
-          )}
+          {tags.map((tag, index) => (
+            <Tag key={index} label={tag} />
+          ))}
         </h3>
-        <CustomButton>View</CustomButton>
       </div>
-    </div>
+    </a>
   )
 }
 

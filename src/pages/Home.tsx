@@ -2,7 +2,7 @@ import styles from './Home.module.css'
 import ParticleCanvas from '../components/canvas/ParticleCanvas'
 import Hero from '../components/sections/Hero'
 import Featured from '../components/sections/Featured'
-import SvgWolf from '../components/icons/SvgWolf'
+import SvgWolf from '../components/icon/SvgWolf'
 
 const Home = () => {
   //const style = {"--background-height": toPixels(window.innerHeight - 60)} as React.CSSProperties;
@@ -18,7 +18,7 @@ const Home = () => {
           mousePushRadius={50}
           maxOpacity={0.65}
         />
-        <div className={`${styles.curve} dotted-bg`} />
+        {/* <div className={`${styles.curve} dotted-bg`} /> */}
       </div>
       <div className={styles.container}>
         <Hero />

@@ -26,7 +26,7 @@ const Navbar = () => {
         <CustomNavLink to="/portfolio" label="Portfolio" onClick={closeHamburgerDrawer} />
         <CustomNavLink to="/blog" label="Blog" onClick={closeHamburgerDrawer} />
         <CustomNavLink to="/about#contact" label="Contact" onClick={closeHamburgerDrawer} />
-        <SearchBar />
+        {/* <SearchBar /> */}
       </ul>
     </nav>
   );
