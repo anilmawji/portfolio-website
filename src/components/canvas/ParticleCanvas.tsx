@@ -14,7 +14,7 @@ const initParticles = (
   particleRgbColor: string
 ) => {
   const particles: Particle[] = [];
-  const particleCount = clampMin(context.canvas.height * context.canvas.width / 25000, 20);
+  const particleCount = clampMin(context.canvas.height * context.canvas.width / 23000, 20);
 
   for (let i = 0; i < particleCount; i++) {
     const p = new Particle(0, 0, 0, 0, particleRadius, particleRgbColor, 1);

@@ -42,3 +42,16 @@ export function rgbToRgba(rgbString: string, alpha: number): string {
 export function getColorValues(rgbString: string): string {
   return rgbString.substring(4, rgbString.length - 1);
 }
+
+export function getCssValue(element: HTMLElement, variableName: string): string {
+  return getComputedStyle(element).getPropertyValue(`--${variableName}`).trim();
+}
+
+export function getNumericalCssValue(element: HTMLElement, variableName: string): number {
+  const numberValue = parseFloat(getCssValue(element, variableName));
+
+  if (isNaN(numberValue)) {
+    console.error(`Failed to parse ${variableName}: CSS variable is not a number value`);
+  }
+  return numberValue;
+}

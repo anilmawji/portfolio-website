@@ -22,11 +22,11 @@ const Navbar = () => {
       <ul>
         <CustomNavLink to="/" label="Home" onClick={closeHamburgerDrawer} />
         <CustomNavLink to="/about#bio" label="About" onClick={closeHamburgerDrawer} />
-        <CustomNavLink to="/portfolio" label="Experience" onClick={closeHamburgerDrawer} />
         <CustomNavLink to="/portfolio" label="Portfolio" onClick={closeHamburgerDrawer} />
-        <CustomNavLink to="/blog" label="Blog" onClick={closeHamburgerDrawer} />
+        <CustomNavLink to="/experience" label="Experience" onClick={closeHamburgerDrawer} />
         <CustomNavLink to="/about#contact" label="Contact" onClick={closeHamburgerDrawer} />
-        {/* <SearchBar /> */}
+        <CustomNavLink to="/blog" label="Blog" onClick={closeHamburgerDrawer} />
+        <SearchBar />
       </ul>
     </nav>
   );

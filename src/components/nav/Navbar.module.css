@@ -45,6 +45,7 @@ nav ul {
   height: 100%;
   list-style: none;
   list-style-type: none;
+  margin-left: 60px;
 }
 
 nav li {
@@ -84,7 +85,7 @@ nav li a {
 }
 
 /* Tablet styling */
-@media(max-width:980px) {
+@media(max-width: 980px) {
   .hamburger {
     display: flex;
   }
@@ -99,6 +100,7 @@ nav li a {
     transform: translateY(var(--navbar-thickness));
     background-color: var(--main-fg-color);
     transition: height 300ms ease-in-out;
+    margin-left: 0;
   }
 
   nav li {
@@ -149,7 +151,7 @@ nav li a {
 }
 
 /* Phone styling */
-@media(max-width:540px) {
+@media(max-width: 540px) {
   nav li {
     height: var(--navbar-thickness-phone);
   }
