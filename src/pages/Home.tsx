@@ -2,7 +2,7 @@ import styles from './Home.module.css'
 import ParticleCanvas from '../components/canvas/ParticleCanvas'
 import HeroSection from '../components/sections/Hero'
 import FeaturedSection from '../components/sections/Featured'
-import SvgFox from '../components/icon/SvgFox'
+import SvgFox from '../components/icons/SvgFox'
 
 const Home = () => {
   return (
