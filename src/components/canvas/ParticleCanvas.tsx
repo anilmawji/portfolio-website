@@ -5,8 +5,10 @@ import { Particle } from "./Particle";
 import { clampMin, isValidCssColor, getColorValues } from '../../Utils';
 
 const MIN_CONNECT_DISTANCE = 40000;
+const MIN_PARTICLE_COUNT = 20;
 const RESET_PARTICLE_DELAY = 500;
 const MOUSE_MOVING_DELAY = 200;
+const MOUSE_PUSH_FORCE = 3;
 
 const initParticles = (
   context: CanvasRenderingContext2D,
@@ -14,10 +16,10 @@ const initParticles = (
   particleRgbColor: string
 ) => {
   const particles: Particle[] = [];
-  const particleCount = clampMin(context.canvas.height * context.canvas.width / 23000, 20);
+  const particleCount = clampMin(context.canvas.height * context.canvas.width / 23000, MIN_PARTICLE_COUNT);
 
   for (let i = 0; i < particleCount; i++) {
-    const p = new Particle(0, 0, 0, 0, particleRadius, particleRgbColor, 1);
+    const p = new Particle(0, 0, 0, 0, particleRadius, particleRgbColor, MOUSE_PUSH_FORCE);
     p.randomVelocity(0.45, 0.5);
     p.randomPosition(context.canvas.width, context.canvas.height);
     particles.push(p);

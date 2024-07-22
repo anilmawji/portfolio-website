@@ -1,10 +1,14 @@
-import useBoolean from '../../hooks/useBoolean';
+import useBoolean from '../../hooks/useBoolean'
 import CustomNavLink from './CustomNavLink'
 import styles from './Navbar.module.css'
-import HamburgerButton from './HamburgerButton';
-import SearchBar from '../SearchBar';
+import HamburgerButton from './HamburgerButton'
+import SearchBar from '../SearchBar'
 
-const Navbar = () => {
+interface PropTypes {
+  drawerDelay?: number;
+}
+
+const Navbar = ({ drawerDelay = 250 }: PropTypes) => {
   const { value: isHamburgerOpen, toggle, setFalse } = useBoolean(false);
 
   // Adds a short delay before closing the navbar
@@ -12,7 +16,7 @@ const Navbar = () => {
     if (isHamburgerOpen) {
       setTimeout(() => {
         setFalse();
-      }, 250);
+      }, drawerDelay);
     }
   }
 

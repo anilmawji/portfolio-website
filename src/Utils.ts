@@ -55,3 +55,7 @@ export function getNumericalCssValue(element: HTMLElement, variableName: string)
   }
   return numberValue;
 }
+
+export function isOverflowing(event: HTMLElement) {
+  return event.offsetHeight < event.scrollHeight || event.offsetWidth < event.scrollWidth;
+}

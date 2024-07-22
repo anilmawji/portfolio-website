@@ -151,7 +151,7 @@ nav li a {
 }
 
 /* Phone styling */
-@media(max-width: 540px) {
+@media(max-width: 500px) {
   nav li {
     height: var(--navbar-thickness-phone);
   }

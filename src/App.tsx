@@ -14,7 +14,7 @@ const App = () => {
   return (
     <>
       <Navbar />
-      <ScrollToAnchor offset={NAVBAR_THICKNESS}/>
+      <ScrollToAnchor delay={250} offset={NAVBAR_THICKNESS}/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />

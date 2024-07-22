@@ -6,7 +6,7 @@ interface PropTypes {
   offset?: number;
 }
 
-const ScrollToAnchor = ({ delay, offset = 0 }: PropTypes) => {
+const ScrollToAnchor = ({ delay = 0, offset = 0 }: PropTypes) => {
   const location = useLocation();
   const lastHash = useRef('');
 
@@ -28,7 +28,7 @@ const ScrollToAnchor = ({ delay, offset = 0 }: PropTypes) => {
             behavior: 'smooth'
         });
       lastHash.current = '';
-    }, delay || 100);
+    }, delay);
   }, [location]);
 
   return null;

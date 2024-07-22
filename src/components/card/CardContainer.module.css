@@ -1,18 +1,116 @@
-.container {
-  display: grid;
-  justify-content: center;
-  margin: 2rem;
-  gap: 24px;
-  /* The number of cards in one row will be the number of cards that can fit in the same row
-  With the minimum width being the first arg, and max width being the 2nd arg */
-  grid-template-columns: repeat(auto-fit, minmax(14rem, 26rem));
+:root {
+  --card-gap: 20px;
 }
 
-.container a {
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--card-gap);
+}
+
+.card {
+  display: flex;
   flex-direction: column;
+  flex: 0 0 calc(33.33% - var(--card-gap));
+  max-width: calc(33.33% - var(--card-gap));
+  width: 100%;
+  background-color: var(--main-fg-color);
+  border-radius: 6px;
 }
 
-.container a img {
+.card:hover {
+  cursor: pointer;
+  transform: translateY(-3px);
+  -webkit-transform: translateY(-3px);
+  -moz-transform: translateY(-3px);
+  -ms-transform: translateY(-3px);
+  -o-transform: translateY(-3px);
+}
+
+.title {
+  margin-bottom: 10px;
+}
+
+.card:hover .title {
+  text-decoration: underline;
+}
+
+.card img {
   width: 100%;
   height: 16rem;
+  object-fit: cover;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+
+.text {
+  padding: 20px;
+}
+
+.description {
+  height: 60px;
+  font-size: 14px;
+  line-height: 1.2rem;
+  overflow: hidden;
+}
+
+.date {
+  font-size: small;
+  color: grey;
+  margin-bottom: 10px;
+}
+
+.tags {
+  font-weight: bold;
+  margin: 14px 0;
+  overflow: hidden;
+}
+
+@media (max-width: 1300px) {
+  .card {
+    flex: 0 0 calc(50% - var(--card-gap));
+    max-width: calc(50% - var(--card-gap));
+  }
+
+  .text {
+    flex-direction: row;
+  }
+}
+
+@media (max-width: 750px) {
+  .card {
+    flex-direction: row;
+    flex: 0 0 100%;
+    max-width: 100%;
+    height: 14rem;
+    overflow: hidden;
+  }
+
+  .card img {
+    width: 14rem;
+    height: 100%;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 6px;
+  }
+
+  h3 {
+    font-size: 16px;
+  }
+
+  .tags {
+    height: 25px;
+  }
+}
+
+@media (max-width: 550px) {
+  .card img {
+    display: none;
+  }
+
+  .description {
+    font-size: 14px;
+    line-height: 1.2rem;
+  }
 }
