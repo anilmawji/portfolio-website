@@ -9,7 +9,7 @@ const CardContainer = () => {
       title: "How to Reset the Root Password in Kali Linux",
       image: arch_desk,
       date: "Jan 15th 2024",
-      description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus impedit a ipsa fugit, porro adipisci at enim similique vitae doloribus maiores repudiandae nostrum maxime in recusandae unde fuga illum esse! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus impedit a ipsa fugit, porro adipisci at enim similique vitae doloribus maiores repudiandae nostrum maxime in recusandae unde fuga illum esse!",
+      body: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus impedit a ipsa fugit, porro adipisci at enim similique vitae doloribus maiores repudiandae nostrum maxime in recusandae unde fuga illum esse! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus impedit a ipsa fugit, porro adipisci at enim similique vitae doloribus maiores repudiandae nostrum maxime in recusandae unde fuga illum esse!",
       link: "https://github.com/anilmawji/PowerShell-Script-Runner",
       tags: ["C#", ".NET MAUI", "Blazor", "HTML", "CSS", "XAML"]
     },
@@ -17,7 +17,7 @@ const CardContainer = () => {
       title: "Hack The Box: Anubis Writeup",
       image: arch_desk,
       date: "October 15th 2024",
-      description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus impedit a ipsa fugit.",
+      body: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus impedit a ipsa fugit!",
       link: "https://github.com/anilmawji/PowerShell-Script-Runner",
       tags: ["C"]
     },
@@ -25,7 +25,7 @@ const CardContainer = () => {
       title: "How to Reset the Root Password in Kali Linux",
       image: arch_desk,
       date: "Jan 15th 2024",
-      description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus impedit a ipsa fugit, porro adipisci at enim similique.",
+      body: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus impedit a ipsa fugit, porro adipisci at enim similique!",
       link: "https://github.com/anilmawji/PowerShell-Script-Runner",
       tags: ["C#", ".NET MAUI", "Blazor", "HTML", "CSS", "XAML", "C#", "C#", "HTML", "Blazor", "CSS", "XAML", ".NET MAUI", "Blazor", "HTML", "CSS", "XAML", ".NET MAUI"]
     },
@@ -33,7 +33,7 @@ const CardContainer = () => {
       title: "Hack The Box: Anubis Writeup",
       image: arch_desk,
       date: "October 15th 2024",
-      description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus impedit a ipsa fugit, porro adipisci at enim similique vitae doloribus maiores repudiandae nostrum maxime in recusandae unde fuga illum esse! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus impedit a ipsa fugit, porro adipisci at enim similique vitae doloribus maiores repudiandae nostrum maxime in recusandae unde fuga illum esse!",
+      body: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus impedit a ipsa fugit, porro adipisci at enim similique vitae doloribus maiores repudiandae nostrum maxime in recusandae unde fuga illum esse! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus impedit a ipsa fugit, porro adipisci at enim similique vitae doloribus maiores repudiandae nostrum maxime in recusandae unde fuga illum esse!",
       link: "https://github.com/anilmawji/PowerShell-Script-Runner",
       tags: ["C"]
     },
@@ -41,7 +41,7 @@ const CardContainer = () => {
       title: "How to Reset the Root Password in Kali Linux",
       image: arch_desk,
       date: "Jan 15th 2024",
-      description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus impedit a ipsa fugit, porro adipisci at enim similique vitae doloribus maiores repudiandae nostrum maxime in recusandae unde fuga illum esse!",
+      body: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus impedit a ipsa fugit, porro adipisci at enim similique vitae doloribus maiores repudiandae nostrum maxime in recusandae unde fuga illum esse!",
       link: "https://github.com/anilmawji/PowerShell-Script-Runner",
       tags: ["React.js", "TypeScript", "HTML", "CSS"]
     },
@@ -49,7 +49,7 @@ const CardContainer = () => {
       title: "How to Reset the Root Password in Kali Linux",
       image: arch_desk,
       date: "Jan 15th 2024",
-      description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus impedit a ipsa fugit, porro adipisci at enim similique vitae doloribus maiores repudiandae nostrum maxime in recusandae unde fuga illum esse!",
+      body: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus impedit a ipsa fugit, porro adipisci at enim similique vitae doloribus maiores repudiandae nostrum maxime in recusandae unde fuga illum esse!",
       link: "https://github.com/anilmawji/PowerShell-Script-Runner",
       tags: ["C#", ".NET MAUI", "Blazor", "HTML", "CSS", "XAML", "C#"]
     }
@@ -74,7 +74,7 @@ const CardContainer = () => {
                     {card.date} &#8226; {readTime} read time
                   </p>
                   <p className={styles.body}>
-                    {card.description}
+                    {card.body}
                   </p>
                 </div>
                 <div className={styles.tags}>

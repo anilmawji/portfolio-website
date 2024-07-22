@@ -43,8 +43,13 @@
   margin-left: 18px;
 }
 
+.icon {
+  transition: filter 0.3s ease;
+}
+
 .icon:hover {
   filter: drop-shadow(0 0 6px var(--neon-green));
+  -webkit-filter: drop-shadow(0 0 6px var(--neon-green));
 }
 
 .icon svg:hover {

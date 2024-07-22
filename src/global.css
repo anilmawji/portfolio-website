@@ -19,12 +19,11 @@
   --main-bg-color: #252525;
   --neon-green: #6CFA84;
   --btn-color: #44D25C;
-  --ff-sans: "Segoe UI Adjusted", "Segoe UI", "Liberation Sans", sans-serif;
   --dotted-bg-color: #262626;
 }
 
 body {
-  font-family: var(--ff-sans);
+  font-family: "Segoe UI Adjusted", "Segoe UI", "Liberation Sans", sans-serif;
   background-color: var(--main-bg-color);
   color: white;
 }

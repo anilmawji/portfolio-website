@@ -1,3 +1,4 @@
+import ContactSection from "../components/sections/Contact"
 import Timeline from "../components/sections/Timeline"
 
 const About = () => {
@@ -7,6 +8,7 @@ const About = () => {
         Bio
       </section>
       <Timeline />
+      <ContactSection />
     </div>
   )
 }

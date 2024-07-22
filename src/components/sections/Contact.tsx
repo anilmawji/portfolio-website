@@ -2,7 +2,7 @@ import styles from '../../pages/About.module.css'
 
 const ContactSection = () => {
   return (
-    <section className={styles.container} id="contact">
+    <section className={styles.contact} id="contact">
       Contact
     </section>
   )
