@@ -7,9 +7,10 @@
   --navbar-gap-mobile: 20px;
   --navbar-font-weight: 600;
   --navlink-offset-y-mobile: 20px;
-  --navlink-count: 6;
+  --navlink-count: 5;
 
-  /* Calculate drawer height based on nav properties */
+  /* Calculate drawer height based on nav properties
+   * CSS animations require a hard value */
   --navbar-height-tablet: calc(
     var(--navbar-thickness-tablet) * var(--navlink-count) +
     var(--navbar-gap-mobile)       * var(--navlink-count) +
@@ -17,7 +18,8 @@
     var(--navlink-offset-y-mobile)                        
   );
 
-  /* Calculate drawer height based on nav properties */
+  /* Calculate drawer height based on nav properties
+   * CSS snimations require a hard value */
   --navbar-height-phone: calc(
     var(--navbar-thickness-phone) * var(--navlink-count) +
     var(--navbar-gap-mobile)      * var(--navlink-count) +
@@ -151,7 +153,7 @@ nav li a {
 }
 
 /* Phone styling */
-@media(max-width: 500px) {
+@media(max-width: 550px) {
   nav li {
     height: var(--navbar-thickness-phone);
   }

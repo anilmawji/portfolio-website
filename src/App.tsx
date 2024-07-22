@@ -5,7 +5,6 @@ import Home from './pages/Home'
 import Portfolio from './pages/Portfolio'
 import About from './pages/About'
 import NotFound from './pages/NotFound'
-import Experience from './pages/Experience'
 import { getNumericalCssValue } from './Utils'
 
 const NAVBAR_THICKNESS: number = getNumericalCssValue(document.documentElement, "navbar-thickness");
@@ -19,8 +18,8 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/about#contact" element={<About />} />
+        <Route path="/about#experience" element={<About />} />
         <Route path="/portfolio" element={<Portfolio />} />
-        <Route path="/experience" element={<Experience />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>

@@ -19,8 +19,8 @@ const Home = () => {
         <div className={`${styles.curve}`} />
       </div>
       <div className={styles.container}>
-        <HeroSection />
-        <FeaturedSection />
+        <HeroSection className={styles.hero} />
+        <FeaturedSection className={styles.featured} />
         {/* <PortfolioSection /> */}
       </div>
     </div>

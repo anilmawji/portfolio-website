@@ -1,5 +1,4 @@
-import CertificationsSection from '../components/sections/Certifications'
-import ContactSection from '../components/sections/Contact'
+import Timeline from "../components/sections/Timeline"
 
 const About = () => {
   return (
@@ -7,8 +6,7 @@ const About = () => {
       <section id="bio">
         Bio
       </section>
-      <CertificationsSection />
-      <ContactSection />
+      <Timeline />
     </div>
   )
 }

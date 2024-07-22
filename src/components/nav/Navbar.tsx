@@ -25,9 +25,8 @@ const Navbar = ({ drawerDelay = 250 }: PropTypes) => {
       <HamburgerButton className={styles.hamburger} isOpen={isHamburgerOpen} onToggle={toggle} />
       <ul>
         <CustomNavLink to="/" label="Home" onClick={closeHamburgerDrawer} />
-        <CustomNavLink to="/about#bio" label="About" onClick={closeHamburgerDrawer} />
         <CustomNavLink to="/portfolio" label="Portfolio" onClick={closeHamburgerDrawer} />
-        <CustomNavLink to="/experience" label="Experience" onClick={closeHamburgerDrawer} />
+        <CustomNavLink to="/about#bio" label="About" onClick={closeHamburgerDrawer} />
         <CustomNavLink to="/about#contact" label="Contact" onClick={closeHamburgerDrawer} />
         <CustomNavLink to="/blog" label="Blog" onClick={closeHamburgerDrawer} />
         <SearchBar />
