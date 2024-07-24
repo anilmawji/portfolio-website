@@ -4,7 +4,7 @@ import it_portal from '../../assets/projects/it-portal.png'
 import mario_kart from '../../assets/projects/mario-kart.png'
 import portfolio_site from '../../assets/projects/portfolio-site.png'
 import traceroute_sim from '../../assets/projects/traceroute-sim.jpg'
-import CardContainer from '../card/CardContainer'
+import CardContainer from '../CardContainer'
 
 const PortfolioSection = () => {
   return (

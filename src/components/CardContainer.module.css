@@ -1,5 +1,8 @@
 :root {
   --card-gap: 20px;
+  --card-line-height: 1.2rem;
+  --card-shift-y: -3px;
+  --card-border-radius: 6px;
 }
 
 .cards {
@@ -17,17 +20,17 @@
   max-width: calc(33.33% - var(--card-gap));
   height: 28em;
   background-color: var(--main-fg-color);
-  border-radius: 6px;
+  border-radius: var(--card-border-radius);
   transition: transform 0.3s ease;
 }
 
 .card:hover {
   cursor: pointer;
-  transform: translateY(-3px);
-  -webkit-transform: translateY(-3px);
-  -moz-transform: translateY(-3px);
-  -ms-transform: translateY(-3px);
-  -o-transform: translateY(-3px);
+  transform: translateY(var(--card-shift-y));
+  -webkit-transform: translateY(var(--card-shift-y));
+  -moz-transform: translateY(var(--card-shift-y));
+  -ms-transform: translateY(var(--card-shift-y));
+  -o-transform: translateY(var(--card-shift-y));
 }
 
 .card:hover .title {
@@ -37,8 +40,8 @@
 .card img {
   height: 14rem;
   object-fit: cover;
-  border-top-left-radius: 6px;
-  border-top-right-radius: 6px;
+  border-top-left-radius: var(--card-border-radius);
+  border-top-right-radius: var(--card-border-radius);
 }
 
 .content {
@@ -50,15 +53,15 @@
 }
 
 .title {
-  line-height: 1.2rem;
+  line-height: var(--card-line-height);
   margin-bottom: 6px;
 }
 
 .body {
   font-size: 14px;
-  overflow: hidden;            /* Hide the overflowing text */
-  max-height: calc(1.2em * 4); /* Set a maximum height based on the number of lines */
-  line-height: 1.2em; 
+  overflow: hidden;
+  max-height: calc(var(--card-line-height) * 4);
+  line-height: var(--card-line-height); 
 }
 
 .date {
@@ -98,7 +101,7 @@
     width: 14rem;
     height: 100%;
     border-top-right-radius: 0;
-    border-bottom-left-radius: 6px;
+    border-bottom-left-radius: var(--card-border-radius);
   }
 
   .title {
@@ -121,6 +124,6 @@
 
   .body {
     font-size: 13px;
-    line-height: 1.2rem;
+    line-height: var(--card-line-height);
   }
 }

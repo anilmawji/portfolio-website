@@ -1,11 +1,14 @@
-import Canvas from "./Canvas";
-import { useState, useEffect } from 'react';
-import { MouseState } from "../../hooks/useMouse";
-import { Particle } from "./Particle";
-import { clampMin, isValidCssColor, getColorValues } from '../../Utils';
+import Canvas from "./Canvas"
+import { useState, useEffect } from 'react'
+import { MouseState } from "../../hooks/useMouse"
+import { Particle } from "./Particle"
+import { clampMin, isValidCssColor, getColorValues } from '../../Utils'
 
-const MIN_CONNECT_DISTANCE = 40000;
+const MIN_CONNECT_DISTANCE = 40_000;
 const MIN_PARTICLE_COUNT = 20;
+const PARTICLE_COUNT_FACTOR = 22_000;
+const MIN_PARTICLE_SPEED = 0.45;
+const MAX_PARTICLE_SPEED = 0.5;
 const RESET_PARTICLE_DELAY = 500;
 const MOUSE_MOVING_DELAY = 200;
 const MOUSE_PUSH_FORCE = 3;
@@ -16,11 +19,11 @@ const initParticles = (
   particleRgbColor: string
 ) => {
   const particles: Particle[] = [];
-  const particleCount = clampMin(context.canvas.height * context.canvas.width / 22000, MIN_PARTICLE_COUNT);
+  const particleCount = clampMin(context.canvas.height * context.canvas.width / PARTICLE_COUNT_FACTOR, MIN_PARTICLE_COUNT);
 
   for (let i = 0; i < particleCount; i++) {
     const p = new Particle(0, 0, 0, 0, particleRadius, particleRgbColor, MOUSE_PUSH_FORCE);
-    p.randomVelocity(0.45, 0.5);
+    p.randomVelocity(MIN_PARTICLE_SPEED, MAX_PARTICLE_SPEED);
     p.randomPosition(context.canvas.width, context.canvas.height);
     particles.push(p);
   }
@@ -33,7 +36,7 @@ const connectParticles = (
   particleLinkColor: string,
   maxOpacity: number
 ) => {
-  const connectDistance = clampMin((context.canvas.width/3) * (context.canvas.height/3), MIN_CONNECT_DISTANCE);
+  const connectDistance = clampMin((context.canvas.width / 3) * (context.canvas.height / 3), MIN_CONNECT_DISTANCE);
   const colorValues = getColorValues(particleLinkColor);
 
   context.lineWidth = 1;
@@ -87,7 +90,7 @@ const ParticleCanvas = ({
   let mouseMoveTimeoutId: number;
 
   if (context) {
-    mouse.radius = (context.canvas.height/80) * (context.canvas.width/80);
+    mouse.radius = (context.canvas.height / 80) * (context.canvas.width / 80);
     particles = initParticles(context, particleRadius, particleRgbColor);
   }
 
@@ -117,7 +120,7 @@ const ParticleCanvas = ({
       });
     }, RESET_PARTICLE_DELAY);
   }
-  
+
   const handleMouseMove = (e: MouseEvent) => {
     e.preventDefault();
     mouse.x = e.clientX;
@@ -151,4 +154,4 @@ const ParticleCanvas = ({
   )
 }
 
-export default ParticleCanvas;
+export default ParticleCanvas

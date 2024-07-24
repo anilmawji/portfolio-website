@@ -1,5 +1,5 @@
-import ContactSection from "../components/sections/Contact"
 import Timeline from "../components/sections/Timeline"
+import ContactSection from "../components/sections/Contact"
 
 const About = () => {
   return (

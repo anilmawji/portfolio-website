@@ -59,3 +59,10 @@ export function getNumericalCssValue(element: HTMLElement, variableName: string)
 export function isOverflowing(event: HTMLElement) {
   return event.offsetHeight < event.scrollHeight || event.offsetWidth < event.scrollWidth;
 }
+
+export function readingTime(text: string, wpm: number = 225): string {
+  const words = text.trim().split(/\s+/).length;
+  const time = Math.ceil(words / wpm);
+
+  return time > 1 ? time.toString() + " min" : "Less than 1 min";
+}
