@@ -1,13 +1,11 @@
 :root {
   --home-bg-height: 450px;
-  --home-margin-left: 10%;
-  --circuit-line-width: 3px;
-  --circuit-icon-size: 100px;
+  --home-margin: 10%;
 }
 
 .background {
   position: absolute;
-  width: 100vw;
+  width: 100%;
   height: var(--home-bg-height);
   background-color: var(--main-fg-color);
 }
@@ -42,7 +40,7 @@
 }
 
 .hero {
-  margin-left: var(--home-margin-left);
+  margin-left: var(--home-margin);
   margin-top: 60px;
   z-index: 2;
 }
@@ -71,40 +69,16 @@
   display: flex;
   position: relative;
   margin-top: 150px;
-  margin-bottom: 50px;
   height: 100%;
 }
 
 .circuit {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 100%;
-  left: calc((var(--home-margin-left) - var(--circuit-icon-size) + 27px) / 2);
-  opacity: 0.6
-}
-
-.line {
-  width: var(--circuit-line-width);
-  height: calc(90%);
-  background-color: var(--main-fg-color);
-}
-
-.circuit_top, .circuit_bottom {
-  position: relative;
-  fill: var(--main-fg-color);
-  width: var(--circuit-icon-size);
-  height: var(--circuit-icon-size);
-}
-
-.circuit_bottom {
-  transform: scaleY(-1);
+  left: calc((var(--home-margin) - var(--circuit-icon-size) + 27px) / 2);
 }
 
 .featured {
+  margin: 0 var(--home-margin);
   z-index: 3;
-  margin: 0 var(--home-margin-left);
 }
 
 @media(max-width: 980px) {
@@ -122,7 +96,7 @@
   }
 
   .circuit {
-    display: none;
+    display: none !important;
   }
 }
 

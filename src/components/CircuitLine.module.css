@@ -1,0 +1,32 @@
+:root {
+  --circuit-line-width: 3px;
+  --circuit-icon-size: 100px;
+}
+
+.circuit {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  opacity: 0.6;
+  z-index: 2;
+}
+
+.line {
+  width: var(--circuit-line-width);
+  height: calc(100% - var(--circuit-icon-size) * 2);
+  background-color: var(--main-fg-color);
+}
+
+.circuit_top,
+.circuit_bottom {
+  position: relative;
+  fill: var(--main-fg-color);
+  width: var(--circuit-icon-size);
+  height: var(--circuit-icon-size);
+}
+
+.circuit_bottom {
+  transform: scaleY(-1);
+}

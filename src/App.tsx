@@ -1,15 +1,19 @@
 import { Route, Routes } from 'react-router-dom'
+import { getNumericalCssValue } from './Utils'
 import Navbar from './components/nav/Navbar'
 import ScrollToAnchor from './components/nav/ScrollToAnchor'
 import Home from './pages/Home'
 import Portfolio from './pages/Portfolio'
 import About from './pages/About'
 import NotFound from './pages/NotFound'
-import { getNumericalCssValue } from './Utils'
+//import lightStyles from './LightTheme.module.css'
+//import darkStyles from './DarkTheme.module.css'
 
-const NAVBAR_THICKNESS: number = getNumericalCssValue(document.documentElement, "navbar-thickness");
+const NAVBAR_THICKNESS = getNumericalCssValue(document.documentElement, "navbar-thickness");
 
 const App = () => {
+  //const styles = theme === 'light' ? lightStyles : darkStyles;
+
   return (
     <>
       <Navbar />

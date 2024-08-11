@@ -4,7 +4,10 @@ import HeroSection from '../components/sections/Hero'
 import FeaturedSection from '../components/sections/Featured'
 import SvgFox from '../components/icons/SvgFox'
 import Footer from '../components/sections/Footer'
-import SvgCircuit from '../components/icons/SvgCircuit'
+import CircuitLine from '../components/CircuitLine'
+import { getCssValue, hexToRgb } from '../Utils'
+
+const NEON_GREEN_RGB = hexToRgb(getCssValue(document.documentElement, "neon-green"));
 
 const Home = () => {
   return (
@@ -14,7 +17,7 @@ const Home = () => {
         <ParticleCanvas
           className={styles.canvas}
           particleRadius={2}
-          particleRgbColor="rgb(108,250,132)"
+          particleRgbColor={NEON_GREEN_RGB}
           mousePushRadius={50}
           maxOpacity={0.65}
         />
@@ -23,11 +26,7 @@ const Home = () => {
       <div className={styles.container}>
         <HeroSection className={styles.hero} />
         <div className={styles.bottom}>
-          <div className={styles.circuit}>
-            <SvgCircuit className={styles.circuit_top} color={"var(--main-fg-color)"} />
-            <div className={styles.line} />
-            <SvgCircuit className={styles.circuit_bottom} color={"var(--main-fg-color)"}/>
-          </div>
+          <CircuitLine className={styles.circuit}/>
           <FeaturedSection className={styles.featured} />
         </div>
       </div>

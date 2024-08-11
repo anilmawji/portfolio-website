@@ -2,7 +2,7 @@ import Canvas from "./Canvas"
 import { useState, useEffect } from 'react'
 import { MouseState } from "../../hooks/useMouse"
 import { Particle } from "./Particle"
-import { clampMin, isValidCssColor, getColorValues } from '../../Utils'
+import { clampMin, isValidCssColor, getRgbColorValues } from '../../Utils'
 
 const MIN_CONNECT_DISTANCE = 40_000;
 const MIN_PARTICLE_COUNT = 20;
@@ -37,12 +37,12 @@ const connectParticles = (
   maxOpacity: number
 ) => {
   const connectDistance = clampMin((context.canvas.width / 3) * (context.canvas.height / 3), MIN_CONNECT_DISTANCE);
-  const colorValues = getColorValues(particleLinkColor);
+  const colorValues = getRgbColorValues(particleLinkColor);
 
   context.lineWidth = 1;
 
   for (let i = 0; i < particles.length; i++) {
-    for (let j = i; j < particles.length; j++) {
+    for (let j = i + 1; j < particles.length; j++) {
       const dx = particles[i].x - particles[j].x;
       const dy = particles[i].y - particles[j].y;
       const distance = dx*dx + dy*dy;
@@ -76,6 +76,7 @@ const ParticleCanvas = ({
   mousePushRadius = 0,
   maxOpacity = 1
 }: PropTypes) => {
+
   if (!isValidCssColor(particleRgbColor)) return;
 
   const [context, setContext] = useState<CanvasRenderingContext2D | null>(null);
@@ -151,7 +152,7 @@ const ParticleCanvas = ({
       fps={60}
       establishContext={(ctx: CanvasRenderingContext2D | null) => setContext(ctx)}
     />
-  )
+  );
 }
 
 export default ParticleCanvas

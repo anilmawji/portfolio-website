@@ -4,7 +4,7 @@ import arch_desk from '../../assets/arch_desktop.png'
 
 const postData = [
   {
-    title: "How to Reset the Root Password in Kali Linux",
+    title: "Hack The Box: Anubis Writeup",
     image: arch_desk,
     date: "Jan 15th 2024",
     body: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus impedit a ipsa fugit, porro adipisci at enim similique vitae doloribus maiores repudiandae nostrum maxime in recusandae unde fuga illum esse! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus impedit a ipsa fugit, porro adipisci at enim similique vitae doloribus maiores repudiandae nostrum maxime in recusandae unde fuga illum esse!",
@@ -20,7 +20,7 @@ const postData = [
     tags: ["C"]
   },
   {
-    title: "How to Reset the Root Password in Kali Linux",
+    title: "Hack The Box: Anubis Writeup",
     image: arch_desk,
     date: "Jan 15th 2024",
     body: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus impedit a ipsa fugit, porro adipisci at enim similique!",
@@ -36,7 +36,7 @@ const postData = [
     tags: ["C"]
   },
   {
-    title: "How to Reset the Root Password in Kali Linux",
+    title: "Hack The Box: Anubis Writeup",
     image: arch_desk,
     date: "Jan 15th 2024",
     body: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus impedit a ipsa fugit, porro adipisci at enim similique vitae doloribus maiores repudiandae nostrum maxime in recusandae unde fuga illum esse!",
@@ -44,7 +44,7 @@ const postData = [
     tags: ["React.js", "TypeScript", "HTML", "CSS"]
   },
   {
-    title: "How to Reset the Root Password in Kali Linux",
+    title: "Hack The Box: Anubis Writeup",
     image: arch_desk,
     date: "Jan 15th 2024",
     body: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus impedit a ipsa fugit, porro adipisci at enim similique vitae doloribus maiores repudiandae nostrum maxime in recusandae unde fuga illum esse!",
@@ -59,10 +59,10 @@ const FeaturedSection = ({ ...restStyles }) => {
       <div className={styles.title}>
         Featured Posts
       </div>
-      <div className={styles.border}>
-        <div className={styles.line} />
-      </div>
-      <CardContainer cardData={postData}/>
+      <CardContainer cardData={postData} />
+      {/* <a className={styles.blog_link}>
+        View Full Blog
+      </a> */}
     </div>
   )
 }

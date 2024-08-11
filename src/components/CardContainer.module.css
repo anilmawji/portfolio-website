@@ -3,6 +3,7 @@
   --card-line-height: 1.2rem;
   --card-shift-y: -3px;
   --card-border-radius: 6px;
+  --card-text-margin: 6px;
 }
 
 .cards {
@@ -22,6 +23,7 @@
   background-color: var(--main-fg-color);
   border-radius: var(--card-border-radius);
   transition: transform 0.3s ease;
+  outline: 3px solid var(--main-bg-color);
 }
 
 .card:hover {
@@ -35,6 +37,7 @@
 
 .card:hover .title {
   text-decoration: underline;
+  text-underline-offset: 5px;
 }
 
 .card img {
@@ -48,26 +51,31 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 20px;
+  padding: 10px;
   height: 100%;
 }
 
+.text {
+  padding: 10px;
+}
+
 .title {
+  font-size: 18px;
   line-height: var(--card-line-height);
-  margin-bottom: 6px;
+  margin-bottom: var(--card-text-margin);
 }
 
 .body {
   font-size: 14px;
   overflow: hidden;
   max-height: calc(var(--card-line-height) * 4);
-  line-height: var(--card-line-height); 
+  line-height: var(--card-line-height);
 }
 
 .date {
   font-size: small;
-  color: grey;
-  margin-bottom: 6px;
+  color: #acabab;;
+  margin-bottom: var(--card-text-margin);
 }
 
 .tags {
@@ -78,6 +86,7 @@
   font-weight: bold;
   overflow: hidden;
   height: 25px;
+  margin: var(--card-text-margin);
 }
 
 @media (max-width: 1300px) {
@@ -94,7 +103,6 @@
     max-width: 100%;
     height: 14rem;
     overflow: hidden;
-    outline: 3px solid var(--main-bg-color);
   }
 
   .card img {

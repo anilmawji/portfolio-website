@@ -1,3 +1,9 @@
+// #########################################################################
+// ##                                                                     ##
+// ##   MATH UTILS                                                        ##
+// ##                                                                     ##
+// #########################################################################
+
 export function randRange(min: number, max: number): number {
   return Math.random() * (max - min) + min;
 }
@@ -14,6 +20,12 @@ export function clampMax(value: number, max: number) {
   return value > max ? max : value;
 }
 
+// #########################################################################
+// ##                                                                     ##
+// ##   COMPONENT UTILS                                                   ##
+// ##                                                                     ##
+// #########################################################################
+
 export function timeout(delay: number): Promise<void> {
   return new Promise(res => setTimeout(res, delay));
 }
@@ -23,24 +35,6 @@ export function toPixels(amount: string | number): string {
     return amount.toString() + "px";
   }
   return amount;
-}
-
-export function isValidCssColor(str: string): boolean {
-  if (CSS.supports('color', str)) {
-    return true
-  }
-  console.warn(`${str} is not a valid CSS color`);
-
-  return false;
-}
-
-export function rgbToRgba(rgbString: string, alpha: number): string {
-  return rgbString.replace('rgb', 'rgba').replace(')', `, ${alpha})`);
-}
-
-// Cut out the 'rgb(' and ')' part of the string
-export function getColorValues(rgbString: string): string {
-  return rgbString.substring(4, rgbString.length - 1);
 }
 
 export function getCssValue(element: HTMLElement, variableName: string): string {
@@ -65,4 +59,45 @@ export function readingTime(text: string, wpm: number = 225): string {
   const time = Math.ceil(words / wpm);
 
   return time > 1 ? time.toString() + " min" : "Less than 1 min";
+}
+
+// #########################################################################
+// ##                                                                     ##
+// ##   COLOR UTILS                                                       ##
+// ##                                                                     ##
+// #########################################################################
+
+export function hexToRgb(hexString: string) {
+  const { style } = new Option();
+  style.color = hexString;
+
+  return style.color;
+}
+
+export function rgbComponentToHex(c: number) {
+  const hex = c.toString(16);
+
+  return hex.length == 1 ? "0" + hex : hex;
+}
+
+export function rgbToHex(r: number, g: number, b: number) {
+  return "#" + rgbComponentToHex(r) + rgbComponentToHex(g) + rgbComponentToHex(b);
+}
+
+export function rgbToRgba(rgbString: string, alpha: number): string {
+  return rgbString.replace('rgb', 'rgba').replace(')', `, ${alpha})`);
+}
+
+export function isValidCssColor(str: string): boolean {
+  if (CSS.supports('color', str)) {
+    return true
+  }
+  console.warn(`${str} is not a valid CSS color`);
+
+  return false;
+}
+
+// Cuta out the 'rgb(' and ')' part of the string
+export function getRgbColorValues(rgbString: string): string {
+  return rgbString.substring(4, rgbString.length - 1);
 }
