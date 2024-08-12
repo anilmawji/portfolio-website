@@ -8,18 +8,6 @@
   padding: 0 30px;
 }
 
-.blog_link {
-  display: inline-block;
-  cursor: pointer;
-  margin-top: 32px;
-  font-size: 18px;
-  text-underline-offset: 4px;
-}
-
-.blog_link:hover {
-  text-decoration: underline;
-}
-
 @media(max-width: 550px) {
   .title {
     font-size: 24px;

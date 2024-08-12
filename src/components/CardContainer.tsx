@@ -3,6 +3,8 @@ import Chip from './Chip'
 import { useState } from 'react'
 import { readingTime } from '../Utils'
 
+const BULLET_POINT = String.fromCharCode(8226);
+
 type Card = {
   title: string;
   image: string;
@@ -21,10 +23,11 @@ const initCards = (cards: Card[]) => {
 
 interface PropTypes {
   cardData: Card[];
+  includeReadingTime?: boolean;
 }
 
-const CardContainer = ({ cardData }: PropTypes) => {
-  const [cards] = useState(initCards(cardData));
+const CardContainer = ({ cardData, includeReadingTime = true }: PropTypes) => {
+  const [cards] = useState(includeReadingTime ? initCards(cardData) : cardData);
 
   return (
     <div className={styles.container}>
@@ -39,7 +42,7 @@ const CardContainer = ({ cardData }: PropTypes) => {
                     {card.title}
                   </h3>
                   <p className={styles.date}>
-                    {card.date} &#8226; {card.readingTime}
+                    {card.date} {'readingTime' in card && `${BULLET_POINT} ${card.readingTime}`}
                   </p>
                   <p className={styles.body}>
                     {card.body}
@@ -59,4 +62,4 @@ const CardContainer = ({ cardData }: PropTypes) => {
   )
 }
 
-export default CardContainer
+export default CardContainer;

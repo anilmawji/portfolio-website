@@ -60,9 +60,6 @@ const FeaturedSection = ({ ...restStyles }) => {
         Featured Posts
       </div>
       <CardContainer cardData={postData} />
-      {/* <a className={styles.blog_link}>
-        View Full Blog
-      </a> */}
     </div>
   )
 }

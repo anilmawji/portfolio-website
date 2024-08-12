@@ -53,16 +53,17 @@ const Footer = () => {
             title={"Profiles"}
             links={{
               "LinkedIn": "https://ca.linkedin.com/in/anil-mawji",
-              "HackTheBox": "",
-              "TryHackMe": "",
-              "GitHub": "",
-              "Stack Overflow": ""
+              "HackTheBox": "https://www.hackthebox.com/",
+              "TryHackMe": "https://tryhackme.com/",
+              "GitHub": "https://github.com/anilmawji",
+              "Stack Overflow": "https://stackoverflow.com/users/8902167/anil-m"
             }}
           />
           <FooterList
             title={"Download"}
             links={{
-              "Resume": ""
+              "Resume": "",
+              "Website License": ""
             }}
           />
         </div>
