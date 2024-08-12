@@ -1,5 +1,5 @@
-import Timeline from "../components/sections/Timeline"
-import ContactSection from "../components/sections/Contact"
+import Timeline from '../components/sections/Timeline';
+import ContactSection from '../components/sections/Contact';
 
 const About = () => {
   return (
@@ -10,7 +10,7 @@ const About = () => {
       <Timeline />
       <ContactSection />
     </div>
-  )
+  );
 }
 
-export default About
+export default About;

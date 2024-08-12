@@ -58,3 +58,8 @@ a {
 .page {
   margin-top: var(--navbar-thickness);
 }
+
+.notFound {
+  font-size: 20px;
+  
+}

@@ -1,8 +1,8 @@
-import useBoolean from '../../hooks/useBoolean'
-import CustomNavLink from './CustomNavLink'
-import styles from './Navbar.module.css'
-import HamburgerButton from './HamburgerButton'
-import SearchBar from '../SearchBar'
+import useBoolean from '../../hooks/useBoolean';
+import CustomNavLink from './CustomNavLink';
+import styles from './Navbar.module.css';
+import HamburgerButton from './HamburgerButton';
+import SearchBar from '../SearchBar';
 
 interface PropTypes {
   drawerDelay?: number;
@@ -25,7 +25,7 @@ const Navbar = ({ drawerDelay = 250 }: PropTypes) => {
       <HamburgerButton className={styles.hamburger} isOpen={isHamburgerOpen} onToggle={toggle} />
       <ul>
         <CustomNavLink to="/" label="Home" onClick={closeHamburgerDrawer} />
-        <CustomNavLink to="/portfolio" label="Portfolio" onClick={closeHamburgerDrawer} />
+        {/* <CustomNavLink to="/portfolio" label="Portfolio" onClick={closeHamburgerDrawer} /> */}
         <CustomNavLink to="/about#bio" label="About" onClick={closeHamburgerDrawer} />
         <CustomNavLink to="/about#contact" label="Contact" onClick={closeHamburgerDrawer} />
         <CustomNavLink to="/blog" label="Blog" onClick={closeHamburgerDrawer} />
@@ -33,6 +33,6 @@ const Navbar = ({ drawerDelay = 250 }: PropTypes) => {
       </ul>
     </nav>
   );
-};
+}
 
-export default Navbar
+export default Navbar;
