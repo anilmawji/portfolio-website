@@ -1,5 +1,5 @@
-import styles from './Hero.module.css'
-import IconLink, { IconType } from '../icons/IconLink'
+import styles from './Hero.module.css';
+import IconLink, { IconType } from '../icons/IconLink';
 
 interface PropTypes {
   className?: string;
@@ -24,29 +24,39 @@ const HeroSection = ({ className }: PropTypes) => {
         Cybersecurity professional with a passion for all things technology.
       </div>
       <div className={styles.icons}>
-        <IconLink iconSize={24}
-                  type={IconType.LINKEDIN}
-                  href="https://ca.linkedin.com/in/anil-mawji"
-                  className={styles.icon} />
-        <IconLink iconSize={24}
-                  type={IconType.HACKTHEBOX}
-                  href="https://www.hackthebox.com/"
-                  className={styles.icon} />
-        <IconLink iconSize={24}
-                  type={IconType.TRYHACKME}
-                  href="https://tryhackme.com/"
-                  className={styles.icon} />
-        <IconLink iconSize={24}
-                  type={IconType.GITHUB}
-                  href="https://github.com/anilmawji"
-                  className={styles.icon} />
-        <IconLink iconSize={24}
-                  type={IconType.STACKOVERFLOW}
-                  href="https://stackoverflow.com/users/8902167/anil-m"
-                  className={styles.icon} />
+        <IconLink
+          iconSize={24}
+          type={IconType.LINKEDIN}
+          href="https://ca.linkedin.com/in/anil-mawji"
+          className={styles.icon}
+        />
+        <IconLink
+          iconSize={24}
+          type={IconType.HACKTHEBOX}
+          href="https://www.hackthebox.com/"
+          className={styles.icon}
+        />
+        <IconLink
+          iconSize={24}
+          type={IconType.TRYHACKME}
+          href="https://tryhackme.com/"
+          className={styles.icon}
+        />
+        <IconLink
+          iconSize={24}
+          type={IconType.GITHUB}
+          href="https://github.com/anilmawji"
+          className={styles.icon}
+        />
+        <IconLink
+          iconSize={24}
+          type={IconType.STACKOVERFLOW}
+          href="https://stackoverflow.com/users/8902167/anil-m"
+          className={styles.icon}
+        />
       </div>
     </div>
-  )
+  );
 }
 
-export default HeroSection
+export default HeroSection;

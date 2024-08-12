@@ -1,5 +1,5 @@
 import styles from './IconLink.module.css'
-import { toPixels } from '../../Utils';
+import { toPixels } from '../../utils';
 
 enum IconType {
   LINKEDIN,

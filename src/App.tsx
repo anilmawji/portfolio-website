@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router-dom'
-import { getNumericalCssValue } from './Utils'
+import { getNumericalCssValue } from './utils'
 import Navbar from './components/nav/Navbar'
 import ScrollToAnchor from './components/nav/ScrollToAnchor'
 import Home from './pages/Home'

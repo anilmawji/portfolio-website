@@ -1,7 +1,7 @@
-import styles from './CardContainer.module.css'
-import Chip from './Chip'
-import { useState } from 'react'
-import { readingTime } from '../Utils'
+import styles from './CardContainer.module.css';
+import Chip from './Chip';
+import { useState } from 'react';
+import { readingTime } from '../utils';
 
 const BULLET_POINT = String.fromCharCode(8226);
 
@@ -19,18 +19,20 @@ const initCards = (cards: Card[]) => {
     ...card,
     readingTime: readingTime(card.body)
   }));
-};
+}
 
 interface PropTypes {
+  className?: string;
   cardData: Card[];
   includeReadingTime?: boolean;
 }
 
-const CardContainer = ({ cardData, includeReadingTime = true }: PropTypes) => {
+const CardContainer = ({ className, cardData, includeReadingTime = true }: PropTypes) => {
+  const combinedClassName = `${styles.container} ${className}`;
   const [cards] = useState(includeReadingTime ? initCards(cardData) : cardData);
 
   return (
-    <div className={styles.container}>
+    <div className={combinedClassName}>
       <div className={styles.cards}>
         {cards.map((card, i) => {
           return (
@@ -59,7 +61,7 @@ const CardContainer = ({ cardData, includeReadingTime = true }: PropTypes) => {
         })}
       </div>
     </div>
-  )
+  );
 }
 
 export default CardContainer;

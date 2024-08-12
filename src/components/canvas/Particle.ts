@@ -1,4 +1,4 @@
-import { randRange } from "../../Utils";
+import { randRange } from "../../utils";
 import { MouseState } from "../../hooks/useMouse";
 
 class Particle {

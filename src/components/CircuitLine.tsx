@@ -1,6 +1,6 @@
-import styles from './CircuitLine.module.css'
-import SvgCircuit from './icons/SvgCircuit'
-import { getCssValue } from '../Utils'
+import styles from './CircuitLine.module.css';
+import SvgCircuit from './icons/SvgCircuit';
+import { getCssValue } from '../utils';
 
 const CIRCUIT_SVG_COLOR = getCssValue(document.documentElement, "main-fg-color");
 
@@ -17,7 +17,7 @@ const CircuitLine = ({ className }: PropTypes) => {
       <div className={styles.line} />
       <SvgCircuit className={styles.circuit_bottom} color={CIRCUIT_SVG_COLOR}/>
     </div>
-  )
+  );
 }
 
-export default CircuitLine
+export default CircuitLine;
