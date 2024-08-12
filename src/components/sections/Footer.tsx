@@ -60,7 +60,7 @@ const Footer = () => {
             }}
           />
           <FooterList
-            title={"Download"}
+            title={"External Files"}
             links={{
               "Resume": "",
               "Website License": ""
