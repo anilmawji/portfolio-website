@@ -2,7 +2,7 @@ import styles from './Home.module.css';
 import Page from './Page';
 import ParticleCanvas from '../components/canvas/ParticleCanvas';
 import HeroSection from '../components/sections/Hero';
-import CardContainer from '../components/CardContainer';
+import CardContainer from '../components/card/CardContainer';
 import BlogData from '../data/BlogData';
 import SvgFox from '../components/icons/SvgFox';
 import CircuitLine from '../components/CircuitLine';
@@ -28,7 +28,12 @@ const Home = () => {
         <HeroSection className={styles.hero} />
         <div className={styles.bottom}>
           <CircuitLine className={styles.circuit}/>
-          <CardContainer title="Featured Posts" cardData={BlogData} className={styles.featured} />
+          <CardContainer
+            title="Featured Posts"
+            cardData={BlogData}
+            className={styles.featured}
+            includeReadingTime
+          />
         </div>
       </div>
     </Page>

@@ -1,5 +1,5 @@
 import styles from './Page.module.css';
-import Footer from '../components/sections/Footer';
+import Footer from '../components/Footer';
 import CircuitLine from '../components/CircuitLine';
 
 interface PropTypes {

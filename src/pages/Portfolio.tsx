@@ -1,5 +1,5 @@
 import Page from './Page';
-import CardContainer from '../components/CardContainer';
+import CardContainer from '../components/card/CardContainer';
 import ProjectData from '../data/ProjectData';
 
 const Portfolio = () => {

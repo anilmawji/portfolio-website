@@ -6,25 +6,6 @@
   --card-text-margin: 6px;
 }
 
-.container {
-  display: flex;
-  flex-direction: column;
-}
-
-.title {
-  font-size: 28px;
-  margin-bottom: 40px;
-  padding: 0 30px;
-}
-
-.cards {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--card-gap);
-}
-
 .card {
   display: flex;
   flex-direction: column;
@@ -58,6 +39,12 @@
   border-top-right-radius: var(--card-border-radius);
 }
 
+.title {
+  font-size: 18px;
+  line-height: var(--card-line-height);
+  margin-bottom: var(--card-text-margin);
+}
+
 .content {
   display: flex;
   flex-direction: column;
@@ -68,12 +55,6 @@
 
 .text {
   padding: 10px;
-}
-
-.card_title {
-  font-size: 18px;
-  line-height: var(--card-line-height);
-  margin-bottom: var(--card-text-margin);
 }
 
 .body {
