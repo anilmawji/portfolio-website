@@ -1,10 +1,12 @@
+import Page from "./Page";
+
 const NotFound = () => {
   return (
-    <div className="page">
+    <Page>
       <p className="notFound">
         Error 404: No page exists at this path.
       </p>
-    </div>
+    </Page>
   );
 }
 

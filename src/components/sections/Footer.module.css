@@ -1,9 +1,7 @@
-.background {
+footer {
   display: flex;
   flex-direction: column;
-  height: 100%;
   background-color: var(--main-fg-color);
-  margin-top: 150px;
 }
 
 .content {
@@ -22,18 +20,19 @@
   margin-bottom: 20px;
 }
 
-.links {
+.list ul {
   display: flex;
   flex-direction: column;
+  list-style-type: none;
+  gap: 10px;
   font-size: 14px;
 }
 
-.links a {
-  margin-bottom: 10px;
-  color: #acabab;
+.list ul a {
+  color: var(--grey);
 }
 
-.links a:hover {
+.list ul a:hover {
   color: white;
 }
 

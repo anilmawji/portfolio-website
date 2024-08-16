@@ -68,8 +68,8 @@
 .bottom {
   display: flex;
   position: relative;
-  margin-top: 150px;
   height: 100%;
+  margin-top: 150px;
 }
 
 .circuit {

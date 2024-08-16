@@ -18,8 +18,14 @@
   --main-fg-shadow-color: #191919;
   --main-bg-color: #252525;
   --neon-green: #6CFA84;
+  --neon-green2: #91FC9F;
   --btn-color: #44D25C;
-  --dotted-bg-color: #262626;
+  --grey: #ACABAB;
+}
+
+/* Ensure the main content takes all available space, pushing the footer to the bottom */
+main {
+  flex: 1;
 }
 
 body {
@@ -56,10 +62,23 @@ a {
 }
 
 .page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   margin-top: var(--navbar-thickness);
 }
 
+.portfolio {
+  display: flex;
+  position: relative;
+  margin-top: 150px;
+  margin-bottom: 50px;
+  height: 100%;
+  z-index: 3;
+  margin: 0 var(--home-margin);
+}
+
+
 .notFound {
   font-size: 20px;
-  
 }

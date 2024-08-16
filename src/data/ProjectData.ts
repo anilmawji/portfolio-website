@@ -12,7 +12,7 @@ const ProjectData = [
     date: "July 20th, 2023",
     body: "Microsoft-focused desktop application for internal IT operations. Dynamically generates modern UI to interact with PowerShell script blocks. Import, track, schedule and execute scripts locally.",
     link: "https://github.com/anilmawji/PowerShell-Script-Runner",
-    tags: ["C#", ".NET MAUI", "Blazor", "HTML", "CSS"]
+    tags: ["C#", ".NET MAUI", "Blazor", "MudBlazor", "HTML", "CSS"]
   },
   {
     title: "Personal Website",

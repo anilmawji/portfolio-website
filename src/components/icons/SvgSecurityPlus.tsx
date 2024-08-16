@@ -2,9 +2,7 @@ const SvgSecurityPlus = ({ ...svgStyle }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     id="security-plus_svg__Layer_1"
-    viewBox="0 0 288 288"
-    width="1em"
-    height="1em"
+    viewBox="35 135 220 15"
     {...svgStyle}
   >
     <defs>

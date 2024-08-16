@@ -1,4 +1,4 @@
-.container {
+.header {
   display: flex;
   flex-direction: column;
   gap: 6px;
@@ -8,18 +8,18 @@
   text-shadow: 2px 2px 2px var(--main-fg-color);
 }
 
+.name {
+  font-size: 50px;
+  font-weight: bold;
+  color: var(--neon-green2);
+}
+
 .bracket {
   width: .6em;
   display: inline;
   position: relative;
   top: 0.15em;
-  fill: #91fc9f;
-}
-
-.name {
-  font-size: 50px;
-  font-weight: bold;
-  color: #91fc9f;
+  fill: var(--neon-green2);
 }
 
 .title {
@@ -32,7 +32,7 @@
 .bio {
   padding: 18px 0;
   font-size: 16px;
-  color: #acabab;
+  color: var(--grey);
   margin-left: 18px;
 }
 
@@ -53,14 +53,14 @@
 }
 
 .icon svg:hover {
-  fill: #91fc9f;
+  fill: var(--neon-green2);
 }
 
 .icon svg {
   fill: #c6c6c6;
 }
 
-@media (max-width: 550px) {
+@media (max-width: 600px) {
   .name {
     font-size: 36px;
   }

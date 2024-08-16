@@ -9,7 +9,7 @@ interface PropTypes {
 const HamburgerButton = ({ className, isOpen, onToggle }: PropTypes) => {
   const combinedClassName: string = (`
     ${styles.hamburger}
-    ${className ?? ''}
+    ${className ?? ""}
     ${isOpen ? "open" : ""}
   `).trim();
 

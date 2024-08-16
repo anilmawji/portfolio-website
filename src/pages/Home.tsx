@@ -1,23 +1,23 @@
 import styles from './Home.module.css';
+import Page from './Page';
 import ParticleCanvas from '../components/canvas/ParticleCanvas';
 import HeroSection from '../components/sections/Hero';
 import FeaturedSection from '../components/sections/Featured';
 import SvgFox from '../components/icons/SvgFox';
-import Footer from '../components/sections/Footer';
 import CircuitLine from '../components/CircuitLine';
 import { getCssValue, hexToRgb } from '../utils';
 
-const NEON_GREEN_RGB = hexToRgb(getCssValue(document.documentElement, "neon-green"));
+const NEON_GREEN_COLOR = hexToRgb(getCssValue(document.documentElement, "neon-green"));
 
 const Home = () => {
   return (
-    <div className="page">
+    <Page>
       <div className={styles.background}>
         <SvgFox className={styles.fox} />
         <ParticleCanvas
           className={styles.canvas}
           particleRadius={2}
-          particleRgbColor={NEON_GREEN_RGB}
+          particleRgbColor={NEON_GREEN_COLOR}
           mousePushRadius={50}
           maxOpacity={0.65}
         />
@@ -30,8 +30,7 @@ const Home = () => {
           <FeaturedSection className={styles.featured} />
         </div>
       </div>
-      <Footer />
-    </div>
+    </Page>
   );
 }
 

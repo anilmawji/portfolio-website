@@ -50,7 +50,7 @@ const CardContainer = ({ className, cardData, includeReadingTime = true }: PropT
                     {card.body}
                   </p>
                 </div>
-                <div className={styles.tags}>
+                <div className={styles.chips}>
                   {card.tags.map((tag, index) => (
                     <Chip key={index} label={tag} />
                   ))}

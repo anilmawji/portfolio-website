@@ -1,4 +1,33 @@
+.header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 180px;
+  background-color: var(--main-fg-color);
+}
+
+.title {
+  font-size: 32px;
+  margin-left: 200px;
+}
+
 .contact {
-  margin-top: 2000px;
-  margin-bottom: 2000px;
+  margin-top: 1000px;
+  margin-bottom: 1000px;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-top: 80px;
+  margin-bottom: 150px;
+}
+
+.circuit {
+  left: calc((var(--home-margin) - var(--circuit-icon-size) + 27px) / 2);
+}
+
+.sections {
+  margin: 0 var(--home-margin);
 }

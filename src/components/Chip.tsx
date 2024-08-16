@@ -7,7 +7,7 @@ interface PropTypes {
 
 const Chip = ({ label, color }: PropTypes) => {
   return (
-    <div className={styles.tag}>
+    <div className={styles.chip}>
       {label}
     </div>
   )

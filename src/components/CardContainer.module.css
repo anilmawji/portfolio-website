@@ -78,7 +78,7 @@
   margin-bottom: var(--card-text-margin);
 }
 
-.tags {
+.chips {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -117,7 +117,7 @@
   }
 }
 
-@media (max-width: 550px) {
+@media (max-width: 600px) {
   .card {
     height: initial;
   }

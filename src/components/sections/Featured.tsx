@@ -1,14 +1,14 @@
 import styles from './Featured.module.css';
 import CardContainer from '../CardContainer';
-import ProjectData from '../../data/ProjectData';
+import BlogData from '../../data/BlogData';
 
 const FeaturedSection = ({ ...restStyles }) => {
   return (
     <div className={styles.container} {...restStyles}>
       <div className={styles.title}>
-        Portfolio
+        Featured Posts
       </div>
-      <CardContainer cardData={ProjectData} />
+      <CardContainer cardData={BlogData} />
     </div>
   );
 }

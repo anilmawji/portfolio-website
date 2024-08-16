@@ -1,5 +1,5 @@
-import styles from './Footer.module.css'
-import { NavLink } from 'react-router-dom'
+import styles from './Footer.module.css';
+import { NavLink } from 'react-router-dom';
 
 interface FooterItemPropTypes {
   text: string;
@@ -11,35 +11,37 @@ const FooterItem = ({ text, url, icon, ...restProps }: FooterItemPropTypes) => {
   const isInternalLink = url.startsWith('/');
 
   return (
-    <NavLink to={url} target={isInternalLink ? "_self" : "_blank"} {...restProps}>
-      {text}
-    </NavLink>
+    <li>
+      <NavLink to={url} target={isInternalLink ? "_self" : "_blank"} {...restProps}>
+        {text}
+      </NavLink>
+    </li>
   );
 }
 
-interface FooterListPropTypes {
+interface FooterItemListPropTypes {
   title: string;
   links: Record<string, string>;
 }
 
-const FooterList = ({ title, links }: FooterListPropTypes) => {
+const FooterItemList = ({ title, links }: FooterItemListPropTypes) => {
   return (
     <div className={styles.list}>
       <h3>{title.toUpperCase()}</h3>
-      <div className={styles.links}>
+      <ul className={styles.links}>
         {Object.keys(links).map((name, index) => (
           <FooterItem key={index} text={name} url={links[name]} />
         ))}
-      </div>
+      </ul>
     </div>
   )
 }
 
 const Footer = () => {
   return (
-    <footer className={styles.background}>
+    <footer>
         <div className={styles.content}>
-        <FooterList
+        <FooterItemList
             title={"Navigation"}
             links={{
               "Home": "/",
@@ -49,7 +51,7 @@ const Footer = () => {
               "Blog": "/blog"
             }}
           />
-          <FooterList
+          <FooterItemList
             title={"Profiles"}
             links={{
               "LinkedIn": "https://ca.linkedin.com/in/anil-mawji",
@@ -59,7 +61,7 @@ const Footer = () => {
               "Stack Overflow": "https://stackoverflow.com/users/8902167/anil-m"
             }}
           />
-          <FooterList
+          <FooterItemList
             title={"External Files"}
             links={{
               "Resume": "",

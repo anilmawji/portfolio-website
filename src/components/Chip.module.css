@@ -1,4 +1,4 @@
-.tag {
+.chip {
   display: inline-flex;
   justify-content: center;
   font-size: 12px;
@@ -8,7 +8,7 @@
   margin: 4px;
   padding: 0 8px;
   background-color: #56c769;
-  outline: 2px solid #47a557;
+  outline: 2px solid #3c8b49;
   border-radius: 9999px;
   overflow: hidden;
 }

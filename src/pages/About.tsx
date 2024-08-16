@@ -1,15 +1,19 @@
-import Timeline from '../components/sections/Timeline';
+import styles from './About.module.css';
+import Page from './Page';
+import CertificationsSection from '../components/sections/Certifications';
 import ContactSection from '../components/sections/Contact';
 
 const About = () => {
   return (
-    <div className="page">
-      <section id="bio">
-        Bio
-      </section>
-      <Timeline />
-      <ContactSection />
-    </div>
+    <Page title="About" headerId="bio" includeCircuitLine>
+      <div className={styles.sections}>
+        <section>
+          Bio
+        </section>
+        <CertificationsSection />
+        <ContactSection />
+      </div>
+    </Page>
   );
 }
 
