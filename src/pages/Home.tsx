@@ -29,9 +29,9 @@ const Home = () => {
         <div className={styles.bottom}>
           <CircuitLine className={styles.circuit}/>
           <CardContainer
+            className={styles.featured}
             title="Featured Posts"
             cardData={BlogData}
-            className={styles.featured}
             includeReadingTime
           />
         </div>

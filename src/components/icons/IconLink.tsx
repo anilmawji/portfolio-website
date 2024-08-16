@@ -10,16 +10,16 @@ enum IconType {
 }
 
 interface PropTypes {
+  className?: string;
   iconSize: string | number;
   type?: IconType;
-  className?: string;
   src?: string;
   href?: string;
   alt?: string;
 }
 
 // TODO: Add white glow when hovering over icons
-const IconLink = ({ iconSize, type, className, src, href, alt }: PropTypes) => {
+const IconLink = ({ className, iconSize, type, src, href, alt }: PropTypes) => {
   const combinedClassName: string = `${className || ''} ${styles.icon}`.trim();
   const style = {"--icon-size": toPixels(iconSize)} as React.CSSProperties;
 

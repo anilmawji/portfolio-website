@@ -1,6 +1,8 @@
 import styles from './Hero.module.css';
 import IconLink, { IconType } from '../icons/IconLink';
 
+const ICON_SIZE = 24;
+
 interface PropTypes {
   className?: string;
 }
@@ -25,34 +27,34 @@ const HeroSection = ({ className }: PropTypes) => {
       </div>
       <div className={styles.icons}>
         <IconLink
-          iconSize={24}
+          className={styles.icon}
+          iconSize={ICON_SIZE}
           type={IconType.LINKEDIN}
           href="https://ca.linkedin.com/in/anil-mawji"
-          className={styles.icon}
         />
         <IconLink
-          iconSize={24}
+          className={styles.icon}
+          iconSize={ICON_SIZE}
           type={IconType.HACKTHEBOX}
           href="https://www.hackthebox.com/"
-          className={styles.icon}
         />
         <IconLink
-          iconSize={24}
+          className={styles.icon}
+          iconSize={ICON_SIZE}
           type={IconType.TRYHACKME}
           href="https://tryhackme.com/"
-          className={styles.icon}
         />
         <IconLink
-          iconSize={24}
+          className={styles.icon}
+          iconSize={ICON_SIZE}
           type={IconType.GITHUB}
           href="https://github.com/anilmawji"
-          className={styles.icon}
         />
         <IconLink
-          iconSize={24}
+          className={styles.icon}
+          iconSize={ICON_SIZE}
           type={IconType.STACKOVERFLOW}
           href="https://stackoverflow.com/users/8902167/anil-m"
-          className={styles.icon}
         />
       </div>
     </header>

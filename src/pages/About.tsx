@@ -8,7 +8,7 @@ const About = () => {
     <Page title="About" headerId="bio" includeCircuitLine>
       <div className={styles.sections}>
         <section>
-          Bio
+          Hi, my name is Anil!
         </section>
         <CertificationsSection />
         <ContactSection />

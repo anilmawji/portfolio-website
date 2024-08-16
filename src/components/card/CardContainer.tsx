@@ -1,6 +1,7 @@
 import styles from './CardContainer.module.css';
 import { Card, CardData } from './Card';
 import { useState } from 'react';
+import { joinClassNames } from '../../utils';
 
 interface PropTypes {
   className?: string;
@@ -10,11 +11,10 @@ interface PropTypes {
 }
 
 const CardContainer = ({ className, title, cardData, includeReadingTime }: PropTypes) => {
-  const combinedClassName = `${styles.container} ${className}`;
   const [cards] = useState(cardData);
 
   return (
-    <div className={combinedClassName}>
+    <div className={joinClassNames(styles.container, className)}>
       {title && 
         <div className={styles.title}>
           {title}
@@ -23,7 +23,7 @@ const CardContainer = ({ className, title, cardData, includeReadingTime }: PropT
       <div className={styles.cards}>
         {cards.map((data, i) => {
           return (
-            <Card key={i} data={data} includeReadingTime={includeReadingTime}/>
+            <Card key={i} data={data} includeReadingTime={includeReadingTime} />
           );
         })}
       </div>

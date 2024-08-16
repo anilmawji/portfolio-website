@@ -69,7 +69,9 @@ const Footer = () => {
             }}
           />
         </div>
-        <p className={styles.copyright}>&#169; 2024 Anil Mawji</p>
+        <p className={styles.copyright}>
+          &#169; 2024 Anil Mawji
+        </p>
     </footer>
   );
 }

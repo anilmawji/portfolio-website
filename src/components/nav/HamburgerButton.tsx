@@ -1,4 +1,5 @@
 import styles from './Hamburger.module.css';
+import { joinClassNames } from '../../utils';
 
 interface PropTypes {
   className?: string;
@@ -7,11 +8,11 @@ interface PropTypes {
 }
 
 const HamburgerButton = ({ className, isOpen, onToggle }: PropTypes) => {
-  const combinedClassName: string = (`
-    ${styles.hamburger}
-    ${className ?? ""}
-    ${isOpen ? "open" : ""}
-  `).trim();
+  const combinedClassName = joinClassNames(
+    styles.hamburger,
+    className,
+    isOpen ? "open" : ""
+  );
 
   return (
     <label className={combinedClassName}>
