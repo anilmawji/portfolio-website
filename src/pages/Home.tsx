@@ -2,7 +2,8 @@ import styles from './Home.module.css';
 import Page from './Page';
 import ParticleCanvas from '../components/canvas/ParticleCanvas';
 import HeroSection from '../components/sections/Hero';
-import FeaturedSection from '../components/sections/Featured';
+import CardContainer from '../components/CardContainer';
+import BlogData from '../data/BlogData';
 import SvgFox from '../components/icons/SvgFox';
 import CircuitLine from '../components/CircuitLine';
 import { getCssValue, hexToRgb } from '../utils';
@@ -27,7 +28,7 @@ const Home = () => {
         <HeroSection className={styles.hero} />
         <div className={styles.bottom}>
           <CircuitLine className={styles.circuit}/>
-          <FeaturedSection className={styles.featured} />
+          <CardContainer title="Featured Posts" cardData={BlogData} className={styles.featured} />
         </div>
       </div>
     </Page>

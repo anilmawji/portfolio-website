@@ -23,16 +23,22 @@ const initCards = (cards: Card[]) => {
 
 interface PropTypes {
   className?: string;
+  title?: string;
   cardData: Card[];
   includeReadingTime?: boolean;
 }
 
-const CardContainer = ({ className, cardData, includeReadingTime = true }: PropTypes) => {
+const CardContainer = ({ className, title, cardData, includeReadingTime = true }: PropTypes) => {
   const combinedClassName = `${styles.container} ${className}`;
   const [cards] = useState(includeReadingTime ? initCards(cardData) : cardData);
 
   return (
     <div className={combinedClassName}>
+      {title && 
+        <div className={styles.title}>
+          {title}
+        </div>
+      }
       <div className={styles.cards}>
         {cards.map((card, i) => {
           return (
@@ -40,7 +46,7 @@ const CardContainer = ({ className, cardData, includeReadingTime = true }: PropT
               <img src={card.image} />
               <div className={styles.content}>
                 <div className={styles.text}>
-                  <h3 className={styles.title}>
+                  <h3 className={styles.card_title}>
                     {card.title}
                   </h3>
                   <p className={styles.date}>
