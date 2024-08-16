@@ -1,4 +1,4 @@
-import styles from './IconLink.module.css'
+import styles from './IconLink.module.css';
 import { toPixels } from '../../utils';
 
 enum IconType {
@@ -49,9 +49,9 @@ const IconLink = ({ iconSize, type, className, src, href, alt }: PropTypes) => {
         <img src={src} alt={alt} draggable="false" onMouseDown={(e: React.MouseEvent<HTMLImageElement, MouseEvent>) => e.preventDefault()} />
       )}
     </a>
-  )
+  );
 }
 
-export default IconLink
+export default IconLink;
 
 export { IconType }

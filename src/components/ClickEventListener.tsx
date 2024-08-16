@@ -120,9 +120,9 @@ const ClickEventListener = (
     <div {...eventListenerProps} className={combinedClassName}>
       {children}
     </div>
-  )
+  );
 }
 
-export default ClickEventListener
+export default ClickEventListener;
 
 export { MouseState, TouchState }

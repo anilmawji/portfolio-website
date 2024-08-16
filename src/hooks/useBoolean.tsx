@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState } from 'react';
 
 type ReturnType = {
   value: boolean;
@@ -27,7 +27,7 @@ const useBoolean = (initialValue: boolean): ReturnType => {
     toggle,
     setTrue,
     setFalse,
-  }
+  };
 }
 
-export default useBoolean
+export default useBoolean;

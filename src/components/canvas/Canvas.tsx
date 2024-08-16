@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef } from 'react';
 
 interface PropTypes {
   draw: (ctx: CanvasRenderingContext2D) => void;
@@ -62,4 +62,4 @@ const Canvas = ({ draw, resize, establishContext, className, style, fps = 30, ..
   return <canvas ref={canvasRef} className={className} style={style} {...restProps} />
 };
 
-export default Canvas
+export default Canvas;

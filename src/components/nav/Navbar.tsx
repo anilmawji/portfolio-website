@@ -31,6 +31,8 @@ const Navbar = ({ drawerDelay = 250 }: PropTypes) => {
         <CustomNavLink to="/blog" label="Blog" onClick={closeHamburgerDrawer} />
         {/* <SearchBar /> */}
       </ul>
+      <div className={styles.shadow}>
+      </div>
     </nav>
   );
 }

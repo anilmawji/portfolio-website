@@ -1,5 +1,5 @@
-import { useEffect, useRef } from 'react'
-import { useLocation } from 'react-router-dom'
+import { useEffect, useRef } from 'react';
+import { useLocation } from 'react-router-dom';
 
 interface PropTypes {
   delay?: number;
@@ -34,4 +34,4 @@ const ScrollToAnchor = ({ delay = 0, offset = 0 }: PropTypes) => {
   return null;
 }
 
-export default ScrollToAnchor
+export default ScrollToAnchor;

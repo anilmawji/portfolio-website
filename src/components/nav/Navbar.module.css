@@ -6,6 +6,7 @@
   --navbar-border-thickness: 3px;
   --navbar-gap-mobile: 20px;
   --navbar-font-weight: 600;
+  --navbar-transition-time: 300ms;
   --navlink-offset-y-mobile: 20px;
   --navlink-count: 5;
 
@@ -86,6 +87,19 @@ nav li a {
   display: none;
 }
 
+.shadow {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+  opacity: 0;
+  visibility: hidden;
+  top: var(--navbar-thickness);
+  /* Push the shadow below the navbar */
+  z-index: -1;
+  transition: opacity var(--navbar-transition-time) ease-in-out;
+}
+
 /* Tablet styling */
 @media(max-width: 980px) {
   .hamburger {
@@ -101,7 +115,7 @@ nav li a {
     gap: var(--navbar-gap-mobile);
     transform: translateY(var(--navbar-thickness));
     background-color: var(--main-fg-color);
-    transition: height 300ms ease-in-out;
+    transition: height var(--navbar-transition-time) ease-in-out;
     margin-left: 0;
   }
 
@@ -149,6 +163,11 @@ nav li a {
   /* Targets the hover line of the navlink */
   .hamburger[class*="open"] ~ ul li div div {
     display: block;
+  }
+
+  .hamburger[class*="open"] ~ .shadow {
+    visibility: visible;
+    opacity: 0.5;
   }
 }
 

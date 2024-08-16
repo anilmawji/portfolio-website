@@ -51,9 +51,9 @@ const CardContainer = ({ className, cardData, includeReadingTime = true }: PropT
                   </p>
                 </div>
                 <div className={styles.chips}>
-                  {card.tags.map((tag, index) => (
+                  {card.tags.map((tag, index) =>
                     <Chip key={index} label={tag} />
-                  ))}
+                  )}
                 </div>
               </div>
             </a>

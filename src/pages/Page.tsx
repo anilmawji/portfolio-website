@@ -1,6 +1,6 @@
 import styles from './Page.module.css';
-import Footer from "../components/sections/Footer";
-import CircuitLine from "../components/CircuitLine";
+import Footer from '../components/sections/Footer';
+import CircuitLine from '../components/CircuitLine';
 
 interface PropTypes {
   className?: string;

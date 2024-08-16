@@ -1,8 +1,8 @@
-import Canvas from "./Canvas"
-import { useState, useEffect } from 'react'
-import { MouseState } from "../../hooks/useMouse"
-import { Particle } from "./Particle"
-import { clampMin, isValidCssColor, getRgbColorValues } from '../../utils'
+import Canvas from './Canvas';
+import { useState, useEffect } from 'react';
+import { MouseState } from '../../hooks/useMouse';
+import { Particle } from './Particle';
+import { clampMin, isValidCssColor, getRgbColorValues } from '../../utils';
 
 const MIN_CONNECT_DISTANCE = 40_000;
 const MIN_PARTICLE_COUNT = 20;
@@ -155,4 +155,4 @@ const ParticleCanvas = ({
   );
 }
 
-export default ParticleCanvas
+export default ParticleCanvas;

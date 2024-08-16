@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react';
 
 interface PropTypes {
   text: string;
@@ -31,7 +31,7 @@ const Typewriter = ({ text, delay, looped }: PropTypes) => {
     <span>
       {currentText}
     </span>
-  )
+  );
 }
 
 export default Typewriter;

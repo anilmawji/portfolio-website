@@ -71,7 +71,7 @@ const Footer = () => {
         </div>
         <p className={styles.copyright}>&#169; 2024 Anil Mawji</p>
     </footer>
-  )
+  );
 }
 
-export default Footer
+export default Footer;

@@ -1,4 +1,4 @@
-import styles from './Hamburger.module.css'
+import styles from './Hamburger.module.css';
 
 interface PropTypes {
   className?: string;
@@ -20,7 +20,7 @@ const HamburgerButton = ({ className, isOpen, onToggle }: PropTypes) => {
       <span className={styles.bar2} />
       <span className={styles.bar3} />
     </label>
-  )
+  );
 }
 
-export default HamburgerButton
+export default HamburgerButton;

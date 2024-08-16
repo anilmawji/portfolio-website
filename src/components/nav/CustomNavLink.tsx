@@ -1,6 +1,6 @@
 import ClickEventListener from '../ClickEventListener';
-import styles from './CustomNavLink.module.css'
-import { Link, LinkProps, NavLink, useLocation } from 'react-router-dom'
+import styles from './CustomNavLink.module.css';
+import { Link, LinkProps, NavLink, useLocation } from 'react-router-dom';
 
 type LinkType = typeof NavLink | typeof Link;
 
@@ -41,7 +41,7 @@ const CustomNavLink = ({ to, label, className, children, ...restProps }: PropTyp
         <div className={styles["hover-line"]} />
       </ClickEventListener>
     </li>
-  )
+  );
 }
 
-export default CustomNavLink
+export default CustomNavLink;

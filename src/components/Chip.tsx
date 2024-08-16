@@ -1,4 +1,4 @@
-import styles from './Chip.module.css'
+import styles from './Chip.module.css';
 
 interface PropTypes {
   label: string,
@@ -10,7 +10,7 @@ const Chip = ({ label, color }: PropTypes) => {
     <div className={styles.chip}>
       {label}
     </div>
-  )
+  );
 }
 
-export default Chip
+export default Chip;

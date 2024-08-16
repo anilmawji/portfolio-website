@@ -1,7 +1,7 @@
 import styles from './Certifications.module.css';
 import SvgAPlus from '../icons/SvgAPlus';
 import SvgSecurityPlus from '../icons/SvgSecurityPlus';
-import az_900 from '../../assets/certifications/az-900.png'
+import az_900 from '../../assets/certifications/az-900.png';
 
 const CertificationsSection = () => {
   return (
