@@ -104,16 +104,12 @@
     border-bottom-left-radius: var(--card-border-radius);
   }
 
-  .card_title {
+  .title {
     font-size: 16px;
   }
 }
 
 @media (max-width: 600px) {
-  .title {
-    font-size: 24px;
-  }
-
   .card {
     height: initial;
   }

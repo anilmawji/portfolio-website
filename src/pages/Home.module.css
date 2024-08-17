@@ -53,7 +53,7 @@
   fill: var(--main-bg-color);
   z-index: 1;
   top: -50px;
-  opacity: 0.6;
+  opacity: 0.5;
 }
 
 .canvas {

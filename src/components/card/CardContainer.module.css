@@ -16,3 +16,9 @@
   justify-content: space-between;
   gap: var(--card-gap);
 }
+
+@media (max-width: 600px) {
+  .title {
+    font-size: 24px;
+  }
+}

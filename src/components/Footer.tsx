@@ -1,5 +1,6 @@
 import styles from './Footer.module.css';
 import { NavLink } from 'react-router-dom';
+import ScrollToTopButton from './ScrollToTopButton';
 
 interface FooterItemPropTypes {
   text: string;
@@ -40,38 +41,41 @@ const FooterItemList = ({ title, links }: FooterItemListPropTypes) => {
 const Footer = () => {
   return (
     <footer>
-        <div className={styles.content}>
+      <div className={styles.button}>
+        <ScrollToTopButton />
+      </div>
+      <div className={styles.content}>
         <FooterItemList
-            title={"Navigation"}
-            links={{
-              "Home": "/",
-              "Portfolio": "/portfolio",
-              "About": "/about#bio",
-              "Contact": "/about#contact",
-              "Blog": "/blog"
-            }}
-          />
-          <FooterItemList
-            title={"Profiles"}
-            links={{
-              "LinkedIn": "https://ca.linkedin.com/in/anil-mawji",
-              "HackTheBox": "https://www.hackthebox.com/",
-              "TryHackMe": "https://tryhackme.com/",
-              "GitHub": "https://github.com/anilmawji",
-              "Stack Overflow": "https://stackoverflow.com/users/8902167/anil-m"
-            }}
-          />
-          <FooterItemList
-            title={"External Files"}
-            links={{
-              "Resume": "",
-              "Website License": ""
-            }}
-          />
-        </div>
-        <p className={styles.copyright}>
-          &#169; 2024 Anil Mawji
-        </p>
+          title={"Navigation"}
+          links={{
+            "Home": "/",
+            "Portfolio": "/portfolio",
+            "About": "/about#bio",
+            "Contact": "/about#contact",
+            "Blog": "/blog"
+          }}
+        />
+        <FooterItemList
+          title={"Profiles"}
+          links={{
+            "LinkedIn": "https://ca.linkedin.com/in/anil-mawji",
+            "HackTheBox": "https://www.hackthebox.com/",
+            "TryHackMe": "https://tryhackme.com/",
+            "GitHub": "https://github.com/anilmawji",
+            "Stack Overflow": "https://stackoverflow.com/users/8902167/anil-m"
+          }}
+        />
+        <FooterItemList
+          title={"External Files"}
+          links={{
+            "Resume": "",
+            "Website License": ""
+          }}
+        />
+      </div>
+      <p className={styles.copyright}>
+        &#169; 2024 Anil Mawji
+      </p>
     </footer>
   );
 }

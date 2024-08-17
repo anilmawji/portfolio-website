@@ -6,6 +6,7 @@ import Portfolio from './pages/Portfolio'
 import About from './pages/About'
 import NotFound from './pages/NotFound'
 import { getNumericalCssValue } from './utils'
+import ScrollToTopButton from './components/ScrollToTopButton'
 //import lightStyles from './LightTheme.module.css'
 //import darkStyles from './DarkTheme.module.css'
 

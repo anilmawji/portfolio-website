@@ -21,11 +21,13 @@ const CardContainer = ({ className, title, cardData, includeReadingTime }: PropT
         </div>
       }
       <div className={styles.cards}>
-        {cards.map((data, i) => {
-          return (
-            <Card key={i} data={data} includeReadingTime={includeReadingTime} />
-          );
-        })}
+        {
+          cards.map((data, i) => {
+            return (
+              <Card key={i} data={data} includeReadingTime={includeReadingTime} />
+            );
+          })
+        }
       </div>
     </div>
   );

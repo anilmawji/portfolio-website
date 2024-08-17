@@ -18,7 +18,7 @@ const ProjectData = [
     title: "Personal Website",
     image: portfolio_img,
     date: "June 30th, 2024",
-    body: "Dynamic, mobile-friendly site used to showcase my projects. The site uses a fully custom component library. It will eventually be extended to include a full tech blog!",
+    body: "Dynamic, mobile-friendly site used to showcase my projects. The site uses a fully custom component library. It will eventually be extended to include a tech blog!",
     link: "https://github.com/anilmawji/portfolio-site",
     tags: ["React", "TypeScript", "HTML", "CSS"]
   },
