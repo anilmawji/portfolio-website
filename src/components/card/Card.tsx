@@ -25,7 +25,7 @@ const Card = ({ data, includeReadingTime }: PropTypes) => {
   }
 
   return (
-      <a className={styles.card} href={data.link} target="_blank">
+    <a className={styles.card} href={data.link} target="_blank">
       <img src={data.image} />
       <div className={styles.content}>
         <div className={styles.text}>

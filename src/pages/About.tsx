@@ -1,16 +1,13 @@
 import styles from './About.module.css';
 import Page from './Page';
-import CertificationsSection from '../components/sections/Certifications';
 import ContactSection from '../components/sections/Contact';
+import BioSection from '../components/sections/Bio';
 
 const About = () => {
   return (
-    <Page title="About" headerId="bio" includeCircuitLine>
+    <Page title="About Me" headerId="bio" includeCircuitLine>
       <div className={styles.sections}>
-        <section>
-          Hi, my name is Anil!
-        </section>
-        <CertificationsSection />
+        <BioSection />
         <ContactSection />
       </div>
     </Page>

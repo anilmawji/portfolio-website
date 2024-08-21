@@ -1,9 +1,12 @@
+/* TODO: add default styling for h1, h2, h3 so you can use them for title styling across the website */
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-family: "Segoe UI Adjusted", "Segoe UI", "Liberation Sans", sans-serif;
 }
 
 /* Highlighted text style */
@@ -29,7 +32,6 @@ main {
 }
 
 body {
-  font-family: "Segoe UI Adjusted", "Segoe UI", "Liberation Sans", sans-serif;
   background-color: var(--main-bg-color);
   color: white;
 }

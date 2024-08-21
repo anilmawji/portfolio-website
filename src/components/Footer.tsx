@@ -1,6 +1,6 @@
 import styles from './Footer.module.css';
 import { NavLink } from 'react-router-dom';
-import ScrollToTopButton from './ScrollToTopButton';
+import ScrollToTopButton from './buttons/ScrollToTopButton';
 
 interface FooterItemPropTypes {
   text: string;

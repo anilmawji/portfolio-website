@@ -7,8 +7,8 @@
 }
 
 .title {
+  margin: 0 auto;
   font-size: 32px;
-  margin-left: 200px;
   text-shadow: 2px 2px 2px var(--main-fg-color);
 }
 
@@ -33,7 +33,6 @@
   }
 
   .title {
-    margin: 0 auto;
     font-size: 24px;
   }
 }
