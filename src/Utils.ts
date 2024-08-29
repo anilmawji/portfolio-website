@@ -37,15 +37,18 @@ export function toPixels(amount: string | number): string {
   return amount;
 }
 
-export function getCssValue(element: HTMLElement, variableName: string): string {
-  return getComputedStyle(element).getPropertyValue(`--${variableName}`).trim();
+export function getCssValue(variableName: string, element?: HTMLElement | null): string {
+  const targetElement = element || document.documentElement;
+  
+  return getComputedStyle(targetElement).getPropertyValue(`--${variableName}`).trim();
 }
 
-export function getNumericalCssValue(element: HTMLElement, variableName: string): number {
-  const numberValue = parseFloat(getCssValue(element, variableName));
+export function getNumericalCssValue(variableName: string, element?: HTMLElement | null): number {
+  const numberValue = parseFloat(getCssValue(variableName, element));
 
   if (isNaN(numberValue)) {
     console.error(`Failed to parse ${variableName}: CSS variable is not a number value`);
+    return 0; // Return a default value or throw an error based on your requirements
   }
   return numberValue;
 }
@@ -61,9 +64,9 @@ export function readingTime(text: string, wpm: number = 225): string {
   return time >= 1 ? time.toString() + " min" : "Less than 1 min";
 }
 
-export function joinClassNames(...classNames: (string | undefined)[]): string {
+export function joinClassNames(joinCharacter: string = " ", ...classNames: (string | undefined)[]): string {
   // Use filter to remove all undefined strings from the list of class names
-  return classNames.filter(s => s).join(" ").trim();
+  return classNames.filter(s => s).join(joinCharacter).trim();
 }
 
 /*#####################################################################*\

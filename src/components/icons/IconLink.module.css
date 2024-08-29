@@ -7,6 +7,15 @@
   background-color: none;
 }
 
+.icon:hover {
+  filter: drop-shadow(0 0 6px var(--icon-hover-color));
+  -webkit-filter: drop-shadow(0 0 6px var(--icon-hover-color));
+}
+
+.icon svg:hover {
+  fill: var(--icon-hover-color);
+}
+
 .icon img {
   width: 100%;
   height: 100%;

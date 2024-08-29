@@ -9,7 +9,7 @@ import { getNumericalCssValue } from './utils';
 //import lightStyles from './LightTheme.module.css'
 //import darkStyles from './DarkTheme.module.css'
 
-const NAVBAR_THICKNESS = getNumericalCssValue(document.documentElement, "navbar-thickness");
+const NAVBAR_THICKNESS = getNumericalCssValue("navbar-thickness");
 
 const App = () => {
   //const styles = theme === 'light' ? lightStyles : darkStyles;

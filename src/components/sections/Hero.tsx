@@ -1,5 +1,6 @@
 import styles from './Hero.module.css';
 import IconLink, { IconType } from '../icons/IconLink';
+import { getCssValue } from '../../utils';
 
 const ICON_SIZE = 24;
 
@@ -32,33 +33,38 @@ const HeroSection = ({ className }: PropTypes) => {
       <div className={styles.icons}>
         <IconLink
           className={styles.icon}
-          iconSize={ICON_SIZE}
+          size={ICON_SIZE}
           type={IconType.LINKEDIN}
           href="https://ca.linkedin.com/in/anil-mawji"
+          hoverColor={getCssValue("linkedin")}
         />
         <IconLink
           className={styles.icon}
-          iconSize={ICON_SIZE}
+          size={ICON_SIZE}
           type={IconType.HACKTHEBOX}
           href="https://www.hackthebox.com/"
+          hoverColor={getCssValue("neon-green2")}
         />
         <IconLink
           className={styles.icon}
-          iconSize={ICON_SIZE}
+          size={ICON_SIZE}
           type={IconType.TRYHACKME}
           href="https://tryhackme.com/"
+          hoverColor={getCssValue("tryhackme")}
         />
         <IconLink
           className={styles.icon}
-          iconSize={ICON_SIZE}
+          size={ICON_SIZE}
           type={IconType.GITHUB}
           href="https://github.com/anilmawji"
+          hoverColor={"white"}
         />
         <IconLink
           className={styles.icon}
-          iconSize={ICON_SIZE}
-          type={IconType.STACKOVERFLOW}
+          size={ICON_SIZE}
+          type={IconType.STACK_OVERFLOW}
           href="https://stackoverflow.com/users/8902167/anil-m"
+          hoverColor={getCssValue("stack-overflow")}
         />
       </div>
     </section>

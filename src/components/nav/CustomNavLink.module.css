@@ -21,14 +21,14 @@ nav a[class*="active"] {
   width: 0;
   height: var(--hover-line-thickness);
   background-color: var(--neon-green);
-  transition: 0.1s ease-out;
+  transition: width 120ms ease-out;
 }
 
 /* Start expanding underline on mouse down */
-nav div[class*="mouseDown"] .hover-line {
+/* nav div[class*="mouseDown"] .hover-line {
   width: 100%;
   transition-duration: 3s;
-}
+} */
 
 /* Underline remains expanded when navlink is selected */
 nav a[class*="active"] + .hover-line {

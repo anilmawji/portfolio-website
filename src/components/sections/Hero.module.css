@@ -47,15 +47,6 @@
   transition: filter 0.3s ease;
 }
 
-.icon:hover {
-  filter: drop-shadow(0 0 6px var(--neon-green));
-  -webkit-filter: drop-shadow(0 0 6px var(--neon-green));
-}
-
-.icon svg:hover {
-  fill: var(--neon-green2);
-}
-
 .icon svg {
   fill: #c6c6c6;
 }

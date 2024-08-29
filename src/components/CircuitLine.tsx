@@ -3,7 +3,7 @@ import SvgCircuit from './icons/SvgCircuit';
 import { getCssValue } from '../utils';
 import { joinClassNames } from '../utils';
 
-const CIRCUIT_SVG_COLOR = getCssValue(document.documentElement, "main-fg-color");
+const CIRCUIT_SVG_COLOR = getCssValue("main-fg-color");
 
 interface PropTypes {
   className?: string;

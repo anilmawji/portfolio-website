@@ -24,6 +24,9 @@
   --neon-green2: #91FC9F;
   --btn-color: #44D25C;
   --grey: #ACABAB;
+  --stack-overflow: #FF9900;
+  --linkedin: #40beff;
+  --tryhackme: red;
 }
 
 /* Ensure the main content takes all available space, pushing the footer to the bottom */

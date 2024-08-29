@@ -8,7 +8,7 @@ import SvgFox from '../components/icons/SvgFox';
 import CircuitLine from '../components/CircuitLine';
 import { getCssValue, hexToRgb } from '../utils';
 
-const NEON_GREEN_COLOR = hexToRgb(getCssValue(document.documentElement, "neon-green"));
+const NEON_GREEN_COLOR = hexToRgb(getCssValue("neon-green"));
 
 const Home = () => {
   return (
