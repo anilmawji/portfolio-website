@@ -33,6 +33,14 @@
   padding-left: 40px;
 }
 
+.bio a {
+  font-weight: 500;
+}
+
+.bio a:hover {
+  text-decoration: underline;
+}
+
 @media (max-width: 980px) {
   .bio img {
     width: 200px;

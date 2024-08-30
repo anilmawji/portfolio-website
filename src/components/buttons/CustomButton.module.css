@@ -24,6 +24,10 @@
 
 .button:active {
   transform: translateY(var(--button-border-size));
+  -webkit-transform: translateY(var(--button-border-size));
+  -moz-transform: translateY(var(--button-border-size));
+  -ms-transform: translateY(var(--button-border-size));
+  -o-transform: translateY(var(--button-border-size));
 }
 
 .border {
