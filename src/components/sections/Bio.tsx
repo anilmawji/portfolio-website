@@ -4,6 +4,7 @@ import portrait from '../../assets/portrait.jpg';
 const BioSection = () => {
   return (
     <section className={styles.bio}>
+      <img src={portrait} />
       <p>
         Hi, I'm Anil, a Computer Science student at the University of Calgary.
         My background includes hands-on experience in both the public and private sectors as a systems administrator and a software developer.
@@ -12,7 +13,6 @@ const BioSection = () => {
         I'm always open to meeting new people, so feel free to reach out if you want to connect.
         Stay tuned for plenty of cybersecurity-related content!
       </p>
-      <img src={portrait} />
     </section>
   );
 }

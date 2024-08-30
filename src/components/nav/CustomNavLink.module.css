@@ -25,12 +25,12 @@ nav a[class*="active"] {
 }
 
 /* Start expanding underline on mouse down */
-/* nav div[class*="mouseDown"] .hover-line {
+/* nav div[class*="mouseDown"] div.hover-line {
   width: 100%;
   transition-duration: 3s;
 } */
 
 /* Underline remains expanded when navlink is selected */
-nav a[class*="active"] + .hover-line {
+nav a[class*="active"] + div.hover-line {
   width: 100%;
 }

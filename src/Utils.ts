@@ -64,9 +64,9 @@ export function readingTime(text: string, wpm: number = 225): string {
   return time >= 1 ? time.toString() + " min" : "Less than 1 min";
 }
 
-export function joinClassNames(joinCharacter: string = " ", ...classNames: (string | undefined)[]): string {
+export function joinClassNames(...classNames: (string | undefined)[]): string {
   // Use filter to remove all undefined strings from the list of class names
-  return classNames.filter(s => s).join(joinCharacter).trim();
+  return classNames.filter(s => s).join(" ");
 }
 
 /*#####################################################################*\

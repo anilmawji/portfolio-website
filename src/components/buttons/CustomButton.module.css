@@ -1,10 +1,32 @@
+:root {
+  --button-border-size: 6px;
+}
+
+.container {
+  position: relative;
+}
+
+.container * {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
 .button {
-  border: none;
-  background-color: var(--btn-color);
-  color: white;
-  font-size: 1rem;
   cursor: pointer;
-  width: 100px;
-  height: 40px;
-  margin: 20px 0;
+  font-size: 1rem;
+  background-color: #56c769;
+  border-radius: var(--button-border-size);
+  bottom: var(--button-border-size);
+  padding: 10px;
+  z-index: 1;
+}
+
+.button:active {
+  transform: translateY(var(--button-border-size));
+}
+
+.border {
+  background-color: #3c8b49;
+  border-radius: var(--button-border-size);
 }

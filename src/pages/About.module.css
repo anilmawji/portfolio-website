@@ -24,5 +24,10 @@
 }
 
 .sections {
-  margin: 0 calc(var(--home-margin) + 50px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  margin: 0 var(--home-margin);
 }
+

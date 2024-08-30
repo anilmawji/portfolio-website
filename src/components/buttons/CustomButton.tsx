@@ -1,14 +1,19 @@
-import styles from '../components/CustomButton.module.css';
+import styles from './CustomButton.module.css';
+import { joinClassNames } from '../../utils';
 
-interface PropTypes {
-  children: string;
+interface PropTypes extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  className?: string;
+  text?: string;
 }
 
-const CustomButton = ({ children }: PropTypes) => {
+const CustomButton = ({ className, text }: PropTypes) => {
   return (
-    <button className={styles.button}>
-      {children}
-    </button>
+    <div className={joinClassNames(className, styles.container)}>
+      <button className={styles.button}>
+        {text}
+      </button>
+      <div className={styles.border} />
+    </div>
   );
 }
 

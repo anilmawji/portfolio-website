@@ -1,21 +1,33 @@
 .contact {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  width: 100%;
+  max-width: 1000px;
+  min-width: 150px;
+  background-color: var(--main-fg-color);
+  border-radius: 6px;
+  padding: 30px;
 }
 
 .fields {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 24px;
   width: 100%;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.title {
+  font-size: 24px;
+  padding: 10px;
+  margin-bottom: 30px;
 }
 
 .fields input,
 .fields textarea {
-  width: 50%;
-  background-color: var(--main-fg-color);
+  width: 100%;
+  background-color: var(--main-bg-color);
   border:  none;
   color: white;
   padding: 14px;
@@ -34,8 +46,27 @@
   height: 40px;
 }
 
-
-
 .message {
   height: 200px;
+}
+
+.send {
+  margin-bottom: 10px;
+  width: 200px;
+  height: 50px;
+}
+
+@media (max-width: 600px) {
+  .contact {
+    align-items: center;
+  }
+
+  .message {
+    height: 300px;
+  }
+
+  .send {
+    width: 150px;
+    height: 40px;
+  }
 }
