@@ -17,12 +17,12 @@ const BioSection = () => {
         <ul>
           <li>
             <a href="https://www.credly.com/badges/e8b164ea-078d-4862-9346-a6ff8fd2547e" target="_blank">
-              CompTIA A+
+              CompTIA Security+
             </a>
           </li>
           <li>
             <a href="https://www.credly.com/badges/79231690-ded9-4d5f-be98-7f74f4ebe95c" target="_blank">
-              CompTIA Security+
+              CompTIA A+
             </a>
           </li>
           <li>

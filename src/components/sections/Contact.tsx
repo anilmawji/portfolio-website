@@ -21,7 +21,7 @@ const ContactSection = () => {
         
         </textarea>
       </div>
-      <CustomButton className={styles.send} text={"Send Message"} onClick={() => {}}/>
+      <CustomButton className={styles.send} text={"Send"} onClick={() => {}}/>
     </section>
   );
 }

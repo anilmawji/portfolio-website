@@ -47,7 +47,7 @@
 
 .fox {
   position: absolute;
-  left: 320px;
+  left: calc(var(--home-margin) + 220px);
   width: 620px;
   height: 620px;
   fill: var(--main-bg-color);

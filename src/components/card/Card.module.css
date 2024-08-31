@@ -15,7 +15,7 @@
   background-color: var(--main-fg-color);
   border-radius: var(--card-border-radius);
   transition: transform 0.3s ease;
-  outline: 3px solid var(--main-bg-color);
+  outline: 4px solid var(--main-fg-color);
 }
 
 .card:hover {

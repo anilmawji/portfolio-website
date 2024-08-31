@@ -56,7 +56,7 @@ const Footer = () => {
           }}
         />
         <FooterItemList
-          title={"Profiles"}
+          title={"Socials"}
           links={{
             "LinkedIn": "https://ca.linkedin.com/in/anil-mawji",
             "HackTheBox": "https://www.hackthebox.com/",

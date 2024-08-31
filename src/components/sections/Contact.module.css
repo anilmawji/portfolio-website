@@ -53,8 +53,8 @@
 
 .send {
   margin-bottom: 10px;
-  width: 160px;
-  height: 46px;
+  width: 100px;
+  height: 40px;
 }
 
 @media (max-width: 600px) {
@@ -64,10 +64,5 @@
 
   .message {
     height: 300px;
-  }
-
-  .send {
-    width: 150px;
-    height: 40px;
   }
 }
