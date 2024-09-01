@@ -1,5 +1,8 @@
 import styles from './Contact.module.css';
+import TextField from '../input/TextField';
 import CustomButton from '../buttons/CustomButton';
+import SvgSend from '../../components/icons/SvgSend';
+import TextArea from '../../components/input/TextArea';
 
 const ContactSection = () => {
   return (
@@ -7,21 +10,15 @@ const ContactSection = () => {
       <div className={styles.title}>
         Get in Touch
       </div>
-      <div className={styles.fields}>
-        <input className={styles.name} type="text" name="name" value="Full Name" onChange={() => {}}>
-
-        </input>
-        <input className={styles.email} type="text" name="email" value="Email" onChange={() => {}}>
-        
-        </input>
-        <input className={styles.subject} type="text" name="subject" value="Subject" onChange={() => {}}>
-        
-        </input>
-        <textarea className={styles.message} name="message" value="Message" onChange={() => {}}>
-        
-        </textarea>
-      </div>
-      <CustomButton className={styles.send} text={"Send"} onClick={() => {}}/>
+      <form className={styles.form}>
+        <TextField text="name" id="name" onChange={() => {}} />
+        <TextField text="email" id="email" onChange={() => {}} />
+        <TextField text="subject" id="subject" onChange={() => {}} />
+        <TextArea className={styles.message} id="message" placeholder="Message" />
+      </form>
+      <CustomButton className={styles.send} text={"Send"} onClick={() => {}}>
+        <SvgSend className={styles.send_icon} />
+      </CustomButton>
     </section>
   );
 }

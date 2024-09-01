@@ -22,12 +22,10 @@ footer {
 
 .list {
   margin: 20px;
-  display: flex;
-  flex-direction: column;
 }
 
 .list h3 {
-  margin-bottom: 20px;
+  margin-bottom: 14px;
 }
 
 .list ul {

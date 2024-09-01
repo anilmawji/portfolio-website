@@ -109,3 +109,13 @@ export function isValidCssColor(str: string): boolean {
 export function getRgbColorValues(rgbString: string): string {
   return rgbString.substring(4, rgbString.length - 1);
 }
+
+/*#####################################################################*\
+|#                                                                     #|
+|#   STRING UTILS                                                      #|
+|#                                                                     #|
+\*#####################################################################*/
+
+export function capitalizeFirstChar(str: string) {
+  return str.length === 0 ? "" : str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+}

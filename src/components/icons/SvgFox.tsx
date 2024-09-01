@@ -1,11 +1,11 @@
-const SvgFox = ({ ...svgStyle }) => (
+const SvgFox = ({ ...svgProps }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     xmlSpace="preserve"
     width="1em"
     height="1em"
     viewBox="0 0 1080 1080"
-    {...svgStyle}
+    {...svgProps}
   >
     <rect width="100%" height="100%" fill="transparent" />
     <path

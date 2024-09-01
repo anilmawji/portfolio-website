@@ -1,9 +1,9 @@
-const SvgAPlus = ({ ...svgStyle }) => (
+const SvgAPlus = ({ ...svgProps }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     id="a-plus_svg__Layer_1"
     viewBox="35 135 220 15"
-    {...svgStyle}
+    {...svgProps}
   >
     <defs>
       <style>

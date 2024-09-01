@@ -9,6 +9,7 @@
 .title {
   margin: 0 auto;
   font-size: 32px;
+  font-weight: bold;
   text-shadow: 2px 2px 2px var(--main-fg-color);
 }
 

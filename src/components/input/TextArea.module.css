@@ -1,0 +1,20 @@
+.filled {
+  resize: none;
+  width: 100%;
+  font-size: 14px;
+  padding: 14px;
+  border:  none;
+  overflow: hidden;
+  border-radius: 6px;
+  color: white;
+  background-color: var(--main-bg-color);
+}
+
+.filled::placeholder {
+  font-size: 16px;
+}
+
+.filled:focus {
+  outline: none;
+  border: 2px solid #56c769;
+}

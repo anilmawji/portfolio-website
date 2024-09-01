@@ -1,14 +1,20 @@
 .bio {
   display: flex;
+  flex-direction: column;
+  gap: 40px;
   padding: 30px;
+  width: min(1000px, 100%);
   min-height: 250px;
   background-color: var(--main-fg-color);
   border-radius: 6px;
   margin-bottom: 20px;
-  max-width: 1000px;
 }
 
-.bio img {
+.content {
+  display: flex;
+}
+
+.portrait {
   object-fit: cover;
   border-radius: 10%;
   margin-top: 10px;
@@ -23,7 +29,7 @@
   padding: 10px;
 }
 
-.bio ul {
+.bio p ul {
   display: block;
   list-style-type: disc;
   margin-top: 0.5em;
@@ -33,34 +39,50 @@
   padding-left: 40px;
 }
 
-.bio a {
+.bio p a {
   font-weight: 500;
 }
 
-.bio a:hover {
+.bio p a:hover {
   text-decoration: underline;
 }
 
+.stack_overflow {
+  
+}
+
+.stack_overflow img {
+  
+}
+
 @media (max-width: 980px) {
-  .bio img {
+  .portrait {
     width: 200px;
     height: 200px;
   }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 850px) {
   .bio {
+    align-items: center;
+  }
+
+  .content {
     flex-direction: column;
     align-items: center;
   }
 
-  .bio img {
+  .portrait {
     margin-bottom: 30px;
+  }
+
+  .bio p {
+    font-size: 14px;
   }
 }
 
 @media (max-width: 640px) {
-  .bio img {
+  .portrait {
     width: 150px;
     height: 150px;
   }

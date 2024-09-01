@@ -5,7 +5,7 @@ import BioSection from '../components/sections/Bio';
 
 const About = () => {
   return (
-    <Page title="About Me" headerId="bio" includeCircuitLine>
+    <Page title="About Me" headerId="bio">
       <div className={styles.sections}>
         <BioSection />
         <ContactSection />

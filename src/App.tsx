@@ -4,6 +4,7 @@ import ScrollToAnchor from './components/nav/ScrollToAnchor';
 import Home from './pages/Home';
 import Portfolio from './pages/Portfolio';
 import About from './pages/About';
+import Blog from './pages/Blog';
 import NotFound from './pages/NotFound';
 import { getNumericalCssValue } from './utils';
 //import lightStyles from './LightTheme.module.css'
@@ -20,10 +21,10 @@ const App = () => {
       <ScrollToAnchor delay={250} offset={NAVBAR_THICKNESS}/>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/about" element={<About />} />
         <Route path="/about#contact" element={<About />} />
-        <Route path="/about#experience" element={<About />} />
-        <Route path="/portfolio" element={<Portfolio />} />
+        <Route path="/blog" element={<Blog />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>

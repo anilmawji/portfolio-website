@@ -1,0 +1,62 @@
+.filled {
+  position: relative;
+}
+
+.filled input {
+  width: 100%;
+  height: 100%;
+  font-size: 16px;
+  outline: none;
+  border: none;
+  padding-top: 20px;
+  padding-left: 10px;
+  padding-bottom: 4px;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  border-bottom: 1px solid grey;
+  background: var(--main-bg-color);
+  color: white;
+}
+
+.filled label {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  padding: 4px;
+  padding-left: 14px;
+  color: grey;
+  pointer-events: none;
+  transition: all 0.2s ease;
+}
+
+.filled input:focus ~ label,
+.filled input:valid ~ label {
+  transform: translateY(-1em);
+  font-size: 12px;
+  padding-left: 10px;
+}
+
+.filled input:focus ~ label {
+  color: #56c769;
+}
+
+.filled .underline {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+}
+
+.filled .underline:before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: #56c769;
+  transform: scaleX(0);
+  transition: transform 0.2s ease;
+}
+
+.filled input:focus ~ .underline:before {
+  transform: scaleX(1);
+}

@@ -21,7 +21,7 @@
   );
 
   /* Calculate drawer height based on nav properties
-   * CSS animations require a hard value */
+   * CSS animations require hard values */
   --navbar-height-phone: calc(
     var(--navbar-thickness-phone) * var(--navlink-count) +
     var(--navbar-gap-mobile)      * var(--navlink-count) +

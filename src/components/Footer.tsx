@@ -28,7 +28,9 @@ interface FooterItemListPropTypes {
 const FooterItemList = ({ title, links }: FooterItemListPropTypes) => {
   return (
     <div className={styles.list}>
-      <h3>{title.toUpperCase()}</h3>
+      <h3 className={styles.title}>
+        {title}
+      </h3>
       <ul className={styles.links}>
         {Object.keys(links).map((name, index) => (
           <FooterItem key={index} text={name} url={links[name]} />

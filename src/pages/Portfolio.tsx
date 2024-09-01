@@ -4,7 +4,7 @@ import ProjectData from '../data/ProjectData';
 
 const Portfolio = () => {
   return (
-    <Page title="Portfolio" includeCircuitLine>
+    <Page title="Portfolio" headerId="projects" includeCircuitLine>
       <CardContainer
         className="portfolio"
         cardData={ProjectData}
