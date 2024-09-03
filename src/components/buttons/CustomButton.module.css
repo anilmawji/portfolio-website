@@ -1,36 +1,25 @@
 :root {
-  --button-border-size: 6px;
+  --button-border-size: 8px;
 }
 
-.container {
-  position: relative;
+.pushable {
+  background: #3c8b49;
+  border-radius: var(--button-border-size);
+  cursor: pointer;
 }
 
-.container * {
-  position: absolute;
+.front {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   height: 100%;
-}
-
-.button {
-  cursor: pointer;
   font-size: 1rem;
-  background-color: #56c769;
+  background: #56c769;
   border-radius: var(--button-border-size);
-  bottom: var(--button-border-size);
-  padding: 10px;
-  z-index: 1;
+  transform: translateY(-6px);
 }
 
-.button:active {
-  transform: translateY(var(--button-border-size));
-  -webkit-transform: translateY(var(--button-border-size));
-  -moz-transform: translateY(var(--button-border-size));
-  -ms-transform: translateY(var(--button-border-size));
-  -o-transform: translateY(var(--button-border-size));
-}
-
-.border {
-  background-color: #3c8b49;
-  border-radius: var(--button-border-size);
+.pushable:active .front {
+  transform: translateY(-2px);
 }

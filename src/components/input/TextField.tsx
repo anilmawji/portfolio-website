@@ -5,15 +5,17 @@ interface PropTypes extends React.InputHTMLAttributes<HTMLInputElement> {
   className?: string;
   text: string;
   id: string;
+  isRequired?: boolean;
 }
 
-const InputField = ({ className, text, id, ...restProps }: PropTypes) => {
+const InputField = ({ className, text, id, isRequired = false, ...restProps }: PropTypes) => {
+  // TODO use separate element for the "*" so you can hide it when input is focused and color it red
   return (
     <div className={joinClassNames(className, styles.filled)}>
-      <input type="text" name={id} id={id} required {...restProps} />
+      <input name={id} id={id} required {...restProps} />
       <div className={styles.underline} />
       <label htmlFor={id}>
-        {capitalizeFirstChar(text)}
+        {capitalizeFirstChar(text) + (isRequired ? " *" : "")}
       </label>
     </div>
   );

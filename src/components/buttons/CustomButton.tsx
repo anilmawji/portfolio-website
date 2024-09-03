@@ -7,15 +7,14 @@ interface PropTypes extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children?: React.ReactNode;
 }
 
-const CustomButton = ({ className, text, children }: PropTypes) => {
+const CustomButton = ({ className, text, children, ...restProps }: PropTypes) => {
   return (
-    <div className={joinClassNames(className, styles.container)}>
-      <button className={styles.button}>
+    <button className={joinClassNames(className, styles.pushable)} {...restProps}>
+      <div className={styles.front}>
         {text}
         {children}
-      </button>
-      <div className={styles.border} />
-    </div>
+      </div>
+    </button>
   );
 }
 

@@ -18,3 +18,12 @@
   outline: none;
   border: 2px solid #56c769;
 }
+
+/* Set autofill styling according to 
+   https://stackoverflow.com/questions/2781549/removing-input-background-colour-for-chrome-autocomplete */
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus {
+  -webkit-text-fill-color: white;
+  transition: background-color 5000s ease-in-out 0s;
+}

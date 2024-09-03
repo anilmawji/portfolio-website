@@ -8,9 +8,9 @@
   font-size: 16px;
   outline: none;
   border: none;
-  padding-top: 20px;
+  padding-top: 24px;
   padding-left: 10px;
-  padding-bottom: 4px;
+  padding-bottom: 10px;
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
   border-bottom: 1px solid grey;
@@ -22,8 +22,8 @@
   position: absolute;
   bottom: 10px;
   left: 0;
-  padding: 4px;
   padding-left: 14px;
+  padding-bottom: 8px;
   color: grey;
   pointer-events: none;
   transition: all 0.2s ease;
@@ -34,6 +34,7 @@
   transform: translateY(-1em);
   font-size: 12px;
   padding-left: 10px;
+  padding-bottom: 12px;
 }
 
 .filled input:focus ~ label {
@@ -59,4 +60,13 @@
 
 .filled input:focus ~ .underline:before {
   transform: scaleX(1);
+}
+
+/* Set autofill styling according to 
+   https://stackoverflow.com/questions/2781549/removing-input-background-colour-for-chrome-autocomplete */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-text-fill-color: white;
+  transition: background-color 5000s ease-in-out 0s;
 }
