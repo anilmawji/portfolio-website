@@ -18,11 +18,11 @@ const Page = ({ className, children, headerId, title, includeCircuitLine }: Prop
         {title &&
         <header className={styles.header} id={headerId ? headerId : ""}>
           <div className={styles.title_container}>
-            <span className={styles.lineL} />
+            <span className={styles.line_left} />
             <div className={styles.title}>
               {title}
             </div>
-            <span className={styles.lineR} />
+            <span className={styles.line_right} />
           </div>
         </header>}
         <div className={joinClassNames(styles.content, title ? styles.content_margin : "")}>

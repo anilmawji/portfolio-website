@@ -28,24 +28,22 @@
   min-width: 120px;
 }
 
-.lineL {
-  width: 12%;
-  min-width: 80px;
-  margin-right: 20px;
+.line_left,
+.line_right {
+  width: max(12%, 80px);
+  max-width: 300px;
   margin-top: 10px;
   height: 0;
   border: 1px solid white;
   opacity: 0.3;
 }
 
-.lineR {
-  width: 12%;
-  min-width: 80px;
+.line_left {
+  margin-right: 20px;
+}
+
+.line_right {
   margin-left: 20px;
-  margin-top: 10px;
-  height: 0;
-  border: 1px solid white;
-  opacity: 0.3;
 }
 
 .content {
