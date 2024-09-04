@@ -5,7 +5,7 @@ import { joinClassNames } from '../../utils';
 
 const BioSection = () => {
   return (
-    <div className={joinClassNames(styles.bio, "shadow")}>
+    <div className={joinClassNames(styles.bio, "animated_border", "shadow")}>
       <div className={styles.content}>
         <div className={styles.portrait}>
           <img src={portrait} />
@@ -17,7 +17,7 @@ const BioSection = () => {
             My journey in tech has led me through roles as a systems administrator and software developer.
             I've had the privilege of working at&nbsp;
             <a href="https://www.starburst.io/" target="_blank">a unicorn startup</a>,&nbsp;
-            <a href="https://www.arcurve.com/" target="_blank">a software development company</a>, and the federal government.
+            <a href="https://www.arcurve.com/" target="_blank">a software development company</a> and the federal government.
             Currently, I'm exploring the world of ethical hacking as I work towards earning my&nbsp;
             <a href="https://certifications.tcm-sec.com/pjpt/" target="_blank">PJPT certification</a>.
             <br /><br />
@@ -36,10 +36,10 @@ const BioSection = () => {
           </ul>
           <p>
             <br />
-            I'm passionate about cybersecurity and always eager to connect with others in the field.
+            I'm very passionate about cybersecurity and always eager to connect with others in the field.
             Feel free to&nbsp;
-            <NavLink to="/about#contact">reach out</NavLink> if you'd like to chat or collaborate, and stay tuned for plenty of&nbsp;
-            <NavLink to="/blog">cybersecurity content</NavLink>!
+            <NavLink to="/about#contact">reach out</NavLink> if you'd like to chat or collaborate, and stay tuned for&nbsp;
+            <NavLink to="/blog#posts">interesting content</NavLink>!
           </p>
         </div>
       </div>

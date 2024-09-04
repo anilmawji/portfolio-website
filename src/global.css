@@ -74,6 +74,42 @@ a {
   background-position: -19px -19px;
 }
 
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.animated_border::before,
+.animated_border::after {
+  --angle: 0deg;
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  z-index: -1;
+  top: calc(-1 * var(--pseudo-border-thickness));
+  right: calc(-1 * var(--pseudo-border-thickness));
+  bottom: calc(-1 * var(--pseudo-border-thickness));
+  left: calc(-1 * var(--pseudo-border-thickness));
+  border-radius: var(--bio-border-radius);
+  background-image: conic-gradient(from var(--angle), transparent 30%, #56c769);
+  animation: 3s spin linear infinite;
+}
+
+.animated_border::before {
+  filter: blur(1.5rem);
+  opacity: 0.4;
+}
+
+@keyframes spin {
+  from {
+    --angle: 0deg;
+  }
+  to {
+    --angle: 360deg;
+  }
+}
+
 .portfolio_cards {
   display: flex;
   position: relative;

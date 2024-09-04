@@ -20,36 +20,6 @@
   inherits: false;
 }
 
-.bio::before,
-.bio::after {
-  --angle: 0deg;
-  content: "";
-  position: absolute;
-  pointer-events: none;
-  z-index: -1;
-  top: calc(-1 * var(--pseudo-border-thickness));
-  right: calc(-1 * var(--pseudo-border-thickness));
-  bottom: calc(-1 * var(--pseudo-border-thickness));
-  left: calc(-1 * var(--pseudo-border-thickness));
-  border-radius: var(--bio-border-radius);
-  background-image: conic-gradient(from var(--angle), transparent 30%, #56c769);
-  animation: 3s spin linear infinite;
-}
-
-.bio::before {
-  filter: blur(1.5rem);
-  opacity: 0.4;
-}
-
-@keyframes spin {
-  from {
-    --angle: 0deg;
-  }
-  to {
-    --angle: 360deg;
-  }
-}
-
 .content {
   display: flex;
 }
@@ -76,17 +46,13 @@
 .text {
   display: flex;
   flex-direction: column;
-}
-
-.bio p {
-  overflow: hidden;
   padding: 10px;
 }
 
 .bio ul {
   display: block;
   list-style-type: disc;
-  margin-top: 0.5em;
+  margin-top: 0.5rem;
   margin-bottom: 1 em;
   margin-left: 0;
   margin-right: 0;
