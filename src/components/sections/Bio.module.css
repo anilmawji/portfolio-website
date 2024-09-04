@@ -73,12 +73,17 @@
   -o-transform: scale(1.02);
 }
 
+.text {
+  display: flex;
+  flex-direction: column;
+}
+
 .bio p {
   overflow: hidden;
   padding: 10px;
 }
 
-.bio p ul {
+.bio ul {
   display: block;
   list-style-type: disc;
   margin-top: 0.5em;
@@ -88,11 +93,11 @@
   padding-left: 40px;
 }
 
-.bio p a {
+.bio a {
   font-weight: 500;
 }
 
-.bio p a:hover {
+.bio a:hover {
   text-decoration: underline;
 }
 
@@ -126,7 +131,8 @@
     margin-bottom: 30px;
   }
 
-  .bio p {
+  .bio p,
+  .bio a {
     font-size: 14px;
   }
 }

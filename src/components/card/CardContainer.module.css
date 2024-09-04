@@ -14,7 +14,7 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: var(--card-gap);
+  gap: 30px;
 }
 
 @media (max-width: 600px) {

@@ -16,13 +16,16 @@ const Page = ({ className, children, headerId, title, includeCircuitLine }: Prop
     <div className={joinClassNames(styles.page, className)}>
       <main>
         {title &&
-          <header className={styles.header} id={headerId ? headerId : ""}>
+        <header className={styles.header} id={headerId ? headerId : ""}>
+          <div className={styles.title_container}>
+            <span className={styles.lineL} />
             <div className={styles.title}>
               {title}
             </div>
-          </header>
-        }
-        <div className={joinClassNames(styles.container, title ? styles.title_container : "")}>
+            <span className={styles.lineR} />
+          </div>
+        </header>}
+        <div className={joinClassNames(styles.content, title ? styles.content_margin : "")}>
           {includeCircuitLine && <CircuitLine className={styles.circuit} />}
           {children}
         </div>

@@ -9,16 +9,18 @@ const BioSection = () => {
         <div className={styles.portrait}>
           <img src={portrait} />
         </div>
-        <p>
-          Hi, I'm Anil, a student studying Computer Science at the University of Calgary.
-          <br />
-          <br />
-          My background includes experience as a systems administrator and a software developer.
-          Over time, I've had the privilege of working at a unicorn start-up, a software development company and the federal government.
-          Now I'm diving into ethical hacking as I work towards earning my PJPT.
-          <br />
-          <br />
-          Here are some of the certifications I currently hold:
+        <div className={styles.text}>
+          <p>
+            Hi, I'm Anil, a Computer Science student at the University of Calgary.
+            <br />
+            <br />
+            My journey in tech has led me through roles as a systems administrator and software developer.
+            I've had the privilege of working at a unicorn start-up, a software development company and the federal government.
+            Currently, I'm exploring the world of ethical hacking as I work towards earning my PJPT certification.
+            <br />
+            <br />
+            Some of the certifications I hold:
+          </p>
           <ul>
             <li>
               <a href="https://www.credly.com/badges/79231690-ded9-4d5f-be98-7f74f4ebe95c" target="_blank">
@@ -36,9 +38,11 @@ const BioSection = () => {
               </a>
             </li>
           </ul>
-          <br />
-          I'm always open to meeting new people, so feel free to reach out if you want to connect, and stay tuned for plenty of cybersecurity-related content!
-        </p>
+          <p>
+            <br />
+            I'm passionate about cybersecurity and always eager to connect with others in the field. Feel free to reach out if you'd like to chat or collaborate, and stay tuned for plenty of cybersecurity-related content!
+          </p>
+        </div>
       </div>
       <div className={styles.profiles}>
         <a href="https://stackoverflow.com/users/8902167/anil" target="_blank">

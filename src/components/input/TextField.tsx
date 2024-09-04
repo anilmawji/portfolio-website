@@ -3,12 +3,12 @@ import { joinClassNames, capitalizeFirstChar } from '../../utils';
 
 interface PropTypes extends React.InputHTMLAttributes<HTMLInputElement> {
   className?: string;
-  text: string;
   id: string;
+  text: string;
   isRequired?: boolean;
 }
 
-const InputField = ({ className, text, id, isRequired = false, ...restProps }: PropTypes) => {
+const InputField = ({ className, id, text, isRequired = false, ...restProps }: PropTypes) => {
   // TODO use separate element for the "*" so you can hide it when input is focused and color it red
   return (
     <div className={joinClassNames(className, styles.filled)}>
