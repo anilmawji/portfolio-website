@@ -1,9 +1,10 @@
 import styles from './Contact.module.css';
+import { useState } from 'react';
 import TextField from '../input/TextField';
 import CustomButton from '../buttons/CustomButton';
 import Icon, { IconType } from '../icons/Icon';
 import TextArea from '../../components/input/TextArea';
-import { useState } from 'react';
+import { joinClassNames } from '../../utils';
 
 const ContactSection = () => {
   const [result, setResult] = useState("");
@@ -32,44 +33,22 @@ const ContactSection = () => {
   }
 
   return (
-    <section className={styles.contact} id="contact">
-      <div className={styles.title}>
-        Get in Touch
+    <>
+      <div className={joinClassNames(styles.contact, "shadow")} id="contact">
+        <div className={styles.title}>Get in Touch</div>
+        <form className={styles.form} onSubmit={onSubmit}>
+          <TextField type="text" id="name" text="name" isRequired onChange={() => {}} />
+          <TextField type="email" id="email" text="email" isRequired onChange={() => {}} />
+          <TextField type="text" id="subject" text="subject" isRequired onChange={() => {}} />
+          <TextArea className={styles.message} id="message" placeholder="Message" isRequired />
+          <CustomButton className={styles.send} type="submit" text={"Send"} onClick={() => {}}>
+            <Icon className={styles.icon} type={IconType.SEND} size={24} />
+          </CustomButton>
+        </form>
+        <span>{result}</span>
+        <div className={styles.border}></div>
       </div>
-      <form className={styles.form} onSubmit={onSubmit}>
-        <TextField
-          type="text"
-          id="name"
-          text="name"
-          isRequired
-          onChange={() => {}}
-        />
-        <TextField
-          type="email"
-          id="email"
-          text="email"
-          isRequired
-          onChange={() => {}}
-        />
-        <TextField
-          type="text"
-          id="subject"
-          text="subject"
-          isRequired
-          onChange={() => {}}
-        />
-        <TextArea
-          className={styles.message}
-          id="message"
-          placeholder="Message"
-          isRequired
-        />
-        <CustomButton className={styles.send} type="submit" text={"Send"} onClick={() => {}}>
-          <Icon className={styles.icon} type={IconType.SEND} size={24} />
-        </CustomButton>
-      </form>
-      <span>{result}</span>
-    </section>
+    </>
   );
 }
 

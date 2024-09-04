@@ -13,7 +13,7 @@ interface PropTypes {
 
 const Page = ({ className, children, headerId, title, includeCircuitLine }: PropTypes) => {
   return (
-    <div className={joinClassNames("page", className)}>
+    <div className={joinClassNames(styles.page, className)}>
       <main>
         {title &&
           <header className={styles.header} id={headerId ? headerId : ""}>

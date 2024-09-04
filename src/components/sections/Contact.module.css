@@ -3,24 +3,8 @@
   flex-direction: column;
   width: min(1000px, 100%);
   background-color: var(--main-fg-color);
-  border-radius: 6px;
+  border-radius: 8px;
   padding: 30px;
-}
-
-.form {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  gap: 30px;
-  margin-bottom: 40px;
-}
-
-.form * {
-  width: 100%;
-}
-
-.message {
-  height: 200px;
 }
 
 .title {
@@ -28,6 +12,22 @@
   padding: 10px;
   margin-bottom: 30px;
   font-weight: bold;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.form * {
+  width: 100%;
+}
+
+.message {
+  min-height: 200px;
 }
 
 .send {
@@ -38,20 +38,27 @@
   height: 40px;
 }
 
+.send > :first-child {
+  padding-left: 6px;
+}
+
 .icon {
-  width: 22px;
-  height: 22px;
+  width: 24px;
+  height: 24px;
   stroke: green;
+  padding-top: 2px;
 }
 
 @media (max-width: 850px) {
+  .contact {
+    align-items: center;
+  }
+
   .title {
     font-size: 24px;
   }
-}
 
-@media (max-width: 600px) {
-  .contact {
+  .form {
     align-items: center;
   }
 

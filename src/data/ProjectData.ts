@@ -42,7 +42,7 @@ const ProjectData = [
     title: "Mystics",
     image: mystics_img,
     date: "August 19th, 2019",
-    body: "A 2D medieval-style RPG I made in my senior year of high school, designed to test the limits of JavaFX. Includes a full sprite animation system, A* pathfinding enemies, tilemaps, and an entity component system (ECS).",
+    body: "A 2D medieval-style RPG I made in my senior year of high school, designed to test the limits of JavaFX. Includes a full sprite animation system, A* pathfinding enemies, tilemaps and an entity component system (ECS).",
     link: "https://github.com/anilmawji/mystics",
     tags: ["Java", "JavaFX"]
   },

@@ -60,27 +60,20 @@ a {
   -webkit-user-drag: none;
 }
 
+.shadow {
+  box-shadow:
+    0 1px 1px hsl(0deg 0% 0% / 0.1),
+    0 2px 2px hsl(0deg 0% 0% / 0.1),
+    0 4px 4px hsl(0deg 0% 0% / 0.1),
+    0 8px 8px hsl(0deg 0% 0% / 0.1),
+    0 16px 16px hsl(0deg 0% 0% / 0.1);
+}
+
+/* Unused */
 .dotted-bg {
   background-image: radial-gradient(var(--dotted-bg-color) 1px, transparent 0);
   background-size: 20px 20px;
   background-position: -19px -19px;
-}
-
-.page {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  margin-top: var(--navbar-thickness);
-}
-
-.portfolio {
-  display: flex;
-  position: relative;
-  margin-top: 150px;
-  margin-bottom: 50px;
-  height: 100%;
-  z-index: 3;
-  margin: 0 var(--home-margin);
 }
 
 .notFound {

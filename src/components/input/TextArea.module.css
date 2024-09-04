@@ -5,7 +5,7 @@
   padding: 14px;
   border:  none;
   overflow: hidden;
-  border-radius: 6px;
+  border-radius: 8px;
   color: white;
   background-color: var(--main-bg-color);
 }

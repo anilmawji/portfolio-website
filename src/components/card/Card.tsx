@@ -1,6 +1,7 @@
 import styles from './Card.module.css';
 import Chip from '../Chip';
 import { readingTime } from '../../utils';
+import { joinClassNames } from '../../utils';
 
 const BULLET_POINT = String.fromCharCode(8226);
 
@@ -25,7 +26,7 @@ const Card = ({ data, includeReadingTime }: PropTypes) => {
   }
 
   return (
-    <a className={styles.card} href={data.link} target="_blank">
+    <a className={joinClassNames(styles.card, "shadow")} href={data.link} target="_blank">
       <img src={data.image} />
       <div className={styles.content}>
         <div className={styles.text}>

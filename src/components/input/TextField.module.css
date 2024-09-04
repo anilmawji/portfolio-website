@@ -11,8 +11,8 @@
   padding-top: 24px;
   padding-left: 10px;
   padding-bottom: 10px;
-  border-top-left-radius: 6px;
-  border-top-right-radius: 6px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
   border-bottom: 1px solid grey;
   background: var(--main-bg-color);
   color: white;
