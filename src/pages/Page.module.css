@@ -33,8 +33,6 @@
   width: max(12%, 80px);
   max-width: 300px;
   margin-top: 10px;
-  height: 0;
-  border: 1px solid white;
   opacity: 0.3;
 }
 
