@@ -1,9 +1,0 @@
-.projects {
-  display: flex;
-  position: relative;
-  margin-top: 150px;
-  margin-bottom: 50px;
-  height: 100%;
-  z-index: 3;
-  margin: 0 var(--home-margin);
-}

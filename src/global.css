@@ -76,6 +76,29 @@ a {
   background-position: -19px -19px;
 }
 
-.notFound {
+.not_found_page p {
   font-size: 20px;
+}
+
+.about_page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  margin: 0 var(--home-margin);
+}
+
+.blog_page p {
+  display: flex;
+  justify-content: center;
+}
+
+.portfolio_cards {
+  display: flex;
+  position: relative;
+  margin-top: 150px;
+  margin-bottom: 50px;
+  height: 100%;
+  z-index: 3;
+  margin: 0 var(--home-margin);
 }

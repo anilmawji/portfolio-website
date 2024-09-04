@@ -2,7 +2,6 @@ import useBoolean from '../../hooks/useBoolean';
 import CustomNavLink from './CustomNavLink';
 import styles from './Navbar.module.css';
 import HamburgerButton from './HamburgerButton';
-import SearchBar from '../SearchBar';
 
 interface PropTypes {
   drawerDelay?: number;
@@ -29,7 +28,6 @@ const Navbar = ({ drawerDelay = 250 }: PropTypes) => {
         <CustomNavLink to="/about#bio" label="About" onClick={closeHamburgerDrawer} />
         <CustomNavLink to="/about#contact" label="Contact" onClick={closeHamburgerDrawer} />
         <CustomNavLink to="/blog#posts" label="Blog" onClick={closeHamburgerDrawer} />
-        {/* <SearchBar /> */}
       </ul>
       <div className={styles.shadow} />
     </nav>

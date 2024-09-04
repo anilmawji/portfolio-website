@@ -41,6 +41,8 @@ const ContactSection = () => {
           <TextField type="email" id="email" text="email" isRequired onChange={() => {}} />
           <TextField type="text" id="subject" text="subject" isRequired onChange={() => {}} />
           <TextArea className={styles.message} id="message" placeholder="Message" isRequired />
+          <div className="h-captcha" data-captcha="true"></div>
+          <button type="submit">Submit</button>
           <CustomButton className={styles.send} type="submit" text={"Send"} onClick={() => {}}>
             <Icon className={styles.icon} type={IconType.SEND} size={24} />
           </CustomButton>

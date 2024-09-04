@@ -2,8 +2,8 @@ import Page from "./Page";
 
 const NotFound = () => {
   return (
-    <Page>
-      <p className="notFound">
+    <Page className="not_found_page">
+      <p>
         Error 404: No page exists at this path.
       </p>
     </Page>
