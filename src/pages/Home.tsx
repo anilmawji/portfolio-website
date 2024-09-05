@@ -13,7 +13,6 @@ const Home = () => {
   return (
     <Page>
       <div className={styles.background}>
-        {/* <SvgFox className={styles.fox} /> */}
         <ParticleCanvas
           className={styles.canvas}
           particleRadius={2}

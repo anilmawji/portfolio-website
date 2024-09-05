@@ -15,8 +15,7 @@ const Page = ({ className, children, headerId, title, includeCircuitLine }: Prop
   return (
     <div className={joinClassNames(styles.page, className)}>
       <main>
-        {title &&
-        <header className={styles.header} id={headerId ? headerId : ""}>
+        {title && <header className={styles.header} id={headerId ? headerId : ""}>
           <div className={styles.title_container}>
             <hr className={styles.line_left} />
             <div className={styles.title}>{title}</div>

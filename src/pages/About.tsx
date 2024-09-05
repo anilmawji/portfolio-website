@@ -6,26 +6,31 @@ import { joinClassNames } from '../utils';
 import useThrottle from '../hooks/useThrottle';
 
 const About = () => {
-  const [invisibleBorder, setInvisibleBorder] = useState(false);
-  const throttledInvisibleBorder = useThrottle(invisibleBorder, 500);
-
-  const handleScroll = () => {
-    setInvisibleBorder(window.scrollY >= 350);
-  }
+  const [isBorderInvisible, setIsBorderInvisible] = useState(false);
+  const throttledBorderVisibility = useThrottle(isBorderInvisible, 500);
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
+    const handleScroll = () => setIsBorderInvisible(window.scrollY >= 350);
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    }
-  }, [handleScroll]);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <Page title="About Me" headerId="bio">
       <div className="about_sections">
-        <BioSection className={joinClassNames(throttledInvisibleBorder ? "invisible_border" : "", "animated_border", "shadow")} />
-        <ContactSection className={joinClassNames(!throttledInvisibleBorder ? "invisible_border" : "", "animated_border", "shadow")} />
+        <BioSection
+          className={joinClassNames(
+            throttledBorderVisibility ? "invisible_border shadow" : "",
+            "animated_border"
+          )}
+        />
+        <ContactSection
+          className={joinClassNames(
+            !throttledBorderVisibility ? "invisible_border shadow" : "",
+            "animated_border"
+          )}
+        />
       </div>
     </Page>
   );
