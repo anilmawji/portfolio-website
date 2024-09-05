@@ -4,7 +4,6 @@ import ParticleCanvas from '../components/canvas/ParticleCanvas';
 import HeroSection from '../components/sections/Hero';
 import CardContainer from '../components/card/CardContainer';
 import BlogData from '../data/BlogData';
-import SvgFox from '../components/icons/SvgFox';
 import CircuitLine from '../components/CircuitLine';
 import { getCssValue, hexToRgb } from '../utils';
 
@@ -14,7 +13,7 @@ const Home = () => {
   return (
     <Page>
       <div className={styles.background}>
-        <SvgFox className={styles.fox} />
+        {/* <SvgFox className={styles.fox} /> */}
         <ParticleCanvas
           className={styles.canvas}
           particleRadius={2}

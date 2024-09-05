@@ -1,6 +1,8 @@
 import styles from './Bio.module.css';
 import portrait from '../../assets/me.jpg';
 import { NavLink } from 'react-router-dom';
+import { StackOverflowCard, SOCardTheme } from '../../components/card/StackOverflowCard';
+import TryHackMeCard from '../../components/card/TryHackMeCard';
 import { joinClassNames } from '../../utils';
 
 const BioSection = () => {
@@ -44,12 +46,8 @@ const BioSection = () => {
         </div>
       </div>
       <div className={styles.profiles}>
-        <a href="https://stackoverflow.com/users/8902167/anil" target="_blank">
-          <img src="https://stackoverflow.com/users/flair/8902167.png?theme=dark" width="208" height="58" alt="Profile for Anil at Stack Overflow, Q&amp;A for professional and enthusiast programmers" title="Profile for Anil at Stack Overflow, Q&amp;A for professional and enthusiast programmers"/>
-        </a>
-        <a href="https://tryhackme.com/p/Cyb3rHusky" target="_blank">
-          <img src="https://tryhackme-badges.s3.amazonaws.com/Cyb3rHusky.png" alt="TryHackMe"/>
-        </a>
+        <StackOverflowCard user_id="8902167" theme={SOCardTheme.Dark} />
+        <TryHackMeCard username="Cyb3rHusky" />
       </div>
     </div>
   );

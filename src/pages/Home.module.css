@@ -1,5 +1,5 @@
 :root {
-  --home-bg-height: 450px;
+  --home-bg-height: 500px;
   --home-margin: 10%;
 }
 
@@ -41,11 +41,11 @@
 
 .hero {
   margin-left: var(--home-margin);
-  margin-top: 60px;
+  margin-top: 100px;
   z-index: 2;
 }
 
-.fox {
+/* .fox {
   position: absolute;
   left: calc(var(--home-margin) + 220px);
   width: 620px;
@@ -54,7 +54,7 @@
   z-index: 1;
   top: -50px;
   opacity: 0.5;
-}
+} */
 
 .canvas {
   position: absolute;
@@ -72,11 +72,14 @@
 }
 
 .circuit {
+  top: 20px;
   left: calc((var(--home-margin) - var(--circuit-icon-size) + 27px) / 2);
 }
 
 .featured {
-  margin: 0 var(--home-margin);
+  margin-top: 20px;
+  margin-left: var(--home-margin);
+  margin-right: var(--home-margin);
   z-index: 3;
 }
 
@@ -101,8 +104,12 @@
 
 @media(max-width: 550px) {
   .hero {
-    margin-top: 30px;
+    margin-top: 80px;
     margin-left: 20px;
+  }
+
+  .featured {
+    margin-top: 60px;
   }
 
   .featured .title {

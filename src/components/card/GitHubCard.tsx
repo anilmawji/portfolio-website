@@ -1,5 +1,3 @@
-import styles from './Card.module.css';
-
 async function fetchData(response: string) {
   const data = await fetch(`https://api.github.com/users/${response}`, {
       method: 'GET',
@@ -14,7 +12,7 @@ interface PropTypes {
 
 const GitHubCard = ({ username }: PropTypes) => {
   return (
-    <a className={styles.card} href={"github.com/anilmawji"} target="_blank">
+    <a href={"github.com/anilmawji"} target="_blank">
       <div>
 
       </div>
@@ -22,4 +20,4 @@ const GitHubCard = ({ username }: PropTypes) => {
   );
 }
 
-export default GitHubCard;
+export { GitHubCard };

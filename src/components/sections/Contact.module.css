@@ -49,6 +49,10 @@
   padding-top: 2px;
 }
 
+.result {
+  margin-top: 20px;
+}
+
 @media (max-width: 850px) {
   .contact {
     align-items: center;
@@ -64,5 +68,9 @@
 
   .message {
     height: 300px;
+  }
+
+  .captcha {
+    width: auto;
   }
 }
