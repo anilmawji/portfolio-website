@@ -77,7 +77,7 @@ const Footer = () => {
       </div>
       <hr className={styles.line}/>
       <p className={styles.copyright}>
-        &copy; 2024 Site designed & built by Anil Mawji.
+        &copy; 2024 site designed & built by Anil Mawji.
         <br/>
         Super Mario&trade; is a trademark of Nintendo&reg; which does not sponsor, authorize or endorse this site.
         <br/>

@@ -94,11 +94,17 @@ a {
   border-radius: var(--bio-border-radius);
   background-image: conic-gradient(from var(--angle), transparent 30%, #56c769);
   animation: 3s spin linear infinite;
+  transition: 0.5s opacity ease;
 }
 
 .animated_border::before {
   filter: blur(1.5rem);
   opacity: 0.4;
+}
+
+.invisible_border::before,
+.invisible_border::after {
+  opacity: 0;
 }
 
 @keyframes spin {

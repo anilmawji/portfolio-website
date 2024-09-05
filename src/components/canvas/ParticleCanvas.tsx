@@ -103,6 +103,7 @@ const ParticleCanvas = ({
   const draw = (ctx: CanvasRenderingContext2D) => {
     if (!particles) return;
     clear(ctx);
+
     particles.forEach(p => {
       p.tick(ctx.canvas, mouse, mousePushRadius);
       p.render(ctx);
@@ -112,6 +113,7 @@ const ParticleCanvas = ({
 
   const resize = (ctx: CanvasRenderingContext2D) => {
     clearTimeout(particleResetTimeoutId);
+
     particleResetTimeoutId = window.setTimeout(() => {
       particles = initParticles(ctx, particleRadius, particleRgbColor);
       particles.forEach(p => {
@@ -124,6 +126,7 @@ const ParticleCanvas = ({
 
   const handleMouseMove = (e: MouseEvent) => {
     e.preventDefault();
+
     mouse.x = e.clientX;
     mouse.y = e.clientY;
     mouse.moving = true;

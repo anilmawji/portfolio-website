@@ -17,9 +17,8 @@ const App = () => {
 
   return (
     <>
-    <script src="https://web3forms.com/client/script.js" async defer></script>
       <Navbar />
-      <ScrollToAnchor delay={250} offset={NAVBAR_THICKNESS}/>
+      <ScrollToAnchor delay={250} offset={NAVBAR_THICKNESS + 2}/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/portfolio" element={<Portfolio />} />
