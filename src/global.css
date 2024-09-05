@@ -93,7 +93,7 @@ a {
   left: calc(-1 * var(--pseudo-border-thickness));
   border-radius: var(--bio-border-radius);
   background-image: conic-gradient(from var(--angle), transparent 30%, #56c769);
-  animation: 3s spin linear infinite;
+  animation: 8s spin linear infinite;
   transition: 0.5s opacity ease;
 }
 

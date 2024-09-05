@@ -26,6 +26,11 @@ export function clampMax(value: number, max: number) {
 |#                                                                     #|
 \*#####################################################################*/
 
+export function joinClassNames(...classNames: (string | undefined)[]): string {
+  // Use filter to remove all undefined strings from the list of class names
+  return classNames.filter(s => s).join(" ");
+}
+
 export function timeout(delay: number): Promise<void> {
   return new Promise(res => setTimeout(res, delay));
 }
@@ -64,9 +69,29 @@ export function readingTime(text: string, wpm: number = 225): string {
   return time >= 1 ? time.toString() + " min" : "Less than 1 min";
 }
 
-export function joinClassNames(...classNames: (string | undefined)[]): string {
-  // Use filter to remove all undefined strings from the list of class names
-  return classNames.filter(s => s).join(" ");
+type DebounceFunction = (...args: any[]) => void;
+
+export function debounce<T extends DebounceFunction>(func: T, delay: number, immediate: boolean = false): T {
+  let timeout: number | null = null;
+
+  return function(this: any, ...args: Parameters<T>): void {
+    const context = this;
+    const callNow = immediate && !timeout;
+
+    if (timeout) {
+      clearTimeout(timeout);
+    }
+    timeout = setTimeout(() => {
+      timeout = null;
+      if (!immediate) {
+        func.apply(context, args);
+      }
+    }, delay);
+
+    if (callNow) {
+      func.apply(context, args);
+    }
+  } as T;
 }
 
 /*#####################################################################*\

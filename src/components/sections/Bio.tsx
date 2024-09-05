@@ -44,7 +44,7 @@ const BioSection = ({ className }: PropTypes) => {
             <br />
             I'm very passionate about cybersecurity and always eager to connect with others in the field.
             Feel free to&nbsp;
-            <NavLink to="/about#contact">reach out</NavLink> if you'd like to chat or collaborate, and stay tuned for&nbsp;
+            <NavLink to="/about#contact">reach out</NavLink> if you'd like to chat or collaborate, and stay tuned for some&nbsp;
             <NavLink to="/blog#posts">interesting content</NavLink>!
           </p>
         </div>

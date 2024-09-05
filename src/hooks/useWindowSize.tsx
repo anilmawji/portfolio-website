@@ -1,25 +1,39 @@
 import { useState, useEffect } from 'react';
+import { debounce } from '../utils';
 
-const useWindowSize = () => {
-  const [windowSize, setWindowSize] = useState({
-    width: window.innerWidth,
-    height: window.innerHeight,
-  });
+interface WindowSize {
+  width: number;
+  height: number;
+}
 
-  const updateWindowSize = () => {
-    setWindowSize({
+type WindowSizeCallback = (size: WindowSize) => void;
+
+interface UseWindowSizeOptions {
+  callback?: WindowSizeCallback;
+  debounceDelay?: number;
+}
+
+const useWindowSize = ({ callback, debounceDelay = 5000 }: UseWindowSizeOptions) => {
+  const getWindowSize = () => {
+    return {
       width: window.innerWidth,
       height: window.innerHeight,
-    });
-  };
+    };
+  }
+
+  const [windowSize, setWindowSize] = useState(getWindowSize);
 
   useEffect(() => {
-    window.addEventListener('resize', updateWindowSize);
+    // Debounce to avoid the function fire multiple times
+    const handleResizeDebounced = debounce(() => {
+      const newSize = getWindowSize();
+      setWindowSize(newSize);
+      callback?.(newSize);
+    }, debounceDelay);
 
-    return () => {
-      window.removeEventListener('resize', updateWindowSize);
-    };
-  }, []);
+    window.addEventListener("resize", handleResizeDebounced);
+    return () => window.removeEventListener("resize", handleResizeDebounced);
+  }, [callback, debounceDelay]);
 
   return windowSize;
 }
