@@ -7,10 +7,15 @@ import TextArea from '../../components/input/TextArea';
 import HCaptcha from '@hcaptcha/react-hcaptcha';
 import { joinClassNames } from '../../utils';
 
+// Non-sensitive identifiers
 const hCaptchaSiteKey = "d574842a-aa1e-4d90-a8b8-c9aeefb6e09c";
-const web3FormsKey = "7dbbe70d-2eef-4510-9f7a-e769758a79ae";
+const web3FormsAccessKey = "7dbbe70d-2eef-4510-9f7a-e769758a79ae";
 
-const ContactSection = () => {
+interface PropTypes {
+  className?: string;
+}
+
+const ContactSection = ({ className }: PropTypes) => {
   const [result, setResult] = useState("");
 
   const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
@@ -18,7 +23,7 @@ const ContactSection = () => {
     setResult("Sending....");
     const formData = new FormData(event.currentTarget);
 
-    formData.append("access_key", web3FormsKey);
+    formData.append("access_key", web3FormsAccessKey);
 
     const response = await fetch("https://api.web3forms.com/submit", {
       method: "POST",
@@ -37,17 +42,17 @@ const ContactSection = () => {
   }
 
   return (
-    <div className={joinClassNames(styles.contact, "shadow")} id="contact">
+    <div className={joinClassNames(className, styles.contact)} id="contact">
       <div className={styles.title}>Get in Touch</div>
       <form className={styles.form} onSubmit={onSubmit}>
-        <TextField type="text" id="name" text="name" isRequired onChange={() => {}} />
-        <TextField type="email" id="email" text="email" isRequired onChange={() => {}} />
-        <TextField type="text" id="subject" text="subject" isRequired onChange={() => {}} />
+        <TextField type="text" id="name" text="name" isRequired />
+        <TextField type="email" id="email" text="email" isRequired />
+        <TextField type="text" id="subject" text="subject" isRequired />
         <TextArea className={styles.message} id="message" placeholder="Message" isRequired />
         <div className={styles.captcha}>
           <HCaptcha sitekey={hCaptchaSiteKey} theme="dark" />
         </div>
-        <CustomButton className={styles.send} type="submit" text={"Send"} onClick={() => {}}>
+        <CustomButton className={styles.send} type="submit" text={"Send"}>
           <Icon className={styles.icon} type={IconType.SEND} size={24} />
         </CustomButton>
       </form>

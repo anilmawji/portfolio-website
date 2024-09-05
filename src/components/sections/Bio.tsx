@@ -5,9 +5,13 @@ import { StackOverflowCard, SOCardTheme } from '../../components/card/StackOverf
 import TryHackMeCard from '../../components/card/TryHackMeCard';
 import { joinClassNames } from '../../utils';
 
-const BioSection = () => {
+interface PropTypes {
+  className?: string;
+}
+
+const BioSection = ({ className }: PropTypes) => {
   return (
-    <div className={joinClassNames(styles.bio, "animated_border", "shadow")}>
+    <div className={joinClassNames(className, styles.bio)}>
       <div className={styles.content}>
         <div className={styles.portrait}>
           <img src={portrait} />
