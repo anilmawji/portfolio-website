@@ -14,7 +14,7 @@ const CircuitLine = ({ className }: PropTypes) => {
     <div className={joinClassNames(styles.circuit, className)}>
       <SvgCircuit className={styles.circuit_top} color={CIRCUIT_SVG_COLOR} />
       <div className={styles.line} />
-      <SvgCircuit className={styles.circuit_bottom} color={CIRCUIT_SVG_COLOR}/>
+      <SvgCircuit className={styles.circuit_bottom} color={CIRCUIT_SVG_COLOR} />
     </div>
   );
 }
