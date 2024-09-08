@@ -44,7 +44,7 @@
 .filled .underline {
   position: absolute;
   width: 100%;
-  height: 2px;
+  height: 1px;
   bottom: 0;
 }
 
@@ -62,11 +62,10 @@
   transform: scaleX(1);
 }
 
-/* Set autofill styling according to 
-   https://stackoverflow.com/questions/2781549/removing-input-background-colour-for-chrome-autocomplete */
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus {
+/* Autofill styling according */
+.filled input:-webkit-autofill,
+.filled input:-webkit-autofill:hover,
+.filled input:-webkit-autofill:focus {
   -webkit-text-fill-color: white;
   transition: background-color 5000s ease-in-out 0s;
 }

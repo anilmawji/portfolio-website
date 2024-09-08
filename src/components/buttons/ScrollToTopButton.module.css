@@ -9,7 +9,7 @@
   align-items: center;
   width: var(--scroll-button-size);
   height: var(--scroll-button-size);
-  background-color: var(--main-fg-color);
+  background: var(--main-fg-color);
   border-radius: 9999px;
   outline: 3px solid #4f4f4f;
   transition: outline-color var(--scroll-button-hover-time) ease-in-out;

@@ -26,7 +26,7 @@ const Card = ({ data, includeReadingTime }: PropTypes) => {
   }
 
   return (
-    <a className={joinClassNames(styles.card, "shadow")} href={data.link} target="_blank">
+    <a className={joinClassNames(styles.card, "shadow_bottom")} href={data.link} target="_blank">
       <img src={data.image} />
       <div className={styles.content}>
         <div className={styles.text}>

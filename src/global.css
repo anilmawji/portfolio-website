@@ -14,22 +14,41 @@
   background-color: var(--btn-color);
 }
 
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--main-fg-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: grey;
+  border-radius: 4px;
+  border: 2px solid black;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--grey);
+}
+
+/* TODO: Clean up */
 :root {
   --main-fg-color: #191919;
-  --main-fg-shadow-color: #191919;
   --main-bg-color: #252525;
   --neon-green: #6CFA84;
   --neon-green2: #91FC9F;
   --btn-color: #44D25C;
   --grey: #ACABAB;
-  --stack-overflow: #FF9900;
-  --linkedin: #40beff;
-  --tryhackme: red;
+  --stack-overflow-color: #FF9900;
+  --linkedin-color: #40beff;
+  --tryhackme-color: red;
+  --box-shadow-color: hsl(0deg 0% 0% / 0.1);
+  --glow-border-radius: 1px;
 }
 
-/* Ensure the main content takes all available space, pushing the footer to the bottom */
 main {
-  flex: 1;
+  flex: 1; /* Ensure main content takes all available space, pushing footer to the bottom */
 }
 
 body {
@@ -37,18 +56,11 @@ body {
   color: white;
 }
 
-button {
-  background-color: var(--main-bg-color);
-  color: white;
-  border: none;
-}
-
 a {
-  color: white;
   text-decoration: none;
 }
 
-.noselect {  
+.disable_select {  
   user-select: none;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -58,53 +70,28 @@ a {
   -webkit-user-drag: none;
 }
 
-.shadow {
+.shadow_bottom {
   box-shadow:
-    0 1px 1px hsl(0deg 0% 0% / 0.1),
-    0 2px 2px hsl(0deg 0% 0% / 0.1),
-    0 4px 4px hsl(0deg 0% 0% / 0.1),
-    0 8px 8px hsl(0deg 0% 0% / 0.1),
-    0 16px 16px hsl(0deg 0% 0% / 0.1);
+    0 1px 1px var(--box-shadow-color),
+    0 2px 2px var(--box-shadow-color),
+    0 4px 4px var(--box-shadow-color),
+    0 8px 8px var(--box-shadow-color),
+    0 16px 16px var(--box-shadow-color);
 }
 
-/* Unused */
-.dotted-bg {
-  background-image: radial-gradient(var(--dotted-bg-color) 1px, transparent 0);
-  background-size: 20px 20px;
-  background-position: -19px -19px;
+.shadow_top {
+  box-shadow:
+    0 -1px 1px var(--box-shadow-color),
+    0 -2px 2px var(--box-shadow-color),
+    0 -4px 4px var(--box-shadow-color),
+    0 -8px 8px var(--box-shadow-color),
+    0 -16px 16px var(--box-shadow-color);
 }
 
 @property --angle {
   syntax: "<angle>";
   initial-value: 0deg;
   inherits: false;
-}
-
-.animated_border::before,
-.animated_border::after {
-  --angle: 0deg;
-  content: "";
-  position: absolute;
-  pointer-events: none;
-  z-index: -1;
-  top: calc(-1 * var(--pseudo-border-thickness));
-  right: calc(-1 * var(--pseudo-border-thickness));
-  bottom: calc(-1 * var(--pseudo-border-thickness));
-  left: calc(-1 * var(--pseudo-border-thickness));
-  border-radius: var(--bio-border-radius);
-  background-image: conic-gradient(from var(--angle), transparent 30%, #56c769);
-  animation: 8s spin linear infinite;
-  transition: 0.5s opacity ease;
-}
-
-.animated_border::before {
-  filter: blur(1.5rem);
-  opacity: 0.4;
-}
-
-.invisible_border::before,
-.invisible_border::after {
-  opacity: 0;
 }
 
 @keyframes spin {
@@ -116,14 +103,44 @@ a {
   }
 }
 
-.portfolio_cards {
+.glow_border::before,
+.glow_border::after {
+  --angle: 0deg;
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  top: calc(-1 * var(--glow-border-radius));
+  right: calc(-1 * var(--glow-border-radius));
+  bottom: calc(-1 * var(--glow-border-radius));
+  left: calc(-1 * var(--glow-border-radius));
+  z-index: -1;
+  border-radius: 8px;
+  background-image:
+    conic-gradient(
+      from var(--angle),
+      transparent, #56c769,
+      transparent, #56c769,
+      transparent
+    );
+  animation: 8s spin linear infinite;
+  transition: 0.5s opacity ease;
+}
+
+.glow_border::before {
+  filter: blur(1rem);
+  opacity: 0.5;
+}
+
+.dotted_bg {
+  background-image: radial-gradient(var(--dotted-bg-color) 1px, transparent 0);
+  background-size: 20px 20px;
+  background-position: -19px -19px;
+}
+
+.projects {
   display: flex;
-  position: relative;
-  margin-top: 150px;
-  margin-bottom: 50px;
-  height: 100%;
-  z-index: 3;
-  margin: 0 var(--home-margin);
+  margin-left: var(--home-margin);
+  margin-right: var(--home-margin);
 }
 
 .about_sections {
@@ -137,8 +154,4 @@ a {
 .blog_page p {
   display: flex;
   justify-content: center;
-}
-
-.not_found_page p {
-  font-size: 20px;
 }

@@ -3,6 +3,7 @@
 }
 
 nav li div {
+  width: 100%;
   height: calc(100% - var(--hover-line-thickness));
 }
 
@@ -16,21 +17,26 @@ nav a[class*="active"] {
   color: var(--neon-green);
 }
 
+nav a[class*="active"] ~ .underline2 {
+  width: 0;
+}
+
 /* Underline starts collapsed by default */
-.hover-line {
+.underline {
   width: 0;
   height: var(--hover-line-thickness);
   background-color: var(--neon-green);
   transition: width 120ms ease-out;
 }
 
-/* Start expanding underline on mouse down */
-/* nav div[class*="mouseDown"] div.hover-line {
+/* Start expanding underline on mouse down
+   Broken due to bug in Chromium browsers, see https://issues.chromium.org/issues/361847240 */
+/* nav div[class*="mouseDown"] div.underline {
   width: 100%;
   transition-duration: 3s;
 } */
 
 /* Underline remains expanded when navlink is selected */
-nav a[class*="active"] + div.hover-line {
+nav a[class*="active"] ~ .underline {
   width: 100%;
 }

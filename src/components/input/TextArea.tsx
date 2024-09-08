@@ -1,20 +1,23 @@
 import styles from './TextArea.module.css';
-import { joinClassNames } from '../../utils';
+import { joinClassNames, toTitleCase } from '../../utils';
 
 interface PropTypes extends React.InputHTMLAttributes<HTMLTextAreaElement> {
   className?: string;
-  id: string;
   isRequired?: boolean;
 }
 
-const TextArea = ({ className, id, isRequired = false, ...restProps }: PropTypes) => {
+const TextArea = ({ className, id, placeholder, isRequired, ...restProps }: PropTypes) => {
   return (
-    <textarea
-      className={joinClassNames(className, styles.filled)}
-      id={id}
-      name={id}
-      {...restProps}
-    />
+    <div className={joinClassNames(className, styles.filled)}>
+      <textarea
+        id={id}
+        name={id}
+        placeholder={placeholder ? toTitleCase(placeholder) + (isRequired ? " *" : "") : ""}
+        required={isRequired}
+        {...restProps}
+      />
+      <span className={styles.border}></span>
+    </div>
   );
 }
 

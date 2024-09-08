@@ -28,9 +28,7 @@ const Typewriter = ({ text, delay, looped }: PropTypes) => {
   }, [currentIndex, delay, looped, text]);
 
   return (
-    <span>
-      {currentText}
-    </span>
+    <span>{currentText}</span>
   );
 }
 

@@ -1,20 +1,24 @@
 import styles from './TextField.module.css';
-import { joinClassNames, capitalizeFirstChar } from '../../utils';
+import { joinClassNames, toTitleCase } from '../../utils';
 
 interface PropTypes extends React.InputHTMLAttributes<HTMLInputElement> {
   className?: string;
-  id: string;
-  text: string;
+  placeholder: string;
   isRequired?: boolean;
 }
 
-const InputField = ({ className, id, text, isRequired = false, ...restProps }: PropTypes) => {
+const InputField = ({ className, id, placeholder, isRequired, ...restProps }: PropTypes) => {
   return (
     <div className={joinClassNames(className, styles.filled)}>
-      <input name={id} id={id} required {...restProps} />
+      <input
+        id={id}
+        name={id}
+        required={isRequired}
+        {...restProps}
+      />
       <div className={styles.underline} />
       <label htmlFor={id}>
-        {capitalizeFirstChar(text) + (isRequired ? " *" : "")}
+        {toTitleCase(placeholder) + (isRequired ? " *" : "")}
       </label>
     </div>
   );

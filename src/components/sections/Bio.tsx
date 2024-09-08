@@ -18,16 +18,16 @@ const BioSection = ({ className }: PropTypes) => {
         </div>
         <div className={styles.text}>
           <p>
-            Hi, I'm Anil, a Computer Science student at the University of Calgary.
+            Hi, I'm Anil, a Computer Science student at the University of Calgary with a deep passion for cybersecurity.
             <br /><br />
             My journey in tech has led me through roles as a systems administrator and software developer.
-            I've had the privilege of working at&nbsp;
+            Over time, I've had the privilege of working at&nbsp;
             <a href="https://www.starburst.io/" target="_blank">a unicorn startup</a>,&nbsp;
             <a href="https://www.arcurve.com/" target="_blank">a software development company</a> and the federal government.
-            Currently, I'm exploring the world of ethical hacking as I work towards earning my&nbsp;
-            <a href="https://certifications.tcm-sec.com/pjpt/" target="_blank">PJPT certification</a>.
+            Currently, I'm diving into the world of ethical hacking as I work towards earning my&nbsp;
+            <a href="https://certifications.tcm-sec.com/pjpt/" target="_blank">PJPT certification.</a>
             <br /><br />
-            Some of the certifications I hold:
+            Here is a list of the certifications I hold:
           </p>
           <ul>
             <li>
@@ -42,10 +42,10 @@ const BioSection = ({ className }: PropTypes) => {
           </ul>
           <p>
             <br />
-            I'm very passionate about cybersecurity and always eager to connect with others in the field.
+            I'm always eager to connect with fellow tech enthusiasts.
             Feel free to&nbsp;
-            <NavLink to="/about#contact">reach out</NavLink> if you'd like to chat or collaborate, and stay tuned for some&nbsp;
-            <NavLink to="/blog#posts">interesting content</NavLink>!
+            <NavLink to="/about#contact">reach out</NavLink> if you'd like to chat or collaborate and stay tuned for some&nbsp;
+            <NavLink to="/blog#posts">interesting cybersecurity content!</NavLink>
           </p>
         </div>
       </div>

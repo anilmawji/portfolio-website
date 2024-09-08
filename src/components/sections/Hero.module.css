@@ -9,16 +9,19 @@
 }
 
 .name {
+  display: flex;
   font-size: 50px;
   font-weight: bold;
   color: var(--neon-green2);
 }
 
-.bracket {
-  width: .6em;
-  display: inline;
+.bracket,
+.bracket svg {
   position: relative;
-  top: 0.15em;
+  top: 0.2em;
+}
+
+.bracket svg {
   fill: var(--neon-green2);
 }
 

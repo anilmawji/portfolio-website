@@ -18,7 +18,7 @@ const Home = () => {
           particleRadius={2}
           particleRgbColor={NEON_GREEN_COLOR}
           mousePushRadius={50}
-          maxOpacity={0.65}
+          maxOpacity={0.55}
         />
         <div className={styles.curve} />
       </div>
@@ -26,12 +26,14 @@ const Home = () => {
         <HeroSection className={styles.hero} />
         <div className={styles.bottom}>
           <CircuitLine className={styles.circuit}/>
+          <div>
           <CardContainer
             className={styles.featured}
             title="Featured Posts"
             cardData={BlogData}
             includeReadingTime
           />
+          </div>
         </div>
       </div>
     </Page>

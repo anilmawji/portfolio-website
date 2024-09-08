@@ -38,7 +38,8 @@ const CustomNavLink = ({ to, label, className, children, ...restProps }: PropTyp
           {label}
           {children}
         </CustomLink>
-        <div className={styles["hover-line"]} />
+        <div className={styles.underline} />
+        <div className={styles.underline2} />
       </ClickEventListener>
     </li>
   );

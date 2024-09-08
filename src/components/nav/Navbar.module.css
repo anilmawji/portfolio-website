@@ -6,7 +6,7 @@
   --navbar-border-thickness: 3px;
   --navbar-gap-mobile: 20px;
   --navbar-font-weight: 600;
-  --navbar-transition-time: 300ms;
+  --navbar-transition-time: 350ms;
   --navlink-offset-y-mobile: 20px;
   --navlink-count: 5;
   --navlink-gap: 0.12;
@@ -96,9 +96,10 @@ nav li a {
   opacity: 0;
   visibility: hidden;
   top: var(--navbar-thickness);
-  /* Push the shadow below the navbar */
   z-index: -1;
-  transition: opacity var(--navbar-transition-time) ease-in-out;
+  transition:
+    opacity var(--navbar-transition-time) ease,
+    visibility var(--navbar-transition-time) ease;
 }
 
 /* Specify maximum gap for the navlinks */

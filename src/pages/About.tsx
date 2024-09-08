@@ -4,10 +4,10 @@ import BioSection from '../components/sections/Bio';
 
 const About = () => {
   return (
-    <Page title="About Me" headerId="bio">
+    <Page title="About Me">
       <div className="about_sections">
-        <BioSection className="animated_border" />
-        <ContactSection className="shadow" />
+        <BioSection className="glow_border" />
+        <ContactSection className="shadow_bottom" />
       </div>
     </Page>
   );

@@ -8,26 +8,28 @@ interface PropTypes {
 
 const ScrollToAnchor = ({ delay = 0, offset = 0 }: PropTypes) => {
   const location = useLocation();
-  const lastHash = useRef('');
+  const lastHash = useRef("");
 
   useEffect(() => {
     if (location.hash) {
       lastHash.current = location.hash.slice(1);
     }
-    if (!lastHash.current) return;
-
+    if (!lastHash.current) {
+      return;
+    }
     const element = document.getElementById(lastHash.current);
-    if (!element) return;
-
+    if (!element) {
+      return;
+    }
     setTimeout(() => {
         const elementPosition = element.getBoundingClientRect().top;
         const offsetPosition = elementPosition - offset;
 
         window.scrollBy({
             top: offsetPosition,
-            behavior: 'smooth'
+            behavior: "smooth"
         });
-      lastHash.current = '';
+      lastHash.current = "";
     }, delay);
   }, [location]);
 

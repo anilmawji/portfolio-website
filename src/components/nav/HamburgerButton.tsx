@@ -8,14 +8,8 @@ interface PropTypes {
 }
 
 const HamburgerButton = ({ className, isOpen, onToggle }: PropTypes) => {
-  const combinedClassName = joinClassNames(
-    styles.hamburger,
-    className,
-    isOpen ? "open" : ""
-  );
-
   return (
-    <label className={combinedClassName}>
+    <label className={joinClassNames(styles.hamburger, className, isOpen ? "open" : "")}>
       <input type="checkbox" checked={isOpen} onChange={onToggle} />
       <span className={styles.bar1} />
       <span className={styles.bar2} />

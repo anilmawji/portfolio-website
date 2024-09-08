@@ -2,24 +2,6 @@ import styles from './Footer.module.css';
 import { NavLink } from 'react-router-dom';
 import ScrollToTopButton from './buttons/ScrollToTopButton';
 
-interface FooterItemPropTypes {
-  text: string;
-  url: string;
-  icon?: string;
-}
-
-const FooterItem = ({ text, url, icon, ...restProps }: FooterItemPropTypes) => {
-  const isInternalLink = url.startsWith('/');
-
-  return (
-    <li>
-      <NavLink to={url} target={isInternalLink ? "_self" : "_blank"} {...restProps}>
-        {text}
-      </NavLink>
-    </li>
-  );
-}
-
 interface FooterItemListPropTypes {
   title: string;
   links: Record<string, string>;
@@ -33,7 +15,11 @@ const FooterItemList = ({ title, links }: FooterItemListPropTypes) => {
       </h3>
       <ul className={styles.links}>
         {Object.keys(links).map((name, index) => (
-          <FooterItem key={index} text={name} url={links[name]} />
+          <li key={index}>
+            <NavLink to={links[name]} target={links[name].startsWith('/') ? "_self" : "_blank"}>
+              {name}
+            </NavLink>
+          </li>
         ))}
       </ul>
     </div>
@@ -42,7 +28,7 @@ const FooterItemList = ({ title, links }: FooterItemListPropTypes) => {
 
 const Footer = () => {
   return (
-    <footer>
+    <footer className="shadow_top">
       <div className={styles.button}>
         <ScrollToTopButton />
       </div>
@@ -51,10 +37,10 @@ const Footer = () => {
           title={"Navigation"}
           links={{
             "Home": "/",
-            "Portfolio": "/portfolio",
+            "Portfolio": "/#portfolio",
             "About": "/about#bio",
             "Contact": "/about#contact",
-            "Blog": "/blog"
+            "Blog": "/blog#posts"
           }}
         />
         <FooterItemList
@@ -79,7 +65,7 @@ const Footer = () => {
       <p className={styles.copyright}>
         &copy; 2024 site designed & built by Anil Mawji.
         <br/>
-        Super Mario&trade; is a trademark of Nintendo&reg; which does not sponsor, authorize or endorse this site.
+        Super Mario&trade; is a trademark of Nintendo Co., Ltd. which does not sponsor, authorize or endorse this site.
         <br/>
         All other trademarks are the property of their respective owners.
       </p>

@@ -6,6 +6,8 @@
   background-color: var(--main-fg-color);
   border-radius: 8px;
   padding: 30px;
+  margin-bottom: 50px;
+  border: 1px solid #303030;
 }
 
 .title {
@@ -46,7 +48,7 @@
 .icon {
   width: 24px;
   height: 24px;
-  stroke: green;
+  stroke: #3c8b49;
   padding-top: 2px;
 }
 

@@ -1,4 +1,4 @@
-import styles from './CustomButton.module.css';
+import styles from './Button.module.css';
 import { joinClassNames } from '../../utils';
 
 interface PropTypes extends React.ButtonHTMLAttributes<HTMLButtonElement> {

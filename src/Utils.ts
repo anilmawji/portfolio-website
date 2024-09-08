@@ -141,6 +141,6 @@ export function getRgbColorValues(rgbString: string): string {
 |#                                                                     #|
 \*#####################################################################*/
 
-export function capitalizeFirstChar(str: string) {
+export function toTitleCase(str: string) {
   return str.length === 0 ? "" : str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
 }

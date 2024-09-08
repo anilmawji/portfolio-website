@@ -3,9 +3,11 @@
 }
 
 .pushable {
+  cursor: pointer;
+  border: none;
+  color: white;
   background: #3c8b49;
   border-radius: var(--button-border-size);
-  cursor: pointer;
 }
 
 .front {

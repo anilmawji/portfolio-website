@@ -8,7 +8,7 @@ interface PropTypes {
 const scrollToTopOfPage = () => {
   window.scrollTo({
     top: 0,
-    behavior: 'smooth'
+    behavior: "smooth"
   });
 }
 

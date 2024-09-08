@@ -1,10 +1,9 @@
 import styles from './Contact.module.css';
 import { useState } from 'react';
 import TextField from '../input/TextField';
-import CustomButton from '../buttons/CustomButton';
+import Button from '../buttons/Button';
 import Icon, { IconType } from '../icons/Icon';
 import TextArea from '../../components/input/TextArea';
-import HCaptcha from '@hcaptcha/react-hcaptcha';
 import { joinClassNames } from '../../utils';
 
 // Non-sensitive identifiers
@@ -42,19 +41,19 @@ const ContactSection = ({ className }: PropTypes) => {
   }
 
   return (
-    <div className={joinClassNames(className, styles.contact)} id="contact">
+    <div className={joinClassNames(styles.contact, className)} id="contact">
       <div className={styles.title}>Get in Touch</div>
       <form className={styles.form} onSubmit={onSubmit}>
-        <TextField type="text" id="name" text="name" isRequired />
-        <TextField type="email" id="email" text="email" isRequired />
-        <TextField type="text" id="subject" text="subject" isRequired />
-        <TextArea className={styles.message} id="message" placeholder="Message" isRequired />
-        <div className={styles.captcha}>
+        <TextField type="text" id="name" placeholder="name" isRequired />
+        <TextField type="email" id="email" placeholder="email" isRequired />
+        <TextField type="text" id="subject" placeholder="subject" isRequired />
+        <TextArea className={styles.message} id="message" placeholder="message" isRequired />
+        {/* <div className={styles.captcha}>
           <HCaptcha sitekey={hCaptchaSiteKey} theme="dark" />
-        </div>
-        <CustomButton className={styles.send} type="submit" text={"Send"}>
+        </div> */}
+        <Button className={styles.send} type="submit" text="Send">
           <Icon className={styles.icon} type={IconType.SEND} size={24} />
-        </CustomButton>
+        </Button>
       </form>
       {result && <span className={styles.result}>{result}</span>}
       <div className={styles.border}></div>
