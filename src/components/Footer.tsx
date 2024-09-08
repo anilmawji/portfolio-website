@@ -33,42 +33,44 @@ const Footer = () => {
         <ScrollToTopButton />
       </div>
       <div className={styles.content}>
-        <FooterItemList
-          title={"Navigation"}
-          links={{
-            "Home": "/",
-            "Portfolio": "/#portfolio",
-            "About": "/about#bio",
-            "Contact": "/about#contact",
-            "Blog": "/blog#posts"
-          }}
-        />
-        <FooterItemList
-          title={"Socials"}
-          links={{
-            "LinkedIn": "https://ca.linkedin.com/in/anil-mawji",
-            "HackTheBox": "https://www.hackthebox.com/",
-            "TryHackMe": "https://tryhackme.com/",
-            "GitHub": "https://github.com/anilmawji",
-            "Stack Overflow": "https://stackoverflow.com/users/8902167/anil-m"
-          }}
-        />
-        <FooterItemList
-          title={"External Files"}
-          links={{
-            "Resume": "",
-            "Website License": ""
-          }}
-        />
+        <div className={styles.footerLists}>
+          <FooterItemList
+            title={"Navigation"}
+            links={{
+              "Home": "/",
+              "Portfolio": "/#portfolio",
+              "About": "/about#bio",
+              "Contact": "/about#contact",
+              "Blog": "/blog#posts"
+            }}
+          />
+          <FooterItemList
+            title={"Socials"}
+            links={{
+              "LinkedIn": "https://ca.linkedin.com/in/anil-mawji",
+              "HackTheBox": "https://www.hackthebox.com/",
+              "TryHackMe": "https://tryhackme.com/",
+              "GitHub": "https://github.com/anilmawji",
+              "Stack Overflow": "https://stackoverflow.com/users/8902167/anil-m"
+            }}
+          />
+          <FooterItemList
+            title={"External Files"}
+            links={{
+              "Resume": "",
+              "Website License": ""
+            }}
+          />
+        </div>
+        <hr className={styles.line}/>
+        <p className={styles.copyright}>
+          &copy; 2024 site designed & built by Anil Mawji.
+          <br/>
+          Super Mario&trade; is a trademark of Nintendo Co., Ltd. which does not sponsor, authorize or endorse this site.
+          <br/>
+          All other trademarks are the property of their respective owners.
+        </p>
       </div>
-      <hr className={styles.line}/>
-      <p className={styles.copyright}>
-        &copy; 2024 site designed & built by Anil Mawji.
-        <br/>
-        Super Mario&trade; is a trademark of Nintendo Co., Ltd. which does not sponsor, authorize or endorse this site.
-        <br/>
-        All other trademarks are the property of their respective owners.
-      </p>
     </footer>
   );
 }

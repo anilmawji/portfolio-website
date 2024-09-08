@@ -1,10 +1,10 @@
 .icon {
   display: flex;
   align-items: center;
-  width: var(--icon-size);
-  height: var(--icon-size);
   fill: white;
   background-color: none;
+  min-width: 20px;
+  min-height: 20px;
 }
 
 .icon:hover {

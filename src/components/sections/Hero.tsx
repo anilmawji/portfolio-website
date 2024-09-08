@@ -3,8 +3,6 @@ import Icon, { IconType } from '../icons/Icon';
 import { getCssValue } from '../../utils';
 import { joinClassNames } from '../../utils';
 
-const ICON_SIZE = 24;
-
 interface PropTypes {
   className?: string;
 }
@@ -12,11 +10,11 @@ interface PropTypes {
 const HeroSection = ({ className }: PropTypes) => {
   return (
     <section className={joinClassNames(styles.header, className)}>
-      <header className={styles.name}>
-        <Icon className={styles.bracket} type={IconType.BRACKET_LEFT} size="2rem" />
+      <h3 className={styles.name}>
+        <Icon className={joinClassNames(styles.bracket, styles.bracketLeft)} type={IconType.BRACKET_LEFT} />
         {"Anil Mawji"}
-        <Icon className={styles.bracket} type={IconType.BRACKET_RIGHT} size="2rem" />
-      </header>
+        <Icon className={joinClassNames(styles.bracket, styles.bracketRight)} type={IconType.BRACKET_RIGHT} />
+      </h3>
       <div className={styles.title}>
         {"Cybersecurity Analyst"}
       </div>
@@ -29,35 +27,30 @@ const HeroSection = ({ className }: PropTypes) => {
         <Icon
           className={styles.icon}
           type={IconType.LINKEDIN}
-          size={ICON_SIZE}
           href="https://ca.linkedin.com/in/anil-mawji"
           hoverColor={getCssValue("linkedin-color")}
         />
         <Icon
           className={styles.icon}
           type={IconType.HACK_THE_BOX}
-          size={ICON_SIZE}
           href="https://www.hackthebox.com/"
           hoverColor={getCssValue("neon-green2")}
         />
         <Icon
           className={styles.icon}
           type={IconType.TRYHACKME}
-          size={ICON_SIZE}
           href="https://tryhackme.com/"
           hoverColor={getCssValue("tryhackme-color")}
         />
         <Icon
           className={styles.icon}
           type={IconType.GITHUB}
-          size={ICON_SIZE}
           href="https://github.com/anilmawji"
           hoverColor="white"
         />
         <Icon
           className={styles.icon}
           type={IconType.STACK_OVERFLOW}
-          size={ICON_SIZE}
           href="https://stackoverflow.com/users/8902167/anil-m"
           hoverColor={getCssValue("stack-overflow-color")}
         />

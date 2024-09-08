@@ -52,7 +52,7 @@ const ContactSection = ({ className }: PropTypes) => {
           <HCaptcha sitekey={hCaptchaSiteKey} theme="dark" />
         </div> */}
         <Button className={styles.send} type="submit" text="Send">
-          <Icon className={styles.icon} type={IconType.SEND} size={24} />
+          <Icon className={styles.icon} type={IconType.SEND} />
         </Button>
       </form>
       {result && <span className={styles.result}>{result}</span>}

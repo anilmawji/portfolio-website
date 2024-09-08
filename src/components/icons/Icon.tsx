@@ -1,5 +1,4 @@
 import styles from './Icon.module.css';
-import { toPixels } from '../../utils';
 
 enum IconType {
   LINKEDIN,
@@ -14,7 +13,6 @@ enum IconType {
 
 interface PropTypes {
   className?: string;
-  size: string | number;
   type?: IconType;
   src?: string;
   href?: string;
@@ -22,14 +20,11 @@ interface PropTypes {
   hoverColor?: string;
 }
 
-const Icon = ({ className, size, type, src, href, alt, hoverColor }: PropTypes) => {
+const Icon = ({ className, type, src, href, alt, hoverColor }: PropTypes) => {
   const IconWrapper = href ? 'a' : 'div';
   const combinedClassName: string = `${className || ''} ${styles.icon}`.trim();
   const iconStyle = {
-    "--icon-size": toPixels(size),
-    ...(hoverColor && {
-      "--icon-hover-color": hoverColor
-    })
+    ...(hoverColor && {"--icon-hover-color": hoverColor})
   } as React.CSSProperties;
 
   return (

@@ -9,7 +9,7 @@ interface PropTypes extends React.InputHTMLAttributes<HTMLInputElement> {
 
 const InputField = ({ className, id, placeholder, isRequired, ...restProps }: PropTypes) => {
   return (
-    <div className={joinClassNames(className, styles.filled)}>
+    <div className={joinClassNames(styles.filled, className)}>
       <input
         id={id}
         name={id}
