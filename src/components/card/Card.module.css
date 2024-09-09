@@ -39,7 +39,6 @@
   border-top-left-radius: var(--card-border-radius);
   border-top-right-radius: var(--card-border-radius);
   border-bottom: 1px solid #303030;
-  border-bottom: 1px solid #303030;
 }
 
 .title {
@@ -62,6 +61,7 @@
 
 .body {
   font-size: 14px;
+  font-family: "Segoe UI Adjusted", "Segoe UI", "Liberation Sans", sans-serif;
   overflow: hidden;
   max-height: calc(var(--card-line-height) * 4);
   line-height: var(--card-line-height);
@@ -71,6 +71,7 @@
   font-size: small;
   color: #acabab;;
   margin-bottom: var(--card-text-margin);
+  font-family: "Segoe UI Adjusted", "Segoe UI", "Liberation Sans", sans-serif;
 }
 
 .chips {

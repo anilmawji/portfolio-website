@@ -7,6 +7,7 @@ import About from './pages/About';
 import Blog from './pages/Blog';
 import NotFound from './pages/NotFound';
 import { getNumericalCssValue } from './utils';
+import "@fontsource/aldrich";
 //import lightStyles from './LightTheme.module.css'
 //import darkStyles from './DarkTheme.module.css'
 
@@ -22,8 +23,8 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/portfolio" element={<Portfolio />} />
-        <Route path="/about" element={<About />} />
         <Route path="/about#contact" element={<About />} />
+        <Route path="/about" element={<About />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

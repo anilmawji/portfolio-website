@@ -8,7 +8,7 @@ interface PropTypes {
 
 const ScrollToAnchor = ({ delay = 0, offset = 0 }: PropTypes) => {
   const location = useLocation();
-  const lastHash = useRef("");
+  const lastHash = useRef('');
 
   useEffect(() => {
     if (location.hash) {
@@ -27,9 +27,9 @@ const ScrollToAnchor = ({ delay = 0, offset = 0 }: PropTypes) => {
 
         window.scrollBy({
             top: offsetPosition,
-            behavior: "smooth"
+            behavior: 'smooth'
         });
-      lastHash.current = "";
+      lastHash.current = '';
     }, delay);
   }, [location]);
 

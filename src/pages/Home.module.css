@@ -34,7 +34,6 @@
   -o-transform: translateX(-50%);
 }
 
-
 .container {
   position: relative;
   display: flex;
@@ -43,7 +42,7 @@
 
 .hero {
   margin-left: var(--home-margin);
-  margin-top: 100px;
+  margin-top: 90px;
   z-index: 2;
 }
 
@@ -70,8 +69,7 @@
 .bottom {
   display: flex;
   position: relative;
-  margin-top: 150px;
-  margin-bottom: 50px;
+  margin-top: 160px;
 }
 
 .circuit {

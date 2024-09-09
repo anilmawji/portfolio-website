@@ -27,6 +27,7 @@
   color: grey;
   pointer-events: none;
   transition: all 0.2s ease;
+  font-family: "Segoe UI Adjusted", "Segoe UI", "Liberation Sans", sans-serif;
 }
 
 .filled input:focus ~ label,

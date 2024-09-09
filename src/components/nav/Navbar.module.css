@@ -39,7 +39,7 @@ nav {
   font-weight: var(--navbar-font-weight);
   background-color: var(--main-fg-color);
   border-bottom: var(--navbar-border-thickness) solid var(--main-bg-color);
-  z-index: 10000;
+  z-index: 99999;
 }
 
 nav ul {
