@@ -1,4 +1,5 @@
 import styles from './Icon.module.css';
+import { joinClassNames } from '../../utils';
 
 enum IconType {
   LINKEDIN,
@@ -20,15 +21,14 @@ interface PropTypes {
   hoverColor?: string;
 }
 
-const Icon = ({ className, type, src, href, alt, hoverColor }: PropTypes) => {
+const preventImageDrag = (e: React.MouseEvent<HTMLImageElement, MouseEvent>) => e.preventDefault();
+
+const Icon = ({ className, type, src, href, alt }: PropTypes) => {
   const IconWrapper = href ? 'a' : 'div';
-  const combinedClassName: string = `${className || ''} ${styles.icon}`.trim();
-  const iconStyle = {
-    ...(hoverColor && {"--icon-hover-color": hoverColor})
-  } as React.CSSProperties;
+  const combinedClassName: string = joinClassNames(styles.icon, className);
 
   return (
-    <IconWrapper href={href} className={combinedClassName} style={iconStyle} target={href ? "_blank" : ""}>
+    <IconWrapper href={href} className={combinedClassName} target={href ? "_blank" : ""}>
       {type === IconType.LINKEDIN && (
         <svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
           <title>LinkedIn</title>
@@ -75,7 +75,7 @@ const Icon = ({ className, type, src, href, alt, hoverColor }: PropTypes) => {
         </svg>
       )}
       {src && (
-        <img src={src} alt={alt} draggable="false" onMouseDown={(e: React.MouseEvent<HTMLImageElement, MouseEvent>) => e.preventDefault()} />
+        <img src={src} alt={alt} draggable="false" onMouseDown={preventImageDrag} />
       )}
     </IconWrapper>
   );

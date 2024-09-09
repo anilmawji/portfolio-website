@@ -53,14 +53,9 @@
   padding-left: 40px;
 }
 
-.bio p {
-  font-family: "Segoe UI Adjusted", "Segoe UI", "Liberation Sans", sans-serif;
-}
-
 .bio a {
   color: #56c769;
   font-weight: 500;
-  font-family: "Segoe UI Adjusted", "Segoe UI", "Liberation Sans", sans-serif;
 }
 
 .bio a:hover {

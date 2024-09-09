@@ -20,7 +20,6 @@
   background: #56c769;
   border-radius: var(--button-border-size);
   transform: translateY(-6px);
-  font-family: "Segoe UI Adjusted", "Segoe UI", "Liberation Sans", sans-serif;
 }
 
 .pushable:active .front {

@@ -44,7 +44,6 @@ footer {
 
 .list ul a {
   color: var(--grey);
-  font-family: "Segoe UI Adjusted", "Segoe UI", "Liberation Sans", sans-serif;
 }
 
 .list ul a:hover {
@@ -63,7 +62,6 @@ footer {
   text-align: center;
   color: var(--grey);
   margin-bottom: 30px;
-  font-family: "Segoe UI Adjusted", "Segoe UI", "Liberation Sans", sans-serif;
 }
 
 @media(max-width: 980px) {

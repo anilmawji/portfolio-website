@@ -1,10 +1,22 @@
+:root {
+  --default-fonts: "Segoe UI Adjusted", "Segoe UI", "Liberation Sans", sans-serif;
+  --main-fg-color: #191919;
+  --main-bg-color: #252525;
+  --neon-green: #6CFA84;
+  --neon-green2: #91FC9F;
+  --btn-color: #44D25C;
+  --grey: #ACABAB;
+  --box-shadow-color: hsl(0deg 0% 0% / 0.1);
+  --glow-border-radius: 1px;
+}
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-family: "Aldrich", "Segoe UI Adjusted", "Segoe UI", "Liberation Sans", sans-serif;
+  font-family: var(--default-fonts);
 }
 
 /* Highlighted text style */
@@ -32,21 +44,6 @@
   background: #636262;
 }
 
-/* TODO: Clean up */
-:root {
-  --main-fg-color: #191919;
-  --main-bg-color: #252525;
-  --neon-green: #6CFA84;
-  --neon-green2: #91FC9F;
-  --btn-color: #44D25C;
-  --grey: #ACABAB;
-  --stack-overflow-color: #FF9900;
-  --linkedin-color: #40beff;
-  --tryhackme-color: red;
-  --box-shadow-color: hsl(0deg 0% 0% / 0.1);
-  --glow-border-radius: 1px;
-}
-
 main {
   flex: 1; /* Ensure main content takes all available space, pushing footer to the bottom */
 }
@@ -54,6 +51,11 @@ main {
 body {
   background-color: var(--main-bg-color);
   color: white;
+}
+
+h1, h2, h3, h4 {
+  font-family: "Aldrich", var(--default-fonts);
+  font-weight: normal;
 }
 
 a {

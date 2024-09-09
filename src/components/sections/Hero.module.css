@@ -24,8 +24,8 @@
 .bracket svg {
   position: relative;
   fill: var(--neon-green2);
-  width: 1em;
-  height: 1em;
+  width: 0.8em;
+  height: 0.8em;
 }
 
 .bracketLeft svg {
@@ -45,7 +45,6 @@
   padding: 20px 0;
   font-size: 18px;
   color: var(--grey);
-  font-family: "Segoe UI Adjusted", "Segoe UI", "Liberation Sans", sans-serif;
 }
 
 .icons {
@@ -63,6 +62,35 @@
 
 .icon svg {
   fill: #c6c6c6;
+}
+
+.icon:hover {
+  filter: drop-shadow(0 0 6px var(--icon-color));
+  -webkit-filter: drop-shadow(0 0 6px var(--icon-color));
+}
+
+.icon:hover svg {
+  fill: var(--icon-color);
+}
+
+.linkedinIcon.icon {
+  --icon-color: #40beff;
+}
+
+.thmIcon.icon {
+  --icon-color: red;
+}
+
+.htbIcon.icon {
+  --icon-color: var(--neon-green2);
+}
+
+.githubIcon.icon {
+  --icon-color: white;
+}
+
+.soIcon.icon {
+  --icon-color: #FF9900;
 }
 
 @media (max-width: 600px) {
