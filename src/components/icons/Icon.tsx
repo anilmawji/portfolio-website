@@ -75,7 +75,7 @@ const Icon = ({ className, type, src, href, alt }: PropTypes) => {
         </svg>
       )}
       {src && (
-        <img src={src} alt={alt} draggable="false" onMouseDown={preventImageDrag} />
+        <img src={src} alt={alt} draggable={false} onMouseDown={preventImageDrag} />
       )}
     </IconWrapper>
   );

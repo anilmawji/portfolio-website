@@ -44,11 +44,24 @@
   padding-left: 6px;
 }
 
+.send:disabled .icon {
+  stroke: #606060;
+}
+
 .icon {
   width: 24px;
   height: 24px;
-  stroke: #3c8b49;
+  stroke: #56c769;
   padding-top: 2px;
+}
+
+/* Cover ugly border until hCaptcha decides to fix their styling: https://github.com/hCaptcha/react-hcaptcha/issues/225 */
+.captcha {
+  width: 300px;
+  height: 75px;
+  outline: 6px solid var(--main-fg-color);
+  outline-offset: -2px;
+  border-radius: 6px;
 }
 
 .result {

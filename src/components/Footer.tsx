@@ -28,7 +28,7 @@ const FooterItemList = ({ title, links }: FooterItemListPropTypes) => {
 
 const Footer = () => {
   return (
-    <footer className="shadow_top">
+    <footer className="shadowTop">
       <div className={styles.button}>
         <ScrollToTopButton />
       </div>

@@ -1,5 +1,5 @@
 :root {
-  --default-fonts: "Segoe UI Adjusted", "Segoe UI", "Liberation Sans", sans-serif;
+  --default-font: "Segoe UI Adjusted", "Segoe UI", "Liberation Sans", sans-serif;
   --main-fg-color: #191919;
   --main-bg-color: #252525;
   --neon-green: #6CFA84;
@@ -16,7 +16,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-family: var(--default-fonts);
+  font-family: var(--default-font);
 }
 
 /* Highlighted text style */
@@ -54,7 +54,7 @@ body {
 }
 
 h1, h2, h3, h4 {
-  font-family: "Aldrich", var(--default-fonts);
+  font-family: "Aldrich", var(--default-font);
   font-weight: normal;
 }
 
@@ -62,7 +62,7 @@ a {
   text-decoration: none;
 }
 
-.disable_select {  
+.disableSelect {  
   user-select: none;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -72,7 +72,7 @@ a {
   -webkit-user-drag: none;
 }
 
-.shadow_bottom {
+.shadowBottom {
   box-shadow:
     0 1px 1px var(--box-shadow-color),
     0 2px 2px var(--box-shadow-color),
@@ -81,7 +81,7 @@ a {
     0 16px 16px var(--box-shadow-color);
 }
 
-.shadow_top {
+.shadowTop {
   box-shadow:
     0 -1px 1px var(--box-shadow-color),
     0 -2px 2px var(--box-shadow-color),
@@ -105,8 +105,8 @@ a {
   }
 }
 
-.glow_border::before,
-.glow_border::after {
+.glowBorder::before,
+.glowBorder::after {
   --angle: 0deg;
   content: "";
   position: absolute;
@@ -128,12 +128,12 @@ a {
   transition: 0.5s opacity ease;
 }
 
-.glow_border::before {
+.glowBorder::before {
   filter: blur(1rem);
   opacity: 0.5;
 }
 
-.dotted_bg {
+.dottedBackground {
   background-image: radial-gradient(var(--dotted-bg-color) 1px, transparent 0);
   background-size: 20px 20px;
   background-position: -19px -19px;
@@ -145,7 +145,7 @@ a {
   margin-right: var(--home-margin);
 }
 
-.about_sections {
+.aboutSections {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -153,7 +153,7 @@ a {
   margin: 0 var(--home-margin);
 }
 
-.blog_page p {
+.blogPage p {
   display: flex;
   justify-content: center;
 }

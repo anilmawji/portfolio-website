@@ -25,3 +25,11 @@
 .pushable:active .front {
   transform: translateY(-2px);
 }
+
+.pushable:disabled {
+  background: #404040;
+}
+
+.pushable:disabled .front {
+  background: #606060;
+}

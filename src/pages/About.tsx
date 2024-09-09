@@ -5,9 +5,9 @@ import BioSection from '../components/sections/Bio';
 const About = () => {
   return (
     <Page title="About Me">
-      <div className="about_sections">
-        <BioSection className="glow_border" />
-        <ContactSection className="shadow_bottom" />
+      <div className="aboutSections">
+        <BioSection className="glowBorder" />
+        <ContactSection className="shadowBottom" />
       </div>
     </Page>
   );

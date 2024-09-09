@@ -29,7 +29,7 @@ const CustomNavLink = ({ to, label, className, children, onClick, ...restProps }
       <ClickEventListener trackMouseDown trackTouch>
         <Link
           to={to}
-          className={joinClassNames(className, to === currentUrl ? 'active' : '')}
+          className={joinClassNames(className, to === currentUrl ? "active" : "")}
           onDragStart={preventAnchorDrag}
           onClick={handleClick}
           {...restProps}
