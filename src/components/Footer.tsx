@@ -48,8 +48,8 @@ const Footer = () => {
             title={"Socials"}
             links={{
               "LinkedIn": "https://ca.linkedin.com/in/anil-mawji",
+              "TryHackMe": "https://tryhackme.com/p/Cyb3rHusky",
               "HackTheBox": "https://www.hackthebox.com/",
-              "TryHackMe": "https://tryhackme.com/",
               "GitHub": "https://github.com/anilmawji",
               "Stack Overflow": "https://stackoverflow.com/users/8902167/anil-m"
             }}

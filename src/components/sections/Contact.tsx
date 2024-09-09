@@ -17,12 +17,20 @@ interface PropTypes {
 
 const ContactSection = ({ className }: PropTypes) => {
   const [result, setResult] = useState<string>("");
-  const [token, setToken] = useState<string | null>(null);
+  const formRef = useRef<HTMLFormElement>(null);
   const captchaRef = useRef<HCaptcha>(null);
+
+  const resetForm = () => {
+    if (captchaRef.current) {
+      captchaRef.current.resetCaptcha();
+      setTimeout(() => {
+        setResult("");
+      }, 10000);
+    }
+  }
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setResult("Sending message...");
 
     const formData = new FormData(e.currentTarget);
     formData.append("access_key", web3FormsAccessKey);
@@ -37,8 +45,10 @@ const ContactSection = ({ className }: PropTypes) => {
     if (data.success) {
       setResult("Message sent successfully!");
     } else {
-      setResult("Could not send message: " + data.message + ". Try reloading the page.");
+      setResult("Failed to send message: " + data.message);
+      console.log(result);
     }
+    resetForm();
   }
 
   // This reaches out to the hCaptcha JS API and runs the execute function on it.
@@ -52,8 +62,8 @@ const ContactSection = ({ className }: PropTypes) => {
 
   return (
     <div className={joinClassNames(styles.contact, className)} id="contact">
-      <div className={styles.title}>Get in Touch</div>
-      <form className={styles.form} onSubmit={handleSubmit}>
+      <h2 className={styles.title}>Get in Touch</h2>
+      <form className={styles.form} onSubmit={handleSubmit} ref={formRef}>
         <TextField type="text" id="name" placeholder="name" isRequired />
         <TextField type="email" id="email" placeholder="email" isRequired />
         <TextField type="text" id="subject" placeholder="subject" isRequired />
@@ -62,13 +72,12 @@ const ContactSection = ({ className }: PropTypes) => {
           <HCaptcha
             sitekey={hCaptchaSiteKey}
             reCaptchaCompat={false}
-            onLoad={onLoad}
-            onVerify={setToken}
+            // onLoad={onLoad}
             ref={captchaRef}
             theme="dark"
           />
         </div>
-        <Button className={styles.send} type="submit" text="Send" disabled={!token}>
+        <Button className={styles.send} type="submit" text="Send">
           <Icon className={styles.icon} type={IconType.SEND} />
         </Button>
       </form>

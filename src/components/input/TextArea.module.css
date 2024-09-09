@@ -50,7 +50,7 @@
   border-left: var(--ta-border-style);
   border-right: var(--ta-border-style);
   transition:
-    transform var(--ta-border-transition-delay) ease var(--ta-border-transition-delay),
+    transform var(--ta-border-transition-delay) ease calc(var(--ta-border-transition-delay) + 0.05s),
     height var(--ta-border-transition-delay) ease;
 }
 
@@ -74,7 +74,7 @@
   height: 50%;
   transition:
     transform var(--ta-border-transition-delay) ease,
-    height var(--ta-border-transition-delay) ease var(--ta-border-transition-delay);
+    height var(--ta-border-transition-delay) ease calc(var(--ta-border-transition-delay) + 0.05s);
 }
 
 /* Autofill styling according */

@@ -20,7 +20,7 @@ const Navbar = ({ drawerDelay = 250 }: PropTypes) => {
   }
 
   return (
-    <nav className={styles.nav}>
+    <nav>
       <HamburgerButton className={styles.hamburger} isOpen={isHamburgerOpen} onToggle={toggle} />
       <ul>
         <CustomNavLink to="/" label="Home" onClick={closeHamburgerDrawer} />

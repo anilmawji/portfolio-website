@@ -32,7 +32,7 @@ const HeroSection = ({ className }: PropTypes) => {
           <Icon
             className={joinClassNames(styles.icon, styles.thmIcon)}
             type={IconType.TRYHACKME}
-            href="https://tryhackme.com/"
+            href="https://tryhackme.com/p/Cyb3rHusky"
           />
           <Icon
             className={joinClassNames(styles.icon, styles.htbIcon)}

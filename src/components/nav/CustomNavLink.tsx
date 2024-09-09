@@ -19,7 +19,7 @@ const CustomNavLink = ({ to, label, className, children, onClick, ...restProps }
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     onClick?.(e);
-    if (!to.includes('#')) {
+    if (!to.includes("#")) {
       window.scrollTo(0, 0);
     }
   }
