@@ -22,8 +22,13 @@
   transform: translateY(-4px);
 }
 
+.pushable:hover .front {
+  transform: translateY(-5.5px);
+}
+
 .pushable:active .front {
-  transform: translateY(-1px);
+  transform: translateY(-2px);
+  transition: transform 100ms;
 }
 
 .pushable:disabled {
