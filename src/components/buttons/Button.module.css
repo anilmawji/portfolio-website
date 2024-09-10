@@ -6,7 +6,7 @@
   cursor: pointer;
   border: none;
   color: white;
-  background: #3c8b49;
+  background: rgb(48, 112, 59);
   border-radius: var(--button-border-size);
 }
 
@@ -19,11 +19,11 @@
   font-size: 1rem;
   background: #56c769;
   border-radius: var(--button-border-size);
-  transform: translateY(-6px);
+  transform: translateY(-4px);
 }
 
 .pushable:active .front {
-  transform: translateY(-2px);
+  transform: translateY(-1px);
 }
 
 .pushable:disabled {

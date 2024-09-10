@@ -94,15 +94,31 @@
 }
 
 @media (max-width: 600px) {
+  .header {
+    align-items: center;
+  }
+
+  .body {
+    margin-left: 0;
+  }
+
   .name {
     font-size: 36px;
+    text-align: center;
+    right: 0;
   }
 
   .title {
     font-size: 18px;
+    text-align: center;
   }
 
   .bio {
     font-size: 14px;
+    text-align: center;
+  }
+
+  .icons {
+    justify-content: center;
   }
 }

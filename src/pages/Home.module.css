@@ -64,6 +64,7 @@
   top: 0;
   left: 0;
   z-index: 2;
+  filter: blur(1.5px);
 }
 
 .bottom {
@@ -73,7 +74,8 @@
 }
 
 .circuit {
-  top: 20px;
+  position: absolute;
+  top: 10px;
   left: calc((var(--home-margin) - var(--circuit-icon-size) + 27px) / 2);
 }
 
@@ -110,7 +112,7 @@
   }
 
   .circuit {
-    display: none !important;
+    visibility: hidden;
   }
 }
 

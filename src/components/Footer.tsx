@@ -1,6 +1,6 @@
 import styles from './Footer.module.css';
-import { NavLink } from 'react-router-dom';
 import ScrollToTopButton from './buttons/ScrollToTopButton';
+import CustomNavLink from './nav/CustomNavLink';
 
 interface FooterItemListPropTypes {
   title: string;
@@ -16,9 +16,11 @@ const FooterItemList = ({ title, links }: FooterItemListPropTypes) => {
       <ul className={styles.links}>
         {Object.keys(links).map((name, index) => (
           <li key={index}>
-            <NavLink to={links[name]} target={links[name].startsWith('/') ? "_self" : "_blank"}>
-              {name}
-            </NavLink>
+            <CustomNavLink
+              to={links[name]}
+              label={name}
+              target={links[name].startsWith("/") ? "_self" : "_blank"}
+            />
           </li>
         ))}
       </ul>
@@ -38,16 +40,17 @@ const Footer = () => {
             title={"Navigation"}
             links={{
               "Home": "/",
-              "Portfolio": "/#portfolio",
-              "About": "/about#bio",
+              "Portfolio": "/portfolio",
+              "About": "/about",
               "Contact": "/about#contact",
-              "Blog": "/blog#posts"
+              "Blog": "/blog"
             }}
           />
           <FooterItemList
-            title={"Socials"}
+            title={"Connect With Me"}
             links={{
               "LinkedIn": "https://ca.linkedin.com/in/anil-mawji",
+              "Email": "https://stackoverflow.com/users/8902167/anil-m",
               "TryHackMe": "https://tryhackme.com/p/Cyb3rHusky",
               "HackTheBox": "https://www.hackthebox.com/",
               "GitHub": "https://github.com/anilmawji",

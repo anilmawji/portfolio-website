@@ -1,6 +1,5 @@
 import styles from './Page.module.css';
 import Footer from '../components/Footer';
-import CircuitLine from '../components/CircuitLine';
 import { joinClassNames } from '../utils';
 
 interface PropTypes {
@@ -11,19 +10,18 @@ interface PropTypes {
   includeCircuitLine?: boolean;
 }
 
-const Page = ({ className, children, headerId, title, includeCircuitLine }: PropTypes) => {
+const Page = ({ className, children, headerId, title }: PropTypes) => {
   return (
     <div className={joinClassNames(styles.page, className)}>
       <main>
         {title && <header className={styles.header} id={headerId ? headerId : ""}>
-          <div className={styles.title_container}>
-            <hr className={styles.line_left} />
+          <div className={styles.titleContainer}>
+            <hr className={styles.lineLeft} />
             <h4 className={styles.title}>{title}</h4>
-            <hr className={styles.line_right} />
+            <hr className={styles.lineRight} />
           </div>
         </header>}
-        <div className={joinClassNames(styles.content, title ? styles.content_margin : "")}>
-          {includeCircuitLine && <CircuitLine className={styles.circuit} />}
+        <div className={joinClassNames(styles.content, title ? styles.contentMargin : "")}>
           {children}
         </div>
       </main>

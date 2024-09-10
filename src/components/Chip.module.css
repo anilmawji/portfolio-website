@@ -1,14 +1,21 @@
 .chip {
-  display: inline-flex;
-  justify-content: center;
-  font-size: 12px;
   min-width: 30px;
   max-width: 100px;
-  height: 1rem;
-  margin: 4px;
+  height: 1.05rem;
+  font-size: 12px;
   padding: 0 8px;
-  background-color: #56c769;
-  outline: 2px solid #3c8b49;
-  border-radius: 9999px;
-  overflow: hidden;
+  margin: 4px;
+  text-align: center;
+  border-radius: 999px;
+  outline: 2px solid rgb(100, 233, 122);
+	background-image:
+    linear-gradient(-180deg,
+    rgb(85, 199, 104) 50%,
+    rgba(67, 156, 82, 0.7) 100%
+    );
+  text-shadow:
+    -1px -1px 0 #005a0c,
+    1px -1px 0 #005a0c,
+    -1px 1px 0 #005a0c,
+    1px 1px 0 #005a0c;
 }

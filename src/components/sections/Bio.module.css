@@ -15,7 +15,6 @@
 }
 
 .portrait {
-  position: relative; /* Create a positioning context for the child element */
   width: 1000px;
   height: 280px;
   margin-top: 10px;
@@ -96,6 +95,7 @@
   .portrait {
     width: 200px;
     height: 200px;
+    margin-right: 10px;
   }
 
   .bio p,
@@ -106,5 +106,9 @@
   .profiles {
     align-items: center;
     flex-direction: column;
+  }
+
+  .profiles img {
+    width: 100%;
   }
 }

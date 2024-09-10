@@ -25,10 +25,9 @@ const preventImageDrag = (e: React.MouseEvent<HTMLImageElement, MouseEvent>) => 
 
 const Icon = ({ className, type, src, href, alt }: PropTypes) => {
   const IconWrapper = href ? 'a' : 'div';
-  const combinedClassName: string = joinClassNames(styles.icon, className);
 
   return (
-    <IconWrapper href={href} className={combinedClassName} target={href ? "_blank" : ""}>
+    <IconWrapper href={href} className={joinClassNames(styles.icon, className)} target={href ? "_blank" : ""}>
       {type === IconType.LINKEDIN && (
         <svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
           <title>LinkedIn</title>

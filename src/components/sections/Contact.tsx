@@ -75,6 +75,7 @@ const ContactSection = ({ className }: PropTypes) => {
             // onLoad={onLoad}
             ref={captchaRef}
             theme="dark"
+            size="normal"
           />
         </div>
         <Button className={styles.send} type="submit" text="Send">

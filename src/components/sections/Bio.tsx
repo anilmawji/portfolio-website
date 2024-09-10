@@ -18,7 +18,7 @@ const BioSection = ({ className }: PropTypes) => {
         </div>
         <div className={styles.text}>
           <p>
-            Hi, I'm Anil, a Computer Science student at the University of Calgary with a deep passion for cybersecurity.
+            Hi, I'm Anil, a Computer Science student at the University of Calgary with a deep passion for cyber security.
             <br /><br />
             My journey in tech has led me through roles as a systems administrator and software developer.
             Over time, I've had the privilege of working at&nbsp;
@@ -27,7 +27,7 @@ const BioSection = ({ className }: PropTypes) => {
             Currently, I'm diving into the world of ethical hacking as I work towards earning my&nbsp;
             <a href="https://certifications.tcm-sec.com/pjpt/" target="_blank">PJPT certification.</a>
             <br /><br />
-            Here is a list of the certifications I hold:
+            Here are some of the certifications I hold:
           </p>
           <ul>
             <li>
@@ -45,7 +45,7 @@ const BioSection = ({ className }: PropTypes) => {
             I'm always eager to connect with fellow tech enthusiasts.
             Feel free to&nbsp;
             <NavLink to="/about#contact">reach out</NavLink> if you'd like to chat or collaborate and stay tuned for some&nbsp;
-            <NavLink to="/blog">interesting cybersecurity content!</NavLink>
+            <NavLink to="/blog">interesting cyber security content!</NavLink>
           </p>
         </div>
       </div>

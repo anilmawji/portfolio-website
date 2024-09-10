@@ -37,7 +37,7 @@ nav {
   height: var(--navbar-thickness);
   font-size: 14px;
   font-weight: var(--navbar-font-weight);
-  background-color: var(--main-fg-color);
+  background: var(--shadow-gradient);
   border-bottom: var(--navbar-border-thickness) solid var(--main-bg-color);
   z-index: 99999;
 }

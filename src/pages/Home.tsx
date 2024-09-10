@@ -26,14 +26,12 @@ const Home = () => {
         <HeroSection className={styles.hero} />
         <div className={styles.bottom}>
           <CircuitLine className={styles.circuit}/>
-          <div>
           <CardContainer
             className={styles.featured}
             title="Featured Posts"
             cardData={BlogData}
             includeReadingTime
           />
-          </div>
         </div>
       </div>
     </Page>

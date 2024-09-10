@@ -11,7 +11,7 @@
   height: var(--scroll-button-size);
   background: var(--main-fg-color);
   border-radius: 9999px;
-  outline: 3px solid #4f4f4f;
+  outline: 2px solid #4f4f4f;
   transition: outline-color var(--scroll-button-hover-time) ease-in-out;
 }
 

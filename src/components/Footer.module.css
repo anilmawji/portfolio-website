@@ -24,11 +24,12 @@ footer {
   flex-wrap: wrap;
   justify-content: center;
   gap: 0 150px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .list {
   margin: 20px;
+  margin-bottom: 30px;
 }
 
 .list h3 {
