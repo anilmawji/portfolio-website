@@ -1,6 +1,6 @@
 :root {
   --ta-text-padding: 14px;
-  --ta-border-style: 1px solid #56c769;
+  --ta-border-style: 1px solid rgba(108, 250, 132, 0.8);
   --ta-border-transition-delay: 0.15s;
 }
 

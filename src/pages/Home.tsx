@@ -4,7 +4,6 @@ import ParticleCanvas from '../components/canvas/ParticleCanvas';
 import HeroSection from '../components/sections/Hero';
 import CardContainer from '../components/card/CardContainer';
 import BlogData from '../data/BlogData';
-import CircuitLine from '../components/CircuitLine';
 import { getCssValue, hexToRgb } from '../utils';
 
 const NEON_GREEN_COLOR = hexToRgb(getCssValue("neon-green"));
@@ -25,7 +24,6 @@ const Home = () => {
       <div className={styles.container}>
         <HeroSection className={styles.hero} />
         <div className={styles.bottom}>
-          <CircuitLine className={styles.circuit}/>
           <CardContainer
             className={styles.featured}
             title="Featured Posts"

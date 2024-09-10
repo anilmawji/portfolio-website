@@ -121,9 +121,7 @@ a {
   background-image:
     conic-gradient(
       from var(--angle),
-      transparent, #56c769,
-      transparent, #56c769,
-      transparent
+      transparent, rgba(86, 199, 105, 0.6)
     );
   animation: 8s spin linear infinite;
   transition: 0.5s opacity ease;
@@ -138,6 +136,11 @@ a {
   background-image: radial-gradient(var(--dotted-bg-color) 1px, transparent 0);
   background-size: 20px 20px;
   background-position: -19px -19px;
+}
+
+.projects {
+  margin-left: var(--home-margin);
+  margin-right: var(--home-margin);
 }
 
 .aboutSections {
