@@ -1,5 +1,5 @@
 import styles from './GlitchedText.module.css';
-import { joinClassNames } from '../utils';
+import { joinClassNames } from '../../utils';
 
 const stackStyle = {'--stacks': '3'} as React.CSSProperties;
 const spanStyle0 = {'--index' : '0'} as React.CSSProperties;

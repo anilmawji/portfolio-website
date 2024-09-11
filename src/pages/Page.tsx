@@ -1,6 +1,6 @@
 import styles from './Page.module.css';
-import Footer from '../components/Footer';
-import GlitchedText from '../components/GlitchedText';
+import Footer from '../components/sections/Footer';
+import GlitchedText from '../components/text/GlitchedText';
 import { joinClassNames } from '../utils';
 
 interface PropTypes {

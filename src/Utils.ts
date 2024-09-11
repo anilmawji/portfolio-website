@@ -1,3 +1,5 @@
+import { RgbString, RgbaString } from 'types';
+
 /*#####################################################################*\
 |#                                                                     #|
 |#   MATH UTILS                                                        #|
@@ -75,6 +77,14 @@ export function readingTime(text: string, wpm: number = 225): string {
 |#                                                                     #|
 \*#####################################################################*/
 
+export function rgb(r: number, g: number, b: number): RgbString {
+  return `rgb(${r},${g},${b})`;
+}
+
+export function rgba(r: number, g: number, b: number, a: number): RgbaString {
+  return `rgba(${r},${g},${b},${a})`;
+}
+
 export function hexToRgb(hexString: string) {
   const { style } = new Option();
   style.color = hexString;
@@ -82,14 +92,15 @@ export function hexToRgb(hexString: string) {
   return style.color;
 }
 
-export function rgbComponentToHex(c: number) {
-  const hex = c.toString(16);
-
-  return hex.length == 1 ? "0" + hex : hex;
+export function rgbToHex(r: number, g: number, b: number) {
+  return `#${rgbComponentToHex(r)}${rgbComponentToHex(g)}${rgbComponentToHex(b)};`;
 }
 
-export function rgbToHex(r: number, g: number, b: number) {
-  return "#" + rgbComponentToHex(r) + rgbComponentToHex(g) + rgbComponentToHex(b);
+export function rgbComponentToHex(c: number): string {
+  if (c < 0 || c > 255) {
+    console.warn(`RGB component ${c} out of range: must be between 0 and 255`);
+  }
+  return c.toString(16).padStart(2, '0');
 }
 
 export function rgbToRgba(rgbString: string, alpha: number): string {
@@ -101,13 +112,30 @@ export function isValidCssColor(str: string): boolean {
     return true
   }
   console.warn(`${str} is not a valid CSS color`);
-
   return false;
 }
 
-// Cuta out the 'rgb(' and ')' part of the string
-export function getRgbColorValues(rgbString: string): string {
-  return rgbString.substring(4, rgbString.length - 1);
+// Functions to lighten/darken/blend RGB colors based on a given percentage p
+// Full credit goes to Pimp Trizkit https://stackoverflow.com/questions/5560248/programmatically-lighten-or-darken-a-hex-color-or-rgb-and-blend-colors/73660199#73660199
+
+export function rgbLinearBlend(p: number, c0: string, c1: string): string {
+  var i=parseInt,r=Math.round,P=1-p,[a,b,c,d]=c0.split(","),[e,f,g,h]=c1.split(","),x=d||h,j=x?","+(!d?h:!h?d:r((parseFloat(d)*P+parseFloat(h)*p)*1000)/1000+")"):")";
+  return"rgb"+(x?"a(":"(")+r(i(a[3]=="a"?a.slice(5):a.slice(4))*P+i(e[3]=="a"?e.slice(5):e.slice(4))*p)+","+r(i(b)*P+i(f)*p)+","+r(i(c)*P+i(g)*p)+j;
+}
+
+export function rgbLinearShade(p: number, c: string): string {
+  var i=parseInt,r=Math.round,[a,b,c,d]=c.split(","),P=p<0,t=P?0:255*p,P2=P?1+p:1-p;
+  return"rgb"+(d?"a(":"(")+r(i(a[3]=="a"?a.slice(5):a.slice(4))*P2+t)+","+r(i(b)*P2+t)+","+r(i(c)*P2+t)+(d?","+d:")");
+}
+
+export function rgbLogBlend(p: number, c0: string, c1: string): string {
+  var i=parseInt,r=Math.round,P=1-p,[a,b,c,d]=c0.split(","),[e,f,g,h]=c1.split(","),x=d||h,j=x?","+(!d?h:!h?d:r((parseFloat(d)*P+parseFloat(h)*p)*1000)/1000+")"):")";
+  return"rgb"+(x?"a(":"(")+r((P*i(a[3]=="a"?a.slice(5):a.slice(4))**2+p*i(e[3]=="a"?e.slice(5):e.slice(4))**2)**0.5)+","+r((P*i(b)**2+p*i(f)**2)**0.5)+","+r((P*i(c)**2+p*i(g)**2)**0.5)+j;
+}
+
+export function rgbLogShade(p: number, c: string): string {
+  var i=parseInt,r=Math.round,[a,b,c,d]=c.split(","),P=p<0,t=P?0:p*255**2,P2=P?1+p:1-p;
+  return"rgb"+(d?"a(":"(")+r((P2*i(a[3]=="a"?a.slice(5):a.slice(4))**2+t)**0.5)+","+r((P2*i(b)**2+t)**0.5)+","+r((P2*i(c)**2+t)**0.5)+(d?","+d:")");
 }
 
 /*#####################################################################*\

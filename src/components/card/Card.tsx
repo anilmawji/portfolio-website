@@ -1,26 +1,19 @@
 import styles from './Card.module.css';
-import Chip from '../Chip';
+import Chip from '../text/Chip';
 import { readingTime } from '../../utils';
 import { joinClassNames } from '../../utils';
+import { Post } from '../../types';
 
 const BULLET_POINT = String.fromCharCode(8226);
 
-type CardData = {
-  title: string;
-  image: string;
-  date: string;
-  body: string;
-  link: string;
-  tags: string[];
-  time?: string;
+interface Props {
+  data: Post;
+  includeReadingTime: boolean;
 }
 
-interface PropTypes {
-  data: CardData;
-  includeReadingTime?: boolean;
-}
+const Card = ({ data, includeReadingTime = false }: Props) => {
+  console.log(includeReadingTime);
 
-const Card = ({ data, includeReadingTime }: PropTypes) => {
   if (includeReadingTime) {
     data.time = readingTime(data.body);
   }
@@ -34,15 +27,15 @@ const Card = ({ data, includeReadingTime }: PropTypes) => {
             {data.title}
           </h3>
           <p className={styles.date}>
-            {data.date} {data.time && `${BULLET_POINT} ${data.time}`}
+            {data.date} {data.time && `${BULLET_POINT} ${data.time} read`}
           </p>
           <p className={styles.body}>
             {data.body}
           </p>
         </div>
         <div className={styles.chips}>
-          {data.tags.map((tag, index) =>
-            <Chip key={index} label={tag} />
+          {data.tags.map((toolInfo, index) =>
+            <Chip key={index} label={toolInfo.name} color={toolInfo.color} />
           )}
         </div>
       </div>
@@ -50,4 +43,4 @@ const Card = ({ data, includeReadingTime }: PropTypes) => {
   );
 }
 
-export { Card, type CardData }
+export default Card;

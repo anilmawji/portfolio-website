@@ -71,7 +71,7 @@ footer {
   }
 }
 
-@media (max-width: 550px) {
+@media (max-width: 600px) {
   .content {
     padding: 10px;
     margin-left: 0;

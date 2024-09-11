@@ -1,16 +1,17 @@
 import styles from './CardContainer.module.css';
-import { Card, CardData } from './Card';
+import Card from './Card';
 import { useState } from 'react';
 import { joinClassNames } from '../../utils';
+import { Post } from '../../types';
 
-interface PropTypes {
+interface Props {
   className?: string;
   title?: string;
-  cardData: CardData[];
-  includeReadingTime?: boolean;
+  cardData: Post[];
+  includeReadingTime: boolean;
 }
 
-const CardContainer = ({ className, title, cardData, includeReadingTime }: PropTypes) => {
+const CardContainer = ({ className, title, cardData, includeReadingTime = false }: Props) => {
   const [cards] = useState(cardData);
 
   return (

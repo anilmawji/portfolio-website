@@ -2,7 +2,7 @@ import Canvas from './Canvas';
 import { useState, useEffect } from 'react';
 import { MouseState } from '../../hooks/useMouse';
 import { Particle } from './Particle';
-import { clamp, clampMin, isValidCssColor, getRgbColorValues } from '../../utils';
+import { clamp, clampMin, isValidCssColor, rgbToRgba } from '../../utils';
 
 const MIN_CONNECT_DISTANCE = 40_000;
 const MIN_PARTICLE_COUNT = 20;
@@ -41,7 +41,6 @@ const connectParticles = (
   particleLinkColor: string,
   maxOpacity: number
 ) => {
-  const colorValues = getRgbColorValues(particleLinkColor);
   const connectDistance = clampMin(
     (context.canvas.width / 3) * (context.canvas.height / 3),
     MIN_CONNECT_DISTANCE
@@ -56,7 +55,7 @@ const connectParticles = (
 
       if (distance <= connectDistance) {
         const opacity = maxOpacity - distance / connectDistance;
-        context.strokeStyle = `rgba(${colorValues}, ${opacity})`;
+        context.strokeStyle = rgbToRgba(particleLinkColor, opacity);
         context.beginPath();
         context.moveTo(particles[i].x, particles[i].y);
         context.lineTo(particles[j].x, particles[j].y);

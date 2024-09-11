@@ -4,15 +4,17 @@ import traceroute_img from '../assets/projects/traceroute-sim.jpg';
 import proxy_img from '../assets/projects/http-proxy.png';
 import mario_img from '../assets/projects/mario-kart.png';
 import mystics_img from '../assets/projects/mystics.png';
+import { ToolInfoMap as Tool } from './ToolInfo';
+import { Post } from '../types';
 
-const ProjectData = [
+const ProjectData: Post[] = [
   {
     title: "PowerShell Script Executor",
     image: it_portal_img,
     date: "July 20th, 2023",
     body: "Microsoft-focused desktop application for internal IT operations. Dynamically generates modern UI to interact with PowerShell script blocks. Import, track, schedule and execute scripts locally.",
     link: "https://github.com/anilmawji/PowerShell-Script-Runner",
-    tags: ["C#", ".NET MAUI", "Blazor", "MudBlazor", "HTML", "CSS"]
+    tags: [Tool.C_SHARP, Tool.DOT_NET_MAUI, Tool.BLAZOR, Tool.MUDBLAZOR, Tool.HTML, Tool.CSS]
   },
   {
     title: "Personal Website",
@@ -20,7 +22,7 @@ const ProjectData = [
     date: "June 30th, 2024",
     body: "Dynamic, mobile-friendly site loosely designed in Figma. It's currently being used to showcase my projects, but will eventually be extended to include a tech blog as well! The site uses a fully custom component library. ",
     link: "https://github.com/anilmawji/portfolio-site",
-    tags: ["React", "TypeScript", "JavaScript", "HTML", "CSS"]
+    tags: [Tool.REACT, Tool.TYPESCRIPT, Tool.JAVASCRIPT, Tool.HTML, Tool.CSS]
   },
   {
     title: "Mario Kart for Raspberry Pi 4",
@@ -28,7 +30,7 @@ const ProjectData = [
     date: "March 14th, 2022",
     body: "Frogger from scratch, except with characters from Super Mario! Includes custom SNES controller firmware for interfacing with GPIO. Originally a term project made for CPSC 359: Computing Machinery II at UCalgary.",
     link: "https://github.com/anilmawji/mario-kart",
-    tags: ["C", "WiringPi"]
+    tags: [Tool.C, Tool.WIRING_PI]
   },
   {
     title: "HTTP Proxy Server",
@@ -36,7 +38,7 @@ const ProjectData = [
     date: "January 6th, 2022",
     body: "Web proxy that blocks webpages containing select keywords. This server intercepts HTTP responses received by connected clients, and filters out information as needed. Made to work on Linux.",
     link: "https://github.com/anilmawji/http-proxy",
-    tags: ["C"]
+    tags: [Tool.C]
   },
   {
     title: "Mystics",
@@ -44,7 +46,7 @@ const ProjectData = [
     date: "August 19th, 2019",
     body: "A 2D medieval-style RPG I made in my senior year of high school, designed to test the limits of JavaFX. Includes a full sprite animation system, A* pathfinding enemies, tilemaps and an entity component system (ECS).",
     link: "https://github.com/anilmawji/mystics",
-    tags: ["Java", "JavaFX"]
+    tags: [Tool.JAVA, Tool.JAVA_FX]
   },
   {
     title: "Traceroute Simulation",
@@ -52,7 +54,7 @@ const ProjectData = [
     date: "January 15th, 2021",
     body: "Program for finding the shortest path between two nodes, meant to imitate traceroute. Uses Dijkstra’s shortest path algorithm.",
     link: "https://github.com/anilmawji/py-chat-app",
-    tags: ["C++"]
+    tags: [Tool.CPP]
   }
 ];
 

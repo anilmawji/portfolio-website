@@ -22,17 +22,16 @@
 
 .bracket svg {
   position: relative;
-  fill: var(--neon-green2);
   width: 0.8em;
-  height: 0.8em;
+  fill: var(--neon-green2);
 }
 
 .bracketLeft svg {
-  left: 10px;
+  left: 2px;
 }
 
 .bracketRight svg {
-  right: 10px;
+  right: 2px;
 }
 
 .title {
@@ -105,6 +104,10 @@
     font-size: 36px;
     text-align: center;
     right: 0;
+  }
+
+  .bracket svg {
+    width: initial;
   }
 
   .title {

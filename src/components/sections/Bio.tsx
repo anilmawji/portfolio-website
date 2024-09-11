@@ -20,7 +20,7 @@ const BioSection = ({ className }: PropTypes) => {
           <p>
             Hi, I'm Anil, a Computer Science student at the <a href="https://www.ucalgary.ca/" target="_blank">University of Calgary</a> with a deep passion for cyber security.
             <br /><br />
-            My love for technology began like many others; playing video games! But once I stumbled across <a href="https://en.wikipedia.org/wiki/Cheat_Engine" target="_blank">one fun little program</a>,
+            My love for technology began like many others; playing video games! But once I stumbled across <a href="https://en.wikipedia.org/wiki/Cheat_Engine" target="_blank">this fun little program</a>,
             I learned that you could break them, too. Ever since then, my curiosity for the digital world has only grown.
             <br /><br />
             Fast forward to today, and I've had the privilege of working at <a href="https://www.starburst.io/" target="_blank">a unicorn startup</a>, <a href="https://www.arcurve.com/" target="_blank">a software development company</a> and the <a href="https://www.canada.ca/en.html" target="_blank">federal government</a>.
@@ -41,7 +41,7 @@ const BioSection = ({ className }: PropTypes) => {
           </ul>
           <p>
             <br />
-            I'm always eager to connect with other tech enthusiasts, so feel free to <NavLink to="/about#contact">reach out</NavLink> if you want to chat or collaborate!
+            I'm always eager to connect with other tech enthusiasts, so feel free to <NavLink to="/about#contact">reach out</NavLink> if you'd like to chat or collaborate!
           </p>
         </div>
       </div>

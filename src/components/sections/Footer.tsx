@@ -1,6 +1,6 @@
 import styles from './Footer.module.css';
-import ScrollToTopButton from './buttons/ScrollToTopButton';
-import CustomNavLink from './nav/CustomNavLink';
+import ScrollToTopButton from '../buttons/ScrollToTopButton';
+import CustomNavLink from '../nav/CustomNavLink';
 
 interface FooterItemListPropTypes {
   title: string;

@@ -1,6 +1,6 @@
 import styles from './Hero.module.css';
 import Icon, { IconType } from '../icons/Icon';
-import GlitchedText from '../GlitchedText';
+import GlitchedText from '../text/GlitchedText';
 import { joinClassNames } from '../../utils';
 
 interface PropTypes {

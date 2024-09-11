@@ -1,6 +1,6 @@
 type AnyFunction = (...args: any[]) => void;
 
-const useThrottle = <T extends AnyFunction>(callback: T, delay: number, immediate: boolean = false) => {
+const useThrottle = <T extends AnyFunction>(callback: T, delay: number, immediate: boolean = false): T => {
   let lastRun = Date.now();
 
   return function(this: any, ...args: Parameters<T>): void {
