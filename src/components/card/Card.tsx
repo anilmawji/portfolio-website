@@ -2,7 +2,7 @@ import styles from './Card.module.css';
 import Chip from '../text/Chip';
 import { readingTime } from '../../utils';
 import { joinClassNames } from '../../utils';
-import { Post } from '../../types';
+import { Post, isToolInfo } from '../../types';
 
 const BULLET_POINT = String.fromCharCode(8226);
 
@@ -12,8 +12,6 @@ interface Props {
 }
 
 const Card = ({ data, includeReadingTime = false }: Props) => {
-  console.log(includeReadingTime);
-
   if (includeReadingTime) {
     data.time = readingTime(data.body);
   }
@@ -34,9 +32,16 @@ const Card = ({ data, includeReadingTime = false }: Props) => {
           </p>
         </div>
         <div className={styles.chips}>
-          {data.tags.map((toolInfo, index) =>
-            <Chip key={index} label={toolInfo.name} color={toolInfo.color} />
-          )}
+          {data.tags.map((tag, index) => {
+            const isTagATool = isToolInfo(tag);
+            return (
+              <Chip
+                key={index}
+                label={isTagATool ? tag.name : tag}
+                color={isTagATool ? tag.color : undefined}
+              />
+            );
+          })}
         </div>
       </div>
     </a>

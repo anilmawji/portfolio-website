@@ -1,7 +1,7 @@
-import { ToolInfo } from "./data/ToolInfo"
-
 type RgbString = `rgb(${number},${number},${number})`;
 type RgbaString = `rgba(${number},${number},${number},${number})`;
+
+type ToolInfo = { name: string; color: RgbString; }
 
 type Post = {
   title: string;
@@ -10,11 +10,20 @@ type Post = {
   time?: string;
   body: string;
   link: string;
-  tags: ToolInfo[];
+  tags: (ToolInfo | string)[];
+}
+
+function isToolInfo(value: any): value is ToolInfo {
+  return typeof value === 'object' &&
+         value !== null &&
+         typeof value.name === 'string' &&
+         typeof value.color === 'string';
 }
 
 export {
   type RgbString,
   type RgbaString,
-  type Post
+  type ToolInfo,
+  type Post,
+  isToolInfo
 };

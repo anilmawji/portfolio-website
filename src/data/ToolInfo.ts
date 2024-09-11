@@ -1,7 +1,6 @@
 import { rgb } from '../utils';
-import { RgbString } from '../types';
+import { ToolInfo } from '../types';
 
-interface ToolInfo { name: string; color: RgbString; }
 const newToolInfo = (name: string, r: number, g: number, b: number): ToolInfo => ({ name, color: rgb(r, g, b) });
 
 enum ToolName {
@@ -48,4 +47,4 @@ const ToolInfoMap: Record<ToolName, ToolInfo> = {
   [ToolName.REACT]: newToolInfo('React', 88, 195, 224)
 } as const;
 
-export { ToolInfoMap, type ToolInfo };
+export { ToolInfoMap };

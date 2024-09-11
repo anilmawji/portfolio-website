@@ -9,7 +9,7 @@ const BlogData: Post[] = [
     date: "Jan 15th 2024",
     body: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus impedit a ipsa fugit, porro adipisci at enim similique vitae doloribus maiores repudiandae nostrum maxime in recusandae unde fuga illum esse! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus impedit a ipsa fugit, porro adipisci at enim similique vitae doloribus maiores repudiandae nostrum maxime in recusandae unde fuga illum esse!",
     link: "https://github.com/anilmawji/PowerShell-Script-Runner",
-    tags: [Tool.C, Tool.DOT_NET_MAUI, Tool.HTML, Tool.CSS]
+    tags: [Tool.C, Tool.DOT_NET_MAUI, Tool.HTML, "Test"]
   },
   {
     title: "Hack The Box: Anubis Writeup",
