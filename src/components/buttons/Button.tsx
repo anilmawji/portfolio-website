@@ -1,4 +1,5 @@
 import styles from './Button.module.css';
+import LoadingIcon from '../../components/icons/LoadingIcon';
 import { joinClassNames } from '../../utils';
 
 interface PropTypes extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -17,8 +18,11 @@ const CustomButton = ({ className, text, disabled, isLoading, children, ...restP
       {...restProps}
     >
       <div className={styles.front}>
-        {text}
-        {children}
+        <div className={styles.front}>
+          {isLoading
+            ? <LoadingIcon />
+            : <>{text} {children}</>}
+        </div>
       </div>
     </button>
   );

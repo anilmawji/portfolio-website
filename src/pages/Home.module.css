@@ -32,10 +32,8 @@
   -ms-transform: translateX(-50%);
   -o-transform: translateX(-50%);
   background: var(--main-bg-color);
-  background-size: 16px 16px;
-  background-image:
-    linear-gradient(to right, #252525 1px, transparent 1px),
-    linear-gradient(to bottom, #252525 1px, transparent 1px);
+  background-size: var(--grid-background-size);
+  background-image: var(--grid-background-image);
 }
 
 .container {
