@@ -6,7 +6,7 @@ const BlogData: Post[] = [
   {
     title: "Hack The Box: Anubis Writeup",
     image: arch_desk,
-    date: "Jan 15th 2024",
+    date: "January 15th 2024",
     body: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus impedit a ipsa fugit, porro adipisci at enim similique vitae doloribus maiores repudiandae nostrum maxime in recusandae unde fuga illum esse! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus impedit a ipsa fugit, porro adipisci at enim similique vitae doloribus maiores repudiandae nostrum maxime in recusandae unde fuga illum esse!",
     link: "https://github.com/anilmawji/PowerShell-Script-Runner",
     tags: [Tool.C, Tool.DOT_NET_MAUI, Tool.HTML, "Test"]
@@ -14,7 +14,7 @@ const BlogData: Post[] = [
   {
     title: "Hack The Box: Anubis Writeup",
     image: arch_desk,
-    date: "Jan 15th 2024",
+    date: "January 15th 2024",
     body: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus impedit a ipsa fugit, porro adipisci at enim similique!",
     link: "https://github.com/anilmawji/PowerShell-Script-Runner",
     tags: [Tool.C_SHARP, Tool.DOT_NET_MAUI, Tool.BLAZOR]
@@ -30,7 +30,7 @@ const BlogData: Post[] = [
   {
     title: "Hack The Box: Anubis Writeup",
     image: arch_desk,
-    date: "Jan 15th 2024",
+    date: "January 15th 2024",
     body: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus impedit a ipsa fugit, porro adipisci at enim similique!",
     link: "https://github.com/anilmawji/PowerShell-Script-Runner",
     tags: [Tool.C_SHARP, Tool.DOT_NET_MAUI, Tool.BLAZOR, Tool.HTML]
@@ -38,7 +38,7 @@ const BlogData: Post[] = [
   {
     title: "Hack The Box: Anubis Writeup",
     image: arch_desk,
-    date: "Jan 15th 2024",
+    date: "January 15th 2024",
     body: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus impedit a ipsa fugit, porro adipisci at enim similique!",
     link: "https://github.com/anilmawji/PowerShell-Script-Runner",
     tags: [Tool.C_SHARP, Tool.DOT_NET_MAUI]
@@ -46,7 +46,7 @@ const BlogData: Post[] = [
   {
     title: "Hack The Box: Anubis Writeup",
     image: arch_desk,
-    date: "Jan 15th 2024",
+    date: "January 15th 2024",
     body: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus impedit a ipsa fugit, porro adipisci at enim similique!",
     link: "https://github.com/anilmawji/PowerShell-Script-Runner",
     tags: [Tool.C_SHARP, Tool.DOT_NET_MAUI, Tool.BLAZOR, Tool.HTML]

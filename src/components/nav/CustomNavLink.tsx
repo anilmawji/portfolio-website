@@ -11,8 +11,6 @@ interface PropTypes extends LinkProps {
   onClick?: (e: React.MouseEvent<HTMLAnchorElement>) => void;
 }
 
-const preventAnchorDrag = (e: React.DragEvent<HTMLAnchorElement>) => e.preventDefault();
-
 const CustomNavLink = ({ to, label, className, children, onClick, ...restProps }: PropTypes) => {
   const location = useLocation();
   const currentUrl = location.pathname + location.hash;
@@ -29,8 +27,8 @@ const CustomNavLink = ({ to, label, className, children, onClick, ...restProps }
       <Link
         to={to}
         className={joinClassNames(className, to === currentUrl ? "active" : "")}
-        onDragStart={preventAnchorDrag}
         onClick={handleClick}
+        onDragStart={(e) => e.preventDefault()}
         {...restProps}
       >
         {label}

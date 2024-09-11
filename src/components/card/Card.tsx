@@ -4,14 +4,12 @@ import { readingTime } from '../../utils';
 import { joinClassNames } from '../../utils';
 import { Post, isToolInfo } from '../../types';
 
-const BULLET_POINT = String.fromCharCode(8226);
-
 interface Props {
   data: Post;
-  includeReadingTime: boolean;
+  includeReadingTime?: boolean;
 }
 
-const Card = ({ data, includeReadingTime = false }: Props) => {
+const Card = ({ data, includeReadingTime }: Props) => {
   if (includeReadingTime) {
     data.time = readingTime(data.body);
   }
@@ -25,7 +23,7 @@ const Card = ({ data, includeReadingTime = false }: Props) => {
             {data.title}
           </h3>
           <p className={styles.date}>
-            {data.date} {data.time && `${BULLET_POINT} ${data.time} read`}
+            {data.date} {data.time ? <span>&#8226; {data.time} read</span> : null}
           </p>
           <p className={styles.body}>
             {data.body}

@@ -8,10 +8,10 @@ interface Props {
   className?: string;
   title?: string;
   cardData: Post[];
-  includeReadingTime: boolean;
+  includeReadingTime?: boolean;
 }
 
-const CardContainer = ({ className, title, cardData, includeReadingTime = false }: Props) => {
+const CardContainer = ({ className, title, cardData, includeReadingTime }: Props) => {
   const [cards] = useState(cardData);
 
   return (

@@ -32,7 +32,7 @@ const ToolInfoMap: Record<ToolName, ToolInfo> = {
   [ToolName.CPP]: newToolInfo('C++', 243, 75, 125),
   [ToolName.DOT_NET]: newToolInfo('.NET', 81, 43, 212),
   [ToolName.DOT_NET_MAUI]: newToolInfo('.NET MAUI', 134, 97, 197),
-  [ToolName.BLAZOR]: newToolInfo('Blazor', 91, 45, 143),
+  [ToolName.BLAZOR]: newToolInfo('Blazor', 92, 45, 145),
   [ToolName.MUDBLAZOR]: newToolInfo('MudBlazor', 126, 111, 255),
   [ToolName.JAVA]: newToolInfo('Java', 176, 114, 25),
   [ToolName.JAVAFX]: newToolInfo('JavaFX', 82, 211, 170),
