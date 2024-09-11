@@ -10,7 +10,7 @@
 
 .name {
   display: flex;
-  font-size: 56px;
+  font-size: 60px;
   color: var(--neon-green2);
   right: 20px;
 }
@@ -22,7 +22,7 @@
 
 .bracket svg {
   position: relative;
-  width: 0.8em;
+  width: 0.9em;
   fill: var(--neon-green2);
 }
 
@@ -35,13 +35,13 @@
 }
 
 .title {
-  font-size: 24px;
+  font-size: 26px;
   padding-top: 10px;
 }
 
 .bio {
   padding: 20px 0;
-  font-size: 18px;
+  font-size: 19px;
   color: var(--grey);
 }
 
@@ -53,8 +53,8 @@
 }
 
 .icon {
-  width: 24px;
-  height: 24px;
+  width: 26px;
+  height: 26px;
   transition: filter 0.3s ease;
 }
 

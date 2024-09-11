@@ -12,7 +12,7 @@ interface PropTypes {
 
 const Page = ({ className, children, headerId, title }: PropTypes) => {
   return (
-    <div className={joinClassNames(styles.page, className)}>
+    <div className={joinClassNames(styles.page, className, "gridBackground")}>
       <main>
         {title && <header className={styles.header} id={headerId ? headerId : ""}>
           <div className={styles.titleContainer}>

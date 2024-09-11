@@ -6,11 +6,11 @@ import { Post, isToolInfo } from '../../types';
 
 interface Props {
   data: Post;
-  includeReadingTime?: boolean;
+  includeReadTime?: boolean;
 }
 
-const Card = ({ data, includeReadingTime }: Props) => {
-  if (includeReadingTime) {
+const Card = ({ data, includeReadTime }: Props) => {
+  if (includeReadTime) {
     data.time = readingTime(data.body);
   }
 

@@ -14,9 +14,15 @@ interface PropTypes {
 const GlitchedText = ({ className, children }: PropTypes) => {
   return (
     <div className={joinClassNames(styles.stack, className)} style={stackStyle}>
-      <span style={spanStyle0}>{children}</span>
-      <span style={spanStyle1}>{children}</span>
-      <span style={spanStyle2}>{children}</span>
+      <span style={spanStyle0} className="preventSelect">
+        {children}
+      </span>
+      <span style={spanStyle1}>
+        {children}
+      </span>
+      <span style={spanStyle2} className="preventSelect">
+        {children}
+      </span>
     </div>
   );
 }

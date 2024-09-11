@@ -14,15 +14,7 @@ const ProjectData: Post[] = [
     date: "July 20th, 2023",
     body: "Microsoft-focused desktop application for internal IT operations. Dynamically generates modern UI to interact with PowerShell script blocks. Import, track, schedule and execute scripts locally.",
     link: "https://github.com/anilmawji/PowerShell-Script-Runner",
-    tags: [Tool.C_SHARP, Tool.DOT_NET_MAUI, Tool.BLAZOR, Tool.MUDBLAZOR, Tool.HTML, Tool.CSS]
-  },
-  {
-    title: "Personal Website",
-    image: portfolio_img,
-    date: "June 30th, 2024",
-    body: "Dynamic, mobile-friendly site loosely designed in Figma. It's currently being used to showcase my projects, but will eventually be extended to include a tech blog as well! The site uses a fully custom component library. ",
-    link: "https://github.com/anilmawji/portfolio-site",
-    tags: [Tool.REACT, Tool.TYPESCRIPT, Tool.JAVASCRIPT, Tool.HTML, Tool.CSS]
+    tags: [Tool.C_SHARP, Tool.DOT_NET_MAUI, Tool.BLAZOR, Tool.POWERSHELL, Tool.HTML, Tool.CSS]
   },
   {
     title: "Mario Kart for Raspberry Pi 4",
@@ -31,6 +23,14 @@ const ProjectData: Post[] = [
     body: "Frogger from scratch, except with characters from Super Mario! Includes custom SNES controller firmware for interfacing with GPIO. Originally a term project made for CPSC 359: Computing Machinery II at UCalgary.",
     link: "https://github.com/anilmawji/mario-kart",
     tags: [Tool.C, Tool.WIRING_PI]
+  },
+  {
+    title: "Personal Website",
+    image: portfolio_img,
+    date: "June 30th, 2024",
+    body: "Dynamic, mobile-friendly site loosely designed in Figma. It's currently being used to showcase my projects, but will eventually be extended to include a tech blog as well! The site uses a fully custom component library. ",
+    link: "https://github.com/anilmawji/portfolio-site",
+    tags: [Tool.REACT, Tool.TYPESCRIPT, Tool.JAVASCRIPT, Tool.HTML, Tool.CSS]
   },
   {
     title: "HTTP Proxy Server",
@@ -53,7 +53,7 @@ const ProjectData: Post[] = [
     image: traceroute_img,
     date: "January 15th, 2021",
     body: "Program for finding the shortest path between two nodes, meant to imitate traceroute. Uses Dijkstra’s shortest path algorithm.",
-    link: "https://github.com/anilmawji/py-chat-app",
+    link: "https://github.com/anilmawji/traceroute-sim",
     tags: [Tool.CPP]
   }
 ];

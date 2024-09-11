@@ -63,13 +63,17 @@ a {
   text-decoration: none;
 }
 
-.disableSelect {  
+.preventSelect,
+.preventDrag {  
   user-select: none;
-  -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
+}
+
+.preventDrag {
+  -webkit-touch-callout: none;
   -webkit-user-drag: none;
 }
 
@@ -89,21 +93,6 @@ a {
     0 -4px 4px var(--box-shadow-color),
     0 -8px 8px var(--box-shadow-color),
     0 -16px 16px var(--box-shadow-color);
-}
-
-@property --angle {
-  syntax: "<angle>";
-  initial-value: 0deg;
-  inherits: false;
-}
-
-@keyframes spin {
-  from {
-    --angle: 0deg;
-  }
-  to {
-    --angle: 360deg;
-  }
 }
 
 .glowBorder::before,
@@ -132,10 +121,36 @@ a {
   opacity: 0.5;
 }
 
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes spin {
+  from {
+    --angle: 0deg;
+  }
+  to {
+    --angle: 360deg;
+  }
+}
+
+.gridBackground {
+  background-size: 16px 16px;
+  background-image:
+    linear-gradient(to right, #252525 1px, transparent 1px),
+    linear-gradient(to bottom, #252525 1px, transparent 1px);
+}
+
 .dottedBackground {
-  background-image: radial-gradient(var(--dotted-bg-color) 1px, transparent 0);
   background-size: 20px 20px;
   background-position: -19px -19px;
+  background-image:
+    radial-gradient(
+      var(--dotted-bg-color)
+      1px, transparent 0
+    );
 }
 
 .projects {
@@ -149,6 +164,16 @@ a {
   align-items: center;
   margin: 0 auto;
   gap: 50px;
+}
+
+/* This is to ensure the glowing border of the bio section appears above the grid effect */
+.bioSection {
+  width: min(1000px, calc(100% - 100px));
+  z-index: 2;
+}
+
+.contactSection {
+  width: min(1000px, calc(100% - 100px));
 }
 
 .blogPage p {

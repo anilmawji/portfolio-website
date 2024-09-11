@@ -26,9 +26,9 @@ const Home = () => {
         <div className={styles.bottom}>
           <CardContainer
             className={styles.featured}
-            title="Featured Posts"
+            title="Featured Blog Posts"
             cardData={BlogData}
-            includeReadingTime
+            includeReadTime
           />
         </div>
       </div>

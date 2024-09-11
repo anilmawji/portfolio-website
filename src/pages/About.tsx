@@ -6,8 +6,10 @@ const About = () => {
   return (
     <Page title="About Me">
       <div className="aboutSections">
-        <BioSection className="glowBorder" />
-        <ContactSection className="shadowBottom" />
+        <div className="bioSection">
+          <BioSection className="glowBorder" />
+        </div>
+        <ContactSection className="contactSection shadowBottom" />
       </div>
     </Page>
   );

@@ -4,12 +4,18 @@ import { joinClassNames } from '../../utils';
 interface PropTypes extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
   text?: string;
+  disabled?: boolean;
+  isLoading?: boolean;
   children?: React.ReactNode;
 }
 
-const CustomButton = ({ className, text, children, ...restProps }: PropTypes) => {
+const CustomButton = ({ className, text, disabled, isLoading, children, ...restProps }: PropTypes) => {
   return (
-    <button className={joinClassNames(styles.pushable, className)} {...restProps}>
+    <button
+      className={joinClassNames(styles.pushable, className)}
+      disabled={disabled || isLoading}
+      {...restProps}
+    >
       <div className={styles.front}>
         {text}
         {children}

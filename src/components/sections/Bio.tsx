@@ -20,8 +20,8 @@ const BioSection = ({ className }: PropTypes) => {
           <p>
             Hi, I'm Anil, a Computer Science student at the <a href="https://www.ucalgary.ca/" target="_blank">University of Calgary</a> with a deep passion for cyber security.
             <br /><br />
-            My love for technology began like many others; playing video games! But once I stumbled across <a href="https://en.wikipedia.org/wiki/Cheat_Engine" target="_blank">this fun little program</a>,
-            I learned that you could break them, too. Ever since then, my curiosity for the digital world has only grown.
+            My love for technology began like many others; playing video games! But when I stumbled across <a href="https://en.wikipedia.org/wiki/Cheat_Engine" target="_blank">this fun little program</a> when I was a kid,
+            I learned how to break games, too. Ever since then, my curiosity for the digital world has only grown.
             <br /><br />
             Fast forward to today, and I've had the privilege of working at <a href="https://www.starburst.io/" target="_blank">a unicorn startup</a>, <a href="https://www.arcurve.com/" target="_blank">a software development company</a> and the <a href="https://www.canada.ca/en.html" target="_blank">federal government</a>.
             Now, I'm diving into the world of ethical hacking as I work towards earning my <a href="https://certifications.tcm-sec.com/pjpt/" target="_blank">PJPT certification.</a>
@@ -41,13 +41,13 @@ const BioSection = ({ className }: PropTypes) => {
           </ul>
           <p>
             <br />
-            I'm always eager to connect with other tech enthusiasts, so feel free to <NavLink to="/about#contact">reach out</NavLink> if you'd like to chat or collaborate!
+            I'm always eager to connect with fellow tech enthusiasts, so feel free to <NavLink to="/about#contact">reach out</NavLink> if you'd like to chat or collaborate!
           </p>
         </div>
       </div>
       <div className={styles.profiles}>
         <StackOverflowCard user_id="8902167" theme={SOCardTheme.Dark} />
-        <TryHackMeCard username="Cyb3rHusky" />
+        <TryHackMeCard username="zxphyr" />
       </div>
     </div>
   );

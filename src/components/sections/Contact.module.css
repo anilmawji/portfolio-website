@@ -2,7 +2,6 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  width: min(1000px, calc(100% - 100px));
   background: var(--main-fg-color);
   border-radius: 8px;
   padding: 30px;

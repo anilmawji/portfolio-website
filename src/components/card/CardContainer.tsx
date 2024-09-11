@@ -8,10 +8,10 @@ interface Props {
   className?: string;
   title?: string;
   cardData: Post[];
-  includeReadingTime?: boolean;
+  includeReadTime?: boolean;
 }
 
-const CardContainer = ({ className, title, cardData, includeReadingTime }: Props) => {
+const CardContainer = ({ className, title, cardData, includeReadTime }: Props) => {
   const [cards] = useState(cardData);
 
   return (
@@ -22,7 +22,7 @@ const CardContainer = ({ className, title, cardData, includeReadingTime }: Props
       <div className={styles.cards}>
         {cards.map((data, i) => {
           return (
-            <Card key={i} data={data} includeReadingTime={includeReadingTime} />
+            <Card key={i} data={data} includeReadTime={includeReadTime} />
           );
         })}
       </div>

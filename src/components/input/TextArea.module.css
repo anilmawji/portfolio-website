@@ -2,6 +2,7 @@
   --ta-text-padding: 14px;
   --ta-border-style: 1px solid rgba(108, 250, 132, 0.8);
   --ta-border-transition-delay: 0.15s;
+  --ta-border-radius: 8px;
 }
 
 .filled {
@@ -10,6 +11,7 @@
   width: 100%;
   padding: var(--ta-text-padding);
   background-color: var(--main-bg-color);
+  border-radius: var(--ta-border-radius);
 }
 
 .filled textarea {
@@ -24,6 +26,7 @@
   color: white;
   font-size: 16px;
   padding: var(--ta-text-padding);
+  border-radius: var(--ta-border-radius);
 }
 
 .filled textarea::placeholder {
@@ -50,18 +53,22 @@
   border-left: var(--ta-border-style);
   border-right: var(--ta-border-style);
   transition:
-    transform var(--ta-border-transition-delay) ease calc(var(--ta-border-transition-delay) + 0.05s),
+    transform var(--ta-border-transition-delay) ease var(--ta-border-transition-delay),
     height var(--ta-border-transition-delay) ease;
 }
 
 .border::before {
   top: 0;
   border-top: var(--ta-border-style);
+  border-top-left-radius: var(--ta-border-radius);
+  border-top-right-radius: var(--ta-border-radius);
 }
 
 .border::after {
   bottom: 0;
   border-bottom: var(--ta-border-style);
+  border-bottom-left-radius: var(--ta-border-radius);
+  border-bottom-right-radius: var(--ta-border-radius);
 }
 
 .filled textarea:focus ~ .border::before,
@@ -74,7 +81,7 @@
   height: 50%;
   transition:
     transform var(--ta-border-transition-delay) ease,
-    height var(--ta-border-transition-delay) ease calc(var(--ta-border-transition-delay) + 0.05s);
+    height var(--ta-border-transition-delay) ease var(--ta-border-transition-delay);
 }
 
 /* Autofill styling according */
