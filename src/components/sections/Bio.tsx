@@ -2,6 +2,7 @@ import styles from './Bio.module.css';
 import portrait from '../../assets/me.jpg';
 import { StackOverflowCard, SOCardTheme } from '../../components/card/StackOverflowCard';
 import TryHackMeCard from '../../components/card/TryHackMeCard';
+import { NavLink } from 'react-router-dom';
 import { joinClassNames } from '../../utils';
 
 interface PropTypes {
@@ -38,6 +39,10 @@ const BioSection = ({ className }: PropTypes) => {
               <a href="https://www.credly.com/badges/d63c2487-af0c-4141-a69f-f2b17d503b47" target="_blank">Microsoft Azure Fundamentals (AZ-900)</a>
             </li>
           </ul>
+          <p>
+            <br />
+            I'm always eager to connect with other tech enthusiasts, so feel free to <NavLink to="/about#contact">reach out</NavLink> if you want to chat or collaborate!
+          </p>
         </div>
       </div>
       <div className={styles.profiles}>

@@ -23,11 +23,21 @@ const Navbar = ({ drawerDelay = 250 }: PropTypes) => {
     <nav>
       <HamburgerButton className={styles.hamburger} isOpen={isHamburgerOpen} onToggle={toggle} />
       <ul>
-        <CustomNavLink to="/" label="Home" onClick={closeHamburgerDrawer} />
-        <CustomNavLink to="/portfolio" label="Portfolio" onClick={closeHamburgerDrawer} />
-        <CustomNavLink to="/about" label="About" onClick={closeHamburgerDrawer} />
-        <CustomNavLink to="/about#contact" label="Contact" onClick={closeHamburgerDrawer} />
-        <CustomNavLink to="/blog" label="Blog" onClick={closeHamburgerDrawer} />
+        <li>
+          <CustomNavLink to="/" label="Home" onClick={closeHamburgerDrawer} />
+        </li>
+        <li>
+          <CustomNavLink to="/portfolio" label="Portfolio" onClick={closeHamburgerDrawer} />
+        </li>
+        <li>
+          <CustomNavLink to="/about" label="About" onClick={closeHamburgerDrawer} />
+        </li>
+        <li>
+          <CustomNavLink to="/about#contact" label="Contact" onClick={closeHamburgerDrawer} />
+        </li>
+        <li>
+          <CustomNavLink to="/blog" label="Blog" onClick={closeHamburgerDrawer} />
+        </li>
       </ul>
       <div className={styles.shadow} />
     </nav>

@@ -54,10 +54,6 @@
   margin-top: 80px;
 }
 
-/* .circuit {
-  left: calc((var(--home-margin) - var(--circuit-icon-size) + 27px) / 2);
-} */
-
 @media (max-width: 850px) {
   .header {
     height: 125px;
@@ -79,10 +75,7 @@
 }
 
 @media (max-width: 400px) {
-  .lineLeft {
-    display: none;
-  }
-
+  .lineLeft,
   .lineRight {
     display: none;
   }

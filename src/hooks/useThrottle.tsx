@@ -1,24 +1,21 @@
-import { useEffect, useState, useRef } from 'react';
+type AnyFunction = (...args: any[]) => void;
 
-const useThrottle = <T,>(value: T, interval: number): T => {
-  const [throttledValue, setThrottledValue] = useState<T>(value);
-  const lastExecution = useRef<number>(-1);
+const useThrottle = <T extends AnyFunction>(callback: T, delay: number, immediate: boolean = false) => {
+  let lastRun = Date.now();
 
-  useEffect(() => {
-    if (Date.now() >= lastExecution.current + interval) {
-      setThrottledValue(value);
-      lastExecution.current = Date.now();
-    } else {
-      const timerId = setTimeout(() => {
-        setThrottledValue(value);
-        lastExecution.current = Date.now();
-      }, interval);
+  return function(this: any, ...args: Parameters<T>): void {
+    const context = this;
+    const callNow = immediate;
 
-      return () => clearTimeout(timerId);
+    if (Date.now() - lastRun >= delay) {
+      callback.apply(context, args);
+      lastRun = Date.now();
     }
-  }, [value, interval]);
 
-  return throttledValue;
-}
+    if (callNow) {
+      callback.apply(context, args);
+    }
+  } as T;
+};
 
 export default useThrottle;

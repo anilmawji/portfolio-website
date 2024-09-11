@@ -2,7 +2,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  width: min(1000px, 100%);
+  width: min(1000px, calc(100% - 100px));
   background: var(--main-fg-color);
   border-radius: 8px;
   padding: 30px;
@@ -34,8 +34,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 120px;
-  height: 40px;
+  width: 100px;
+  height: 44px;
 }
 
 .send > :first-child {
@@ -49,17 +49,26 @@
 .icon {
   width: 24px;
   height: 24px;
-  stroke: #56c769;
+  stroke: #00ac33;
   padding-top: 2px;
 }
 
 /* Cover ugly border until hCaptcha decides to fix their styling: https://github.com/hCaptcha/react-hcaptcha/issues/225 */
-.captcha {
-  width: 300px;
-  height: 75px;
-  outline: 6px solid var(--main-fg-color);
+.captchaNormal,
+.captchaCompact {
+  outline: 8px solid var(--main-fg-color);
   outline-offset: -2px;
-  border-radius: 6px;
+  border-radius: 8px;
+}
+
+.captchaNormal {
+  width: 302px;
+  height: 76px;
+}
+
+.captchaCompact {
+  width: 158px;
+  height: 138px;
 }
 
 .result {
@@ -85,5 +94,16 @@
 
   .captcha {
     width: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .contact {
+    width: min(1000px, calc(100% - 30px));
+  }
+
+  .title {
+    font-size: 20px;
+    white-space: nowrap;
   }
 }

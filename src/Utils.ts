@@ -69,31 +69,6 @@ export function readingTime(text: string, wpm: number = 225): string {
   return time >= 1 ? time.toString() + " min" : "Less than 1 min";
 }
 
-type DebounceFunction = (...args: any[]) => void;
-
-export function debounce<T extends DebounceFunction>(func: T, delay: number, immediate: boolean = false): T {
-  let timeout: number | null = null;
-
-  return function(this: any, ...args: Parameters<T>): void {
-    const context = this;
-    const callNow = immediate && !timeout;
-
-    if (timeout) {
-      clearTimeout(timeout);
-    }
-    timeout = setTimeout(() => {
-      timeout = null;
-      if (!immediate) {
-        func.apply(context, args);
-      }
-    }, delay);
-
-    if (callNow) {
-      func.apply(context, args);
-    }
-  } as T;
-}
-
 /*#####################################################################*\
 |#                                                                     #|
 |#   COLOR UTILS                                                       #|

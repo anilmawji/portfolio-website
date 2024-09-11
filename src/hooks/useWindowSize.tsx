@@ -1,5 +1,13 @@
 import { useState, useEffect } from 'react';
-import { debounce } from '../utils';
+import useThrottle from './useThrottle';
+import useDebounce from './useDebounce';
+
+const getWindowSize = () => {
+  return {
+    width: window.innerWidth,
+    height: window.innerHeight,
+  };
+}
 
 interface WindowSize {
   width: number;
@@ -8,34 +16,22 @@ interface WindowSize {
 
 type WindowSizeCallback = (size: WindowSize) => void;
 
-interface UseWindowSizeOptions {
-  callback?: WindowSizeCallback;
-  debounceDelay?: number;
-}
-
-const useWindowSize = ({ callback, debounceDelay = 5000 }: UseWindowSizeOptions) => {
-  const getWindowSize = () => {
-    return {
-      width: window.innerWidth,
-      height: window.innerHeight,
-    };
-  }
-
+const useWindowSize = (callback?: WindowSizeCallback, throttleDelay = 500) => {
   const [windowSize, setWindowSize] = useState(getWindowSize);
 
   useEffect(() => {
-    // Debounce to avoid the function fire multiple times
-    const handleResizeDebounced = debounce(() => {
+    // Debounce to avoid executing the function too many times
+    const handleResizeThrottled = useThrottle(() => {
       const newSize = getWindowSize();
       setWindowSize(newSize);
       callback?.(newSize);
-    }, debounceDelay);
+    }, throttleDelay);
 
-    window.addEventListener("resize", handleResizeDebounced);
-    return () => window.removeEventListener("resize", handleResizeDebounced);
-  }, [callback, debounceDelay]);
+    window.addEventListener("resize", handleResizeThrottled);
+    return () => window.removeEventListener("resize", handleResizeThrottled);
+  }, [callback, throttleDelay]);
 
-  return windowSize;
+  return [windowSize.width, windowSize.height];
 }
 
 export default useWindowSize;

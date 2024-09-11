@@ -6,6 +6,7 @@ import Icon, { IconType } from '../icons/Icon';
 import TextArea from '../../components/input/TextArea';
 import { joinClassNames } from '../../utils';
 import HCaptcha from '@hcaptcha/react-hcaptcha';
+import useWindowSize from '../../hooks/useWindowSize';
 
 // Public keys
 const hCaptchaSiteKey = "50b2fe65-b00b-4b9e-ad62-3ba471098be2";
@@ -19,15 +20,7 @@ const ContactSection = ({ className }: PropTypes) => {
   const [result, setResult] = useState<string>("");
   const formRef = useRef<HTMLFormElement>(null);
   const captchaRef = useRef<HCaptcha>(null);
-
-  const resetForm = () => {
-    if (captchaRef.current) {
-      captchaRef.current.resetCaptcha();
-      setTimeout(() => {
-        setResult("");
-      }, 10000);
-    }
-  }
+  const [windowWidth] = useWindowSize();
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -48,7 +41,8 @@ const ContactSection = ({ className }: PropTypes) => {
       setResult("Failed to send message: " + data.message);
       console.log(result);
     }
-    resetForm();
+    // Remove message after 10 seconds
+    setTimeout(() => setResult(""), 10000);
   }
 
   // This reaches out to the hCaptcha JS API and runs the execute function on it.
@@ -68,14 +62,14 @@ const ContactSection = ({ className }: PropTypes) => {
         <TextField type="email" id="email" placeholder="email" isRequired />
         <TextField type="text" id="subject" placeholder="subject" isRequired />
         <TextArea className={styles.message} id="message" placeholder="message" isRequired />
-        <div className={styles.captcha}>
+        <div className={windowWidth > 400 ? styles.captchaNormal : styles.captchaCompact}>
           <HCaptcha
             sitekey={hCaptchaSiteKey}
             reCaptchaCompat={false}
             // onLoad={onLoad}
-            ref={captchaRef}
+            size={windowWidth > 400 ? "normal" : "compact"}
             theme="dark"
-            size="normal"
+            ref={captchaRef}
           />
         </div>
         <Button className={styles.send} type="submit" text="Send">

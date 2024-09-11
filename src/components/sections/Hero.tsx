@@ -10,12 +10,12 @@ interface PropTypes {
 const HeroSection = ({ className }: PropTypes) => {
   return (
     <section className={joinClassNames(styles.header, className)}>
-      <GlitchedText className={styles.name}>
+      <GlitchedText>
         <Icon
           className={joinClassNames(styles.bracket, styles.bracketLeft)}
           type={IconType.BRACKET_LEFT}
         />
-        <h4>Anil Mawji</h4>
+        <h4 className={styles.name}>Anil Mawji</h4>
         <Icon
           className={joinClassNames(styles.bracket, styles.bracketRight)}
           type={IconType.BRACKET_RIGHT}

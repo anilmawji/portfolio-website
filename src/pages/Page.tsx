@@ -8,7 +8,6 @@ interface PropTypes {
   headerId?: string;
   children?: React.ReactNode;
   title?: string;
-  includeCircuitLine?: boolean;
 }
 
 const Page = ({ className, children, headerId, title }: PropTypes) => {
@@ -18,8 +17,8 @@ const Page = ({ className, children, headerId, title }: PropTypes) => {
         {title && <header className={styles.header} id={headerId ? headerId : ""}>
           <div className={styles.titleContainer}>
             <hr className={styles.lineLeft} />
-            <GlitchedText className={styles.title}>
-              <h4>{title}</h4>
+            <GlitchedText>
+              <h4 className={styles.title}>{title}</h4>
             </GlitchedText>
             <hr className={styles.lineRight} />
           </div>
