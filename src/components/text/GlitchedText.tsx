@@ -6,12 +6,12 @@ const spanStyle0 = {'--index' : '0'} as React.CSSProperties;
 const spanStyle1 = {'--index' : '1'} as React.CSSProperties;
 const spanStyle2 = {'--index' : '2'} as React.CSSProperties;
 
-interface PropTypes {
+interface Props {
   className?: string;
   children: React.ReactNode;
 }
 
-const GlitchedText = ({ className, children }: PropTypes) => {
+const GlitchedText = ({ className, children }: Props) => {
   return (
     <div className={joinClassNames(styles.stack, className)} style={stackStyle}>
       <span style={spanStyle0} className="preventSelect">

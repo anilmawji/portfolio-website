@@ -1,19 +1,19 @@
 enum SOCardTheme {
-  Default = "default",
-  Clean = "clean",
-  Dark = "dark",
-  Hotdog = "hotdog",
-  Combined = "combined"
+  DEFAULT = "default",
+  CLEAN = "clean",
+  DARK = "dark",
+  HOTDOG = "hotdog",
+  COMBINED = "combined"
 }
 
-interface PropTypes extends React.ImgHTMLAttributes<HTMLImageElement> {
+interface Props extends React.ImgHTMLAttributes<HTMLImageElement> {
   user_id: string;
   width?: number;
   height?: number;
   theme?: SOCardTheme;
 }
 
-const StackOverflowCard = ({ user_id, width = 208, height = 58, theme = SOCardTheme.Default, ...restProps }: PropTypes) => {
+const StackOverflowCard = ({ user_id, width = 208, height = 58, theme = SOCardTheme.DEFAULT, ...restProps }: Props) => {
   return (
     <a href={`https://stackoverflow.com/users/${user_id}`} target="_blank">
       <img

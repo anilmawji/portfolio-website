@@ -1,12 +1,12 @@
 import { useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 
-interface PropTypes {
+interface Props {
   delay?: number;
   offset?: number;
 }
 
-const ScrollToAnchor = ({ delay = 0, offset = 0 }: PropTypes) => {
+const ScrollToAnchor = ({ delay = 0, offset = 0 }: Props) => {
   const location = useLocation();
   const lastHash = useRef('');
 

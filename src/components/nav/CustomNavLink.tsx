@@ -3,7 +3,7 @@ import ClickEventListener from '../ClickEventListener';
 import { Link, LinkProps, useLocation } from 'react-router-dom';
 import { joinClassNames } from '../../utils';
 
-interface PropTypes extends LinkProps {
+interface Props extends LinkProps {
   to: string;
   label: string;
   className?: string;
@@ -11,7 +11,7 @@ interface PropTypes extends LinkProps {
   onClick?: (e: React.MouseEvent<HTMLAnchorElement>) => void;
 }
 
-const CustomNavLink = ({ to, label, className, children, onClick, ...restProps }: PropTypes) => {
+const CustomNavLink = ({ to, label, className, children, onClick, ...restProps }: Props) => {
   const location = useLocation();
   const currentUrl = location.pathname + location.hash;
 

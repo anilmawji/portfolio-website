@@ -3,14 +3,14 @@ import Footer from '../components/sections/Footer';
 import GlitchedText from '../components/text/GlitchedText';
 import { joinClassNames } from '../utils';
 
-interface PropTypes {
+interface Props {
   className?: string;
   headerId?: string;
   children?: React.ReactNode;
   title?: string;
 }
 
-const Page = ({ className, children, headerId, title }: PropTypes) => {
+const Page = ({ className, children, headerId, title }: Props) => {
   return (
     <div className={joinClassNames(styles.page, className, "gridBackground")}>
       <main>

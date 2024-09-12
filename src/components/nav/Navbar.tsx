@@ -3,11 +3,11 @@ import CustomNavLink from './CustomNavLink';
 import styles from './Navbar.module.css';
 import HamburgerButton from './HamburgerButton';
 
-interface PropTypes {
+interface Props {
   drawerDelay?: number;
 }
 
-const Navbar = ({ drawerDelay = 250 }: PropTypes) => {
+const Navbar = ({ drawerDelay = 250 }: Props) => {
   const { value: isHamburgerOpen, toggle, setFalse } = useBoolean(false);
 
   // Adds a short delay before closing the navbar

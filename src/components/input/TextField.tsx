@@ -1,13 +1,13 @@
 import styles from './TextField.module.css';
 import { joinClassNames, toTitleCase } from '../../utils';
 
-interface PropTypes extends React.InputHTMLAttributes<HTMLInputElement> {
+interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
   className?: string;
   placeholder: string;
   isRequired?: boolean;
 }
 
-const InputField = ({ className, id, placeholder, isRequired, ...restProps }: PropTypes) => {
+const InputField = ({ className, id, placeholder, isRequired, ...restProps }: Props) => {
   return (
     <div className={joinClassNames(styles.filled, className)}>
       <input

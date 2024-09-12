@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 
-interface PropTypes {
+interface Props extends React.CanvasHTMLAttributes<HTMLCanvasElement> {
   draw: (ctx: CanvasRenderingContext2D) => void;
   resize: (ctx: CanvasRenderingContext2D) => void;
   establishContext?: (ctx: CanvasRenderingContext2D | null) => void;
@@ -9,7 +9,7 @@ interface PropTypes {
   fps?: number;
 }
 
-const Canvas = ({ draw, resize, establishContext, className, style, fps = 30, ...restProps}: PropTypes) => {
+const Canvas = ({ draw, resize, establishContext, className, style, fps = 30, ...restProps}: Props) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {

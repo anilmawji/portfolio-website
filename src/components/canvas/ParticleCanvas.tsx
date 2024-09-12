@@ -65,7 +65,7 @@ const connectParticles = (
   }
 }
 
-interface PropTypes {
+interface Props {
   className?: string;
   style?: React.CSSProperties;
   particleRadius: number;
@@ -81,7 +81,7 @@ const ParticleCanvas = ({
   particleRgbColor,
   mousePushRadius = 0,
   maxOpacity = 1
-}: PropTypes) => {
+}: Props) => {
 
   if (!isValidCssColor(particleRgbColor)) return;
 

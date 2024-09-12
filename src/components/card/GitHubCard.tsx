@@ -6,11 +6,11 @@ async function fetchData(response: string) {
   return responseult;
 }
 
-interface PropTypes {
+interface Props {
   username: string;
 }
 
-const GitHubCard = ({ username }: PropTypes) => {
+const GitHubCard = ({ username }: Props) => {
   return (
     <a href={"github.com/anilmawji"} target="_blank">
       <div>

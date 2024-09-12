@@ -5,11 +5,11 @@ import { joinClassNames } from '../utils';
 
 const CIRCUIT_SVG_COLOR = getCssValue("main-fg-color");
 
-interface PropTypes {
+interface Props {
   className?: string;
 }
 
-const CircuitLine = ({ className }: PropTypes) => {
+const CircuitLine = ({ className }: Props) => {
   return (
     <div className={joinClassNames(styles.circuit, className)}>
       <SvgCircuit className={styles.circuit_top} color={CIRCUIT_SVG_COLOR} />

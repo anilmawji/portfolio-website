@@ -5,11 +5,11 @@ import TryHackMeCard from '../../components/card/TryHackMeCard';
 import { NavLink } from 'react-router-dom';
 import { joinClassNames } from '../../utils';
 
-interface PropTypes {
+interface Props {
   className?: string;
 }
 
-const BioSection = ({ className }: PropTypes) => {
+const BioSection = ({ className }: Props) => {
   return (
     <div className={joinClassNames(className, styles.bio)}>
       <div className={styles.content}>
@@ -46,7 +46,7 @@ const BioSection = ({ className }: PropTypes) => {
         </div>
       </div>
       <div className={styles.profiles}>
-        <StackOverflowCard user_id="8902167" theme={SOCardTheme.Dark} />
+        <StackOverflowCard user_id="8902167" theme={SOCardTheme.DARK} />
         <TryHackMeCard username="zxphyr" />
       </div>
     </div>

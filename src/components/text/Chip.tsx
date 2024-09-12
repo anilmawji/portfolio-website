@@ -1,12 +1,12 @@
 import styles from './Chip.module.css';
 import { rgb, rgbLinearShade, rgbToRgba } from '../../utils';
 
-interface PropTypes {
+interface Props {
   label: string,
   color?: string
 }
 
-const Chip = ({ label, color = rgb(100, 233, 122) }: PropTypes) => {
+const Chip = ({ label, color = rgb(100, 233, 122) }: Props) => {
   const chipStyle = {
     '--chip-outline-color': color,
     '--chip-bg-top-color': rgbLinearShade(-0.15, color),

@@ -1,8 +1,8 @@
-interface PropTypes extends React.ImgHTMLAttributes<HTMLImageElement> {
+interface Props extends React.ImgHTMLAttributes<HTMLImageElement> {
   username: string;
 }
 
-const TryHackMeCard = ({ username, ...restProps }: PropTypes) => {
+const TryHackMeCard = ({ username, ...restProps }: Props) => {
   return (
     <a href={`https://tryhackme.com/p/${username}`} target="_blank">
       <img

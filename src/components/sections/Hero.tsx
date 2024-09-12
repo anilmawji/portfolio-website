@@ -4,11 +4,11 @@ import GlitchedText from '../text/GlitchedText';
 import ScrollToButton from '../../components/buttons/ScrollToButton';
 import { joinClassNames } from '../../utils';
 
-interface PropTypes {
+interface Props {
   className?: string;
 }
 
-const HeroSection = ({ className }: PropTypes) => {
+const HeroSection = ({ className }: Props) => {
   return (
     <section className={joinClassNames(styles.header, className)}>
       <GlitchedText>

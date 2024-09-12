@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 enum MouseState { UP, DOWN, LEAVE, CLICK }
 enum TouchState { START, END }
 
-interface PropTypes {
+interface Props {
   className?: string;
   children?: React.ReactNode;
   trackMouseDown?: boolean;
@@ -34,7 +34,7 @@ const ClickEventListener = (
     onTouchStart,
     onTouchEnd,
     onClick,
-  }: PropTypes) => {
+  }: Props) => {
 
   const [isMouseDown, setIsMouseDown] = useState(false);
   const [isClicked, setIsClicked] = useState(false);
@@ -93,7 +93,7 @@ const ClickEventListener = (
     }
   }, [isClicked, toggleClick, clickDelay]);
 
-  const eventListenerProps: PropTypes = {
+  const eventListenerProps: Props = {
     ...(trackMouseDown && {
       onMouseDown: handleMouseEvent(MouseState.DOWN),
       onMouseUp: handleMouseEvent(MouseState.UP),

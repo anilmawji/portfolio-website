@@ -1,13 +1,13 @@
 import styles from './Hamburger.module.css';
 import { joinClassNames } from '../../utils';
 
-interface PropTypes {
+interface Props {
   className?: string;
   isOpen: boolean;
   onToggle?: React.ChangeEventHandler<HTMLInputElement>;
 }
 
-const HamburgerButton = ({ className, isOpen, onToggle }: PropTypes) => {
+const HamburgerButton = ({ className, isOpen, onToggle }: Props) => {
   return (
     <label className={joinClassNames(styles.hamburger, className, isOpen ? "open" : "")}>
       <input type="checkbox" checked={isOpen} onChange={onToggle} />

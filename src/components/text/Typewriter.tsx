@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
 
-interface PropTypes {
+interface Props {
   text: string;
   delay: number;
   looped: boolean;
 }
 
-const Typewriter = ({ text, delay, looped }: PropTypes) => {
+const Typewriter = ({ text, delay, looped }: Props) => {
   const [currentText, setCurrentText] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
 

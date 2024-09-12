@@ -2,12 +2,12 @@ import styles from './Footer.module.css';
 import ScrollToButton from '../buttons/ScrollToButton';
 import CustomNavLink from '../nav/CustomNavLink';
 
-interface FooterItemListPropTypes {
+interface FooterItemListProps{
   title: string;
   links: Record<string, string>;
 }
 
-const FooterItemList = ({ title, links }: FooterItemListPropTypes) => {
+const FooterItemList = ({ title, links }: FooterItemListProps) => {
   return (
     <div className={styles.list}>
       <h3 className={styles.title}>
