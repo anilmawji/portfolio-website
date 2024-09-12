@@ -13,12 +13,12 @@ const HeroSection = ({ className }: Props) => {
     <section className={joinClassNames(styles.header, className)}>
       <GlitchedText>
         <Icon
-          className={joinClassNames(styles.bracket, styles.bracketLeft)}
+          className={`${styles.bracket} ${styles.bracketLeft}`}
           type={IconType.BRACKET_LEFT}
         />
         <h4 className={styles.name}>Anil Mawji</h4>
         <Icon
-          className={joinClassNames(styles.bracket, styles.bracketRight)}
+          className={`${styles.bracket} ${styles.bracketRight}`}
           type={IconType.BRACKET_RIGHT}
         />
       </GlitchedText>
@@ -33,27 +33,27 @@ const HeroSection = ({ className }: Props) => {
         </div>
         <div className={styles.icons}>
           <Icon
-            className={joinClassNames(styles.icon, styles.linkedinIcon)}
+            className={`${styles.icon} ${styles.linkedinIcon}`}
             type={IconType.LINKEDIN}
             href="https://ca.linkedin.com/in/anil-mawji"
           />
           <Icon
-            className={joinClassNames(styles.icon, styles.thmIcon)}
+            className={`${styles.icon} ${styles.thmIcon}`}
             type={IconType.TRYHACKME}
             href="https://tryhackme.com/p/Cyb3rHusky"
           />
           <Icon
-            className={joinClassNames(styles.icon, styles.htbIcon)}
+            className={`${styles.icon} ${styles.htbIcon}`}
             type={IconType.HACK_THE_BOX}
             href="https://www.hackthebox.com/"
           />
           <Icon
-            className={joinClassNames(styles.icon, styles.githubIcon)}
+            className={`${styles.icon} ${styles.githubIcon}`}
             type={IconType.GITHUB}
             href="https://github.com/anilmawji"
           />
           <Icon
-            className={joinClassNames(styles.icon, styles.soIcon)}
+            className={`${styles.icon} ${styles.soIcon}`}
             type={IconType.STACK_OVERFLOW}
             href="https://stackoverflow.com/users/8902167/anil-m"
           />

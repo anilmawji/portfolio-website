@@ -2,7 +2,7 @@ import styles from './Footer.module.css';
 import ScrollToButton from '../buttons/ScrollToButton';
 import CustomNavLink from '../nav/CustomNavLink';
 
-interface FooterItemListProps{
+interface FooterItemListProps {
   title: string;
   links: Record<string, string>;
 }
@@ -19,7 +19,7 @@ const FooterItemList = ({ title, links }: FooterItemListProps) => {
             <CustomNavLink
               to={links[name]}
               label={name}
-              target={links[name].startsWith("/") ? "_self" : "_blank"}
+              target={links[name].startsWith('/') ? '_self' : '_blank'}
             />
           </li>
         ))}

@@ -18,7 +18,7 @@ const InputField = ({ className, id, placeholder, isRequired, ...restProps }: Pr
       />
       <div className={styles.underline} />
       <label htmlFor={id}>
-        {toTitleCase(placeholder) + (isRequired ? " *" : "")}
+        {`${toTitleCase(placeholder)}${isRequired ? ' *' : ''}`}
       </label>
     </div>
   );

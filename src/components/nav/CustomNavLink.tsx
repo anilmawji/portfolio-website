@@ -17,7 +17,7 @@ const CustomNavLink = ({ to, label, className, children, onClick, ...restProps }
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     onClick?.(e);
-    if (!to.includes("#")) {
+    if (!to.includes('#')) {
       window.scrollTo(0, 0);
     }
   }
@@ -26,7 +26,7 @@ const CustomNavLink = ({ to, label, className, children, onClick, ...restProps }
     <ClickEventListener trackMouseDown trackTouch>
       <Link
         to={to}
-        className={joinClassNames(className, to === currentUrl ? "active" : "")}
+        className={joinClassNames(className, to === currentUrl ? 'active' : '')}
         onClick={handleClick}
         onDragStart={(e) => e.preventDefault()}
         {...restProps}

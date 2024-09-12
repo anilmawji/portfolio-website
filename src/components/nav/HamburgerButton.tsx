@@ -9,7 +9,7 @@ interface Props {
 
 const HamburgerButton = ({ className, isOpen, onToggle }: Props) => {
   return (
-    <label className={joinClassNames(styles.hamburger, className, isOpen ? "open" : "")}>
+    <label className={joinClassNames(styles.hamburger, className, isOpen ? 'open' : '')}>
       <input type="checkbox" checked={isOpen} onChange={onToggle} />
       <span className={styles.bar1} />
       <span className={styles.bar2} />

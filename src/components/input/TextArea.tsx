@@ -12,7 +12,7 @@ const TextArea = ({ className, id, placeholder, isRequired, ...restProps }: Prop
       <textarea
         id={id}
         name={id}
-        placeholder={placeholder ? toTitleCase(placeholder) + (isRequired ? " *" : "") : ""}
+        placeholder={placeholder ? `${toTitleCase(placeholder)}${(isRequired ? ' *' : '')}` : ''}
         required={isRequired}
         {...restProps}
       />

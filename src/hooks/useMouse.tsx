@@ -23,10 +23,10 @@ const useMouse = () => {
   };
 
   useEffect(() => {
-    window.addEventListener('mousemove', updateMousePosition);
+    window.addEventListener("mousemove", updateMousePosition);
 
     return () => {
-      window.removeEventListener('mousemove', updateMousePosition);
+      window.removeEventListener("mousemove", updateMousePosition);
     };
   }, []);
 

@@ -7,7 +7,7 @@ interface Props {
 }
 
 const Typewriter = ({ text, delay, looped }: Props) => {
-  const [currentText, setCurrentText] = useState("");
+  const [currentText, setCurrentText] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
@@ -21,7 +21,7 @@ const Typewriter = ({ text, delay, looped }: Props) => {
 
     } else if (looped) {
       setCurrentIndex(0);
-      setCurrentText("");
+      setCurrentText('');
     }
 
     return () => clearTimeout(timeout);

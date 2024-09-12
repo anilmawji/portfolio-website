@@ -11,7 +11,7 @@ interface Props {
 
 const BioSection = ({ className }: Props) => {
   return (
-    <div className={joinClassNames(className, styles.bio)}>
+    <div className={joinClassNames(styles.bio, className)}>
       <div className={styles.content}>
         <div className={styles.portrait}>
           <img src={portrait} />

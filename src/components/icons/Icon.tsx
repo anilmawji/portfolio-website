@@ -82,7 +82,7 @@ const Icon = ({ className, type, src, href, alt, imgDraggable }: Props) => {
     <IconWrapper
       href={href}
       className={joinClassNames(styles.icon, className)}
-      target={href ? "_blank" : ""}
+      target={href ? '_blank' : ''}
     >
       {type !== undefined && iconMap[type]}
       {src && (
