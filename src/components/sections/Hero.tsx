@@ -1,6 +1,7 @@
 import styles from './Hero.module.css';
-import Icon, { IconType } from '../icons/Icon';
+import { Icon, IconType } from '../icons/Icon';
 import GlitchedText from '../text/GlitchedText';
+import ScrollToButton from '../../components/buttons/ScrollToButton';
 import { joinClassNames } from '../../utils';
 
 interface PropTypes {
@@ -57,6 +58,12 @@ const HeroSection = ({ className }: PropTypes) => {
             href="https://stackoverflow.com/users/8902167/anil-m"
           />
         </div>
+        <ScrollToButton
+          className={styles.scrollButton}
+          scrollPosition={650}
+          size={45}
+          rotation={180}
+        />
       </div>
     </section>
   );

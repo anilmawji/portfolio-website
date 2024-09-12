@@ -9,7 +9,8 @@ enum IconType {
   TRYHACKME,
   SEND,
   BRACKET_LEFT,
-  BRACKET_RIGHT
+  BRACKET_RIGHT,
+  ARROW
 }
 
 const iconMap: { [key in IconType]: JSX.Element } = {
@@ -54,7 +55,12 @@ const iconMap: { [key in IconType]: JSX.Element } = {
     </svg>
   ),
   [IconType.BRACKET_RIGHT]: (
-    <svg viewBox="0 0 320 512" xmlns="http://www.w3.org/2000/svg">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+      <path d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z" />
+    </svg>
+  ),
+  [IconType.ARROW]: (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
       <path d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z" />
     </svg>
   )
@@ -91,6 +97,4 @@ const Icon = ({ className, type, src, href, alt, imgDraggable }: Props) => {
   );
 }
 
-export default Icon;
-
-export { IconType }
+export { Icon, IconType }

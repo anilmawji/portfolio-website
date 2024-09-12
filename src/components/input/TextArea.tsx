@@ -16,7 +16,7 @@ const TextArea = ({ className, id, placeholder, isRequired, ...restProps }: Prop
         required={isRequired}
         {...restProps}
       />
-      <span className={styles.border}></span>
+      <span className={styles.border} />
     </div>
   );
 }

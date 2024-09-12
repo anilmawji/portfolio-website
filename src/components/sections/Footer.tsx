@@ -1,5 +1,5 @@
 import styles from './Footer.module.css';
-import ScrollToTopButton from '../buttons/ScrollToTopButton';
+import ScrollToButton from '../buttons/ScrollToButton';
 import CustomNavLink from '../nav/CustomNavLink';
 
 interface FooterItemListPropTypes {
@@ -32,7 +32,11 @@ const Footer = () => {
   return (
     <footer className="shadowTop">
       <div className={styles.button}>
-        <ScrollToTopButton />
+        <ScrollToButton
+          scrollPosition={0}
+          size={38}
+          includeRing
+        />
       </div>
       <div className={styles.content}>
         <div className={styles.footerLists}>

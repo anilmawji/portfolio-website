@@ -1,26 +1,15 @@
-
 .icon,
 .icon div {
-  box-sizing: border-box;
-}
-
-.icon {
-  display: inline-block;
-  position: relative;
-  width: 24px;
-  height: auto;
+  width: var(--icon-size);
+  height: var(--icon-size);
 }
 
 .icon div {
-  box-sizing: border-box;
   display: block;
   position: absolute;
-  width: 24px;
-  height: 24px;
-  margin: 3px;
-  border: 3px solid currentColor;
+  border: var(--border-thickness) solid currentColor;
   border-radius: 50%;
-  animation: icon 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  animation: spin 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
   border-color: currentColor transparent transparent transparent;
 }
 
@@ -36,7 +25,7 @@
   animation-delay: -0.15s;
 }
 
-@keyframes icon {
+@keyframes spin {
   0% {
     transform: rotate(0deg);
   }

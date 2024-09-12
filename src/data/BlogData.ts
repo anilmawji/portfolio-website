@@ -24,7 +24,7 @@ const BlogData: Post[] = [
     date: "October 15th 2024",
     body: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus impedit a ipsa fugit!",
     link: "https://github.com/anilmawji/PowerShell-Script-Runner",
-    tags: ["Test", "Test", "Test", "Test", "Test"]
+    tags: ["Test123", "Test", "Test", "Test123", "Test123456", "Test", "Test"]
   },
   {
     title: "Hack The Box: Anubis Writeup",

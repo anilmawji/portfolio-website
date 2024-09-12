@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import useThrottle from './useThrottle';
 import useDebounce from './useDebounce';
 
 const getWindowSize = () => {
@@ -21,7 +20,7 @@ const useWindowSize = (callback?: WindowSizeCallback, throttleDelay = 500) => {
 
   useEffect(() => {
     // Debounce to avoid executing the function too many times
-    const handleResizeThrottled = useThrottle(() => {
+    const handleResizeThrottled = useDebounce(() => {
       const newSize = getWindowSize();
       setWindowSize(newSize);
       callback?.(newSize);
