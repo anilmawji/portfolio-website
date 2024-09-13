@@ -38,24 +38,31 @@ const Canvas = ({ draw, resize, establishContext, className, style, fps = 30, ..
       }
     }
 
-    const resizeCanvas = () => {
+    const resizeCanvas = (runCallback: boolean) => {
       const parent = ctx.canvas.parentElement;
       if (!parent) return;
   
       ctx.canvas.width = parent.clientWidth;
       ctx.canvas.height = parent.clientHeight;
-      resize(ctx);
+
+      if (runCallback) {
+        resize(ctx);
+      }
+    }
+
+    const handleResize = () => {
+      resizeCanvas(true);
     }
 
     fpsInterval = 1000 / fps;
     then = Date.now();
     drawCanvas();
-    resizeCanvas();
-    window.addEventListener("resize", resizeCanvas);
+    resizeCanvas(false);
+    window.addEventListener("resize", handleResize);
 
     return () => {
       window.cancelAnimationFrame(animationFrameId);
-      window.removeEventListener("resize", resizeCanvas);
+      window.removeEventListener("resize", handleResize);
     }
   }, [canvasRef, fps, draw, resize]);
 

@@ -2,7 +2,7 @@ interface Props {
   className?: string;
 }
 
-const Experience = ({ className }: Props) => {
+const ExperienceSection = ({ className }: Props) => {
   return (
     <div>
 
@@ -10,4 +10,4 @@ const Experience = ({ className }: Props) => {
   );
 }
 
-export default Experience;
+export default ExperienceSection;

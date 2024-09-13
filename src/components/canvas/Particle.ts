@@ -86,10 +86,10 @@ class Particle {
     }
     this.applyMousePush(canvas, mouse, pushRadius);
   
-    // Limit the maximum speed
     if (collideX || collideY) {
       const speed = Math.hypot(this.velocityX, this.velocityY);
 
+      // Limit the maximum speed
       if (speed > this.maxSpeed) {
         const scale = this.maxSpeed / speed;
         this.velocityX *= scale;

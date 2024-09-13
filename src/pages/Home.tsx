@@ -2,6 +2,7 @@ import styles from './Home.module.css';
 import Page from './Page';
 import ParticleCanvas from '../components/canvas/ParticleCanvas';
 import HeroSection from '../components/sections/Hero';
+import ExperienceSection from '../components/sections/Experience';
 import CardContainer from '../components/card/CardContainer';
 import ProjectData from '../data/ProjectData';
 import { getCssValue, hexToRgb } from '../utils';
@@ -26,6 +27,7 @@ const Home = () => {
         <div id="projects" className={styles.bottom}>
           <CardContainer className="cardContainer" title="Projects" cardData={ProjectData} />
         </div>
+        <ExperienceSection />
       </div>
     </Page>
   );
