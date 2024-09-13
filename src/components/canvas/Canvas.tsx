@@ -67,7 +67,12 @@ const Canvas = ({ draw, resize, establishContext, className, style, fps = 30, ..
   }, [canvasRef, fps, draw, resize]);
 
   return (
-    <canvas ref={canvasRef} className={className} style={style} {...restProps} />
+    <canvas
+      ref={canvasRef}
+      className={className}
+      style={style}
+      {...restProps}
+    />
   );
 }
 

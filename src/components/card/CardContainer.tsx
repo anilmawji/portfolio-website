@@ -17,9 +17,11 @@ const CardContainer = ({ id, className, title, cardData, includeReadTime }: Prop
 
   return (
     <div id={id} className={joinClassNames(styles.container, className)}>
-      {title && <h3 className={styles.title}>
-        {title}
-      </h3>}
+      {title && (
+        <h3 className={styles.title}>
+          {title}
+        </h3>
+      )}
       <div className={styles.cards}>
         {cards.map((data, i) => {
           return (
