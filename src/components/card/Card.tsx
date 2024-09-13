@@ -4,7 +4,7 @@ import { readingTime } from '../../utils';
 import { Post, isToolInfo } from '../../types';
 import { Icon, IconType } from '../../components/icons/Icon';
 
-interface Props {
+interface Props extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   data: Post;
   includeReadTime?: boolean;
 }

@@ -24,10 +24,15 @@ const Home = () => {
       </div>
       <div className={styles.container}>
         <HeroSection className={styles.hero} />
-        <div id="projects" className={styles.bottom}>
-          <CardContainer className="cardContainer" title="Projects" cardData={ProjectData} />
+        <div className={styles.bottom}>
+          <ExperienceSection />
+          <CardContainer
+            id="projects"
+            className="cardContainer"
+            title="Projects"
+            cardData={ProjectData}
+          />
         </div>
-        <ExperienceSection />
       </div>
     </Page>
   );

@@ -5,17 +5,18 @@ import { joinClassNames } from '../../utils';
 import { Post } from '../../types';
 
 interface Props {
+  id?: string;
   className?: string;
   title?: string;
   cardData: Post[];
   includeReadTime?: boolean;
 }
 
-const CardContainer = ({ className, title, cardData, includeReadTime }: Props) => {
+const CardContainer = ({ id, className, title, cardData, includeReadTime }: Props) => {
   const [cards] = useState(cardData);
 
   return (
-    <div className={joinClassNames(styles.container, className)}>
+    <div id={id} className={joinClassNames(styles.container, className)}>
       {title && <h3 className={styles.title}>
         {title}
       </h3>}
