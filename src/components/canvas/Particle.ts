@@ -50,8 +50,9 @@ class Particle {
     const dy = canvasMouseY - this.y;
     const distance = Math.sqrt(dx * dx + dy * dy);
 
-    if (distance >= mouse.radius + this.radius) return;
-
+    if (distance >= mouse.radius + this.radius) {
+      return;
+    }
     if (canvasMouseX < this.x && this.x < canvas.width - pushRadius) {
       this.x += this.pushForce;
       this.velocityX = -this.velocityX;
@@ -69,41 +70,39 @@ class Particle {
   }
 
   tick(canvas: HTMLCanvasElement, mouse: any, pushRadius: number) {
-    var collidedX = false;
-    var collidedY = false;
+    const collideX = this.x + this.radius >= canvas.width || this.x - this.radius <= 0;
+    const collideY = this.y + this.radius >= canvas.height || this.y - this.radius <= 0;
+
     // Bounding box collision detection with canvas boundaries
-    if (this.x + this.radius >= canvas.width || this.x - this.radius <= 0) {
+    if (collideX) {
       this.velocityX = -this.velocityX;
       this.x += this.velocityX;
-      this.velocityY += this.randomAdjustment(); // Apply a small random adjustment to the velocity
-      collidedX = true;
+      this.velocityY += this.randomVelocityAdjustment(); // Apply a small random adjustment to the velocity
     }
-    if (this.y + this.radius >= canvas.height || this.y - this.radius <= 0) {
+    if (collideY) {
       this.velocityY = -this.velocityY;
       this.y += this.velocityY;
-      this.velocityY += this.randomAdjustment(); // Apply a small random adjustment to the velocity
-      collidedY = true;
+      this.velocityY += this.randomVelocityAdjustment(); // Apply a small random adjustment to the velocity
     }
     this.applyMousePush(canvas, mouse, pushRadius);
   
     // Limit the maximum speed
-    const speed = Math.sqrt(this.velocityX * this.velocityX + this.velocityY * this.velocityY);
-    console.log(speed);
+    const speed = Math.hypot(this.velocityX, this.velocityY);
     if (speed > this.maxSpeed) {
       const scale = this.maxSpeed / speed;
       this.velocityX *= scale;
       this.velocityY *= scale;
     }
-    if (!collidedX) {
+    if (!collideX) {
       this.x += this.velocityX;
     }
-    if (!collidedY) {
+    if (!collideY) {
       this.y += this.velocityY;
     }
   }
 
   // Randomly adjust velocity between -0.5 and 0.5
-  randomAdjustment() {
+  randomVelocityAdjustment() {
     return (Math.random() - 0.5) * 1;
   }
 
@@ -125,7 +124,6 @@ class Particle {
     if (Math.random() < 0.5) {
       velocityY = -velocityY;
     }
-
     this.velocityX = velocityX;
     this.velocityY = velocityY;
   }
