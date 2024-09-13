@@ -10,10 +10,12 @@ enum IconType {
   SEND,
   BRACKET_LEFT,
   BRACKET_RIGHT,
-  ARROW
+  ARROW_HEAD,
+  ARROW_UP_RIGHT,
+  OPEN_EXTERNAL
 }
 
-const iconMap: { [key in IconType]: JSX.Element } = {
+const IconMap: { [key in IconType]: JSX.Element } = {
   [IconType.LINKEDIN]: (
     <svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
       <title>LinkedIn</title>
@@ -59,9 +61,24 @@ const iconMap: { [key in IconType]: JSX.Element } = {
       <path d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z" />
     </svg>
   ),
-  [IconType.ARROW]: (
+  [IconType.ARROW_HEAD]: (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
       <path d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z" />
+    </svg>
+  ),
+  [IconType.ARROW_UP_RIGHT]: (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path d="M7 17L17 7M17 7H8M17 7V16" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+  ),
+  [IconType.OPEN_EXTERNAL]: (
+    <svg viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
+        <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
+            <g fill="#000000" transform="translate(85.333333, 64.000000)">
+                <path d="M128,63.999444 L128,106.666444 L42.6666667,106.666667 L42.6666667,320 L256,320 L256,234.666444 L298.666,234.666444 L298.666667,362.666667 L4.26325641e-14,362.666667 L4.26325641e-14,64 L128,63.999444 Z M362.666667,1.42108547e-14 L362.666667,170.666667 L320,170.666667 L320,72.835 L143.084945,249.751611 L112.915055,219.581722 L289.83,42.666 L192,42.6666667 L192,1.42108547e-14 L362.666667,1.42108547e-14 Z" id="Combined-Shape">
+                </path>
+            </g>
+        </g>
     </svg>
   )
 };
@@ -84,7 +101,7 @@ const Icon = ({ className, type, src, href, alt, imgDraggable }: Props) => {
       className={joinClassNames(styles.icon, className)}
       target={href ? '_blank' : ''}
     >
-      {type !== undefined && iconMap[type]}
+      {type !== undefined && IconMap[type]}
       {src && (
         <img
           src={src}

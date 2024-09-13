@@ -1,6 +1,5 @@
 :root {
   --home-bg-height: 500px;
-  --home-margin: 10%;
 }
 
 .background {
@@ -60,25 +59,14 @@
   margin-top: 160px
 }
 
-.featured {
-  margin-top: 20px;
-  margin-left: var(--home-margin);
-  margin-right: var(--home-margin);
-}
-
-@media(max-width: 980px) {
-  .hero,
-  .featured {
+@media screen and (max-width: 980px) {
+  .hero {
     margin-left: 8%;
   }
 }
 
-@media(max-width: 600px) {
+@media screen and (max-width: 600px) {
   .hero {
     margin-left: 20px;
-  }
-
-  .featured {
-    margin-top: 100px;
   }
 }

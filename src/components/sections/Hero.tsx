@@ -24,28 +24,18 @@ const HeroSection = ({ className }: Props) => {
       </GlitchedText>
       <div className={styles.body}>
         <h2 className={styles.title}>
-          Cyber Security Analyst
+          Software Developer
         </h2>
         <div className={styles.bio}>
-          Fifth year Computer Science student at the University of Calgary.
+          Computer Science student at the University of Calgary
           <br />
-          Cyber security professional with a passion for all things technology.
+          passionate about crafting secure, resilient solutions for clients.
         </div>
         <div className={styles.icons}>
           <Icon
             className={`${styles.icon} ${styles.linkedinIcon}`}
             type={IconType.LINKEDIN}
             href="https://ca.linkedin.com/in/anil-mawji"
-          />
-          <Icon
-            className={`${styles.icon} ${styles.thmIcon}`}
-            type={IconType.TRYHACKME}
-            href="https://tryhackme.com/p/Cyb3rHusky"
-          />
-          <Icon
-            className={`${styles.icon} ${styles.htbIcon}`}
-            type={IconType.HACK_THE_BOX}
-            href="https://www.hackthebox.com/"
           />
           <Icon
             className={`${styles.icon} ${styles.githubIcon}`}
@@ -56,6 +46,16 @@ const HeroSection = ({ className }: Props) => {
             className={`${styles.icon} ${styles.soIcon}`}
             type={IconType.STACK_OVERFLOW}
             href="https://stackoverflow.com/users/8902167/anil-m"
+          />
+          <Icon
+            className={`${styles.icon} ${styles.thmIcon}`}
+            type={IconType.TRYHACKME}
+            href="https://tryhackme.com/p/Cyb3rHusky"
+          />
+          <Icon
+            className={`${styles.icon} ${styles.htbIcon}`}
+            type={IconType.HACK_THE_BOX}
+            href="https://www.hackthebox.com/"
           />
         </div>
         <ScrollToButton

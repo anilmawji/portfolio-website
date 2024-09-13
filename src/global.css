@@ -1,14 +1,18 @@
 :root {
   --default-font: "Segoe UI Adjusted", "Segoe UI", "Liberation Sans", sans-serif;
+  --home-margin: 10%;
+
   --main-fg-color: #191919;
   --main-bg-color: #282828;
   --neon-green: #6CFA84;
   --neon-green2: #91FC9F;
   --btn-color: #44D25C;
   --grey: #ACABAB;
+
   --box-shadow-color: hsl(0deg 0% 0% / 0.1);
   --glow-border-radius: 1px;
   --shadow-gradient: linear-gradient(to top, var(--main-fg-color), #232323);
+
   --grid-background-size: 18px 18px;
   --grid-background-image: 
     linear-gradient(to right, #252525 1px, transparent 1px),
@@ -140,6 +144,26 @@ a {
   }
 }
 
+.hoverUnderline {
+  position: relative;
+  display: inline-block;
+}
+  
+.hoverUnderline::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 1px;
+  transition: width 100ms ease-out;
+  background-color: white; /* Default underline color */
+}
+
+.hoverUnderline:hover::before {
+  width: 100%;
+}
+
 .gridBackground {
   background-size: var(--grid-background-size);
   background-image: var(--grid-background-image);
@@ -155,12 +179,14 @@ a {
     );
 }
 
-.projects {
+.cardContainer {
   margin-left: var(--home-margin);
   margin-right: var(--home-margin);
 }
 
-.blogPage p {
-  margin-left: auto;
-  margin-right: auto;
+@media screen and (max-width: 600px) {
+  .cardContainer {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
 }

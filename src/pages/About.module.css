@@ -17,8 +17,8 @@
   width: 100%;
 }
 
-@media (max-width: 600px) {
+@media screen and (max-width: 600px) {
   .sections {
-    width: min(1000px, calc(100% - 30px));
+    width: min(1000px, calc(100% - 32px));
   }
 }

@@ -62,7 +62,7 @@
   transform: scaleX(1);
 }
 
-/* Autofill styling according */
+/* Autofill styling */
 .filled input:-webkit-autofill,
 .filled input:-webkit-autofill:hover,
 .filled input:-webkit-autofill:focus {

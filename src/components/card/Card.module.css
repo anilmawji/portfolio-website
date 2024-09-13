@@ -1,9 +1,10 @@
 :root {
   --card-gap: 20px;
   --card-line-height: 1.2rem;
-  --card-shift-y: -3px;
+  --card-shift-y: -4px;
   --card-border-radius: 8px;
   --card-text-margin: 8px;
+  --card-transition: transform 200ms ease;
 }
 
 .card {
@@ -16,7 +17,7 @@
   background: var(--shadow-gradient);
   border-radius: var(--card-border-radius);
   border: 1px solid #303030;
-  transition: transform 0.3s ease;
+  transition: var(--card-transition);
 }
 
 .card:hover {
@@ -28,24 +29,17 @@
   -o-transform: translateY(var(--card-shift-y));
 }
 
-.card:hover .title {
-  text-decoration: underline;
-  text-underline-offset: 4px;
+.card:hover .arrow svg {
+  transform: translate(4px, -4px);
 }
 
 .card img {
   height: 14rem;
   object-fit: cover;
+  object-position: top;
   border-top-left-radius: var(--card-border-radius);
   border-top-right-radius: var(--card-border-radius);
   border-bottom: 1px solid #303030;
-}
-
-.title {
-  font-size: 18px;
-  line-height: var(--card-line-height);
-  margin-bottom: var(--card-text-margin);
-  text-wrap: nowrap;
 }
 
 .content {
@@ -60,11 +54,36 @@
   padding: 10px;
 }
 
+.title {
+  display: flex;
+  font-size: 18px;
+  line-height: var(--card-line-height);
+  margin-bottom: var(--card-text-margin);
+  text-wrap: nowrap;
+}
+
+.arrow svg {
+  position: relative;
+  width: 18px;
+  height: 18px;
+  stroke: white;
+  left: 3px;
+  transition: var(--card-transition);
+}
+
 .body {
   font-size: 14px;
   overflow: hidden;
-  max-height: calc(var(--card-line-height) * 4);
+  max-height: calc(var(--card-line-height) * 3);
   line-height: var(--card-line-height);
+}
+
+.multilineTruncate {
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Number of lines to show */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .date {
@@ -80,18 +99,20 @@
   align-items: flex-end;
   font-weight: bold;
   overflow: hidden;
-  height: 25px;
   margin: var(--card-text-margin);
+  margin-top: 0;
+  gap: 4px 0;
+  max-height: 52px;
 }
 
-@media (max-width: 1300px) {
+@media screen and (max-width: 1300px) {
   .card {
     flex: 0 0 calc(50% - var(--card-gap));
     max-width: calc(50% - var(--card-gap));
   }
 }
 
-@media (max-width: 980px) {
+@media screen and (max-width: 980px) {
   .card {
     flex-direction: row;
     flex: 0 0 100%;
@@ -103,6 +124,7 @@
   .card img {
     width: 14rem;
     height: 100%;
+    object-position: top left;
     border-top-right-radius: 0;
     border-bottom-left-radius: var(--card-border-radius);
   }
@@ -112,7 +134,7 @@
   }
 }
 
-@media (max-width: 600px) {
+@media screen and (max-width: 600px) {
   .card {
     height: initial;
   }
@@ -125,8 +147,11 @@
     gap: 10px;
   }
 
+  .title {
+    text-wrap: unset;
+  }
+
   .body {
     font-size: 13px;
-    line-height: var(--card-line-height);
   }
 }

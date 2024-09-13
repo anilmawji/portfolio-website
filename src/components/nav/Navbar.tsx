@@ -27,7 +27,10 @@ const Navbar = ({ drawerDelay = 250 }: Props) => {
           <CustomNavLink to="/" label="Home" onClick={closeHamburgerDrawer} />
         </li>
         <li>
-          <CustomNavLink to="/portfolio" label="Portfolio" onClick={closeHamburgerDrawer} />
+          <CustomNavLink to="/#experience" label="Experience" onClick={closeHamburgerDrawer} />
+        </li>
+        <li>
+          <CustomNavLink to="/#projects" label="Projects" onClick={closeHamburgerDrawer} />
         </li>
         <li>
           <CustomNavLink to="/about" label="About" onClick={closeHamburgerDrawer} />

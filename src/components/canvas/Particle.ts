@@ -6,15 +6,17 @@ class Particle {
   y: number;
   velocityX: number;
   velocityY: number;
+  maxSpeed: number;
   radius: number;
-  pushForce: number;
   color: string;
+  pushForce: number;
 
   constructor(
     x: number,
     y: number,
     velocityX: number,
     velocityY: number,
+    maxSpeed: number,
     radius: number,
     color: string,
     pushForce: number,
@@ -23,6 +25,7 @@ class Particle {
     this.y = y;
     this.velocityX = velocityX;
     this.velocityY = velocityY;
+    this.maxSpeed = maxSpeed;
     this.radius = radius;
     this.color = color;
     this.pushForce = pushForce;
@@ -66,17 +69,42 @@ class Particle {
   }
 
   tick(canvas: HTMLCanvasElement, mouse: any, pushRadius: number) {
+    var collidedX = false;
+    var collidedY = false;
     // Bounding box collision detection with canvas boundaries
     if (this.x + this.radius >= canvas.width || this.x - this.radius <= 0) {
       this.velocityX = -this.velocityX;
+      this.x += this.velocityX;
+      this.velocityY += this.randomAdjustment(); // Apply a small random adjustment to the velocity
+      collidedX = true;
     }
     if (this.y + this.radius >= canvas.height || this.y - this.radius <= 0) {
       this.velocityY = -this.velocityY;
+      this.y += this.velocityY;
+      this.velocityY += this.randomAdjustment(); // Apply a small random adjustment to the velocity
+      collidedY = true;
     }
     this.applyMousePush(canvas, mouse, pushRadius);
   
-    this.x += this.velocityX;
-    this.y += this.velocityY;
+    // Limit the maximum speed
+    const speed = Math.sqrt(this.velocityX * this.velocityX + this.velocityY * this.velocityY);
+    console.log(speed);
+    if (speed > this.maxSpeed) {
+      const scale = this.maxSpeed / speed;
+      this.velocityX *= scale;
+      this.velocityY *= scale;
+    }
+    if (!collidedX) {
+      this.x += this.velocityX;
+    }
+    if (!collidedY) {
+      this.y += this.velocityY;
+    }
+  }
+
+  // Randomly adjust velocity between -0.5 and 0.5
+  randomAdjustment() {
+    return (Math.random() - 0.5) * 1;
   }
 
   render(context: CanvasRenderingContext2D) {

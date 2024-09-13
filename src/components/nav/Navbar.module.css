@@ -8,7 +8,7 @@
   --navbar-font-weight: 600;
   --navbar-transition-time: 350ms;
   --navlink-offset-y-mobile: 20px;
-  --navlink-count: 5;
+  --navlink-count: 6;
   --navlink-gap: 0.12;
 
   /* Calculate drawer height based on nav properties
@@ -103,14 +103,14 @@ nav li a {
 }
 
 /* Specify maximum gap for the navlinks */
-@media(min-width: 2800px) {
+@media screen and (min-width: 2800px) {
   nav ul {
     gap: calc(var(--navlink-gap) * 2800px);
   }
 }
 
 /* Tablet styling */
-@media(max-width: 980px) {
+@media screen and (max-width: 980px) {
   .hamburger {
     display: flex;
   }
@@ -181,7 +181,7 @@ nav li a {
 }
 
 /* Phone styling */
-@media(max-width: 550px) {
+@media screen and (max-width: 550px) {
   nav li {
     height: var(--navbar-thickness-phone);
   }

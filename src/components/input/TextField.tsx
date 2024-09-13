@@ -7,7 +7,7 @@ interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
   isRequired?: boolean;
 }
 
-const InputField = ({ className, id, placeholder, isRequired, ...restProps }: Props) => {
+const TextField = ({ className, id, placeholder, isRequired, ...restProps }: Props) => {
   return (
     <div className={joinClassNames(styles.filled, className)}>
       <input
@@ -24,4 +24,4 @@ const InputField = ({ className, id, placeholder, isRequired, ...restProps }: Pr
   );
 }
 
-export default InputField;
+export default TextField;

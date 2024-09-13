@@ -90,7 +90,15 @@ const ContactSection = ({ className }: Props) => {
             ref={captchaRef}
           />
         </div>
-        <Button className={styles.send} type="submit" text="Send" isLoading={isLoading}>
+        <Button
+          className={joinClassNames(
+            styles.sendButton,
+            !isLoading ? styles.sendButtonPadding : ''
+          )}
+          type="submit"
+          text="Send"
+          isLoading={isLoading}
+        >
           <Icon className={styles.icon} type={IconType.SEND} />
         </Button>
       </form>

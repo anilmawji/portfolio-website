@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column;
   gap: 6px;
-  max-width: 650px;
   padding: 20px;
   font-size: 38px;
   text-shadow: 2px 2px 2px var(--main-fg-color);
@@ -95,7 +94,7 @@
   visibility: hidden;
 }
 
-@media(max-width: 980px) {
+@media screen and (max-width: 980px) {
   .name {
     font-size: 50px;
   }
@@ -113,7 +112,7 @@
   }
 }
 
-@media (max-width: 600px) {
+@media screen and (max-width: 600px) {
   .header {
     align-items: center;
   }

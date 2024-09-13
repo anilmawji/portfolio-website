@@ -7,7 +7,7 @@ const About = () => {
   return (
     <Page title="About Me">
       <div className={styles.sections}>
-        <div className={styles.bio}>
+        <div id="bio" className={styles.bio}>
           <BioSection className="glowBorder" />
         </div>
         <ContactSection className={`${styles.contact} shadowBottom`} />

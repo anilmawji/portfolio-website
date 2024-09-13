@@ -1,16 +1,13 @@
-import styles from './Experience.module.css';
-import { joinClassNames } from '../../utils';
-
 interface Props {
   className?: string;
 }
 
-const ExperienceSection = ({ className }: Props) => {
+const Experience = ({ className }: Props) => {
   return (
-    <section className={joinClassNames(styles.header, className)}>
-      
-    </section>
+    <div>
+
+    </div>
   );
 }
 
-export default ExperienceSection;
+export default Experience;

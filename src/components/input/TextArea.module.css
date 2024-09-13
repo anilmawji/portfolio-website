@@ -84,7 +84,7 @@
     height var(--ta-border-transition-delay) ease var(--ta-border-transition-delay);
 }
 
-/* Autofill styling according */
+/* Autofill styling */
 .filled textarea:-webkit-autofill,
 .filled textarea:-webkit-autofill:hover,
 .filled textarea:-webkit-autofill:focus {

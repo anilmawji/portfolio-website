@@ -1,9 +1,16 @@
 import Page from './Page';
+import BlogData from '../data/BlogData';
+import CardContainer from '../components/card/CardContainer';
 
 const Blog = () => {
   return (
     <Page className="blogPage" title="Blog Posts">
-      <p>This page is a work in progress. Please come back later!</p>
+      <CardContainer
+        className="cardContainer"
+        title="Featured Blog Posts"
+        cardData={BlogData}
+        includeReadTime
+      />
     </Page>
   );
 }

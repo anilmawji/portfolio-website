@@ -33,7 +33,7 @@ const ScrollToButton = ({ className, size = 50, rotation = 0, scrollPosition, in
       style={buttonStyle}
       onClick={() => scrollTo(scrollPosition)}
     >
-      <Icon className={styles.arrow} type={IconType.ARROW} />
+      <Icon className={styles.arrow} type={IconType.ARROW_HEAD} />
     </div>
   );
 }

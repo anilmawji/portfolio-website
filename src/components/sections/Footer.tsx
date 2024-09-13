@@ -17,6 +17,7 @@ const FooterItemList = ({ title, links }: FooterItemListProps) => {
         {Object.keys(links).map((name, index) => (
           <li key={index}>
             <CustomNavLink
+              className="hoverUnderline"
               to={links[name]}
               label={name}
               target={links[name].startsWith('/') ? '_self' : '_blank'}
@@ -31,13 +32,12 @@ const FooterItemList = ({ title, links }: FooterItemListProps) => {
 const Footer = () => {
   return (
     <footer className="shadowTop">
-      <div className={styles.button}>
-        <ScrollToButton
-          scrollPosition={0}
-          size={38}
-          includeRing
-        />
-      </div>
+      <ScrollToButton
+        className={styles.button}
+        scrollPosition={0}
+        size={38}
+        includeRing
+      />
       <div className={styles.content}>
         <div className={styles.footerLists}>
           <FooterItemList

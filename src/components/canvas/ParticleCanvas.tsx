@@ -27,7 +27,7 @@ const initParticles = (
   );
 
   for (let i = 0; i < particleCount; i++) {
-    const p = new Particle(0, 0, 0, 0, particleRadius, particleRgbColor, MOUSE_PUSH_FORCE);
+    const p = new Particle(0, 0, 0, 0, 1, particleRadius, particleRgbColor, MOUSE_PUSH_FORCE);
     p.randomVelocity(MIN_PARTICLE_SPEED, MAX_PARTICLE_SPEED);
     p.randomPosition(context.canvas.width, context.canvas.height);
     particles.push(p);
