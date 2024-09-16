@@ -115,6 +115,8 @@
 @media screen and (max-width: 600px) {
   .header {
     align-items: center;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   .body {

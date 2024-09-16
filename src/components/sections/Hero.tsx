@@ -50,7 +50,7 @@ const HeroSection = ({ className }: Props) => {
           <Icon
             className={`${styles.icon} ${styles.thmIcon}`}
             type={IconType.TRYHACKME}
-            href="https://tryhackme.com/p/Cyb3rHusky"
+            href="https://tryhackme.com/p/zxphyr"
           />
           <Icon
             className={`${styles.icon} ${styles.htbIcon}`}
@@ -60,9 +60,11 @@ const HeroSection = ({ className }: Props) => {
         </div>
         <ScrollToButton
           className={styles.scrollButton}
-          scrollPosition={650}
           size={45}
           rotation={180}
+          hoverColor="white"
+          color="#c6c6c6"
+          scrollLocation="/#projects"
         />
       </div>
     </section>

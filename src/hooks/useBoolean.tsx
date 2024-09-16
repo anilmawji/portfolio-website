@@ -26,7 +26,7 @@ const useBoolean = (initialValue: boolean): ReturnType => {
     value,
     toggle,
     setTrue,
-    setFalse,
+    setFalse
   };
 }
 

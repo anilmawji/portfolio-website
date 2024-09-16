@@ -1,7 +1,7 @@
 import styles from './Icon.module.css';
 import { joinClassNames } from '../../utils';
 
-enum IconType {
+const enum IconType {
   LINKEDIN,
   GITHUB,
   STACK_OVERFLOW,

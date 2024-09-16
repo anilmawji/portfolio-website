@@ -1,4 +1,4 @@
-enum SOCardTheme {
+const enum SOCardTheme {
   DEFAULT = "default",
   CLEAN = "clean",
   DARK = "dark",

@@ -1,4 +1,5 @@
 import styles from './Footer.module.css';
+import globalStyles from '../../global.module.css';
 import ScrollToButton from '../buttons/ScrollToButton';
 import CustomNavLink from '../nav/CustomNavLink';
 
@@ -17,7 +18,7 @@ const FooterItemList = ({ title, links }: FooterItemListProps) => {
         {Object.keys(links).map((name, index) => (
           <li key={index}>
             <CustomNavLink
-              className="hoverUnderline"
+              className={globalStyles.hoverUnderline}
               to={links[name]}
               label={name}
               target={links[name].startsWith('/') ? '_self' : '_blank'}
@@ -31,11 +32,11 @@ const FooterItemList = ({ title, links }: FooterItemListProps) => {
 
 const Footer = () => {
   return (
-    <footer className="shadowTop">
+    <footer className={globalStyles.shadowTop}>
       <ScrollToButton
         className={styles.button}
-        scrollPosition={0}
         size={38}
+        scrollLocation={0}
         includeRing
       />
       <div className={styles.content}>

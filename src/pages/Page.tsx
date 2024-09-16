@@ -5,17 +5,17 @@ import { joinClassNames } from '../utils';
 
 interface Props {
   className?: string;
-  headerId?: string;
+  id?: string;
   children?: React.ReactNode;
   title?: string;
 }
 
-const Page = ({ className, children, headerId, title }: Props) => {
+const Page = ({ className, children, id, title }: Props) => {
   return (
-    <div className={joinClassNames(styles.page, className, "gridBackground")}>
+    <div id={id} className={joinClassNames(styles.page, className, "gridBackground")}>
       <main>
         {title && (
-          <header className={styles.header} id={headerId ? headerId : ''}>
+          <header className={styles.header}>
             <div className={styles.titleContainer}>
               <hr className={styles.lineLeft} />
               <GlitchedText>

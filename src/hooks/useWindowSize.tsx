@@ -15,20 +15,20 @@ interface WindowSize {
 
 type WindowSizeCallback = (size: WindowSize) => void;
 
-const useWindowSize = (callback?: WindowSizeCallback, throttleDelay = 500) => {
+const useWindowSize = (callback?: WindowSizeCallback, debounceDelay = 500) => {
   const [windowSize, setWindowSize] = useState(getWindowSize);
 
   useEffect(() => {
-    // Debounce to avoid executing the function too many times
-    const handleResizeThrottled = useDebounce(() => {
+    // Debounce to avoid updating state and executing the callback too many times
+    const handleResizeDebounced = useDebounce(() => {
       const newSize = getWindowSize();
       setWindowSize(newSize);
       callback?.(newSize);
-    }, throttleDelay);
+    }, debounceDelay);
 
-    window.addEventListener("resize", handleResizeThrottled);
-    return () => window.removeEventListener("resize", handleResizeThrottled);
-  }, [callback, throttleDelay]);
+    window.addEventListener("resize", handleResizeDebounced);
+    return () => window.removeEventListener("resize", handleResizeDebounced);
+  }, [callback, debounceDelay]);
 
   return [windowSize.width, windowSize.height];
 }

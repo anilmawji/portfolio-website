@@ -1,6 +1,6 @@
 :root {
   --ta-text-padding: 14px;
-  --ta-border-style: 1px solid rgba(108, 250, 132, 0.8);
+  --ta-border-color: rgba(108, 250, 132, 0.8);
   --ta-border-transition-delay: 0.15s;
   --ta-border-radius: 8px;
 }
@@ -50,8 +50,8 @@
   -moz-transform: scaleX(0);
   -ms-transform: scaleX(0);
   -o-transform: scaleX(0);
-  border-left: var(--ta-border-style);
-  border-right: var(--ta-border-style);
+  border-left: 1px solid var(--ta-border-color);;
+  border-right: 1px solid var(--ta-border-color);;
   transition:
     transform var(--ta-border-transition-delay) ease var(--ta-border-transition-delay),
     height var(--ta-border-transition-delay) ease;
@@ -59,14 +59,14 @@
 
 .border::before {
   top: 0;
-  border-top: var(--ta-border-style);
+  border-top: 1px solid var(--ta-border-color);;
   border-top-left-radius: var(--ta-border-radius);
   border-top-right-radius: var(--ta-border-radius);
 }
 
 .border::after {
   bottom: 0;
-  border-bottom: var(--ta-border-style);
+  border-bottom: 1px solid var(--ta-border-color);;
   border-bottom-left-radius: var(--ta-border-radius);
   border-bottom-right-radius: var(--ta-border-radius);
 }

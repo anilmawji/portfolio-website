@@ -1,13 +1,14 @@
 import Page from './Page';
+import globalStyles from '../global.module.css';
 import BlogData from '../data/BlogData';
 import CardContainer from '../components/card/CardContainer';
 
 const Blog = () => {
   return (
-    <Page className="blogPage" title="Blog Posts">
+    <Page className={globalStyles.blogPage} title="Blog">
       <CardContainer
-        className="cardContainer"
-        title="Featured Blog Posts"
+        className={globalStyles.cardContainer}
+        title="Featured Posts"
         cardData={BlogData}
         includeReadTime
       />

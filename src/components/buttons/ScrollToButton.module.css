@@ -1,5 +1,7 @@
 :root {
   --scroll-btn-hover-time: 150ms;
+  --scroll-btn-color: #4f4f4f;
+  --scroll-btn-hover-color: #a0a0a0;
 }
 
 .button {
@@ -14,16 +16,16 @@
 
 .button:hover {
   cursor: pointer;
-  outline-color: #a0a0a0;
+  outline-color: var(--scroll-btn-hover-color);
 }
 
 .button:hover .arrow svg {
-  fill: #a0a0a0;
+  fill: var(--scroll-btn-hover-color);
 }
 
 .ring {
   border-radius: 9999px;
-  outline: 2px solid #4f4f4f;
+  outline: 2px solid var(--scroll-btn-color);
 }
 
 .arrow {
@@ -33,7 +35,7 @@
 }
 
 .arrow svg {
-  fill: #4f4f4f;
+  fill: var(--scroll-btn-color);
   width: calc(var(--scroll-btn-size) - 16px);
   height: calc(var(--scroll-btn-size) - 16px);
   transition: fill var(--scroll-btn-hover-time) ease-in-out;

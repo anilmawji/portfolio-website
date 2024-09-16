@@ -5,11 +5,16 @@ interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
   className?: string;
   placeholder: string;
   isRequired?: boolean;
+  textColor?: string;
 }
 
-const TextField = ({ className, id, placeholder, isRequired, ...restProps }: Props) => {
+const TextField = ({ className, id, placeholder, isRequired, textColor, ...restProps }: Props) => {
+  const textFieldStyle = {
+    '--tf-text-color': textColor
+  } as React.CSSProperties;
+
   return (
-    <div className={joinClassNames(styles.filled, className)}>
+    <div className={joinClassNames(styles.filled, className)} style={textFieldStyle}>
       <input
         id={id}
         name={id}

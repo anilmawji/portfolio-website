@@ -1,8 +1,17 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 
-enum MouseState { UP, DOWN, LEAVE, CLICK }
-enum TouchState { START, END }
+const enum MouseState {
+  UP,
+  DOWN,
+  LEAVE,
+  CLICK
+}
+
+const enum TouchState {
+  START,
+  END
+}
 
 interface Props {
   className?: string;

@@ -1,7 +1,7 @@
 import styles from './CustomNavLink.module.css';
 import ClickEventListener from '../ClickEventListener';
 import { Link, LinkProps, useLocation } from 'react-router-dom';
-import { joinClassNames } from '../../utils';
+import { joinClassNames, urlsOnSamePage } from '../../utils';
 
 interface Props extends LinkProps {
   to: string;
@@ -17,7 +17,9 @@ const CustomNavLink = ({ to, label, className, children, onClick, ...restProps }
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     onClick?.(e);
-    if (!to.includes('#')) {
+    // If destination is not on the same page, skip to the top of the page
+    // Otherwise, do nothing (ScrollToAnchor kicks in)
+    if (!urlsOnSamePage(currentUrl, to)) {
       window.scrollTo(0, 0);
     }
   }
@@ -28,7 +30,6 @@ const CustomNavLink = ({ to, label, className, children, onClick, ...restProps }
         to={to}
         className={joinClassNames(className, to === currentUrl ? 'active' : '')}
         onClick={handleClick}
-        onDragStart={(e) => e.preventDefault()}
         {...restProps}
       >
         {label}

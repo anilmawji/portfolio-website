@@ -71,16 +71,12 @@ a {
   text-decoration: none;
 }
 
-.preventSelect,
-.preventDrag {  
+.noSelect {  
   user-select: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
-}
-
-.preventDrag {
   -webkit-touch-callout: none;
   -webkit-user-drag: none;
 }
@@ -156,7 +152,7 @@ a {
   bottom: 0;
   width: 0;
   height: 1px;
-  transition: width 100ms ease-out;
+  transition: width 150ms ease;
   background-color: white; /* Default underline color */
 }
 

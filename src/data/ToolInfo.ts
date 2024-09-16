@@ -3,7 +3,7 @@ import { ToolInfo } from '../types';
 
 const newToolInfo = (name: string, r: number, g: number, b: number): ToolInfo => ({ name, color: rgb(r, g, b) });
 
-enum ToolName {
+const enum ToolName {
   AZURE_SDK = 'AZURE_SDK',
   ASP_DOT_NET_CORE = 'ASP_DOT_NET_CORE',
   BASH = 'BASH',

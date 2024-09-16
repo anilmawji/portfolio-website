@@ -10,15 +10,15 @@ export function randRange(min: number, max: number): number {
   return Math.random() * (max - min) + min;
 }
 
-export function clamp(value: number, min: number, max: number) {
+export function clamp(value: number, min: number, max: number): number {
   return value < min ? min : value > max ? max : value;
 }
 
-export function clampMin(value: number, min: number) {
+export function clampMin(value: number, min: number): number {
   return value < min ? min : value;
 }
 
-export function clampMax(value: number, max: number) {
+export function clampMax(value: number, max: number): number {
   return value > max ? max : value;
 }
 
@@ -60,7 +60,7 @@ export function getNumericalCssValue(variableName: string, element?: HTMLElement
   return numberValue;
 }
 
-export function isOverflowing(event: HTMLElement) {
+export function isOverflowing(event: HTMLElement): boolean {
   return event.offsetHeight < event.scrollHeight || event.offsetWidth < event.scrollWidth;
 }
 
@@ -116,6 +116,7 @@ export function isValidCssColor(str: string): boolean {
 }
 
 // Functions to lighten/darken/blend RGB colors based on a given percentage p
+// Optimized for speed instead of readability
 // Full credit goes to Pimp Trizkit https://stackoverflow.com/questions/5560248/programmatically-lighten-or-darken-a-hex-color-or-rgb-and-blend-colors/73660199#73660199
 
 export function rgbLinearBlend(p: number, c0: string, c1: string): string {
@@ -144,6 +145,16 @@ export function rgbLogShade(p: number, c: string): string {
 |#                                                                     #|
 \*#####################################################################*/
 
-export function toTitleCase(str: string) {
+export function toTitleCase(str: string): string {
   return str.length === 0 ? "" : str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+}
+
+export function removeHash(url: string): string {
+  const hashIndex = url.indexOf('#');
+
+  return hashIndex === -1 ? url : url.substring(0, hashIndex);
+}
+
+export function urlsOnSamePage(url1: string, url2: string): boolean {
+  return removeHash(url1) === removeHash(url2);
 }

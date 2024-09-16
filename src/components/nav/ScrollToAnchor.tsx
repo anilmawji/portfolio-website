@@ -31,7 +31,7 @@ const ScrollToAnchor = ({ delay = 0, offset = 0 }: Props) => {
         });
       lastHash.current = '';
     }, delay);
-  }, [location]);
+  }, [location, delay, offset]);
 
   return null;
 }

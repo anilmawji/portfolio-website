@@ -1,45 +1,32 @@
-import useBoolean from '../../hooks/useBoolean';
 import CustomNavLink from './CustomNavLink';
 import styles from './Navbar.module.css';
 import HamburgerButton from './HamburgerButton';
+import { useNavMenuContext } from '../../contexts/NavMenuContext';
 
-interface Props {
-  drawerDelay?: number;
-}
-
-const Navbar = ({ drawerDelay = 250 }: Props) => {
-  const { value: isHamburgerOpen, toggle, setFalse } = useBoolean(false);
-
-  // Adds a short delay before closing the navbar
-  async function closeHamburgerDrawer() {
-    if (isHamburgerOpen) {
-      setTimeout(() => {
-        setFalse();
-      }, drawerDelay);
-    }
-  }
+const Navbar = () => {
+  const { isOpen: isMenuOpen, toggle: toggleMenu, close: closeMenu } = useNavMenuContext();
 
   return (
     <nav>
-      <HamburgerButton className={styles.hamburger} isOpen={isHamburgerOpen} onToggle={toggle} />
+      <HamburgerButton className={styles.hamburger} isOpen={isMenuOpen} onToggle={toggleMenu} />
       <ul>
         <li>
-          <CustomNavLink to="/" label="Home" onClick={closeHamburgerDrawer} />
+          <CustomNavLink to="/#hero" label="Home" onClick={closeMenu} />
         </li>
         <li>
-          <CustomNavLink to="/#experience" label="Experience" onClick={closeHamburgerDrawer} />
+          <CustomNavLink to="/#experience" label="Experience" onClick={closeMenu} />
         </li>
         <li>
-          <CustomNavLink to="/#projects" label="Projects" onClick={closeHamburgerDrawer} />
+          <CustomNavLink to="/#projects" label="Projects" onClick={closeMenu} />
         </li>
         <li>
-          <CustomNavLink to="/about" label="About" onClick={closeHamburgerDrawer} />
+          <CustomNavLink to="/about#bio" label="About" onClick={closeMenu} />
         </li>
         <li>
-          <CustomNavLink to="/about#contact" label="Contact" onClick={closeHamburgerDrawer} />
+          <CustomNavLink to="/about#contact" label="Contact" onClick={closeMenu} />
         </li>
         <li>
-          <CustomNavLink to="/blog" label="Blog" onClick={closeHamburgerDrawer} />
+          <CustomNavLink to="/blog" label="Blog" onClick={closeMenu} />
         </li>
       </ul>
       <div className={styles.shadow} />

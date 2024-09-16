@@ -1,0 +1,14 @@
+.container {
+  position: relative;
+  display: inline-flex;
+}
+
+.target {
+  display: flex;
+  border: none;
+  background: none;
+  padding: 5px;
+  margin: -1px;
+  color: inherit;
+  cursor: inherit;
+}
