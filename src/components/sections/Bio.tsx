@@ -20,12 +20,14 @@ const BioSection = ({ className }: Props) => {
         </div>
         <div className={styles.text}>
           <p>
-            Hi, I'm Anil, a software developer with a deep passion for cyber security.
+            Hi, I'm Anil, a software developer with a strong passion for cyber security.
             <br /><br />
-            My love for technology began like many others&mdash; by playing video games! But once I stumbled across <a className={globalStyles.hoverUnderline} href="https://en.wikipedia.org/wiki/Cheat_Engine" target="_blank">this fun little program</a> as a kid,
-            I learned it was possible to break games, too. Over time, I've had the privilege of working at <a className={globalStyles.hoverUnderline} href="https://www.starburst.io/" target="_blank">a unicorn start-up</a>, <a className={globalStyles.hoverUnderline} href="https://www.arcurve.com/" target="_blank">a software services company</a> and
-            the <a className={globalStyles.hoverUnderline} href="https://www.canada.ca/en.html" target="_blank">federal government.</a> Currently,
-            I'm diving into the world of ethical hacking as I work towards earning my <a className={globalStyles.hoverUnderline} href="https://certifications.tcm-sec.com/pjpt/" target="_blank">PJPT certification.</a>
+            My tech journey started like many others&mdash; playing video games as a kid! But once I stumbled across <a className={globalStyles.hoverUnderline} href="https://en.wikipedia.org/wiki/Cheat_Engine" target="_blank">a fun little program</a> that
+            could be used to break games, my curiosity for the digital world skyrocketed.
+            <br /><br />
+            Over time, I've had the privilege of working at <a className={globalStyles.hoverUnderline} href="https://www.starburst.io/" target="_blank">a unicorn start-up</a>, <a className={globalStyles.hoverUnderline} href="https://www.arcurve.com/" target="_blank">a software services company</a> and
+            the <a className={globalStyles.hoverUnderline} href="https://www.canada.ca/en.html" target="_blank">federal government.</a> I'm currently diving into the world of ethical hacking
+            as I work towards earning my <a className={globalStyles.hoverUnderline} href="https://certifications.tcm-sec.com/pjpt/" target="_blank">PJPT certification.</a>
             <br /><br />
             Here are some of the certifications I've picked up so far:
           </p>
@@ -43,12 +45,12 @@ const BioSection = ({ className }: Props) => {
           <p>
             <br />
             When I'm not at my computer, I enjoy hiking, swimming and going out for a bite with friends.
-            I'm always open to connecting with fellow tech enthusiasts, so feel free to <NavLink className={globalStyles.hoverUnderline} to="/about#contact">reach out</NavLink> if you'd like to chat!
+            Feel free to <NavLink className={globalStyles.hoverUnderline} to="/about#contact">reach out</NavLink> if you'd like to chat!
           </p>
         </div>
       </div>
       <div className={styles.profiles}>
-        <Tooltip text="My profile at Stack Overflow, a site for professional and enthusiast programmers" width='100%' visibilityDelay={300}>
+        <Tooltip text="My profile at Stack Overflow, a forum for professional and enthusiast programmers" width='100%' visibilityDelay={300}>
           <StackOverflowCard user_id="8902167" theme={SOCardTheme.DARK} />
         </Tooltip>
         <Tooltip text="My profile at TryHackMe, a hands-on learning platform for cyber security, all through your browser!" width='100%' visibilityDelay={300}>

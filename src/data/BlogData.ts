@@ -1,7 +1,7 @@
 import arch_desk from '../assets/arch_desktop.png';
 import { Post } from '../types';
 
-const BlogData: Post[] = [
+export const BlogData: Post[] = [
   {
     title: "Hack The Box: Anubis Writeup",
     image: arch_desk,
@@ -51,5 +51,3 @@ const BlogData: Post[] = [
     tags: ["Test", "Test", "Test"]
   }
 ];
-
-export default BlogData;

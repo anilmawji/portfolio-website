@@ -3,7 +3,7 @@ import { ToolInfo } from '../types';
 
 const newToolInfo = (name: string, r: number, g: number, b: number): ToolInfo => ({ name, color: rgb(r, g, b) });
 
-const enum ToolName {
+export const enum ToolName {
   AZURE_SDK = 'AZURE_SDK',
   ASP_DOT_NET_CORE = 'ASP_DOT_NET_CORE',
   BASH = 'BASH',
@@ -31,7 +31,7 @@ const enum ToolName {
 
 // Colors sourced from https://raw.githubusercontent.com/github/linguist/master/lib/linguist/languages.yml
 
-const ToolInfoMap: Record<ToolName, ToolInfo> = {
+export const ToolInfoMap: Record<ToolName, ToolInfo> = {
   [ToolName.ASP_DOT_NET_CORE]: newToolInfo('ASP.NET Core', 81, 43, 212),
   [ToolName.C]: newToolInfo('C', 85, 85, 85),
   [ToolName.C_SHARP]: newToolInfo('C#', 23, 134, 0),
@@ -56,5 +56,3 @@ const ToolInfoMap: Record<ToolName, ToolInfo> = {
   [ToolName.AZURE_SDK]: newToolInfo('Azure SDK', 0, 137, 214),
   [ToolName.FIGMA]: newToolInfo('Figma', 162, 89, 255),
 } as const;
-
-export { ToolInfoMap };

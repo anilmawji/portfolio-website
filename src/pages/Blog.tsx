@@ -1,6 +1,6 @@
 import Page from './Page';
 import globalStyles from '../global.module.css';
-import BlogData from '../data/BlogData';
+import { BlogData } from '../data/BlogData';
 import CardContainer from '../components/card/CardContainer';
 
 const Blog = () => {

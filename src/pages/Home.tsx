@@ -5,7 +5,7 @@ import ParticleCanvas from '../components/canvas/ParticleCanvas';
 import HeroSection from '../components/sections/Hero';
 import ExperienceSection from '../components/sections/Experience';
 import CardContainer from '../components/card/CardContainer';
-import ProjectData from '../data/ProjectData';
+import { ProjectData } from '../data/ProjectData';
 import { getCssValue, hexToRgb } from '../utils';
 
 const NEON_GREEN_COLOR = hexToRgb(getCssValue("neon-green"));

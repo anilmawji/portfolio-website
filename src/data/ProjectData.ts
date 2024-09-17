@@ -7,7 +7,7 @@ import mystics_img from '../assets/projects/mystics.png';
 import { ToolInfoMap as Tool } from './ToolInfo';
 import { Post } from '../types';
 
-const ProjectData: Post[] = [
+export const ProjectData: Post[] = [
   {
     title: "PowerShell Script Profiler",
     image: it_portal_img,
@@ -57,5 +57,3 @@ const ProjectData: Post[] = [
     tags: [Tool.JAVA, Tool.JAVA_FX, Tool.SCENE_BUILDER]
   }
 ];
-
-export default ProjectData;

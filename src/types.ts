@@ -1,7 +1,10 @@
 type RgbString = `rgb(${number},${number},${number})`;
 type RgbaString = `rgba(${number},${number},${number},${number})`;
 
-type ToolInfo = { name: string; color: RgbString; }
+type ToolInfo = {
+  name: string;
+  color: RgbString;
+};
 
 type Post = {
   title: string;
@@ -11,13 +14,13 @@ type Post = {
   body: string;
   link: string;
   tags: (ToolInfo | string)[];
-}
+};
 
 function isToolInfo(value: any): value is ToolInfo {
-  return typeof value === 'object' &&
-         value !== null &&
-         typeof value.name === 'string' &&
-         typeof value.color === 'string';
+  return value !== null
+      && typeof value === 'object'
+      && typeof value.name === 'string'
+      && typeof value.color === 'string';
 }
 
 export {

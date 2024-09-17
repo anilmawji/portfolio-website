@@ -3,7 +3,6 @@ import globalStyles from '../../global.module.css';
 import ScrollToButton from '../buttons/ScrollToButton';
 import CustomNavLink from '../nav/CustomNavLink';
 import { Tooltip, TooltipDirection } from '../text/Tooltip';
-import ResumePdf from '../../assets/anil-mawji-resume-2024.pdf';
 
 interface FooterItemListProps {
   title: string;
@@ -56,9 +55,10 @@ const Footer = () => {
           <FooterItemList
             title={"Navigation"}
             links={{
-              "Home": "/",
+              "Home": "/#hero",
               "Portfolio": "/portfolio",
               "About": "/about#bio",
+              "Experience": "/about#experience",
               "Contact": "/about#contact",
               "Blog": "/blog#featured"
             }}
@@ -68,7 +68,7 @@ const Footer = () => {
             links={{
               "LinkedIn": "https://ca.linkedin.com/in/anil-mawji",
               // "Email": "mailto:mawjianil1@gmail.com",
-              "TryHackMe": "https://tryhackme.com/p/Cyb3rHusky",
+              "TryHackMe": "https://tryhackme.com/p/zxphyr",
               "HackTheBox": "https://app.hackthebox.com/profile/2024905/",
               "GitHub": "https://github.com/anilmawji",
               "Stack Overflow": "https://stackoverflow.com/users/8902167/anil-m"
