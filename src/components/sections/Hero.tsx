@@ -2,6 +2,7 @@ import styles from './Hero.module.css';
 import { Icon, IconType } from '../icons/Icon';
 import GlitchedText from '../text/GlitchedText';
 import ScrollToButton from '../../components/buttons/ScrollToButton';
+import { Tooltip, TooltipDirection } from '../text/Tooltip';
 import { joinClassNames } from '../../utils';
 
 interface Props {
@@ -29,43 +30,57 @@ const HeroSection = ({ className }: Props) => {
         <div className={styles.bio}>
           Computer Science student at the University of Calgary
           <br />
-          passionate about crafting secure, resilient solutions for clients.
+          Passionate about delivering secure, resilient solutions to clients
         </div>
         <div className={styles.icons}>
-          <Icon
-            className={`${styles.icon} ${styles.linkedinIcon}`}
-            type={IconType.LINKEDIN}
-            href="https://ca.linkedin.com/in/anil-mawji"
-          />
-          <Icon
-            className={`${styles.icon} ${styles.githubIcon}`}
-            type={IconType.GITHUB}
-            href="https://github.com/anilmawji"
-          />
-          <Icon
-            className={`${styles.icon} ${styles.soIcon}`}
-            type={IconType.STACK_OVERFLOW}
-            href="https://stackoverflow.com/users/8902167/anil-m"
-          />
-          <Icon
-            className={`${styles.icon} ${styles.thmIcon}`}
-            type={IconType.TRYHACKME}
-            href="https://tryhackme.com/p/zxphyr"
-          />
-          <Icon
-            className={`${styles.icon} ${styles.htbIcon}`}
-            type={IconType.HACK_THE_BOX}
-            href="https://www.hackthebox.com/"
-          />
+          <Tooltip text="LinkedIn" distance="20px">
+            <Icon
+              className={`${styles.icon} ${styles.linkedinIcon}`}
+              type={IconType.LINKEDIN}
+              href="https://ca.linkedin.com/in/anil-mawji"
+            />
+          </Tooltip>
+          <Tooltip text="GitHub" distance="20px">
+            <Icon
+              className={`${styles.icon} ${styles.githubIcon}`}
+              type={IconType.GITHUB}
+              href="https://github.com/anilmawji"
+            />
+          </Tooltip>
+          <Tooltip text="StackOverflow" distance="20px">
+            <Icon
+              className={`${styles.icon} ${styles.soIcon}`}
+              type={IconType.STACK_OVERFLOW}
+              href="https://stackoverflow.com/users/8902167/anil-m"
+            />
+          </Tooltip>
+          <Tooltip text="TryHackMe" distance="20px">
+            <Icon
+              className={`${styles.icon} ${styles.thmIcon}`}
+              type={IconType.TRYHACKME}
+              href="https://tryhackme.com/p/zxphyr"
+            />
+          </Tooltip>
+          <Tooltip text="HackTheBox" distance="20px">
+            <Icon
+              className={`${styles.icon} ${styles.htbIcon}`}
+              type={IconType.HACK_THE_BOX}
+              href="https://www.hackthebox.com/"
+            />
+          </Tooltip>
         </div>
-        <ScrollToButton
-          className={styles.scrollButton}
-          size={45}
-          rotation={180}
-          hoverColor="white"
-          color="#c6c6c6"
-          scrollLocation="/#projects"
-        />
+        <div className={styles.scrollButtonContainer}>
+          <Tooltip text="Scroll down" width="90px" distance="10px">
+            <ScrollToButton
+              className={styles.scrollButton}
+              size={45}
+              rotation={180}
+              hoverColor="white"
+              color="#c6c6c6"
+              scrollLocation="/#projects"
+            />
+          </Tooltip>
+        </div>
       </div>
     </section>
   );

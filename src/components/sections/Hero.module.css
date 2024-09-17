@@ -90,7 +90,7 @@
   --icon-color: #FF9900;
 }
 
-.scrollButton {
+.scrollButtonContainer {
   visibility: hidden;
 }
 
@@ -147,9 +147,11 @@
     justify-content: center;
   }
 
-  .scrollButton {
-    visibility: visible;
+  .scrollButtonContainer {
+    display: flex;
+    justify-content: center;
     margin: 0 auto;
     margin-top: 30px;
+    visibility: visible;
   }
 }

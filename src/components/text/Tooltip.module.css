@@ -1,14 +1,126 @@
-.container {
-  position: relative;
-  display: inline-flex;
+:root {
+  --tooltip-bg-color: var(--main-fg-color);
+  --tooltip-arrow-size: 6px;
+  --tooltip-transition: 250ms ease;
+  --tooltip-border-color: grey;
+  --tooltip-border-thickness: 1px;
 }
 
-.target {
+.tooltip {
+  position: relative;
+}
+
+.text {
+  position: absolute;
   display: flex;
-  border: none;
-  background: none;
-  padding: 5px;
-  margin: -1px;
-  color: inherit;
-  cursor: inherit;
+  align-items: center;
+  justify-content: center;
+  width: var(--tooltip-width);
+  color: white;
+  background-color: var(--tooltip-bg-color);
+  font-size: 14px;
+  text-align: center;
+  text-shadow: none;
+  border-radius: 6px;
+  padding: 6px;
+  z-index: 9999;
+  transition:
+    opacity var(--tooltip-transition),
+    visibility var(--tooltip-transition);
+  visibility: hidden;
+  opacity: 0;
+  border: var(--tooltip-border-thickness) solid var(--tooltip-border-color);
+}
+
+.text.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.textBottom {
+  top: calc(100% + var(--tooltip-distance));
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.textLeft {
+  right: calc(100% + var(--tooltip-distance));
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.textTop {
+  bottom: calc(100% + var(--tooltip-distance));
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.textRight {
+  left: calc(100% + var(--tooltip-distance));
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.arrowBottom,
+.arrowLeft,
+.arrowTop,
+.arrowRight {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  content: "";
+  position: absolute;
+  border-width: var(--tooltip-arrow-size);
+  border-style: solid;
+}
+
+.arrowBottom {
+  top: 100%;
+  border-color: var(--tooltip-bg-color) transparent transparent transparent;
+}
+
+.arrowLeft {
+  right: 100%;
+  border-color: transparent var(--tooltip-bg-color) transparent transparent;
+}
+
+.arrowTop {
+  bottom: 100%;
+  border-color: transparent transparent var(--tooltip-bg-color) transparent;
+}
+
+.arrowRight {
+  left: 100%;
+  border-color: transparent transparent transparent var(--tooltip-bg-color);
+}
+
+.arrowBottom::before,
+.arrowLeft::before,
+.arrowTop::before,
+.arrowRight::before {
+  content: "";
+  position: absolute;
+  border-width: calc(var(--tooltip-arrow-size) + var(--tooltip-border-thickness));
+  border-style: solid;
+  z-index: -1;
+}
+
+.arrowBottom::before {
+  top: calc(100% - var(--tooltip-arrow-size) + var(--tooltip-border-thickness));
+  border-color: var(--tooltip-border-color) transparent transparent transparent;
+}
+
+.arrowLeft::before {
+  right: calc(100% - var(--tooltip-arrow-size) + var(--tooltip-border-thickness));
+  border-color: transparent var(--tooltip-border-color) transparent transparent;
+}
+
+.arrowTop::before {
+  bottom: calc(100% - var(--tooltip-arrow-size) + var(--tooltip-border-thickness));
+  border-color: transparent transparent var(--tooltip-border-color) transparent;
+}
+
+.arrowRight::before {
+  left: calc(100% - var(--tooltip-arrow-size) + var(--tooltip-border-thickness));
+  border-color: transparent transparent transparent var(--tooltip-border-color);
 }

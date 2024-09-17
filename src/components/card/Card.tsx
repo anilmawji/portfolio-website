@@ -1,4 +1,5 @@
 import styles from './Card.module.css';
+import globalStyles from '../../global.module.css';
 import Chip from '../text/Chip';
 import { readingTime } from '../../utils';
 import { Post, isToolInfo } from '../../types';
@@ -15,7 +16,7 @@ const Card = ({ data, includeReadTime }: Props) => {
   }
 
   return (
-    <a className={`${styles.card} shadowBottom`} href={data.link} target="_blank">
+    <a className={`${styles.card} ${globalStyles.shadowBottom}`} href={data.link} target="_blank">
       <img src={data.image} />
       <div className={styles.content}>
         <div className={styles.text}>

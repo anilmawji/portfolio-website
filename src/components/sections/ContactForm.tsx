@@ -28,6 +28,7 @@ const ContactSection = ({ className }: Props) => {
   const [result, setResult] = useState<FormResultMessage | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [windowWidth] = useWindowSize();
+  const isNonMobileView  = windowWidth > COMPACT_CAPTCHA_WINDOW_WIDTH;
 
   const setResultMessage = (message: string, isError: boolean) => setResult({ message, isError });
 
@@ -80,12 +81,12 @@ const ContactSection = ({ className }: Props) => {
         <TextField type="email" id="email" placeholder="email" isRequired />
         <TextField type="text" id="subject" placeholder="subject" isRequired />
         <TextArea className={styles.message} id="message" placeholder="message" isRequired />
-        <div className={windowWidth > COMPACT_CAPTCHA_WINDOW_WIDTH ? styles.captchaNormal : styles.captchaCompact}>
+        <div className={isNonMobileView ? styles.captchaNormal : styles.captchaCompact}>
           <HCaptcha
             sitekey={HCAPTCHA_SITE_KEY}
             reCaptchaCompat={false}
             onVerify={setToken}
-            size={windowWidth > COMPACT_CAPTCHA_WINDOW_WIDTH ? "normal" : "compact"}
+            size={isNonMobileView ? "normal" : "compact"}
             theme="dark"
             ref={captchaRef}
           />

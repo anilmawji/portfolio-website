@@ -1,4 +1,5 @@
 import styles from './Page.module.css';
+import globalStyles from '../global.module.css';
 import Footer from '../components/sections/Footer';
 import GlitchedText from '../components/text/GlitchedText';
 import { joinClassNames } from '../utils';
@@ -12,7 +13,7 @@ interface Props {
 
 const Page = ({ className, children, id, title }: Props) => {
   return (
-    <div id={id} className={joinClassNames(styles.page, className, "gridBackground")}>
+    <div id={id} className={joinClassNames(styles.page, className, globalStyles.gridBackground)}>
       <main>
         {title && (
           <header className={styles.header}>

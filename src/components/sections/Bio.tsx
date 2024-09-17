@@ -3,6 +3,7 @@ import globalStyles from '../../global.module.css';
 import portrait from '../../assets/me.jpg';
 import { StackOverflowCard, SOCardTheme } from '../../components/card/StackOverflowCard';
 import TryHackMeCard from '../../components/card/TryHackMeCard';
+import { Tooltip } from '../../components/text/Tooltip';
 import { NavLink } from 'react-router-dom';
 import { joinClassNames } from '../../utils';
 
@@ -21,8 +22,8 @@ const BioSection = ({ className }: Props) => {
           <p>
             Hi, I'm Anil, a software developer with a deep passion for cyber security.
             <br /><br />
-            My love for technology began like many others; playing video games! But once I stumbled across <a className={globalStyles.hoverUnderline} href="https://en.wikipedia.org/wiki/Cheat_Engine" target="_blank">this fun little program</a> as a kid,
-            I learned how to break games, too. Fast forward to today, and I've had the privilege of working at <a className={globalStyles.hoverUnderline} href="https://www.starburst.io/" target="_blank">a unicorn start-up</a>, <a className={globalStyles.hoverUnderline} href="https://www.arcurve.com/" target="_blank">a software services company</a> and
+            My love for technology began like many others&mdash; by playing video games! But once I stumbled across <a className={globalStyles.hoverUnderline} href="https://en.wikipedia.org/wiki/Cheat_Engine" target="_blank">this fun little program</a> as a kid,
+            I learned it was possible to break games, too. Over time, I've had the privilege of working at <a className={globalStyles.hoverUnderline} href="https://www.starburst.io/" target="_blank">a unicorn start-up</a>, <a className={globalStyles.hoverUnderline} href="https://www.arcurve.com/" target="_blank">a software services company</a> and
             the <a className={globalStyles.hoverUnderline} href="https://www.canada.ca/en.html" target="_blank">federal government.</a> Currently,
             I'm diving into the world of ethical hacking as I work towards earning my <a className={globalStyles.hoverUnderline} href="https://certifications.tcm-sec.com/pjpt/" target="_blank">PJPT certification.</a>
             <br /><br />
@@ -47,8 +48,12 @@ const BioSection = ({ className }: Props) => {
         </div>
       </div>
       <div className={styles.profiles}>
-        <StackOverflowCard user_id="8902167" theme={SOCardTheme.DARK} />
-        <TryHackMeCard username="zxphyr" />
+        <Tooltip text="My profile at Stack Overflow, a site for professional and enthusiast programmers" width='100%' visibilityDelay={300}>
+          <StackOverflowCard user_id="8902167" theme={SOCardTheme.DARK} />
+        </Tooltip>
+        <Tooltip text="My profile at TryHackMe, a hands-on learning platform for cyber security, all through your browser!" width='100%' visibilityDelay={300}>
+          <TryHackMeCard username="zxphyr" />
+        </Tooltip>
       </div>
     </div>
   );

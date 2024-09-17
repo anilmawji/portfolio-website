@@ -2,6 +2,7 @@ import styles from './Footer.module.css';
 import globalStyles from '../../global.module.css';
 import ScrollToButton from '../buttons/ScrollToButton';
 import CustomNavLink from '../nav/CustomNavLink';
+import { Tooltip, TooltipDirection } from '../text/Tooltip';
 
 interface FooterItemListProps {
   title: string;
@@ -33,12 +34,16 @@ const FooterItemList = ({ title, links }: FooterItemListProps) => {
 const Footer = () => {
   return (
     <footer className={globalStyles.shadowTop}>
-      <ScrollToButton
-        className={styles.button}
-        size={38}
-        scrollLocation={0}
-        includeRing
-      />
+      <div className={styles.buttonContainer}>
+        <Tooltip text="Back to top" direction={TooltipDirection.TOP} width="90px" distance="22px">
+          <ScrollToButton
+            className={styles.button}
+            size={38}
+            scrollLocation={0}
+            includeRing
+          />
+        </Tooltip>
+      </div>
       <div className={styles.content}>
         <div className={styles.footerLists}>
           <FooterItemList
@@ -65,8 +70,8 @@ const Footer = () => {
           <FooterItemList
             title={"External Files"}
             links={{
-              "Resume": "",
-              "Website License": ""
+              "Resume": '',
+              "Website License": ''
             }}
           />
         </div>

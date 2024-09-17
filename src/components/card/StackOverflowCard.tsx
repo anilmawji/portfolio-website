@@ -20,8 +20,7 @@ const StackOverflowCard = ({ user_id, width = 208, height = 58, theme = SOCardTh
         src={`https://stackoverflow.com/users/flair/${user_id}.png?theme=${theme}`}
         width={width}
         height={height}
-        alt="My profile at Stack Overflow, a site for professional and enthusiast programmers"
-        title="My profile at Stack Overflow, a site for professional and enthusiast programmers"
+        alt="My profile at Stack Overflow"
         {...restProps}
       />
     </a>

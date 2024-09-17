@@ -49,6 +49,7 @@
   overflow: hidden;
   height: 13em;
   background: var(--shadow-gradient);
+  border-radius: var(--card-border-radius);
 }
 
 .text {

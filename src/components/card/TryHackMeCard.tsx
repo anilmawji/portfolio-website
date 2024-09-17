@@ -7,8 +7,7 @@ const TryHackMeCard = ({ username, ...restProps }: Props) => {
     <a href={`https://tryhackme.com/p/${username}`} target="_blank">
       <img
         src={`https://tryhackme-badges.s3.amazonaws.com/${username}.png`}
-        alt="My profile at TryHackMe, a hands-on learning platform for cyber security, all through your browser!"
-        title="My profile at TryHackMe, a hands-on learning platform for cyber security, all through your browser!"
+        alt="My profile at TryHackMe"
         {...restProps}
       />
     </a>

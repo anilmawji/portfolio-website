@@ -13,7 +13,7 @@
   --glow-border-radius: 1px;
   --shadow-gradient: linear-gradient(to top, var(--main-fg-color), #232323);
 
-  --grid-background-size: 18px 18px;
+  --grid-background-size: 16px 16px;
   --grid-background-image: 
     linear-gradient(to right, #252525 1px, transparent 1px),
     linear-gradient(to bottom, #252525 1px, transparent 1px);
