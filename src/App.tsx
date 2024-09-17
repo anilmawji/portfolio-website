@@ -19,7 +19,7 @@ const App = () => {
   return (
     <NavMenuProvider>
       <Navbar />
-      <ScrollToAnchor offset={NAVBAR_THICKNESS + 2}/>
+      <ScrollToAnchor offset={NAVBAR_THICKNESS}/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/#hero" element={<Home />} />
@@ -29,6 +29,7 @@ const App = () => {
         <Route path="/about#bio" element={<About />} />
         <Route path="/about#contact" element={<About />} />
         <Route path="/blog" element={<Blog />} />
+        <Route path="/blog#featured" element={<Blog />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </NavMenuProvider>

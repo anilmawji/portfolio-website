@@ -1,7 +1,9 @@
 import CustomNavLink from './CustomNavLink';
 import styles from './Navbar.module.css';
 import HamburgerButton from './HamburgerButton';
+import { Icon, IconType } from '../../components/icons/Icon';
 import { useNavMenuContext } from '../../contexts/NavMenuContext';
+import ResumePdf from '../../assets/anil-mawji-resume-2024.pdf';
 
 const Navbar = () => {
   const { isOpen: isMenuOpen, toggle: toggleMenu, close: closeMenu } = useNavMenuContext();
@@ -26,7 +28,13 @@ const Navbar = () => {
           <CustomNavLink to="/about#contact" label="Contact" onClick={closeMenu} />
         </li>
         <li>
-          <CustomNavLink to="/blog" label="Blog" onClick={closeMenu} />
+          <CustomNavLink to="/blog#featured" label="Blog" onClick={closeMenu} />
+        </li>
+        <li>
+          <a className={styles.resume} href={ResumePdf} target="_blank">
+            Resume
+            <Icon className={styles.arrow} type={IconType.ARROW_UP_RIGHT} />
+          </a>
         </li>
       </ul>
       <div className={styles.shadow} />

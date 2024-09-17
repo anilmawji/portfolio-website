@@ -158,3 +158,7 @@ export function removeHash(url: string): string {
 export function urlsOnSamePage(url1: string, url2: string): boolean {
   return removeHash(url1) === removeHash(url2);
 }
+
+export function isExternalUrl(url: string): boolean {
+  return location.origin !== new URL(url).origin;
+}

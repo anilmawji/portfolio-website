@@ -5,6 +5,7 @@
   --card-border-radius: 8px;
   --card-text-margin: 6px;
   --card-transition: transform 200ms ease;
+  --card-border: 2px solid #303030;
   --max-vertical-lines: 3;
 }
 
@@ -15,7 +16,7 @@
   max-width: calc(33.33% - var(--card-gap));
   color: white;
   border-radius: var(--card-border-radius);
-  border: 1px solid #303030;
+  border: var(--card-border);
   transition: var(--card-transition);
 }
 
@@ -38,7 +39,7 @@
   object-position: top;
   border-top-left-radius: var(--card-border-radius);
   border-top-right-radius: var(--card-border-radius);
-  border-bottom: 1px solid #303030;
+  border-bottom: var(--card-border);
 }
 
 .content {
@@ -49,7 +50,8 @@
   overflow: hidden;
   height: 13em;
   background: var(--shadow-gradient);
-  border-radius: var(--card-border-radius);
+  border-bottom-left-radius: var(--card-border-radius);
+  border-bottom-right-radius: var(--card-border-radius);
 }
 
 .text {

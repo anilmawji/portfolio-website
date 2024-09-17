@@ -5,7 +5,7 @@ import CardContainer from '../components/card/CardContainer';
 
 const Blog = () => {
   return (
-    <Page className={globalStyles.blogPage} title="Blog">
+    <Page className={globalStyles.blogPage} title="Blog" id="featured">
       <CardContainer
         className={globalStyles.cardContainer}
         title="Featured Posts"

@@ -5,7 +5,7 @@
   background: var(--main-fg-color);
   border-radius: 8px;
   padding: 30px;
-  border: 1px solid #303030;
+  border: 2px solid #303030;
 }
 
 .title {

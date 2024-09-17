@@ -13,7 +13,14 @@ interface Props {
 
 const Page = ({ className, children, id, title }: Props) => {
   return (
-    <div id={id} className={joinClassNames(styles.page, className, globalStyles.gridBackground)}>
+    <div
+      id={id}
+      className={joinClassNames(
+        styles.page,
+        className,
+        globalStyles.gridBackground
+      )}
+    >
       <main>
         {title && (
           <header className={styles.header}>
@@ -28,10 +35,12 @@ const Page = ({ className, children, id, title }: Props) => {
             </div>
           </header>
         )}
-        <div className={joinClassNames(
-          styles.content,
-          title ? styles.contentMargin : ''
-        )}>
+        <div
+          className={joinClassNames(
+            styles.content,
+            title ? styles.contentMargin : ''
+          )}
+        >
           {children}
         </div>
       </main>

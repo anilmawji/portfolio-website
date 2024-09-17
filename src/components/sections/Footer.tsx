@@ -3,6 +3,7 @@ import globalStyles from '../../global.module.css';
 import ScrollToButton from '../buttons/ScrollToButton';
 import CustomNavLink from '../nav/CustomNavLink';
 import { Tooltip, TooltipDirection } from '../text/Tooltip';
+import ResumePdf from '../../assets/anil-mawji-resume-2024.pdf';
 
 interface FooterItemListProps {
   title: string;
@@ -18,12 +19,18 @@ const FooterItemList = ({ title, links }: FooterItemListProps) => {
       <ul className={styles.links}>
         {Object.keys(links).map((name, index) => (
           <li key={index}>
-            <CustomNavLink
-              className={globalStyles.hoverUnderline}
-              to={links[name]}
-              label={name}
-              target={links[name].startsWith('/') ? '_self' : '_blank'}
-            />
+            {name.toLowerCase() !== 'email' ? (
+              <CustomNavLink
+                className={globalStyles.hoverUnderline}
+                to={links[name]}
+                label={name}
+                target={links[name].startsWith('/') ? '_self' : '_blank'}
+              />
+            ) : (
+              <a className={globalStyles.hoverUnderline} href={links[name]}>
+                {name}
+              </a>
+            )}
           </li>
         ))}
       </ul>
@@ -51,18 +58,18 @@ const Footer = () => {
             links={{
               "Home": "/",
               "Portfolio": "/portfolio",
-              "About": "/about",
+              "About": "/about#bio",
               "Contact": "/about#contact",
-              "Blog": "/blog"
+              "Blog": "/blog#featured"
             }}
           />
           <FooterItemList
-            title={"Connect With Me"}
+            title={"Socials"}
             links={{
               "LinkedIn": "https://ca.linkedin.com/in/anil-mawji",
-              "Email": "https://stackoverflow.com/users/8902167/anil-m",
+              // "Email": "mailto:mawjianil1@gmail.com",
               "TryHackMe": "https://tryhackme.com/p/Cyb3rHusky",
-              "HackTheBox": "https://www.hackthebox.com/",
+              "HackTheBox": "https://app.hackthebox.com/profile/2024905/",
               "GitHub": "https://github.com/anilmawji",
               "Stack Overflow": "https://stackoverflow.com/users/8902167/anil-m"
             }}
@@ -70,8 +77,7 @@ const Footer = () => {
           <FooterItemList
             title={"External Files"}
             links={{
-              "Resume": '',
-              "Website License": ''
+              "Website License": "https://github.com/anilmawji/personal-website/blob/main/LICENSE"
             }}
           />
         </div>

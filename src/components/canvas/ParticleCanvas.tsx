@@ -12,7 +12,7 @@ const MIN_PARTICLE_SPEED = 0.45;
 const MAX_PARTICLE_SPEED = 0.5;
 const RESET_PARTICLE_DELAY = 500;
 const MOUSE_MOVING_DELAY = 200;
-const MOUSE_PUSH_FORCE = 3;
+const MOUSE_PUSH_FORCE = 2;
 
 const initParticles = (
   context: CanvasRenderingContext2D,

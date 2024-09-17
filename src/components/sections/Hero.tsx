@@ -2,7 +2,7 @@ import styles from './Hero.module.css';
 import { Icon, IconType } from '../icons/Icon';
 import GlitchedText from '../text/GlitchedText';
 import ScrollToButton from '../../components/buttons/ScrollToButton';
-import { Tooltip, TooltipDirection } from '../text/Tooltip';
+import { Tooltip } from '../text/Tooltip';
 import { joinClassNames } from '../../utils';
 
 interface Props {
@@ -30,7 +30,7 @@ const HeroSection = ({ className }: Props) => {
         <div className={styles.bio}>
           Computer Science student at the University of Calgary
           <br />
-          Passionate about delivering secure, resilient solutions to clients
+          passionate about delivering secure, resilient solutions to clients.
         </div>
         <div className={styles.icons}>
           <Tooltip text="LinkedIn" distance="20px">
@@ -47,7 +47,7 @@ const HeroSection = ({ className }: Props) => {
               href="https://github.com/anilmawji"
             />
           </Tooltip>
-          <Tooltip text="StackOverflow" distance="20px">
+          <Tooltip text="Stack Overflow" distance="20px" width="110px">
             <Icon
               className={`${styles.icon} ${styles.soIcon}`}
               type={IconType.STACK_OVERFLOW}
@@ -61,7 +61,7 @@ const HeroSection = ({ className }: Props) => {
               href="https://tryhackme.com/p/zxphyr"
             />
           </Tooltip>
-          <Tooltip text="HackTheBox" distance="20px">
+          <Tooltip text="Hack The Box" distance="20px" width="100px">
             <Icon
               className={`${styles.icon} ${styles.htbIcon}`}
               type={IconType.HACK_THE_BOX}

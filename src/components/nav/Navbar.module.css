@@ -1,6 +1,6 @@
 :root {
   /* General navbar styles */
-  --navbar-thickness: 60px;
+  --navbar-thickness: 70px;
   --navbar-thickness-tablet: 46px;
   --navbar-thickness-phone: 36px;
   --navbar-border-thickness: 3px;
@@ -9,7 +9,7 @@
   --navbar-transition-time: 350ms;
   --navlink-offset-y-mobile: 20px;
   --navlink-count: 6;
-  --navlink-gap: 0.12;
+  --navlink-gap: 8%;
 
   /* Calculate drawer height based on nav properties
    * CSS animations require a hard value */
@@ -46,7 +46,7 @@ nav ul {
   display: flex;
   align-items: center;
   margin-left: var(--home-margin);
-  gap: calc(var(--navlink-gap) * 100%);
+  gap: var(--navlink-gap);
   height: 100%;
   list-style: none;
   list-style-type: none;
@@ -88,6 +88,48 @@ nav li a {
   display: none;
 }
 
+nav li:last-child {
+  margin-left: auto;
+  margin-right: 50px;
+}
+
+.resume {
+  position: relative;
+  display: flex;
+  align-items: center;
+  top: calc(50% - 20px);
+  color: gray;
+  height: 40px;
+  font-size: 14px;
+  border: 1px solid gray;
+  border-radius: 6px;
+  padding: 6px;
+  padding-left: 10px;
+  transition: all 200ms ease;
+}
+
+.resume:hover {
+  cursor: pointer;
+  color: var(--neon-green);
+  border-color: var(--neon-green);
+}
+
+.arrow {
+  display: inline;
+}
+
+.arrow svg {
+  position: relative;
+  width: 18px;
+  height: 18px;
+  stroke: gray;
+  transition: all 200ms ease;
+}
+
+.resume:hover .arrow svg {
+  stroke: var(--neon-green);
+}
+
 .shadow {
   position: absolute;
   width: 100%;
@@ -102,12 +144,12 @@ nav li a {
     visibility var(--navbar-transition-time) ease;
 }
 
-/* Specify maximum gap for the navlinks */
 @media screen and (min-width: 2800px) {
-  nav ul {
-    gap: calc(var(--navlink-gap) * 2800px);
+  :root {
+    --navlink-gap: 200px;
   }
 }
+
 
 /* Tablet styling */
 @media screen and (max-width: 980px) {

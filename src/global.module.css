@@ -10,7 +10,7 @@
   --grey: #ACABAB;
 
   --box-shadow-color: hsl(0deg 0% 0% / 0.1);
-  --glow-border-radius: 1px;
+  --glow-border-width: 2px;
   --shadow-gradient: linear-gradient(to top, var(--main-fg-color), #232323);
 
   --grid-background-size: 16px 16px;
@@ -105,10 +105,10 @@ a {
   content: "";
   position: absolute;
   pointer-events: none;
-  top: calc(-1 * var(--glow-border-radius));
-  right: calc(-1 * var(--glow-border-radius));
-  bottom: calc(-1 * var(--glow-border-radius));
-  left: calc(-1 * var(--glow-border-radius));
+  top: calc(-1 * var(--glow-border-width));
+  right: calc(-1 * var(--glow-border-width));
+  bottom: calc(-1 * var(--glow-border-width));
+  left: calc(-1 * var(--glow-border-width));
   z-index: -1;
   border-radius: 8px;
   background-image:

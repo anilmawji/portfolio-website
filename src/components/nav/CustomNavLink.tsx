@@ -1,27 +1,27 @@
 import styles from './CustomNavLink.module.css';
 import ClickEventListener from '../ClickEventListener';
 import { Link, LinkProps, useLocation } from 'react-router-dom';
-import { joinClassNames, urlsOnSamePage } from '../../utils';
+import { joinClassNames, urlsOnSamePage, isExternalUrl } from '../../utils';
 
 interface Props extends LinkProps {
+  className?: string;
   to: string;
   label: string;
-  className?: string;
   children?: React.ReactNode;
   onClick?: (e: React.MouseEvent<HTMLAnchorElement>) => void;
 }
 
-const CustomNavLink = ({ to, label, className, children, onClick, ...restProps }: Props) => {
+const CustomNavLink = ({ className, to, label, children, onClick, ...restProps }: Props) => {
   const location = useLocation();
   const currentUrl = location.pathname + location.hash;
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    onClick?.(e);
-    // If destination is not on the same page, skip to the top of the page
+    // If destination is not on the same page (but still on this website), skip to the top of the page
     // Otherwise, do nothing (ScrollToAnchor kicks in)
-    if (!urlsOnSamePage(currentUrl, to)) {
+    if (!urlsOnSamePage(currentUrl, to) && !isExternalUrl(to)) {
       window.scrollTo(0, 0);
     }
+    onClick?.(e);
   }
 
   return (
