@@ -1,5 +1,6 @@
-import CustomNavLink from './CustomNavLink';
 import styles from './Navbar.module.css';
+import globalStyles from '../../global.module.css';
+import CustomNavLink from './CustomNavLink';
 import HamburgerButton from './HamburgerButton';
 import { Icon, IconType } from '../../components/icons/Icon';
 import { useNavMenuContext } from '../../contexts/NavMenuContext';
@@ -10,7 +11,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav>
+      <nav className={globalStyles.shadowBottomLight}>
         <HamburgerButton className={styles.hamburger} isOpen={isMenuOpen} onToggle={toggleMenu} />
         <ul>
           <li>

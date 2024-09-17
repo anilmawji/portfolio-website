@@ -65,7 +65,7 @@ const HeroSection = ({ className }: Props) => {
             <Icon
               className={`${styles.icon} ${styles.htbIcon}`}
               type={IconType.HACK_THE_BOX}
-              href="https://www.hackthebox.com/"
+              href="https://app.hackthebox.com/profile/2024905/"
             />
           </Tooltip>
         </div>

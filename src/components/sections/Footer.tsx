@@ -39,7 +39,7 @@ const FooterItemList = ({ title, links }: FooterItemListProps) => {
 
 const Footer = () => {
   return (
-    <footer className={globalStyles.shadowTop}>
+    <footer className={globalStyles.shadowTopLight}>
       <div className={styles.buttonContainer}>
         <Tooltip text="Back to top" direction={TooltipDirection.TOP} width="90px" distance="22px">
           <ScrollToButton

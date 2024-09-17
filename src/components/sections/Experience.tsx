@@ -1,11 +1,13 @@
+import styles from './Experience.module.css';
+
 interface Props {
   className?: string;
 }
 
 const ExperienceSection = ({ className }: Props) => {
   return (
-    <div>
-
+    <div className={styles.container}>
+      
     </div>
   );
 }

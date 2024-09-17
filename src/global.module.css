@@ -90,6 +90,13 @@ a {
     0 16px 16px var(--box-shadow-color);
 }
 
+.shadowBottomLight {
+  box-shadow:
+    0 1px 1px var(--box-shadow-color),
+    0 2px 2px var(--box-shadow-color),
+    0 6px 6px var(--box-shadow-color);
+}
+
 .shadowTop {
   box-shadow:
     0 -1px 1px var(--box-shadow-color),
@@ -97,6 +104,13 @@ a {
     0 -4px 4px var(--box-shadow-color),
     0 -8px 8px var(--box-shadow-color),
     0 -16px 16px var(--box-shadow-color);
+}
+
+.shadowTopLight {
+  box-shadow:
+    0 -1px 1px var(--box-shadow-color),
+    0 -2px 2px var(--box-shadow-color),
+    0 -6px 6px var(--box-shadow-color);
 }
 
 .glowBorder::before,
