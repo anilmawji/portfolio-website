@@ -74,7 +74,7 @@ const ContactSection = ({ className }: Props) => {
   }
 
   return (
-    <div className={joinClassNames(styles.contact, className)} id="contact">
+    <section className={joinClassNames(styles.contact, className)} id="contact">
       <h2 className={styles.title}>Get in Touch</h2>
       <form className={styles.form} onSubmit={handleSubmit} ref={formRef}>
         <TextField type="text" id="name" placeholder="name" isRequired />
@@ -108,7 +108,7 @@ const ContactSection = ({ className }: Props) => {
           {result.message}
         </span>
       )}
-    </div>
+    </section>
   );
 }
 

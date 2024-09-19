@@ -3,7 +3,6 @@ import globalStyles from '../global.module.css';
 import Page from './Page';
 import ParticleCanvas from '../components/canvas/ParticleCanvas';
 import HeroSection from '../components/sections/Hero';
-import ExperienceSection from '../components/sections/Experience';
 import CardContainer from '../components/card/CardContainer';
 import { ProjectData } from '../data/ProjectData';
 import { getCssValue, hexToRgb } from '../utils';
@@ -26,7 +25,6 @@ const Home = () => {
       <div className={styles.container}>
         <HeroSection className={styles.hero} />
         <div className={styles.bottom}>
-          <ExperienceSection />
           <CardContainer
             id="projects"
             className={globalStyles.cardContainer}

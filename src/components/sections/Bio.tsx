@@ -13,7 +13,7 @@ interface Props {
 
 const BioSection = ({ className }: Props) => {
   return (
-    <div className={joinClassNames(styles.bio, className)}>
+    <section className={joinClassNames(styles.bio, className)}>
       <div className={styles.content}>
         <div className={styles.portrait}>
           <img src={portrait} />
@@ -57,7 +57,7 @@ const BioSection = ({ className }: Props) => {
           <TryHackMeCard username="zxphyr" />
         </Tooltip>
       </div>
-    </div>
+    </section>
   );
 }
 

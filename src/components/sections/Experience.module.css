@@ -1,0 +1,31 @@
+.experience {
+  display: flex;
+  flex-direction: column;
+  background: var(--main-fg-color);
+  border-radius: 8px;
+  padding: 30px;
+  border: 2px solid #303030;
+}
+
+.experience h2 {
+  padding: 10px;
+  margin-bottom: 30px;
+}
+
+.jobs {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.jobs > :last-child {
+  margin-bottom: 10px;
+}
+
+.job {
+  width: 100%;
+}
+
+.jobTitle {
+  display: flex;
+}

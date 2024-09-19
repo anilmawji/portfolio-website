@@ -28,6 +28,21 @@
   font-family: var(--default-font);
 }
 
+h1,
+h3,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+p,
+li,
+figcaption {
+  text-wrap: pretty;
+}
+
 /* Highlighted text style */
 ::selection,
 ::-moz-selection {
@@ -128,7 +143,7 @@ a {
   background-image:
     conic-gradient(
       from var(--angle),
-      transparent, rgba(86, 199, 105, 0.6), transparent
+      transparent, rgba(86, 199, 105, 0.6)
     );
   animation: 8s spin linear infinite;
   transition: 0.5s opacity ease;
