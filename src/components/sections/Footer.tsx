@@ -3,6 +3,8 @@ import globalStyles from '../../global.module.css';
 import ScrollToButton from '../buttons/ScrollToButton';
 import CustomNavLink from '../nav/CustomNavLink';
 import { Tooltip, TooltipDirection } from '../text/Tooltip';
+import ResumePdf from '../../assets/anil-mawji-resume-2024.pdf';
+import { isPage } from '../../utils';
 
 interface FooterItemListProps {
   title: string;
@@ -18,18 +20,12 @@ const FooterItemList = ({ title, links }: FooterItemListProps) => {
       <ul className={styles.links}>
         {Object.keys(links).map((name, index) => (
           <li key={index}>
-            {name.toLowerCase() !== 'email' ? (
-              <CustomNavLink
-                className={globalStyles.hoverUnderline}
-                to={links[name]}
-                label={name}
-                target={links[name].startsWith('/') ? '_self' : '_blank'}
-              />
-            ) : (
-              <a className={globalStyles.hoverUnderline} href={links[name]}>
-                {name}
-              </a>
-            )}
+            <CustomNavLink
+              className={globalStyles.hoverUnderline}
+              to={links[name]}
+              label={name}
+              target={isPage(links[name]) ? '_self' : '_blank'}
+            />
           </li>
         ))}
       </ul>
@@ -67,16 +63,16 @@ const Footer = () => {
             title={"Socials"}
             links={{
               "LinkedIn": "https://ca.linkedin.com/in/anil-mawji",
-              // "Email": "mailto:mawjianil1@gmail.com",
-              "TryHackMe": "https://tryhackme.com/p/zxphyr",
-              "HackTheBox": "https://app.hackthebox.com/profile/2024905/",
               "GitHub": "https://github.com/anilmawji",
-              "Stack Overflow": "https://stackoverflow.com/users/8902167/anil-m"
+              "Stack Overflow": "https://stackoverflow.com/users/8902167/anil-m",
+              "TryHackMe": "https://tryhackme.com/p/zxphyr",
+              "HackTheBox": "https://app.hackthebox.com/profile/2024905/"
             }}
           />
           <FooterItemList
             title={"External Files"}
             links={{
+              "Resume": ResumePdf,
               "Website License": "https://github.com/anilmawji/personal-website/blob/main/LICENSE"
             }}
           />

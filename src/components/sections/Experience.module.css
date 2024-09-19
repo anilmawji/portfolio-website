@@ -15,17 +15,20 @@
 .jobs {
   display: flex;
   flex-direction: column;
-  gap: 3px;
 }
 
 .jobs > :last-child {
   margin-bottom: 10px;
 }
 
-.job {
-  width: 100%;
+.jobTitle {
+  line-height: 1.5rem;
 }
 
-.jobTitle {
-  display: flex;
+.date {
+  font-size: 15px;
+  color: grey;
+}
+
+.border {
 }

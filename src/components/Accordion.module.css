@@ -1,26 +1,34 @@
 :root {
   --accordion-active-color: rgba(108, 250, 132, 0.8);
   --accordion-transition: 200ms ease;
+  --image-size: 80px;
 }
 
 .accordion {
   display: flex;
   flex-direction: column;
   cursor: pointer;
+  margin: 0;
+  transition: margin 0.3s ease;
 }
 
-.container {
+.accordion.open {
+  margin-top: 20px; /* Space above when open */
+  margin-bottom: 20px; /* Space below when open */
+}
+
+.panel {
   display: flex;
   width: 100%;
-  height: 80px;
+  height: var(--image-size);
 }
 
-.logoContainer {
+.logoBorder {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 80px;
-  height: 80px;
+  width: var(--image-size);
+  height: var(--image-size);
   background: var(--main-bg-color);
   border-top-left-radius: 999px;
   border-bottom-left-radius: 999px;
@@ -29,8 +37,8 @@
 .logo {
   position: relative;
   left: 2px;
-  width: 60px;
-  height: 60px;
+  width: calc(var(--image-size) - 20px);
+  height: calc(var(--image-size) - 20px);
   background: black;
   border-radius: 999px;
 }
@@ -65,7 +73,7 @@
   transition: color var(--accordion-transition);
 }
 
-.accordion.open .header .title {
+.accordion.open .title {
   color: var(--accordion-active-color);
 }
 
@@ -84,37 +92,58 @@
   transition: fill var(--accordion-transition);
 }
 
-.accordion.open .header .arrow {
-  transform: rotate(-90deg);
+.accordion.open .arrow {
+  transform: rotate(270deg);
 }
 
-.accordion.open .header .arrow svg {
+.accordion.open .arrow svg {
   fill: var(--accordion-active-color);
 }
 
-.drawer {
+.withLogo {
   position: relative;
-  bottom: 8px;
-  background: var(--main-bg-color);
-  line-height: 1.5rem;
-  height: 0;
-  border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 8px;
-  transition: height 200ms ease;
-  overflow: hidden;
+  left: var(--image-size);
+  width: calc(100% - var(--image-size));
 }
 
-.drawerWithLogo {
-  width: calc(100% - 80px);
-  left: 80px;
+.underline {
+  position: relative;
+  bottom: 1px;
+  height: 1px;
+  background: var(--accordion-active-color);
+  transform: scaleX(0);
+  transition: transform var(--accordion-transition);
+  z-index: 2;
+}
+
+.accordion.open .underline {
+  transform: scaleX(1);
+}
+
+/* uses grid trick to animate from height 0 to auto
+ * See https://www.youtube.com/watch?v=B_n4YONte5A */
+.drawer {
+  background: var(--main-bg-color);
+  display: grid;
+  grid-template-rows: 0fr;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  transition: grid-template-rows var(--accordion-transition);
+}
+
+.accordion.open .drawer {
+  grid-template-rows: 1fr;
 }
 
 .drawer div {
   position: relative;
   top: 8px;
-  padding: 20px;
+  line-height: 1.5rem;
+  overflow: hidden;
 }
 
-.accordion.open .drawer {
-  height: 200px;
+.drawer div * {
+  padding: 20px;
+  padding-top: 12px;
+  padding-bottom: 28px;
 }

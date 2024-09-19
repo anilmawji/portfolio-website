@@ -1,8 +1,10 @@
 :root {
   --ta-text-padding: 14px;
-  --ta-border-color: rgba(108, 250, 132, 0.8);
-  --ta-border-transition-delay: 0.15s;
   --ta-border-radius: 8px;
+  --ta-border-transition-delay: 150ms;
+  --ta-border-color: rgba(108, 250, 132, 0.8);
+  --ta-border-style: 1px solid var(--ta-border-color);
+  --ta-error-color: rgb(255, 65, 65);
 }
 
 .filled {
@@ -50,8 +52,8 @@
   -moz-transform: scaleX(0);
   -ms-transform: scaleX(0);
   -o-transform: scaleX(0);
-  border-left: 1px solid var(--ta-border-color);;
-  border-right: 1px solid var(--ta-border-color);;
+  border-left: var(--ta-border-style);
+  border-right: var(--ta-border-style);
   transition:
     transform var(--ta-border-transition-delay) ease var(--ta-border-transition-delay),
     height var(--ta-border-transition-delay) ease;
@@ -59,14 +61,14 @@
 
 .border::before {
   top: 0;
-  border-top: 1px solid var(--ta-border-color);;
+  border-top: var(--ta-border-style);
   border-top-left-radius: var(--ta-border-radius);
   border-top-right-radius: var(--ta-border-radius);
 }
 
 .border::after {
   bottom: 0;
-  border-bottom: 1px solid var(--ta-border-color);;
+  border-bottom: var(--ta-border-style);
   border-bottom-left-radius: var(--ta-border-radius);
   border-bottom-right-radius: var(--ta-border-radius);
 }
@@ -108,4 +110,19 @@
 
 .filled textarea::-webkit-scrollbar-thumb:hover {
   background: #636262;
+}
+
+/* Show error color only when input is invalid and the placeholder is no longer displayed */
+.filled textarea:not(:placeholder-shown):invalid ~ .border::before {
+  border-top-color: var(--ta-error-color);
+}
+
+.filled textarea:not(:placeholder-shown):invalid ~ .border::after {
+  border-bottom-color: var(--ta-error-color);
+}
+
+/* Avoid showing error color while user is still typing */
+.filled textarea:focus:invalid ~ .border::before,
+.filled textarea:focus:invalid ~ .border::after {
+  border-color: var(--ta-border-color);
 }

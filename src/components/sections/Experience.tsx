@@ -1,12 +1,21 @@
 import styles from './Experience.module.css';
-import globalStyles from '../../global.module.css';
-import Accordion from '../../components/buttons/Accordion';
+import Accordion from '../Accordion';
 import { joinClassNames } from '../../utils';
 import { JobData } from '../../data/JobData';
 
 interface JobTitleProps {
   title: string;
   organization: string;
+  date: string;
+}
+
+const JobTitle = ({ title, organization, date }: JobTitleProps) => {
+  return (
+    <div className={styles.jobTitle}>
+      <p>{title} @ {organization}</p>
+      <p className={styles.date}>{date}</p>
+    </div>
+  );
 }
 
 interface ExperienceSectionProps {
@@ -20,11 +29,18 @@ const ExperienceSection = ({ className }: ExperienceSectionProps) => {
       <div className={styles.jobs}>
         {JobData.map((data, i) => {
           return (
-            <div className={styles.job}>
+            <>
+              <div className={styles.border} />
               <Accordion
                 key={i}
                 className={styles.accordion}
-                title={`${data.title} @ ${data.organization}`}
+                title={
+                  <JobTitle
+                    title={data.title}
+                    organization={data.organization}
+                    date={`${data.startDate} - ${data.endDate}`}
+                  />
+                }
                 image={data.logo}
                 imageLink={data.link}
               >
@@ -34,7 +50,8 @@ const ExperienceSection = ({ className }: ExperienceSectionProps) => {
                   Facilis ab aut unde deleniti, reprehenderit voluptates numquam dolorem atque, exercitationem iste odit molestias aperiam.
                 </p>
               </Accordion>
-            </div>
+              <div className={styles.border} />
+            </>
           );
         })}
       </div>

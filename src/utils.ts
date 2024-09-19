@@ -162,3 +162,7 @@ export function urlsOnSamePage(url1: string, url2: string): boolean {
 export function isExternalUrl(url: string): boolean {
   return location.origin !== new URL(url).origin;
 }
+
+export function isPage(url: string): boolean {
+  return url.startsWith('/') && !url.startsWith('/src');
+}

@@ -19,6 +19,8 @@ const TextField = ({ className, id, placeholder, isRequired, textColor, ...restP
         id={id}
         name={id}
         required={isRequired}
+        // Empty placeholder allows for error color to function correctly
+        placeholder=''
         {...restProps}
       />
       <div className={styles.underline} />

@@ -1,5 +1,6 @@
 :root {
   --tf-text-color: rgba(108, 250, 132, 0.8);
+  --tf-error-color: rgb(255, 65, 65);
   --tf-transition: 200ms ease;
 }
 
@@ -35,7 +36,8 @@
 }
 
 .filled input:focus ~ label,
-.filled input:valid ~ label {
+.filled input:valid ~ label,
+.filled input:not(:placeholder-shown):invalid ~ label {
   transform: translateY(-1em);
   font-size: 12px;
   padding-left: 10px;
@@ -67,10 +69,30 @@
   transform: scaleX(1);
 }
 
-/* Autofill styling */
+/* Hack to get rid of ugly autofill styling (put a crazy long timer before showing the background color) */
 .filled input:-webkit-autofill,
 .filled input:-webkit-autofill:hover,
 .filled input:-webkit-autofill:focus {
   -webkit-text-fill-color: white;
-  transition: background-color 5000s ease-in-out 0s;
+  transition: background-color 999999s ease-in-out 0s;
+}
+
+/* Show error color when input is invalid and the placeholder is no longer displayed */
+.filled input:not(:placeholder-shown):invalid ~ .underline::before {
+  background: var(--tf-error-color);
+  transform: scaleX(1);
+}
+
+.filled input:not(:placeholder-shown):invalid ~ label {
+  color: var(--tf-error-color);
+}
+
+/* Avoid showing error color while user is still typing */
+.filled input:focus:invalid ~ .underline::before  {
+  background: var(--tf-text-color);
+  transform: scaleX(1);
+}
+
+.filled input:focus:invalid ~ label  {
+  color: var(--tf-text-color);
 }

@@ -19,8 +19,8 @@ export const JobData: JobInfo[] = [
     organization: "Government of Canada",
     link: "https://www.canada.ca/en.html",
     logo: canada_logo,
-    startDate: "May",
-    endDate: "August 2024",
+    startDate: "May 2024",
+    endDate: "Aug 2024",
     bulletPoints: [
       "Something1",
       "Something2"
@@ -31,8 +31,8 @@ export const JobData: JobInfo[] = [
     organization: "Arcurve Inc.",
     link: "https://www.arcurve.com/",
     logo: arcurve_logo,
-    startDate: "September",
-    endDate: "December 2023",
+    startDate: "Sep 2023",
+    endDate: "Dec 2023",
     bulletPoints: [
       "Something1",
       "Something2"
@@ -43,8 +43,8 @@ export const JobData: JobInfo[] = [
     organization: "Arcurve Inc.",
     link: "https://www.arcurve.com/",
     logo: arcurve_logo,
-    startDate: "January",
-    endDate: "August 2023",
+    startDate: "Jan 2023",
+    endDate: "Aug 2023",
     bulletPoints: [
       "Something1",
       "Something2"
@@ -55,8 +55,8 @@ export const JobData: JobInfo[] = [
     organization: "The Calgary Stampede",
     link: "https://www.calgarystampede.com/",
     logo: stampede_logo,
-    startDate: "May",
-    endDate: "August 2022",
+    startDate: "May 2022",
+    endDate: "Aug 2022",
     bulletPoints: [
       "Something1",
       "Something2"
@@ -67,8 +67,8 @@ export const JobData: JobInfo[] = [
     organization: "Starburst Data",
     link: "https://www.starburst.io/",
     logo: starburst_logo,
-    startDate: "June",
-    endDate: "August 2021",
+    startDate: "Jun 2021",
+    endDate: "Aug 2021",
     bulletPoints: [
       "Something1",
       "Something2"
