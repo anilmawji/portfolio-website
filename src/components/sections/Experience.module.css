@@ -15,6 +15,7 @@
 .jobs {
   display: flex;
   flex-direction: column;
+  gap: 2px;
 }
 
 .jobs > :last-child {
@@ -30,5 +31,10 @@
   color: grey;
 }
 
-.border {
+.spacer {
+  transition: margin-top 200ms ease;
+}
+
+.spacerExpanded {
+  margin-top: 16px;
 }

@@ -1,4 +1,3 @@
-import React, { useImperativeHandle, forwardRef, useRef } from 'react';
 import styles from './Accordion.module.css';
 import globalStyles from '../global.module.css';
 import useBoolean from '../hooks/useBoolean';
@@ -10,22 +9,17 @@ interface Props {
   title: string | React.ReactNode;
   image?: string;
   imageLink?: string;
+  toggleCallback?: () => void;
   children?: React.ReactNode;
 }
 
-const Accordion = forwardRef(({
-  className,
-  title,
-  image,
-  imageLink,
-  children
-}: Props, ref) => {
+const Accordion = ({className, title, image, imageLink, toggleCallback, children }: Props) => {
   const { value: isOpen, toggle } = useBoolean(false);
 
-  useImperativeHandle(ref, () => ({
-    isOpen,
-    toggle,
-  }));
+  const handleToggle = () => {
+    toggle();
+    toggleCallback?.();
+  }
 
   return (
     <div className={joinClassNames(className, styles.accordion, isOpen ? styles.open : '')}>
@@ -37,7 +31,7 @@ const Accordion = forwardRef(({
             </a>
           </div>
         )}
-        <div className={joinClassNames(styles.header, !image ? styles.rounded : '')} onClick={toggle}>
+        <div className={joinClassNames(styles.header, !image ? styles.rounded : '')} onClick={handleToggle}>
           <div className={`${styles.title} ${globalStyles.noSelect}`}>
             {title}
           </div>
@@ -54,6 +48,6 @@ const Accordion = forwardRef(({
       </div>
     </div>
   );
-});
+};
 
-export default Accordion;
+export { Accordion };

@@ -1,7 +1,8 @@
 import styles from './Experience.module.css';
-import Accordion from '../Accordion';
+import { Accordion } from '../Accordion';
 import { joinClassNames } from '../../utils';
 import { JobData } from '../../data/JobData';
+import { useState } from 'react';
 
 interface JobTitleProps {
   title: string;
@@ -23,6 +24,16 @@ interface ExperienceSectionProps {
 }
 
 const ExperienceSection = ({ className }: ExperienceSectionProps) => {
+  const [openedAccordions, setOpenedAccordions] = useState<boolean[]>(Array(JobData.length).fill(false));
+
+  const toggleAccordion = (index: number) => {
+    setOpenedAccordions(prev => {
+      const newOpened = [...prev];
+      newOpened[index] = !newOpened[index];
+      return newOpened;
+    });
+  };
+
   return (
     <section className={joinClassNames(styles.experience, className)} id="experience">
       <h2>Experience</h2>
@@ -30,10 +41,14 @@ const ExperienceSection = ({ className }: ExperienceSectionProps) => {
         {JobData.map((data, i) => {
           return (
             <>
-              <div className={styles.border} />
+              {i !== 0 &&
+                <div className={joinClassNames(
+                  styles.spacer,
+                  openedAccordions[i] || openedAccordions[i-1] ? styles.spacerExpanded : ''
+                )} />
+              }
               <Accordion
-                key={i}
-                className={styles.accordion}
+                key={data.key}
                 title={
                   <JobTitle
                     title={data.title}
@@ -43,6 +58,7 @@ const ExperienceSection = ({ className }: ExperienceSectionProps) => {
                 }
                 image={data.logo}
                 imageLink={data.link}
+                toggleCallback={() => toggleAccordion(i)}
               >
                 <p className={styles.bullets}>
                   Lorem ipsum, dolor sit amet consectetur adipisicing elit.
@@ -50,7 +66,6 @@ const ExperienceSection = ({ className }: ExperienceSectionProps) => {
                   Facilis ab aut unde deleniti, reprehenderit voluptates numquam dolorem atque, exercitationem iste odit molestias aperiam.
                 </p>
               </Accordion>
-              <div className={styles.border} />
             </>
           );
         })}

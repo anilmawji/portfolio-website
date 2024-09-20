@@ -22,8 +22,8 @@ const BioSection = ({ className }: Props) => {
           <p>
             Hi, I'm Anil, a software developer with a strong passion for cyber security.
             <br /><br />
-            My tech journey started like many others&mdash; playing video games as a kid! But once I stumbled across <a className={globalStyles.hoverUnderline} href="https://en.wikipedia.org/wiki/Cheat_Engine" target="_blank">a fun little program</a> that
-            could be used to break games, my curiosity for the digital world skyrocketed.
+            My tech journey started like many others&mdash; playing video games as a kid! But one day I stumbled across <a className={globalStyles.hoverUnderline} href="https://en.wikipedia.org/wiki/Cheat_Engine" target="_blank">a fun little program</a> that
+            could be used to break games, and my curiosity for the digital world skyrocketed.
             <br /><br />
             Over time, I've had the privilege of working at <a className={globalStyles.hoverUnderline} href="https://www.starburst.io/" target="_blank">a unicorn start-up</a>, <a className={globalStyles.hoverUnderline} href="https://www.arcurve.com/" target="_blank">a software services company</a> and
             the <a className={globalStyles.hoverUnderline} href="https://www.canada.ca/en.html" target="_blank">federal government.</a> I'm currently diving into the world of ethical hacking
