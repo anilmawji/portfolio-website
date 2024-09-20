@@ -1,5 +1,17 @@
 import { rgb } from '../utils';
-import { ToolInfo } from '../types';
+import { RgbString } from '../types';
+
+export type ToolInfo = {
+  name: string;
+  color: RgbString;
+};
+
+export function isToolInfo(value: any): value is ToolInfo {
+  return value !== null
+      && typeof value === 'object'
+      && typeof value.name === 'string'
+      && typeof value.color === 'string';
+}
 
 const newToolInfo = (name: string, r: number, g: number, b: number): ToolInfo => ({ name, color: rgb(r, g, b) });
 

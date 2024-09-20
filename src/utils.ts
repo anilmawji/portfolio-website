@@ -30,7 +30,7 @@ export function clampMax(value: number, max: number): number {
 
 export function joinClassNames(...classNames: (string | undefined)[]): string {
   // Use filter to remove all undefined strings from the list of class names
-  return classNames.filter(s => s).join(" ");
+  return classNames.filter(s => s).join(' ');
 }
 
 export function timeout(delay: number): Promise<void> {

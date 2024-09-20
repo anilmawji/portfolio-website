@@ -2,7 +2,8 @@ import styles from './Card.module.css';
 import globalStyles from '../../global.module.css';
 import Chip from '../text/Chip';
 import { readingTime } from '../../utils';
-import { Post, isToolInfo } from '../../types';
+import { Post } from '../../types';
+import { isToolInfo } from '../../data/ToolInfo';
 import { Icon, IconType } from '../../components/icons/Icon';
 
 interface Props extends React.AnchorHTMLAttributes<HTMLAnchorElement> {

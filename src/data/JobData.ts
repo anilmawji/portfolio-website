@@ -4,7 +4,6 @@ import stampede_logo from '../assets/logos/stampede-logo.png';
 import starburst_logo from '../assets/logos/starburst-logo.png';
 
 export type JobInfo = {
-  key: number;
   title: string;
   organization: string;
   link: string;
@@ -16,7 +15,6 @@ export type JobInfo = {
 
 export const JobData: JobInfo[] = [
   {
-    key: 342154241,
     title: "DevSecOps Intern",
     organization: "Government of Canada",
     link: "https://www.canada.ca/en.html",
@@ -29,7 +27,6 @@ export const JobData: JobInfo[] = [
     ]
   },
   {
-    key: 1543254235325,
     title: "Software Developer Intern",
     organization: "Arcurve Inc.",
     link: "https://www.arcurve.com/",
@@ -42,7 +39,6 @@ export const JobData: JobInfo[] = [
     ]
   },
   {
-    key: 26543665346,
     title: "IT Coordinator Intern",
     organization: "Arcurve Inc.",
     link: "https://www.arcurve.com/",
@@ -55,7 +51,6 @@ export const JobData: JobInfo[] = [
     ]
   },
   {
-    key: 33421765476543,
     title: "Application Support Analyst",
     organization: "The Calgary Stampede",
     link: "https://www.calgarystampede.com/",
@@ -68,7 +63,6 @@ export const JobData: JobInfo[] = [
     ]
   },
   {
-    key: 423167654753,
     title: "Internal Support Specialist",
     organization: "Starburst Data",
     link: "https://www.starburst.io/",
