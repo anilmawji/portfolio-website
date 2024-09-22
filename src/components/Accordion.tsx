@@ -5,6 +5,11 @@ import { Icon, IconType } from './icons/Icon';
 import { joinClassNames } from '../utils';
 import { useCallback } from 'react';
 
+const getHeaderClassNames = (hasImage: boolean, hasFooter: boolean): string => {
+	return joinClassNames(styles.header
+  );
+}
+
 interface Props {
   className?: string;
   title: string | React.ReactNode;
@@ -27,13 +32,13 @@ const Accordion = ({ className, title, image, imageLink, toggleCallback, childre
     <div className={joinClassNames(className, styles.accordion, isOpen ? styles.open : '')}>
       <div className={styles.panel}>
         {image && (
-          <div className={styles.logoBorder}>
+          <div className={joinClassNames(styles.logoBorder, image ? styles.rounded : '')}>
             <a className={styles.logo} href={imageLink} target="_blank">
               <img className={globalStyles.noSelect} src={image} />
             </a>
           </div>
         )}
-        <div className={joinClassNames(styles.header, !footerChildren ? styles.rounded : '')} onClick={handleToggle}>
+        <div className={getHeaderClassNames(image !== null, footerChildren !== null)} onClick={handleToggle}>
           <div className={`${styles.title} ${globalStyles.noSelect}`}>
             {title}
           </div>
@@ -46,13 +51,13 @@ const Accordion = ({ className, title, image, imageLink, toggleCallback, childre
             {children}
           </div>
         </div>
+        {footerChildren && (
+          <div className={styles.footer}>
+            <div className={styles.underline} />
+            {footerChildren}
+          </div>
+        )}
       </div>
-      {footerChildren && (
-        <div className={joinClassNames(styles.footer, image ? styles.withLogo : '')}>
-          <div className={styles.underline} />
-          {footerChildren}
-        </div>
-      )}
     </div>
   );
 };

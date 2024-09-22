@@ -64,12 +64,12 @@
   right: 2px;
   width: 16px;
   height: 16px;
-  fill: grey;
 }
 
 .bullet svg {
   width: 16px;
   height: 16px;
+  fill: grey;
 }
 
 .chips {

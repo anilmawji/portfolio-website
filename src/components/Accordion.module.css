@@ -2,19 +2,16 @@
   --accordion-height: 100px;
   --accordion-border-radius: 8px;
   --accordion-active-color: rgba(108, 250, 132, 0.8);
-  --accordion-transition: 200ms ease;
+  --accordion-transition: 300ms ease;
   --accordion-hover-color: #a0a0a0;
 }
 
 .accordion {
-  display: flex;
-  flex-direction: column;
   cursor: pointer;
 }
 
 .panel {
   display: flex;
-  width: 100%;
   height: var(--accordion-height);
 }
 
@@ -25,6 +22,9 @@
   width: var(--accordion-height);
   height: var(--accordion-height);
   background: var(--main-bg-color);
+}
+
+.logoBorder.rounded {
   border-top-left-radius: 999px;
   border-bottom-left-radius: 999px;
 }
@@ -40,6 +40,10 @@
 
 .logo img {
   width: 100%;
+  height: 100%;
+}
+
+.logoBorder.rounded .logo img {
   border-radius: 999px;
 }
 
@@ -49,20 +53,24 @@
   justify-content: space-between;
   width: 100%;
   background: var(--main-bg-color);
-  border-top-right-radius: var(--accordion-border-radius);
-  /* border-bottom-right-radius: var(--accordion-border-radius); */
+  border-top-right-radius: 8px;
 }
 
 .header.rounded {
-  border-radius: var(--accordion-border-radius);
+  border-radius: 8px;
 }
 
-.accordion.open .header {
-  border-bottom-right-radius: 0;
+.header.roundedLeft {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+.header.roundedBottomRight {
+  border-bottom-right-radius: 8px;
 }
 
 .title {
-  margin-left: 20px;
+  margin-left: 16px;
   color: white;
   font-size: 17px;
   transition: color var(--accordion-transition);
@@ -74,9 +82,8 @@
 
 .arrow {
   margin-right: 20px;
-  transform: rotate(90deg);
-  border-radius: 999px;
   padding: 6px;
+  transform: rotate(90deg);
   transition: transform var(--accordion-transition);
 }
 
@@ -107,12 +114,12 @@
   background: var(--main-bg-color);
   display: grid;
   grid-template-rows: 0fr;
-  transition: grid-template-rows var(--accordion-transition);
+  transition: grid-template-rows 200ms ease;
 }
 
 .drawer.rounded {
-  border-bottom-left-radius: var(--accordion-border-radius);
-  border-bottom-right-radius: var(--accordion-border-radius);
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
 }
 
 .drawer > div {
@@ -122,7 +129,6 @@
 
 .drawer > div > * {
   padding: calc(14px + var(--accordion-border-radius));
-  padding-top: 14px;
   padding-bottom: 14px;
 }
 
@@ -132,17 +138,16 @@
 
 .footer {
   padding: 14px;
-  padding-top: 20px;
   background: var(--main-bg-color);
   border-top: 2px solid #4f4f4f;
-  border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: var(--accordion-border-radius);
+  border-bottom-right-radius: var(--accordion-border-radius);
 }
 
 .underline {
   position: absolute;
   right: 0;
-  top: -1px;
+  top: 0;
   width: 100%;
   height: 1px;
 }
@@ -154,9 +159,8 @@
   height: 100%;
   background: var(--tf-text-color);
   transform: scaleX(0);
-  transition: transform var(--tf-transition);
+  transition: transform 200ms ease;
 }
-
 
 .accordion.open .underline::before {
   transform: scaleX(1);

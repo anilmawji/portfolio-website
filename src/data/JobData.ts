@@ -13,7 +13,7 @@ export type JobInfo = {
   startDate: string;
   endDate: string;
   bulletPoints: string[];
-  tools: (ToolInfo | string)[];
+  tags: (ToolInfo | string)[];
 };
 
 export const JobData: JobInfo[] = [
@@ -31,7 +31,7 @@ export const JobData: JobInfo[] = [
       "Wrote Python notebooks to create a dashboard that ingests data from Azure Sentinel and VirusTotal, automating threat discovery and analysis.",
       "Developed a custom solution to secure Kubernetes secrets, ensuring API keys were safely accessible to Jupyter pods."
     ],
-    tools: [Tool.PYTHON, Tool.BASH, Tool.AZURE, Tool.KUBERNETES, Tool.DOCKER, Tool.JUPYTER, Tool.JIRA, Tool.LINUX, Tool.GIT]
+    tags: [Tool.PYTHON, Tool.BASH, Tool.AZURE, Tool.KUBERNETES, Tool.DOCKER, Tool.JUPYTER, Tool.JIRA, Tool.LINUX, Tool.GIT]
   },
   {
     title: "Software Developer Intern",
@@ -46,7 +46,7 @@ export const JobData: JobInfo[] = [
       "Leveraged Pulumi to define internal cloud infrastructure as Python code for over 30 running services in Azure.",
       "Automated employee account creation and provisioning in Azure with PowerShell scripts."
     ],
-    tools: [Tool.AZURE, Tool.PYTHON, Tool.PULUMI, Tool.DATA_FACTORY, Tool.POWERSHELL, Tool.JIRA, Tool.GIT]
+    tags: [Tool.AZURE, Tool.PYTHON, Tool.PULUMI, Tool.DATA_FACTORY, Tool.POWERSHELL, Tool.JIRA, Tool.GIT]
   },
   {
     title: "IT Coordinator Intern",
@@ -64,7 +64,7 @@ export const JobData: JobInfo[] = [
       "Closed 250 helpdesk tickets related to troubleshooting and access control with a 98% success rate.",
       "Fully automated device provisioning by deploying Windows Autopilot to over 100 employee laptops."
     ],
-    tools: [Tool.AZURE, Tool.MICROSOFT_DEFENDER, Tool.POWERSHELL, Tool.JIRA, Tool.GIT]
+    tags: [Tool.AZURE, Tool.MICROSOFT_DEFENDER, Tool.POWERSHELL, Tool.JIRA, Tool.GIT]
   },
   {
     title: "Application Support Analyst",
@@ -79,7 +79,7 @@ export const JobData: JobInfo[] = [
       "Remained onsite to troubleshoot payment systems in high-pressure situations with hundreds of customers",
       "Trained 10 cashiers and bartenders to excel in operating POS equipment"
     ],
-    tools: [Tool.MANAGEENGINE, Tool.LIGHTSPEED, Tool.MONERIS]
+    tags: [Tool.MANAGEENGINE, Tool.LIGHTSPEED, Tool.MONERIS]
   },
   {
     title: "Internal Support Specialist",
@@ -93,6 +93,6 @@ export const JobData: JobInfo[] = [
       "Onboarded 20 new employees by provisioning Okta SSO, updating security permissions, and assigning software licenses",
       "Developed knowledge base by writing concise FAQ pages and a comprehensive 8-page macOS troubleshooting guide, reducing the volume of support tickets."
     ],
-    tools: [Tool.OKTA, Tool.JIRA]
+    tags: [Tool.OKTA, Tool.JIRA]
   }
 ];

@@ -48,7 +48,7 @@ const ExperienceSection = ({ className }: ExperienceSectionProps) => {
                 toggleCallback={() => toggleAccordion(i)}
                 footerChildren={
                   <div className={styles.chips}>
-                    {data.tools.map((tag, j) => {
+                    {data.tags.map((tag, j) => {
                       const isTagATool = isToolInfo(tag);
                         return (
                           <Chip
