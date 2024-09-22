@@ -163,23 +163,26 @@
   transform: scaleX(1);
 }
 
+.bottom {
+  position: relative;
+}
+
 @media screen and (min-width: 660px) {
-  .withRoundedLogo .shifted {
-    position: relative;
+  .roundedImage .bottom {
     left: var(--accordion-height);
     width: calc(100% - var(--accordion-height));
   }
   
-  .withRoundedLogo .logoBorder {
+  .roundedImage .logoBorder {
     border-top-left-radius: 999px;
     border-bottom-left-radius: 999px;
   }
   
-  .withRoundedLogo .logo {
+  .roundedImage .logo {
     border-radius: 999px;
   }
   
-  .withRoundedLogo .logo img {
+  .roundedImage .logo img {
     border-radius: 999px;
   }
 }

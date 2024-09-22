@@ -33,7 +33,7 @@ const Accordion = ({ className, title, image, imageLink, toggleCallback, childre
   }, [toggle, toggleCallback]);
 
   return (
-    <div className={joinClassNames(className, isOpen ? styles.open : '', image ? styles.withRoundedLogo : '')}>
+    <div className={joinClassNames(className, isOpen ? styles.open : '', image ? styles.roundedImage : '')}>
       <div className={styles.panel}>
         {image && (
           <div className={joinClassNames(styles.logoBorder, image ? styles.rounded : '')}>
@@ -49,7 +49,7 @@ const Accordion = ({ className, title, image, imageLink, toggleCallback, childre
           <Icon className={styles.arrow} type={IconType.ARROW_HEAD} />
         </div>
       </div>
-      <div className={styles.shifted}>
+      <div className={styles.bottom}>
         <div className={joinClassNames(styles.drawer, !footerChildren ? styles.rounded : '')}>
           <div>
             {children}

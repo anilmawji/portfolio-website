@@ -71,14 +71,12 @@ footer {
 }
 
 @media screen and (max-width: 600px) {
-  .button {
-    margin-top: 50px;
-    margin-bottom: 30px;
+  .content {
+    margin-left: 0;
   }
 
-  .content {
-    padding: 10px;
-    margin-left: 0;
+  .button {
+    margin-bottom: 30px;
   }
 
   .list h3 {
