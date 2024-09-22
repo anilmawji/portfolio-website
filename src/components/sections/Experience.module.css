@@ -4,7 +4,7 @@
   background: var(--main-fg-color);
   border-radius: 8px;
   padding: 30px;
-  border: 2px solid #303030;
+  border: 1px solid #303030;
 }
 
 .experience h2 {
@@ -15,20 +15,29 @@
 .jobs {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 20px;
 }
 
 .jobs > :last-child {
   margin-bottom: 10px;
 }
 
+.accordion img {
+  background: rgb(16, 2, 53);
+}
+
 .jobTitle {
   line-height: 1.5rem;
 }
 
-.date {
-  font-size: 15px;
-  color: grey;
+.date,
+.location {
+  font-size: 14.5px;
+  color: var(--grey);
+}
+
+.location {
+  font-style: italic;
 }
 
 .spacer {
@@ -37,4 +46,35 @@
 
 .spacerExpanded {
   margin-top: 16px;
+}
+
+.bullets {
+  list-style-type: none;
+}
+
+.bullets li {
+  font-size: 16px;
+  padding-bottom: 10px;
+  display: flex;
+}
+
+.bullet {
+  position: relative;
+  top: 2px;
+  right: 2px;
+  width: 16px;
+  height: 16px;
+  fill: grey;
+}
+
+.bullet svg {
+  width: 16px;
+  height: 16px;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+  gap: 4px 0;
 }

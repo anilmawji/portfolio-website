@@ -39,12 +39,12 @@
 }
 
 .bio a {
-  color: #56c769;
+  color: rgba(108, 250, 132, 0.8);
   font-weight: 500;
 }
 
 .bio a::before {
-  background-color: #56c769; /* Hover underline color */
+  background-color: rgba(108, 250, 132, 0.8); /* Hover underline color */
 }
 
 .profiles {

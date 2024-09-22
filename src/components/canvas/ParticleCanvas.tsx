@@ -1,5 +1,5 @@
 import Canvas from './Canvas';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { MouseState } from '../../hooks/useMouse';
 import { Particle } from './Particle';
 import { clamp, clampMin, isValidCssColor, rgbToRgba } from '../../utils';
@@ -82,7 +82,6 @@ const ParticleCanvas = ({
   mousePushRadius = 0,
   maxOpacity = 1
 }: Props) => {
-
   if (!isValidCssColor(particleRgbColor)) return;
 
   const [context, setContext] = useState<CanvasRenderingContext2D | null>(null);
@@ -101,10 +100,10 @@ const ParticleCanvas = ({
     particles = initParticles(context, particleRadius, particleRgbColor);
   }
 
-  const clear = (ctx: CanvasRenderingContext2D) => {
+  const clear = useCallback((ctx: CanvasRenderingContext2D) => {
     ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
     ctx.globalAlpha = maxOpacity;
-  }
+  }, [maxOpacity]);
 
   const draw = (ctx: CanvasRenderingContext2D) => {
     if (!particles) return;
@@ -115,9 +114,9 @@ const ParticleCanvas = ({
       p.render(ctx);
     });
     connectParticles(ctx, particles, particleRgbColor, maxOpacity);
-  }
+  };
 
-  const resize = (ctx: CanvasRenderingContext2D) => {
+  const resize = useCallback((ctx: CanvasRenderingContext2D) => {
     clearTimeout(particleResetTimeoutId);
 
     particleResetTimeoutId = window.setTimeout(() => {
@@ -128,7 +127,7 @@ const ParticleCanvas = ({
         }
       });
     }, RESET_PARTICLE_DELAY);
-  }
+  }, [particleRadius, particleRgbColor]);
 
   const handleMouseMove = (e: MouseEvent) => {
     e.preventDefault();
@@ -141,7 +140,7 @@ const ParticleCanvas = ({
     mouseMoveTimeoutId = setTimeout(() => {
       mouse.moving = false;
     }, MOUSE_MOVING_DELAY);
-  }
+  };
 
   useEffect(() => {
     window.addEventListener("mousemove", handleMouseMove);

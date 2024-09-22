@@ -5,7 +5,7 @@
   --card-border-radius: 8px;
   --card-text-margin: 6px;
   --card-transition: transform 200ms ease;
-  --card-border: 2px solid #303030;
+  --card-border: 1px solid #303030;
   --max-vertical-lines: 3;
 }
 

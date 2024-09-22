@@ -1,5 +1,5 @@
 import styles from './ContactForm.module.css';
-import { useState, useRef } from 'react';
+import { useState, useRef, useCallback } from 'react';
 import TextField from '../input/TextField';
 import Button from '../buttons/Button';
 import { Icon, IconType } from '../icons/Icon';
@@ -30,15 +30,17 @@ const ContactSection = ({ className }: Props) => {
   const [windowWidth] = useWindowSize();
   const isNonMobileView  = windowWidth > COMPACT_CAPTCHA_WINDOW_WIDTH;
 
-  const setResultMessage = (message: string, isError: boolean) => setResult({ message, isError });
+  const setResultMessage = useCallback((message: string, isError: boolean) => {
+    setResult({ message, isError })
+  }, []);
 
-  const resetForm = () => {
+  const resetForm = useCallback(() => {
     setToken(null);
     formRef.current?.reset();
     captchaRef.current?.resetCaptcha();
-  }
+  }, []);
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = useCallback(async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (isLoading || !captchaRef.current?.isReady()) {
@@ -71,7 +73,7 @@ const ContactSection = ({ className }: Props) => {
     } finally {
       setIsLoading(false);
     }
-  }
+  }, [isLoading, token, setResultMessage, resetForm]);
 
   return (
     <section className={joinClassNames(styles.contact, className)} id="contact">

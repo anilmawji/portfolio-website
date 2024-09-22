@@ -3,6 +3,7 @@ import globalStyles from '../global.module.css';
 import useBoolean from '../hooks/useBoolean';
 import { Icon, IconType } from './icons/Icon';
 import { joinClassNames } from '../utils';
+import { useCallback } from 'react';
 
 interface Props {
   className?: string;
@@ -11,15 +12,16 @@ interface Props {
   imageLink?: string;
   toggleCallback?: () => void;
   children?: React.ReactNode;
+  footerChildren?: React.ReactNode;
 }
 
-const Accordion = ({className, title, image, imageLink, toggleCallback, children }: Props) => {
+const Accordion = ({ className, title, image, imageLink, toggleCallback, children, footerChildren }: Props) => {
   const { value: isOpen, toggle } = useBoolean(false);
 
-  const handleToggle = () => {
+  const handleToggle = useCallback(() => {
     toggle();
     toggleCallback?.();
-  }
+  }, [toggle, toggleCallback]);
 
   return (
     <div className={joinClassNames(className, styles.accordion, isOpen ? styles.open : '')}>
@@ -31,7 +33,7 @@ const Accordion = ({className, title, image, imageLink, toggleCallback, children
             </a>
           </div>
         )}
-        <div className={joinClassNames(styles.header, !image ? styles.rounded : '')} onClick={handleToggle}>
+        <div className={joinClassNames(styles.header, !footerChildren ? styles.rounded : '')} onClick={handleToggle}>
           <div className={`${styles.title} ${globalStyles.noSelect}`}>
             {title}
           </div>
@@ -39,13 +41,18 @@ const Accordion = ({className, title, image, imageLink, toggleCallback, children
         </div>
       </div>
       <div className={image ? styles.withLogo : ''}>
-        <div className={styles.underline} />
-        <div className={styles.drawer}>
+        <div className={joinClassNames(styles.drawer, !footerChildren ? styles.rounded : '')}>
           <div>
             {children}
           </div>
         </div>
       </div>
+      {footerChildren && (
+        <div className={joinClassNames(styles.footer, image ? styles.withLogo : '')}>
+          <div className={styles.underline} />
+          {footerChildren}
+        </div>
+      )}
     </div>
   );
 };

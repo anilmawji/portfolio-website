@@ -1,11 +1,11 @@
 .chip {
   min-width: 30px;
-  max-width: 100px;
   height: 1.05rem;
   font-size: 12px;
   padding: 0 8px;
   margin: 4px;
   text-align: center;
+  font-weight: bold;
   border-radius: 999px;
   outline: 2px solid var(--chip-outline-color);
 	background-image:

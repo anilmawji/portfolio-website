@@ -14,7 +14,7 @@ export const ProjectData: Post[] = [
     date: "July 20th, 2023",
     body: "Microsoft-focused desktop application for IT Administrators. Dynamically generates modern UI to import, schedule and monitor the execution of PowerShell script blocks.",
     link: "https://github.com/anilmawji/PowerShell-Script-Runner",
-    tags: [Tool.C_SHARP, Tool.DOT_NET, Tool.BLAZOR, Tool.HTML, Tool.CSS, Tool.ASP_DOT_NET_CORE, Tool.AZURE_SDK, Tool.POWERSHELL, Tool.FIGMA]
+    tags: [Tool.C_SHARP, Tool.DOT_NET, Tool.BLAZOR, Tool.HTML, Tool.CSS, Tool.ASP_DOT_NET_CORE, Tool.AZURE, Tool.POWERSHELL, Tool.FIGMA]
   },
   {
     title: "Personal Website",

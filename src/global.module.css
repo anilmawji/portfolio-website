@@ -10,7 +10,7 @@
   --grey: #ACABAB;
 
   --box-shadow-color: hsl(0deg 0% 0% / 0.1);
-  --glow-border-width: 2px;
+  --glow-border-width: 1px;
   --shadow-gradient: linear-gradient(to top, var(--main-fg-color), #232323);
 
   --grid-background-size: 16px 16px;

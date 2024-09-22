@@ -1,7 +1,9 @@
 :root {
+  --accordion-height: 100px;
+  --accordion-border-radius: 8px;
   --accordion-active-color: rgba(108, 250, 132, 0.8);
   --accordion-transition: 200ms ease;
-  --image-size: 80px;
+  --accordion-hover-color: #a0a0a0;
 }
 
 .accordion {
@@ -13,15 +15,15 @@
 .panel {
   display: flex;
   width: 100%;
-  height: var(--image-size);
+  height: var(--accordion-height);
 }
 
 .logoBorder {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: var(--image-size);
-  height: var(--image-size);
+  width: var(--accordion-height);
+  height: var(--accordion-height);
   background: var(--main-bg-color);
   border-top-left-radius: 999px;
   border-bottom-left-radius: 999px;
@@ -29,9 +31,9 @@
 
 .logo {
   position: relative;
-  left: 2px;
-  width: calc(var(--image-size) - 20px);
-  height: calc(var(--image-size) - 20px);
+  left: 4px;
+  width: calc(var(--accordion-height) / 1.5);
+  height: calc(var(--accordion-height) / 1.5);
   background: black;
   border-radius: 999px;
 }
@@ -47,12 +49,12 @@
   justify-content: space-between;
   width: 100%;
   background: var(--main-bg-color);
-  border-top-right-radius: 8px;
-  border-bottom-right-radius: 8px;
+  border-top-right-radius: var(--accordion-border-radius);
+  /* border-bottom-right-radius: var(--accordion-border-radius); */
 }
 
 .header.rounded {
-  border-radius: 8px;
+  border-radius: var(--accordion-border-radius);
 }
 
 .accordion.open .header {
@@ -62,7 +64,7 @@
 .title {
   margin-left: 20px;
   color: white;
-  font-size: 16px;
+  font-size: 17px;
   transition: color var(--accordion-transition);
 }
 
@@ -95,22 +97,8 @@
 
 .withLogo {
   position: relative;
-  left: var(--image-size);
-  width: calc(100% - var(--image-size));
-}
-
-.underline {
-  position: relative;
-  bottom: 1px;
-  height: 1px;
-  background: var(--accordion-active-color);
-  transform: scaleX(0);
-  transition: transform var(--accordion-transition);
-  z-index: 2;
-}
-
-.accordion.open .underline {
-  transform: scaleX(1);
+  left: var(--accordion-height);
+  width: calc(100% - var(--accordion-height));
 }
 
 /* uses grid trick to animate from height 0 to auto
@@ -119,24 +107,57 @@
   background: var(--main-bg-color);
   display: grid;
   grid-template-rows: 0fr;
-  border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 8px;
   transition: grid-template-rows var(--accordion-transition);
+}
+
+.drawer.rounded {
+  border-bottom-left-radius: var(--accordion-border-radius);
+  border-bottom-right-radius: var(--accordion-border-radius);
+}
+
+.drawer > div {
+  line-height: 1.5rem;
+  overflow: hidden;
+}
+
+.drawer > div > * {
+  padding: calc(14px + var(--accordion-border-radius));
+  padding-top: 14px;
+  padding-bottom: 14px;
 }
 
 .accordion.open .drawer {
   grid-template-rows: 1fr;
 }
 
-.drawer div {
-  position: relative;
-  top: 8px;
-  line-height: 1.5rem;
-  overflow: hidden;
+.footer {
+  padding: 14px;
+  padding-top: 20px;
+  background: var(--main-bg-color);
+  border-top: 2px solid #4f4f4f;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
 }
 
-.drawer div * {
-  padding: 20px;
-  padding-top: 12px;
-  padding-bottom: 28px;
+.underline {
+  position: absolute;
+  right: 0;
+  top: -1px;
+  width: 100%;
+  height: 1px;
+}
+
+.underline::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: var(--tf-text-color);
+  transform: scaleX(0);
+  transition: transform var(--tf-transition);
+}
+
+
+.accordion.open .underline::before {
+  transform: scaleX(1);
 }
