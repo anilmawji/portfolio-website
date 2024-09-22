@@ -6,7 +6,11 @@ import { joinClassNames } from '../utils';
 import { useCallback } from 'react';
 
 const getHeaderClassNames = (hasImage: boolean, hasFooter: boolean): string => {
-	return joinClassNames(styles.header
+	return joinClassNames(styles.header,
+    !hasImage && !hasFooter ? styles.rounded :
+    !hasFooter ? styles.roundedRight :
+    !hasImage ? styles.roundedTop :
+    styles.roundedTopRight
   );
 }
 
@@ -29,7 +33,7 @@ const Accordion = ({ className, title, image, imageLink, toggleCallback, childre
   }, [toggle, toggleCallback]);
 
   return (
-    <div className={joinClassNames(className, isOpen ? styles.open : '')}>
+    <div className={joinClassNames(className, isOpen ? styles.open : '', image ? styles.withRoundedLogo : '')}>
       <div className={styles.panel}>
         {image && (
           <div className={joinClassNames(styles.logoBorder, image ? styles.rounded : '')}>
@@ -38,14 +42,14 @@ const Accordion = ({ className, title, image, imageLink, toggleCallback, childre
             </a>
           </div>
         )}
-        <div className={getHeaderClassNames(image !== null, footerChildren !== null)} onClick={handleToggle}>
+        <div className={getHeaderClassNames(image !== undefined, footerChildren !== undefined)} onClick={handleToggle}>
           <div className={`${styles.title} ${globalStyles.noSelect}`}>
             {title}
           </div>
           <Icon className={styles.arrow} type={IconType.ARROW_HEAD} />
         </div>
       </div>
-      <div className={image ? styles.withLogo : ''}>
+      <div className={styles.shifted}>
         <div className={joinClassNames(styles.drawer, !footerChildren ? styles.rounded : '')}>
           <div>
             {children}

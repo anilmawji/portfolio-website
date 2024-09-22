@@ -21,7 +21,7 @@
   width: 100%;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 660px) {
   .sections {
     width: min(1000px, calc(100% - 32px));
   }

@@ -209,6 +209,13 @@ a {
   margin-right: var(--home-margin);
 }
 
+.chipContainer {
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+  gap: 4px 0;
+}
+
 @media screen and (max-width: 600px) {
   .cardContainer {
     margin-left: 16px;

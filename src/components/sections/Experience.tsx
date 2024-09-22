@@ -1,4 +1,5 @@
 import styles from './Experience.module.css';
+import globalStyles from '../../global.module.css';
 import { Accordion } from '../Accordion';
 import { joinClassNames } from '../../utils';
 import { JobData } from '../../data/JobData';
@@ -39,15 +40,17 @@ const ExperienceSection = ({ className }: ExperienceSectionProps) => {
                 title={
                   <div className={styles.jobTitle}>
                     <p>{data.title} @ {data.organization}</p>
-                    <p className={styles.date}>{data.startDate} - {data.endDate}</p>
-                    <p className={styles.location}>{data.location}</p>
+                    <div className={styles.subtitle}>
+                      <p className={styles.date}>{data.startDate} - {data.endDate}</p>
+                      <p className={styles.location}>{data.location}</p>
+                    </div>
                   </div>
                 }
                 image={data.logo}
                 imageLink={data.link}
                 toggleCallback={() => toggleAccordion(i)}
                 footerChildren={
-                  <div className={styles.chips}>
+                  <div className={globalStyles.chipContainer}>
                     {data.tags.map((tag, j) => {
                       const isTagATool = isToolInfo(tag);
                         return (

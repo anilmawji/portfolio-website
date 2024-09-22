@@ -98,15 +98,10 @@
 }
 
 .chips {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
   align-items: flex-end;
   font-weight: bold;
-  overflow: hidden;
   margin: var(--card-text-margin);
   margin-top: 0;
-  gap: 4px 0;
   max-height: 52px;
 }
 

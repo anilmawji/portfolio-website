@@ -28,6 +28,8 @@
 
 .jobTitle {
   line-height: 1.5rem;
+
+  padding: 10px;
 }
 
 .date,
@@ -53,9 +55,9 @@
 }
 
 .bullets li {
+  display: flex;
   font-size: 16px;
   padding-bottom: 10px;
-  display: flex;
 }
 
 .bullet {
@@ -72,9 +74,13 @@
   fill: grey;
 }
 
-.chips {
-  display: flex;
-  flex-wrap: wrap;
-  overflow: hidden;
-  gap: 4px 0;
+@media screen and (max-width: 660px) {
+  .date,
+  .location {
+    font-size: 12px;
+  }
+
+  .bullets li {
+    font-size: 14px;
+  }
 }

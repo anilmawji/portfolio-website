@@ -34,7 +34,7 @@ const Card = ({ data, includeReadTime }: Props) => {
             {data.body}
           </p>
         </div>
-        <div className={styles.chips}>
+        <div className={`${styles.chips} ${globalStyles.chipContainer}`}>
           {data.tags.map((tag, index) => {
             const isTagATool = isToolInfo(tag);
             return (

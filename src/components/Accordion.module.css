@@ -9,7 +9,6 @@
 .panel {
   display: flex;
   cursor: pointer;
-  height: var(--accordion-height);
 }
 
 .logoBorder {
@@ -17,13 +16,8 @@
   align-items: center;
   justify-content: center;
   width: var(--accordion-height);
-  height: var(--accordion-height);
   background: var(--main-bg-color);
-}
-
-.logoBorder.rounded {
-  border-top-left-radius: 999px;
-  border-bottom-left-radius: 999px;
+  border-top-left-radius: 8px;
 }
 
 .logo {
@@ -32,16 +26,13 @@
   width: calc(var(--accordion-height) / 1.5);
   height: calc(var(--accordion-height) / 1.5);
   background: black;
-  border-radius: 999px;
+  border-radius: 8px;
 }
 
 .logo img {
   width: 100%;
   height: 100%;
-}
-
-.logoBorder.rounded .logo img {
-  border-radius: 999px;
+  border-radius: 8px;
 }
 
 .header {
@@ -50,20 +41,30 @@
   justify-content: space-between;
   width: 100%;
   background: var(--main-bg-color);
-  border-top-right-radius: 8px;
+  transition: 0s border-radius 180ms ease;
+}
+
+/* This is to make the header border radius reappear when the accordion collapses */
+.open .header {
+  transition: 0s border-radius 0s ease;
 }
 
 .header.rounded {
   border-radius: 8px;
 }
 
-.header.roundedLeft {
-  border-top-left-radius: 8px;
-  border-bottom-left-radius: 8px;
+.header.roundedRight {
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
 }
 
-.header.roundedBottomRight {
-  border-bottom-right-radius: 8px;
+.header.roundedTop {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.header.roundedTopRight {
+  border-top-right-radius: 8px;
 }
 
 .title {
@@ -99,12 +100,6 @@
   fill: var(--accordion-active-color);
 }
 
-.withLogo {
-  position: relative;
-  left: var(--accordion-height);
-  width: calc(100% - var(--accordion-height));
-}
-
 /* uses grid trick to animate from height 0 to auto
  * See https://www.youtube.com/watch?v=B_n4YONte5A */
 .drawer {
@@ -131,6 +126,11 @@
 
 .open .drawer {
   grid-template-rows: 1fr;
+}
+
+.open .header {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
 }
 
 .footer {
@@ -161,4 +161,51 @@
 
 .open .underline::before {
   transform: scaleX(1);
+}
+
+@media screen and (min-width: 660px) {
+  .withRoundedLogo .shifted {
+    position: relative;
+    left: var(--accordion-height);
+    width: calc(100% - var(--accordion-height));
+  }
+  
+  .withRoundedLogo .logoBorder {
+    border-top-left-radius: 999px;
+    border-bottom-left-radius: 999px;
+  }
+  
+  .withRoundedLogo .logo {
+    border-radius: 999px;
+  }
+  
+  .withRoundedLogo .logo img {
+    border-radius: 999px;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  .title {
+    font-size: 14px;
+  }
+
+  .logoBorder {
+    width: 80px;
+  }
+
+  .logo {
+    width: 60px;
+    height: 60px;
+    margin-left: 14px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .header {
+    border-top-left-radius: 8px;
+  }
+
+  .logoBorder {
+    display: none;
+  }
 }
