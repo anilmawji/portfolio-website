@@ -8,7 +8,8 @@
   --neon-green2: #91FC9F;
   --btn-color: #44D25C;
   --grey: #ACABAB;
-
+  color-scheme: dark;
+  
   --box-shadow-color: hsl(0deg 0% 0% / 0.1);
   --glow-border-width: 1px;
   --shadow-gradient: linear-gradient(to top, var(--main-fg-color), #232323);
@@ -17,15 +18,6 @@
   --grid-background-image: 
     linear-gradient(to right, #252525 1px, transparent 1px),
     linear-gradient(to bottom, #252525 1px, transparent 1px);
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-  font-family: var(--default-font);
 }
 
 h1,
@@ -43,30 +35,39 @@ figcaption {
   text-wrap: pretty;
 }
 
+html *,
+html *::before,
+html *::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: var(--default-font);
+}
+
 /* Highlighted text style */
-::selection,
-::-moz-selection {
+html::selection,
+html::-moz-selection {
   color: white;
   background-color: green;
 }
 
-::-webkit-scrollbar {
-  width: 14px;
+html::-webkit-scrollbar {
+  width: 16px;
 }
 
-::-webkit-scrollbar-track {
+html::-webkit-scrollbar-track {
   background: var(--main-fg-color);
 }
 
-::-webkit-scrollbar-thumb {
+html::-webkit-scrollbar-thumb {
   background: #555555;
   border-radius: 10px;
   border: 4px solid var(--main-fg-color);
 }
 
-::-webkit-scrollbar-thumb:hover {
+html::-webkit-scrollbar-thumb:hover {
   background: #636262;
-}
+} 
 
 main {
   flex: 1; /* Ensure main content takes all available space, pushing footer to the bottom */

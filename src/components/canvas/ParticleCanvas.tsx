@@ -116,7 +116,7 @@ const ParticleCanvas = ({
     connectParticles(ctx, particles, particleRgbColor, maxOpacity);
   };
 
-  const resize = useCallback((ctx: CanvasRenderingContext2D) => {
+  const resize = (ctx: CanvasRenderingContext2D) => {
     clearTimeout(particleResetTimeoutId);
 
     particleResetTimeoutId = window.setTimeout(() => {
@@ -127,7 +127,7 @@ const ParticleCanvas = ({
         }
       });
     }, RESET_PARTICLE_DELAY);
-  }, [particleRadius, particleRgbColor]);
+  };
 
   const handleMouseMove = (e: MouseEvent) => {
     e.preventDefault();

@@ -203,7 +203,7 @@
   }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 400px) {
   .header {
     border-top-left-radius: 8px;
   }
