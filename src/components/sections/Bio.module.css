@@ -38,6 +38,11 @@
   padding-left: 40px;
 }
 
+.bio p,
+.bio a {
+  font-size: 16px;
+}
+
 .bio a {
   color: rgba(108, 250, 132, 0.8);
   font-weight: 500;
@@ -76,11 +81,6 @@
     min-width: 120px;
     width: 50%;
     height: auto;
-  }
-
-  .bio p,
-  .bio a {
-    font-size: 14px;
   }
 
   .profiles {

@@ -68,9 +68,9 @@
 }
 
 .title {
-  margin-left: 16px;
   color: white;
-  font-size: 17px;
+  font-size: 16px;
+  margin-left: 16px;
   transition: color var(--accordion-transition);
 }
 

@@ -84,7 +84,7 @@ export const JobData: JobInfo[] = [
   {
     title: "Internal Support Specialist",
     organization: "Starburst Data",
-    location: "Remote",
+    location: "Boston, Massachusetts (Remote)",
     link: "https://www.starburst.io/",
     logo: starburst_logo,
     startDate: "Jun 2021",
