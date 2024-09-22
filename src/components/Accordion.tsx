@@ -29,7 +29,7 @@ const Accordion = ({ className, title, image, imageLink, toggleCallback, childre
   }, [toggle, toggleCallback]);
 
   return (
-    <div className={joinClassNames(className, styles.accordion, isOpen ? styles.open : '')}>
+    <div className={joinClassNames(className, isOpen ? styles.open : '')}>
       <div className={styles.panel}>
         {image && (
           <div className={joinClassNames(styles.logoBorder, image ? styles.rounded : '')}>
