@@ -1,21 +1,6 @@
-.experience {
-  display: flex;
-  flex-direction: column;
-  background: var(--main-fg-color);
-  border-radius: 8px;
-  padding: 30px;
-  border: 1px solid #303030;
-}
-
-.experience h2 {
+.title {
   padding: 10px;
   margin-bottom: 30px;
-}
-
-.jobs {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
 }
 
 .jobs > :last-child {

@@ -1,11 +1,7 @@
 .bio {
-  position: relative; /* Ensure the pseudo-element is positioned relative to the .contact element */
-  display: flex;
-  flex-direction: column;
   gap: 40px;
-  background: var(--main-fg-color);
-  border-radius: 8px;
   padding: 40px;
+  border: none;
 }
 
 .content {

@@ -1,5 +1,4 @@
-import { rgb } from '../utils';
-import { RgbString } from '../types';
+import { rgb, RgbString } from '../utils';
 
 export type ToolInfo = {
   name: string;

@@ -9,6 +9,7 @@
 .panel {
   display: flex;
   cursor: pointer;
+  min-height: 80px;
 }
 
 .logoBorder {

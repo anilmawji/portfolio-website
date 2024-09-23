@@ -205,6 +205,16 @@ a {
     );
 }
 
+.sectionBlock {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: var(--main-fg-color);
+  border-radius: 8px;
+  padding: 30px;
+  border: 1px solid #303030;
+}
+
 .cardContainer {
   margin-left: var(--home-margin);
   margin-right: var(--home-margin);

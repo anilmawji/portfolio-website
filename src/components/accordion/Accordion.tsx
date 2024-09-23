@@ -1,9 +1,18 @@
 import styles from './Accordion.module.css';
-import globalStyles from '../global.module.css';
-import useBoolean from '../hooks/useBoolean';
-import { Icon, IconType } from './icons/Icon';
-import { joinClassNames } from '../utils';
+import globalStyles from '../../global.module.css';
 import { useCallback } from 'react';
+import useBoolean from '../../hooks/useBoolean';
+import { Icon, IconType } from '../icons/Icon';
+import { joinClassNames } from '../../utils';
+import { ToolInfo } from '../../data/ToolInfo';
+
+type AccordionInfo = {
+  title: string | React.ReactNode;
+  image: string;
+  imageLink: string;
+  bulletPoints?: string[];
+  tags?: (ToolInfo | string)[];
+};
 
 const getHeaderClassNames = (hasImage: boolean, hasFooter: boolean): string => {
 	return joinClassNames(styles.header,
@@ -16,15 +25,13 @@ const getHeaderClassNames = (hasImage: boolean, hasFooter: boolean): string => {
 
 interface Props {
   className?: string;
-  title: string | React.ReactNode;
-  image?: string;
-  imageLink?: string;
+  data: AccordionInfo;
   toggleCallback?: () => void;
   children?: React.ReactNode;
   footerChildren?: React.ReactNode;
 }
 
-const Accordion = ({ className, title, image, imageLink, toggleCallback, children, footerChildren }: Props) => {
+const Accordion = ({ className, data, toggleCallback, children, footerChildren }: Props) => {
   const { value: isOpen, toggle } = useBoolean(false);
 
   const handleToggle = useCallback(() => {
@@ -33,18 +40,18 @@ const Accordion = ({ className, title, image, imageLink, toggleCallback, childre
   }, [toggle, toggleCallback]);
 
   return (
-    <div className={joinClassNames(className, isOpen ? styles.open : '', image ? styles.roundedImage : '')}>
+    <div className={joinClassNames(className, isOpen ? styles.open : '', data.image ? styles.roundedImage : '')}>
       <div className={styles.panel}>
-        {image && (
-          <div className={joinClassNames(styles.logoBorder, image ? styles.rounded : '')}>
-            <a className={styles.logo} href={imageLink} target="_blank">
-              <img className={globalStyles.noSelect} src={image} />
+        {data.image && (
+          <div className={joinClassNames(styles.logoBorder, data.image ? styles.rounded : '')}>
+            <a className={styles.logo} href={data.imageLink} target="_blank">
+              <img className={globalStyles.noSelect} src={data.image} />
             </a>
           </div>
         )}
-        <div className={getHeaderClassNames(image !== undefined, footerChildren !== undefined)} onClick={handleToggle}>
+        <div className={getHeaderClassNames(data.image !== undefined, footerChildren !== undefined)} onClick={handleToggle}>
           <div className={`${styles.title} ${globalStyles.noSelect}`}>
-            {title}
+            {data.title}
           </div>
           <Icon className={styles.arrow} type={IconType.ARROW_HEAD} />
         </div>
@@ -66,4 +73,4 @@ const Accordion = ({ className, title, image, imageLink, toggleCallback, childre
   );
 };
 
-export { Accordion };
+export { Accordion, type AccordionInfo };

@@ -1,4 +1,5 @@
 import styles from './ContactForm.module.css';
+import globalStyles from '../../global.module.css';
 import { useState, useRef, useCallback } from 'react';
 import TextField from '../input/TextField';
 import Button from '../buttons/Button';
@@ -76,7 +77,7 @@ const ContactSection = ({ className }: Props) => {
   }, [isLoading, token, setResultMessage, resetForm]);
 
   return (
-    <section className={joinClassNames(styles.contact, className)} id="contact">
+    <section className={joinClassNames(globalStyles.sectionBlock, className)} id="contact">
       <h2 className={styles.title}>Get in Touch</h2>
       <form className={styles.form} onSubmit={handleSubmit} ref={formRef}>
         <TextField type="text" id="name" placeholder="name" isRequired />

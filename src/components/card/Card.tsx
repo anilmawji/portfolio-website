@@ -2,12 +2,22 @@ import styles from './Card.module.css';
 import globalStyles from '../../global.module.css';
 import Chip from '../text/Chip';
 import { readingTime } from '../../utils';
-import { Post } from '../../types';
+import { ToolInfo } from '../../data/ToolInfo';
 import { isToolInfo } from '../../data/ToolInfo';
 import { Icon, IconType } from '../../components/icons/Icon';
 
+type CardInfo = {
+  title: string;
+  image: string;
+  date: string;
+  time?: string;
+  body: string;
+  link: string;
+  tags: (ToolInfo | string)[];
+};
+
 interface Props extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
-  data: Post;
+  data: CardInfo;
   includeReadTime?: boolean;
 }
 
@@ -51,4 +61,4 @@ const Card = ({ data, includeReadTime }: Props) => {
   );
 }
 
-export default Card;
+export { Card, type CardInfo };

@@ -13,7 +13,7 @@ interface Props {
 
 const BioSection = ({ className }: Props) => {
   return (
-    <section className={joinClassNames(styles.bio, className)}>
+    <section className={joinClassNames(globalStyles.sectionBlock, styles.bio, className)}>
       <div className={styles.content}>
         <div className={styles.portrait}>
           <img src={portrait} />

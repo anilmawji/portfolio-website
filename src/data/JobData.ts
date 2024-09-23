@@ -3,26 +3,22 @@ import arcurve_logo from '../assets/logos/arcurve-logo.png';
 import stampede_logo from '../assets/logos/stampede-logo.png';
 import starburst_logo from '../assets/logos/starburst-logo.png';
 import { ToolInfoMap as Tool, ToolInfo } from './ToolInfo';
+import { AccordionInfo } from '../components/accordion/Accordion';
 
-export type JobInfo = {
-  title: string;
+export type JobInfo = AccordionInfo & {
   organization: string;
   location: string;
-  link: string;
-  logo: string;
   startDate: string;
   endDate: string;
-  bulletPoints: string[];
-  tags: (ToolInfo | string)[];
 };
 
 export const JobData: JobInfo[] = [
   {
     title: "DevSecOps Intern",
+    image: canada_logo,
+    imageLink: "https://www.canada.ca/en.html",
     organization: "Government of Canada",
     location: "Ottawa, Ontario",
-    link: "https://www.canada.ca/en.html",
-    logo: canada_logo,
     startDate: "May 2024",
     endDate: "Aug 2024",
     bulletPoints: [
@@ -35,10 +31,10 @@ export const JobData: JobInfo[] = [
   },
   {
     title: "Software Developer Intern",
+    image: arcurve_logo,
+    imageLink: "https://www.arcurve.com/",
     organization: "Arcurve Inc.",
     location: "Calgary, Alberta",
-    link: "https://www.arcurve.com/",
-    logo: arcurve_logo,
     startDate: "Sep 2023",
     endDate: "Dec 2023",
     bulletPoints: [
@@ -50,10 +46,10 @@ export const JobData: JobInfo[] = [
   },
   {
     title: "IT Coordinator Intern",
+    image: arcurve_logo,
+    imageLink: "https://www.arcurve.com/",
     organization: "Arcurve Inc.",
     location: "Calgary, Alberta",
-    link: "https://www.arcurve.com/",
-    logo: arcurve_logo,
     startDate: "Jan 2023",
     endDate: "Aug 2023",
     bulletPoints: [
@@ -68,10 +64,10 @@ export const JobData: JobInfo[] = [
   },
   {
     title: "Application Support Analyst",
+    image: stampede_logo,
+    imageLink: "https://www.calgarystampede.com/",
     organization: "The Calgary Stampede",
     location: "Calgary, Alberta",
-    link: "https://www.calgarystampede.com/",
-    logo: stampede_logo,
     startDate: "May 2022",
     endDate: "Aug 2022",
     bulletPoints: [
@@ -83,10 +79,10 @@ export const JobData: JobInfo[] = [
   },
   {
     title: "Internal Support Specialist",
+    image: starburst_logo,
+    imageLink: "https://www.starburst.io/",
     organization: "Starburst Data",
     location: "Boston, Massachusetts (Remote)",
-    link: "https://www.starburst.io/",
-    logo: starburst_logo,
     startDate: "Jun 2021",
     endDate: "Aug 2021",
     bulletPoints: [
