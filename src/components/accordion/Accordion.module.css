@@ -26,7 +26,7 @@
   left: 4px;
   width: calc(var(--accordion-height) / 1.5);
   height: calc(var(--accordion-height) / 1.5);
-  background: black;
+  background: transparent;
   border-radius: 8px;
 }
 

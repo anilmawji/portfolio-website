@@ -31,12 +31,14 @@ interface Props {
 }
 
 const ExperienceSection = ({ className }: Props) => {
+  const accordionData = ModdedJobAccordionData();
+
   return (
     <section className={joinClassNames(globalStyles.sectionBlock, className)} id="experience">
       <h2 className={styles.title}>Experience</h2>
       <AccordionContainer
         className={styles.jobs}
-        accordionData={ModdedJobAccordionData()}
+        accordionData={accordionData}
         footerChildren={(_, i) => (
           <ToolChipContainer chipData={JobData[i].tools} />
         )}

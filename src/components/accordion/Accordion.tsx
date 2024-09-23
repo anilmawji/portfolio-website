@@ -64,6 +64,8 @@ const Accordion = ({ className, data, toggleCallback, children, footerChildren }
             <div className={styles.underline} />
             {footerChildren}
           </div>
+        ) || (
+          <div className={styles.underline} />
         )}
       </div>
     </div>
