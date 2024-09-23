@@ -1,5 +1,13 @@
 .container {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: var(--accordion-gap);
+}
+
+.spacer {
+  transition: margin-top 200ms ease;
+}
+
+.spacerExpanded {
+  margin-top: 16px;
 }

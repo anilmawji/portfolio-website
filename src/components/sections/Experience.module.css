@@ -26,14 +26,6 @@
   font-style: italic;
 }
 
-.spacer {
-  transition: margin-top 200ms ease;
-}
-
-.spacerExpanded {
-  margin-top: 16px;
-}
-
 .bullets {
   list-style-type: none;
 }

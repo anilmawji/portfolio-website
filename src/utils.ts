@@ -7,6 +7,10 @@
 export type RgbString = `rgb(${number},${number},${number})`;
 export type RgbaString = `rgba(${number},${number},${number},${number})`;
 
+export type ReactCSSVariables = React.CSSProperties & {
+  [key: string]: string | number | undefined;
+};
+
 /*#####################################################################*\
 |#                                                                     #|
 |#   MATH UTILS                                                        #|

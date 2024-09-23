@@ -2,7 +2,7 @@ import styles from './Experience.module.css';
 import globalStyles from '../../global.module.css';
 import { joinClassNames } from '../../utils';
 import { JobData } from '../../data/JobData';
-import { AccordionContainer } from '../accordion/AccordionContainer';
+import AccordionContainer from '../accordion/AccordionContainer';
 import { JobInfo } from '../../data/JobData';
 import { Icon, IconType } from '../../components/icons/Icon';
 import { isToolInfo } from '../../data/ToolInfo';

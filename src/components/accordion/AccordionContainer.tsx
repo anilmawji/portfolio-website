@@ -1,18 +1,23 @@
 import styles from './AccordionContainer.module.css';
 import { useState, useCallback } from 'react';
-import { joinClassNames } from '../../utils';
+import { joinClassNames, ReactCSSVariables } from '../../utils';
 import { Accordion, AccordionInfo } from './Accordion';
 
 interface Props {
   id?: string;
   className?: string;
   accordionData: AccordionInfo[];
+  gap?: string;
   children?: React.ReactNode | ((data: AccordionInfo) => React.ReactNode);
   footerChildren?: React.ReactNode | ((data: AccordionInfo) => React.ReactNode);
 }
   
-  const AccordionContainer = ({ id, className, accordionData, children, footerChildren }: Props) => {
+  const AccordionContainer = ({ id, className, accordionData, gap = '20px', children, footerChildren }: Props) => {
     const [openAccordions, setOpenAccordions] = useState<boolean[]>(Array(accordionData.length).fill(false));
+
+    const containerStyle: ReactCSSVariables = {
+      '--accordion-gap': gap
+    };
 
     const toggleAccordion = useCallback((index: number) => {
       setOpenAccordions(prev => {
@@ -23,7 +28,7 @@ interface Props {
     }, []);
 
     return (
-      <div id={id} className={joinClassNames(styles.container, className)}>
+      <div id={id} className={joinClassNames(styles.container, className)} style={containerStyle}>
         {accordionData.map((data, i) => {
           return (
             <div key={i}>
@@ -49,4 +54,4 @@ interface Props {
     );
   };
   
-  export { AccordionContainer };
+  export default AccordionContainer;
