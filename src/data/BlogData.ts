@@ -1,7 +1,7 @@
+import { CardData } from 'components/card/Card';
 import arch_desk from '../assets/arch_desktop.png';
-import { Post } from '../types';
 
-export const BlogData: Post[] = [
+export const BlogData: CardData[] = [
   {
     title: "Hack The Box: Anubis Writeup",
     image: arch_desk,

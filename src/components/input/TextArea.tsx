@@ -1,5 +1,5 @@
 import styles from './TextArea.module.css';
-import { joinClassNames, toTitleCase } from '../../utils';
+import { joinClassNames, toTitleCase, ReactCSSVariables } from '../../utils';
 
 interface Props extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
   className?: string;
@@ -8,9 +8,9 @@ interface Props extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
 }
 
 const TextArea = ({ className, id, placeholder, isRequired, borderColor, ...restProps }: Props) => {
-  const textAreaStyle = {
+  const textAreaStyle: ReactCSSVariables = {
     '--ta-border-color': borderColor
-  } as React.CSSProperties;
+  };
 
   return (
     <div className={joinClassNames(styles.filled, className)} style={textAreaStyle}>

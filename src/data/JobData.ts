@@ -3,20 +3,47 @@ import arcurve_logo from '../assets/logos/arcurve-logo.png';
 import stampede_logo from '../assets/logos/stampede-logo.png';
 import starburst_logo from '../assets/logos/starburst-logo.png';
 import { ToolInfoMap as Tool, ToolInfo } from './ToolInfo';
-import { AccordionInfo } from '../components/accordion/Accordion';
+import { AccordionData } from 'components/accordion/Accordion';
 
-export type JobInfo = AccordionInfo & {
+export type JobData = {
   organization: string;
   location: string;
   startDate: string;
   endDate: string;
+  bulletPoints: string[];
+  tools: (ToolInfo | string)[];
 };
 
-export const JobData: JobInfo[] = [
+export const JobAccordionData: AccordionData[] = [
   {
     title: "DevSecOps Intern",
     image: canada_logo,
-    imageLink: "https://www.canada.ca/en.html",
+    imageLink: "https://www.canada.ca/en.html"
+  },
+  {
+    title: "Software Developer Intern",
+    image: arcurve_logo,
+    imageLink: "https://www.arcurve.com/"
+  },
+  {
+    title: "IT Coordinator Intern",
+    image: arcurve_logo,
+    imageLink: "https://www.arcurve.com/"
+  },
+  {
+    title: "Application Support Analyst",
+    image: stampede_logo,
+    imageLink: "https://www.calgarystampede.com/"
+  },
+  {
+    title: "Internal Support Specialist",
+    image: starburst_logo,
+    imageLink: "https://www.starburst.io/"
+  }
+];
+
+export const JobData: JobData[] = [
+  {
     organization: "Government of Canada",
     location: "Ottawa, Ontario",
     startDate: "May 2024",
@@ -27,12 +54,9 @@ export const JobData: JobInfo[] = [
       "Wrote Python notebooks to create a dashboard that ingests data from Azure Sentinel and VirusTotal, automating threat discovery and analysis.",
       "Developed a custom solution to secure Kubernetes secrets, ensuring API keys were safely accessible to Jupyter pods."
     ],
-    tags: [Tool.PYTHON, Tool.BASH, Tool.AZURE, Tool.KUBERNETES, Tool.DOCKER, Tool.JUPYTER, Tool.JIRA, Tool.LINUX, Tool.GIT]
+    tools: [Tool.PYTHON, Tool.BASH, Tool.AZURE, Tool.KUBERNETES, Tool.DOCKER, Tool.JUPYTER, Tool.JIRA, Tool.LINUX, Tool.GIT]
   },
   {
-    title: "Software Developer Intern",
-    image: arcurve_logo,
-    imageLink: "https://www.arcurve.com/",
     organization: "Arcurve Inc.",
     location: "Calgary, Alberta",
     startDate: "Sep 2023",
@@ -42,12 +66,9 @@ export const JobData: JobInfo[] = [
       "Leveraged Pulumi to define internal cloud infrastructure as Python code for over 30 running services in Azure.",
       "Automated employee account creation and provisioning in Azure with PowerShell scripts."
     ],
-    tags: [Tool.AZURE, Tool.PYTHON, Tool.PULUMI, Tool.DATA_FACTORY, Tool.POWERSHELL, Tool.JIRA, Tool.GIT]
+    tools: [Tool.AZURE, Tool.PYTHON, Tool.PULUMI, Tool.DATA_FACTORY, Tool.POWERSHELL, Tool.JIRA, Tool.GIT]
   },
   {
-    title: "IT Coordinator Intern",
-    image: arcurve_logo,
-    imageLink: "https://www.arcurve.com/",
     organization: "Arcurve Inc.",
     location: "Calgary, Alberta",
     startDate: "Jan 2023",
@@ -60,12 +81,9 @@ export const JobData: JobInfo[] = [
       "Closed 250 helpdesk tickets related to troubleshooting and access control with a 98% success rate.",
       "Fully automated device provisioning by deploying Windows Autopilot to over 100 employee laptops."
     ],
-    tags: [Tool.AZURE, Tool.MICROSOFT_DEFENDER, Tool.POWERSHELL, Tool.JIRA, Tool.GIT]
+    tools: [Tool.AZURE, Tool.MICROSOFT_DEFENDER, Tool.POWERSHELL, Tool.JIRA, Tool.GIT]
   },
   {
-    title: "Application Support Analyst",
-    image: stampede_logo,
-    imageLink: "https://www.calgarystampede.com/",
     organization: "The Calgary Stampede",
     location: "Calgary, Alberta",
     startDate: "May 2022",
@@ -75,12 +93,9 @@ export const JobData: JobInfo[] = [
       "Remained onsite to troubleshoot payment systems in high-pressure situations with hundreds of customers",
       "Trained 10 cashiers and bartenders to excel in operating POS equipment"
     ],
-    tags: [Tool.MANAGEENGINE, Tool.LIGHTSPEED, Tool.MONERIS]
+    tools: [Tool.MANAGEENGINE, Tool.LIGHTSPEED, Tool.MONERIS]
   },
   {
-    title: "Internal Support Specialist",
-    image: starburst_logo,
-    imageLink: "https://www.starburst.io/",
     organization: "Starburst Data",
     location: "Boston, Massachusetts (Remote)",
     startDate: "Jun 2021",
@@ -89,6 +104,6 @@ export const JobData: JobInfo[] = [
       "Onboarded 20 new employees by provisioning Okta SSO, updating security permissions, and assigning software licenses",
       "Developed knowledge base by writing concise FAQ pages and a comprehensive 8-page macOS troubleshooting guide, reducing the volume of support tickets."
     ],
-    tags: [Tool.OKTA, Tool.JIRA]
+    tools: [Tool.OKTA, Tool.JIRA]
   }
 ];

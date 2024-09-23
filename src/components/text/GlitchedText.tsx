@@ -1,11 +1,11 @@
 import styles from './GlitchedText.module.css';
 import globalStyles from '../../global.module.css';
-import { joinClassNames } from '../../utils';
+import { joinClassNames, ReactCSSVariables } from '../../utils';
 
-const stackStyle = {'--stacks': '3'} as React.CSSProperties;
-const spanStyle0 = {'--index' : '0'} as React.CSSProperties;
-const spanStyle1 = {'--index' : '1'} as React.CSSProperties;
-const spanStyle2 = {'--index' : '2'} as React.CSSProperties;
+const stackStyle: ReactCSSVariables = {'--stacks': '3'};
+const spanStyle0: ReactCSSVariables = {'--index' : '0'};
+const spanStyle1: ReactCSSVariables = {'--index' : '1'};
+const spanStyle2: ReactCSSVariables = {'--index' : '2'};
 
 interface Props {
   className?: string;

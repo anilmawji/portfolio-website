@@ -5,9 +5,9 @@ import proxy_img from '../assets/projects/http-proxy.png';
 import mario_img from '../assets/projects/mario-kart.png';
 import mystics_img from '../assets/projects/mystics.png';
 import { ToolInfoMap as Tool } from './ToolInfo';
-import { CardInfo } from '../components/card/Card';
+import { CardData } from 'components/card/Card';
 
-export const ProjectData: CardInfo[] = [
+export const ProjectData: CardData[] = [
   {
     title: "PowerShell Script Profiler",
     image: it_portal_img,

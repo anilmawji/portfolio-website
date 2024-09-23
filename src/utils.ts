@@ -4,12 +4,16 @@
 |#                                                                     #|
 \*#####################################################################*/
 
+export type AnyFunction = (...args: any[]) => void;
+
 export type RgbString = `rgb(${number},${number},${number})`;
 export type RgbaString = `rgba(${number},${number},${number},${number})`;
 
 export type ReactCSSVariables = React.CSSProperties & {
   [key: string]: string | number | undefined;
 };
+
+export type ReactNodeOrNodeProvider = React.ReactNode | ((...args: any[]) => React.ReactNode);
 
 /*#####################################################################*\
 |#                                                                     #|
@@ -80,6 +84,16 @@ export function readingTime(text: string, wpm: number = 225): string {
   const time = Math.ceil(words / wpm);
 
   return time >= 1 ? time.toString() + " min" : "Less than 1 min";
+}
+
+// Utility function that accepts a React node or a function returning a React node.
+// It checks the type of the input:
+//   - If the input is a function, it invokes the function with the provided arguments and returns the resulting node.
+//   - If the input is a React node, it returns the node directly, unchanged.
+export function getModifiedReactNode(modifiedReactNode: ReactNodeOrNodeProvider, ...args: any[]): React.ReactNode {
+  return typeof modifiedReactNode === 'function' 
+    ? (modifiedReactNode as (...args: any[]) => React.ReactNode)(...args) 
+    : modifiedReactNode;
 }
 
 /*#####################################################################*\

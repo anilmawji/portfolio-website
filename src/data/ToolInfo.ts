@@ -54,7 +54,7 @@ export const enum ToolName {
   WIRING_PI = 'WIRING_PI'
 }
 
-// Colors sourced from https://raw.githubusercontent.com/github/linguist/master/lib/linguist/languages.yml
+// Colors partially sourced from https://raw.githubusercontent.com/github/linguist/master/lib/linguist/languages.yml
 
 export const ToolInfoMap: Record<ToolName, ToolInfo> = {
   [ToolName.ASP_DOT_NET_CORE]: newToolInfo('ASP.NET Core', 81, 43, 212),

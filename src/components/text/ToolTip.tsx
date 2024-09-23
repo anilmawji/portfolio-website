@@ -1,6 +1,6 @@
 import styles from './Tooltip.module.css';
 import { useState, useRef } from 'react';
-import { joinClassNames } from '../../utils';
+import { joinClassNames, ReactCSSVariables } from '../../utils';
 
 const enum TooltipDirection {
   TOP = 'Top',
@@ -41,10 +41,10 @@ const Tooltip = ({
   const [isToolTipVisible, setIsTooltipVisible] = useState(false);
   const [visibilityTimer, setVisibilityTimer] = useState<number | null>(null);
   const tooltipRef = useRef<HTMLDivElement>(null);
-  const tooltipStyle = {
+  const tooltipStyle: ReactCSSVariables = {
     '--tooltip-width': width,
     '--tooltip-distance': distance
-  } as React.CSSProperties;
+  };
 
   const handleMouseEnter = () => {
     // Show the tooltip after a delay

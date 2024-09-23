@@ -38,22 +38,24 @@
   padding-top: 2px;
 }
 
-/* Cover ugly border until hCaptcha decides to fix their styling: https://github.com/hCaptcha/react-hcaptcha/issues/225 */
+/* Cover ugly border until hCaptcha decides to fix their styling */
+/* See https://github.com/hCaptcha/react-hcaptcha/issues/225 */
 .captchaNormal,
 .captchaCompact {
-  outline: 8px solid var(--main-fg-color);
-  outline-offset: -2px;
+  outline-offset: -1px;
   border-radius: 8px;
 }
 
 .captchaNormal {
   width: 302px;
   height: 76px;
+  outline: 8px solid var(--main-fg-color);
 }
 
 .captchaCompact {
   width: 158px;
   height: 138px;
+  outline: 14px solid var(--main-fg-color);
 }
 
 .result {

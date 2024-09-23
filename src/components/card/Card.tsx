@@ -1,12 +1,11 @@
 import styles from './Card.module.css';
 import globalStyles from '../../global.module.css';
-import Chip from '../text/Chip';
 import { readingTime } from '../../utils';
 import { ToolInfo } from '../../data/ToolInfo';
-import { isToolInfo } from '../../data/ToolInfo';
 import { Icon, IconType } from '../../components/icons/Icon';
+import ToolChipContainer from '../../components/text/ToolChipContainer';
 
-type CardInfo = {
+type CardData = {
   title: string;
   image: string;
   date: string;
@@ -17,7 +16,7 @@ type CardInfo = {
 };
 
 interface Props extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
-  data: CardInfo;
+  data: CardData;
   includeReadTime?: boolean;
 }
 
@@ -44,21 +43,10 @@ const Card = ({ data, includeReadTime }: Props) => {
             {data.body}
           </p>
         </div>
-        <div className={`${styles.chips} ${globalStyles.chipContainer}`}>
-          {data.tags.map((tag, index) => {
-            const isTagATool = isToolInfo(tag);
-            return (
-              <Chip
-                key={index}
-                label={isTagATool ? tag.name : tag}
-                color={isTagATool ? tag.color : undefined}
-              />
-            );
-          })}
-        </div>
+        <ToolChipContainer className={styles.chips} chipData={data.tags}/>
       </div>
     </a>
   );
 }
 
-export { Card, type CardInfo };
+export { Card, type CardData };

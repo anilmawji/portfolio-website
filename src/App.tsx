@@ -9,7 +9,6 @@ import { getNumericalCssValue } from './utils';
 import { NavMenuProvider } from './contexts/NavMenuContext';
 //import lightStyles from './LightTheme.module.css'
 //import darkStyles from './DarkTheme.module.css'
-import "@fontsource/aldrich";
 
 const NAVBAR_THICKNESS = getNumericalCssValue("navbar-thickness");
 

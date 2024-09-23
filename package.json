@@ -10,7 +10,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@fontsource/aldrich": "^5.0.21",
     "@hcaptcha/react-hcaptcha": "^1.11.0",
     "@svgr/cli": "^8.1.0",
     "react": "^18.3.1",

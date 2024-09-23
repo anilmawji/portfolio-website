@@ -1,4 +1,4 @@
-type AnyFunction = (...args: any[]) => void;
+import { AnyFunction } from 'utils';
 
 const useThrottle = <T extends AnyFunction>(callback: T, delay: number, immediate: boolean = false): T => {
   let lastRun = Date.now();

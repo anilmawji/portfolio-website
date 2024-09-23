@@ -4,14 +4,11 @@ import { useCallback } from 'react';
 import useBoolean from '../../hooks/useBoolean';
 import { Icon, IconType } from '../icons/Icon';
 import { joinClassNames } from '../../utils';
-import { ToolInfo } from '../../data/ToolInfo';
 
-type AccordionInfo = {
+type AccordionData = {
   title: string | React.ReactNode;
   image: string;
   imageLink: string;
-  bulletPoints?: string[];
-  tags?: (ToolInfo | string)[];
 };
 
 const getHeaderClassNames = (hasImage: boolean, hasFooter: boolean): string => {
@@ -25,7 +22,7 @@ const getHeaderClassNames = (hasImage: boolean, hasFooter: boolean): string => {
 
 interface Props {
   className?: string;
-  data: AccordionInfo;
+  data: AccordionData;
   toggleCallback?: () => void;
   children?: React.ReactNode;
   footerChildren?: React.ReactNode;
@@ -73,4 +70,4 @@ const Accordion = ({ className, data, toggleCallback, children, footerChildren }
   );
 };
 
-export { Accordion, type AccordionInfo };
+export { Accordion, type AccordionData };

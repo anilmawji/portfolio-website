@@ -1,6 +1,6 @@
 import styles from './ScrollToButton.module.css';
 import { Icon, IconType } from '../icons/Icon';
-import { joinClassNames } from '../../utils';
+import { joinClassNames, ReactCSSVariables } from '../../utils';
 import { NavLink } from 'react-router-dom';
 
 interface Props {
@@ -29,13 +29,12 @@ const ScrollToButton = ({
   scrollLocation,
   includeRing = false
 }: Props) => {
-
-  const buttonStyle = {
+  const buttonStyle: ReactCSSVariables = {
     '--scroll-btn-size': `${size}px`,
     '--scroll-btn-rotation': `${rotation}deg`,
     '--scroll-btn-color': color,
     '--scroll-btn-hover-color': hoverColor
-  } as React.CSSProperties;
+  };
 
   return (
     typeof scrollLocation === 'number' ? (

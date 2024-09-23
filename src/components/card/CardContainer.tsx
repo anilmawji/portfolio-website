@@ -1,5 +1,5 @@
 import styles from './CardContainer.module.css';
-import { Card, CardInfo } from './Card';
+import { Card, CardData } from './Card';
 import { useState } from 'react';
 import { joinClassNames } from '../../utils';
 
@@ -7,7 +7,7 @@ interface Props {
   id?: string;
   className?: string;
   title?: string;
-  cardData: CardInfo[];
+  cardData: CardData[];
   includeReadTime?: boolean;
 }
 

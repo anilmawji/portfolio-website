@@ -1,5 +1,5 @@
 import styles from './TextField.module.css';
-import { joinClassNames, toTitleCase } from '../../utils';
+import { joinClassNames, toTitleCase, ReactCSSVariables } from '../../utils';
 
 interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
   className?: string;
@@ -9,9 +9,9 @@ interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
 }
 
 const TextField = ({ className, id, placeholder, isRequired, textColor, ...restProps }: Props) => {
-  const textFieldStyle = {
+  const textFieldStyle: ReactCSSVariables = {
     '--tf-text-color': textColor
-  } as React.CSSProperties;
+  };
 
   return (
     <div className={joinClassNames(styles.filled, className)} style={textFieldStyle}>

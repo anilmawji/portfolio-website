@@ -1,9 +1,9 @@
-import { AccordionInfo } from '../components/accordion/Accordion';
+import { AccordionData } from 'components/accordion/Accordion';
 import security_plus from '../assets/certifications/security-plus.svg';
 import a_plus from '../assets/certifications/a-plus.svg';
 import az_900 from '../assets/certifications/az-900.png';
 
-export const CertificationData: AccordionInfo[] = [
+export const CertificationData: AccordionData[] = [
   {
     title: "CompTIA Security+",
     image: security_plus,
