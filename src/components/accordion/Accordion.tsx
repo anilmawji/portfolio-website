@@ -24,11 +24,11 @@ interface Props {
   className?: string;
   data: AccordionData;
   toggleCallback?: () => void;
+  footerContent?: React.ReactNode;
   children?: React.ReactNode;
-  footerChildren?: React.ReactNode;
 }
 
-const Accordion = ({ className, data, toggleCallback, children, footerChildren }: Props) => {
+const Accordion = ({ className, data, toggleCallback, footerContent, children }: Props) => {
   const { value: isOpen, toggle } = useBoolean(false);
 
   const handleToggle = useCallback(() => {
@@ -46,7 +46,7 @@ const Accordion = ({ className, data, toggleCallback, children, footerChildren }
             </a>
           </div>
         )}
-        <div className={getHeaderClassNames(data.image !== undefined, footerChildren !== undefined)} onClick={handleToggle}>
+        <div className={getHeaderClassNames(data.image !== undefined, footerContent !== undefined)} onClick={handleToggle}>
           <div className={`${styles.title} ${globalStyles.noSelect}`}>
             {data.title}
           </div>
@@ -54,15 +54,15 @@ const Accordion = ({ className, data, toggleCallback, children, footerChildren }
         </div>
       </div>
       <div className={styles.bottom}>
-        <div className={joinClassNames(styles.drawer, !footerChildren ? styles.rounded : '')}>
+        <div className={joinClassNames(styles.drawer, !footerContent ? styles.rounded : '')}>
           <div>
             {children}
           </div>
         </div>
-        {footerChildren && (
+        {footerContent && (
           <div className={styles.footer}>
             <div className={styles.underline} />
-            {footerChildren}
+            {footerContent}
           </div>
         ) || (
           <div className={styles.underline} />

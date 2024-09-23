@@ -54,7 +54,7 @@ export const JobData: JobData[] = [
       "Wrote Python notebooks to create a dashboard that ingests data from Azure Sentinel and VirusTotal, automating threat discovery and analysis.",
       "Developed a custom solution to secure Kubernetes secrets, ensuring API keys were safely accessible to Jupyter pods."
     ],
-    tools: [Tool.PYTHON, Tool.BASH, Tool.AZURE, Tool.KUBERNETES, Tool.DOCKER, Tool.JUPYTER, Tool.JIRA, Tool.LINUX, Tool.GIT]
+    tools: [Tool.PYTHON, Tool.BASH, Tool.AZURE, Tool.KUBERNETES, Tool.DOCKER, Tool.JUPYTER, Tool.LINUX, Tool.JIRA, Tool.GIT]
   },
   {
     organization: "Arcurve Inc.",

@@ -12,11 +12,15 @@ const CertificationsSection = ({ className }: Props) => {
   return (
     <section className={joinClassNames(globalStyles.sectionBlock, className)} id="certifications">
       <h2 className={styles.title}>Certifications</h2>
-      <AccordionContainer className={styles.certs} accordionData={CertificationData}>
-        <div>
-          This is some test text
-        </div>
-      </AccordionContainer>
+      <AccordionContainer
+        className={styles.certs}
+        accordionData={CertificationData}
+        accordionContent={
+          <div>
+            This is some test text
+          </div>
+        }
+      />
     </section>
   );
 }

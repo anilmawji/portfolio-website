@@ -39,11 +39,7 @@ const ExperienceSection = ({ className }: Props) => {
       <AccordionContainer
         className={styles.jobs}
         accordionData={accordionData}
-        footerChildren={(_, i) => (
-          <ToolChipContainer chipData={JobData[i].tools} />
-        )}
-      >
-        {(_, i) => (
+        accordionContent={(_, i) => (
           <ul className={styles.bullets}>
             {JobData[i].bulletPoints.map((bullet, j) => (
               <li key={j}>
@@ -53,7 +49,10 @@ const ExperienceSection = ({ className }: Props) => {
             ))}
           </ul>
         )}
-      </AccordionContainer>
+        accordionFooterContent={(_, i) => (
+          <ToolChipContainer chipData={JobData[i].tools} />
+        )}
+      />
     </section>
   );
 }

@@ -8,11 +8,20 @@ interface Props {
   className?: string;
   accordionData: AccordionData[];
   gap?: string;
-  children?: ReactNodeOrNodeProvider;
-  footerChildren?: ReactNodeOrNodeProvider;
+  accordionContent?: ReactNodeOrNodeProvider;
+  accordionFooterContent?: ReactNodeOrNodeProvider;
+  children?: React.ReactNode;
 }
 
-const AccordionContainer = ({ id, className, accordionData, gap = '20px', children, footerChildren }: Props) => {
+const AccordionContainer = ({
+  id,
+  className,
+  accordionData,
+  gap = '20px',
+  accordionContent,
+  accordionFooterContent,
+  children
+}: Props) => {
   const [openAccordions, setOpenAccordions] = useState<boolean[]>(Array(accordionData.length).fill(false));
   const containerStyle: ReactCSSVariables = {
     '--accordion-gap': gap
@@ -42,13 +51,14 @@ const AccordionContainer = ({ id, className, accordionData, gap = '20px', childr
             <Accordion
               data={data}
               toggleCallback={() => toggleAccordion(i)}
-              footerChildren={getModifiedReactNode(footerChildren, data, i)}
+              footerContent={getModifiedReactNode(accordionFooterContent, data, i)}
             >
-              {getModifiedReactNode(children, data, i)}
+              {getModifiedReactNode(accordionContent, data, i)}
             </Accordion>
           </div>
         );
       })}
+      {children}
     </div>
   );
 };
