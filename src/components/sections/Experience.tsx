@@ -7,48 +7,51 @@ import { Icon, IconType } from '../../components/icons/Icon';
 import ToolChipContainer from '../../components/text/ToolChipContainer';
 import { AccordionData } from 'components/accordion/Accordion';
 
+const ModdedJobAccordionData = (): AccordionData[] => {
+  return JobAccordionData.map((data, i) => {
+    const { organization, startDate, endDate, location } = JobData[i];
+
+    return {
+      ...data,
+      title: (
+        <div className={styles.jobTitle}>
+          <p>{data.title} @ {organization}</p>
+          <div className={styles.subtitle}>
+            <p className={styles.date}>{startDate} - {endDate}</p>
+            <p className={styles.location}>{location}</p>
+          </div>
+        </div>
+      )
+    };
+  });
+};
+
 interface Props {
   className?: string;
 }
-
-const JobDataWithModifiedTitles = (): AccordionData[] => {
-  return JobAccordionData.map((data, i) => ({
-    ...data,
-    title: (
-      <div className={styles.jobTitle}>
-        <p>{data.title} @ {JobData[i].organization}</p>
-        <div className={styles.subtitle}>
-          <p className={styles.date}>{JobData[i].startDate} - {JobData[i].endDate}</p>
-          <p className={styles.location}>{JobData[i].location}</p>
-        </div>
-      </div>
-    )
-  }));
-};
 
 const ExperienceSection = ({ className }: Props) => {
   return (
     <section className={joinClassNames(globalStyles.sectionBlock, className)} id="experience">
       <h2 className={styles.title}>Experience</h2>
-      <div className={styles.jobs}>
-        <AccordionContainer
-          accordionData={JobDataWithModifiedTitles()}
-          footerChildren={(_, i) => (
-            <ToolChipContainer chipData={JobData[i].tools} />
-          )}
-        >
-          {(_, i) => (
-            <ul className={styles.bullets}>
-              {JobData[i].bulletPoints.map((bullet, j) => (
-                <li key={j}>
-                  <Icon className={styles.bullet} type={IconType.DOUBLE_ARROW_HEAD} />
-                  {bullet}
-                </li>
-              ))}
-            </ul>
-          )}
-        </AccordionContainer>
-      </div>
+      <AccordionContainer
+        className={styles.jobs}
+        accordionData={ModdedJobAccordionData()}
+        footerChildren={(_, i) => (
+          <ToolChipContainer chipData={JobData[i].tools} />
+        )}
+      >
+        {(_, i) => (
+          <ul className={styles.bullets}>
+            {JobData[i].bulletPoints.map((bullet, j) => (
+              <li key={j}>
+                <Icon className={styles.bullet} type={IconType.DOUBLE_ARROW_HEAD} />
+                {bullet}
+              </li>
+            ))}
+          </ul>
+        )}
+      </AccordionContainer>
     </section>
   );
 }
