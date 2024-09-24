@@ -1,14 +1,14 @@
 import styles from './Experience.module.css';
 import globalStyles from '../../global.module.css';
 import { joinClassNames } from '../../utils';
-import { JobData, JobAccordionData } from '../../data/JobData';
+import { JobData, JobHeaderData } from '../../data/JobData';
 import AccordionContainer from '../accordion/AccordionContainer';
 import { Icon, IconType } from '../../components/icons/Icon';
 import ToolChipContainer from '../../components/text/ToolChipContainer';
-import { AccordionData } from 'components/accordion/Accordion';
+import { HeaderPanelData } from 'components/HeaderPanel';
 
-const ModdedJobAccordionData = (): AccordionData[] => {
-  return JobAccordionData.map((data, i) => {
+const ModdedJobHeaderData = (): HeaderPanelData[] => {
+  return JobHeaderData.map((data, i) => {
     const { organization, startDate, endDate, location } = JobData[i];
 
     return {
@@ -31,7 +31,7 @@ interface Props {
 }
 
 const ExperienceSection = ({ className }: Props) => {
-  const accordionData = ModdedJobAccordionData();
+  const accordionData = ModdedJobHeaderData();
 
   return (
     <section className={joinClassNames(globalStyles.sectionBlock, className)} id="experience">

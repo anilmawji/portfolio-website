@@ -32,7 +32,7 @@
   clip-path: inset(var(--clip-top) 0 var(--clip-bottom) 0);
   animation:
     stack 340ms cubic-bezier(.46,.29,0,1.24) 1 backwards calc(var(--index) * 120ms),
-    glitch 2.5s ease infinite 2.5s alternate-reverse;
+    glitch 2.5s ease infinite 2s alternate-reverse;
 }
 
 .stack span:nth-child(odd) {

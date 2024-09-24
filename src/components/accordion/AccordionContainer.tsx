@@ -1,12 +1,13 @@
 import styles from './AccordionContainer.module.css';
 import { useState, useCallback } from 'react';
 import { joinClassNames, ReactCSSVariables, ReactNodeOrNodeProvider, getModifiedReactNode } from '../../utils';
-import { Accordion, AccordionData } from './Accordion';
+import { Accordion } from './Accordion';
+import { HeaderPanelData } from '../HeaderPanel';
 
 interface Props {
   id?: string;
   className?: string;
-  accordionData: AccordionData[];
+  accordionData: HeaderPanelData[];
   gap?: string;
   accordionContent?: ReactNodeOrNodeProvider;
   accordionFooterContent?: ReactNodeOrNodeProvider;
@@ -37,30 +38,28 @@ const AccordionContainer = ({
 
   return (
     <div id={id} className={joinClassNames(styles.container, className)} style={containerStyle}>
-      {accordionData.map((data, i) => {
-        return (
-          <div key={i}>
-            {i !== 0 && (
-              <div
-                className={joinClassNames(
-                  styles.spacer,
-                  openAccordions[i] || openAccordions[i - 1] ? styles.spacerExpanded : ''
-                )}
-              />
-            )}
-            <Accordion
-              data={data}
-              toggleCallback={() => toggleAccordion(i)}
-              footerContent={getModifiedReactNode(accordionFooterContent, data, i)}
-            >
-              {getModifiedReactNode(accordionContent, data, i)}
-            </Accordion>
-          </div>
-        );
-      })}
+      {accordionData.map((data, i) => (
+        <div key={i}>
+          {i !== 0 && (
+            <div
+              className={joinClassNames(
+                styles.spacer,
+                openAccordions[i] || openAccordions[i - 1] ? styles.spacerExpanded : ''
+              )}
+            />
+          )}
+          <Accordion
+            data={data}
+            toggleCallback={() => toggleAccordion(i)}
+            footerContent={getModifiedReactNode(accordionFooterContent, data, i)}
+          >
+            {getModifiedReactNode(accordionContent, data, i)}
+          </Accordion>
+        </div>
+      ))}
       {children}
     </div>
   );
 };
   
-  export default AccordionContainer;
+export default AccordionContainer;

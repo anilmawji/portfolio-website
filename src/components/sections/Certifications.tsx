@@ -1,8 +1,8 @@
-import styles from './Experience.module.css';
+import styles from './Certifications.module.css';
 import globalStyles from '../../global.module.css';
 import { joinClassNames } from '../../utils';
 import { CertificationData } from '../../data/CertificationData';
-import AccordionContainer from '../accordion/AccordionContainer';
+import { HeaderPanel } from '../../components/HeaderPanel';
 
 interface Props {
   className?: string;
@@ -10,17 +10,11 @@ interface Props {
 
 const CertificationsSection = ({ className }: Props) => {
   return (
-    <section className={joinClassNames(globalStyles.sectionBlock, className)} id="certifications">
+    <section className={joinClassNames(styles.container, globalStyles.sectionBlock, className)} id="certifications">
       <h2 className={styles.title}>Certifications</h2>
-      <AccordionContainer
-        className={styles.certs}
-        accordionData={CertificationData}
-        accordionContent={
-          <div>
-            This is some test text
-          </div>
-        }
-      />
+      {CertificationData.map((data, i) => (
+        <HeaderPanel className={styles.cert} key={i} data={data} />
+      ))}
     </section>
   );
 }

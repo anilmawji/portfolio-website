@@ -83,7 +83,7 @@ export const ToolInfoMap: Record<ToolName, ToolInfo> = {
   [ToolName.KUBERNETES]: newToolInfo('Kubernetes', 50, 108, 229),
   [ToolName.TYPESCRIPT]: newToolInfo('TypeScript', 43, 116, 137),
   [ToolName.POWERSHELL]: newToolInfo('PowerShell', 70, 132, 233),
-  [ToolName.BASH]: newToolInfo('Bash', 137, 224, 81),
+  [ToolName.BASH]: newToolInfo('Bash', 77, 168, 37),
   [ToolName.OKTA]: newToolInfo('Okta', 0, 125, 193),
   [ToolName.WIRING_PI]: newToolInfo('WiringPi', 188, 17, 66),
   [ToolName.HTML]: newToolInfo('HTML', 228, 75, 35),

@@ -14,10 +14,10 @@ const LoadingIcon = ({ size, borderThickness, ...restProps }: Props) => {
 
   return (
     <div className={styles.icon} style={iconStyle} {...restProps}>
-        <div />
-        <div />
-        <div />
-        <div />
+      <div />
+      <div />
+      <div />
+      <div />
     </div>
   );
 }
