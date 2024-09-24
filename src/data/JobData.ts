@@ -3,7 +3,7 @@ import arcurve_logo from '../assets/logos/arcurve-logo.png';
 import stampede_logo from '../assets/logos/stampede-logo.png';
 import starburst_logo from '../assets/logos/starburst-logo.png';
 import { ToolInfoMap as Tool, ToolInfo } from './ToolInfo';
-import { HeaderPanelData } from 'components/HeaderPanel';
+import { AccordionData } from 'components/accordion/Accordion';
 
 export type JobData = {
   organization: string;
@@ -14,7 +14,7 @@ export type JobData = {
   tools: (ToolInfo | string)[];
 };
 
-export const JobHeaderData: HeaderPanelData[] = [
+export const JobHeaderData: AccordionData[] = [
   {
     title: "DevSecOps Intern",
     image: canada_logo,

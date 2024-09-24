@@ -1,9 +1,15 @@
 import styles from './Accordion.module.css';
+import globalStyles from '../../global.module.css';
 import { useCallback } from 'react';
 import useBoolean from '../../hooks/useBoolean';
 import { Icon, IconType } from '../icons/Icon';
-import { HeaderPanel, HeaderPanelData } from '../HeaderPanel';
 import { joinClassNames } from '../../utils';
+
+type AccordionData = {
+  title: string | React.ReactNode;
+  image: string;
+  imageLink: string;
+};
 
 const getHeaderClassNames = (hasImage: boolean, hasFooter: boolean): string => {
 	return joinClassNames(
@@ -17,7 +23,7 @@ const getHeaderClassNames = (hasImage: boolean, hasFooter: boolean): string => {
 
 interface Props {
   className?: string;
-  data: HeaderPanelData;
+  data: AccordionData;
   toggleCallback?: () => void;
   footerContent?: React.ReactNode;
   children?: React.ReactNode;
@@ -33,14 +39,25 @@ const Accordion = ({ className, data, toggleCallback, footerContent, children }:
 
   return (
     <div className={joinClassNames(className, isOpen ? styles.open : '', data.image ? styles.roundedImage : '')}>
-      <HeaderPanel
-        className={getHeaderClassNames(data.image !== undefined, footerContent !== undefined)}
-        data={data}
-        children={
+      <div className={styles.panel}>
+        {data.image && (
+          <div className={joinClassNames(styles.imageBorder, data.image ? styles.rounded : '')}>
+            <a className={styles.imageBackground} href={data.imageLink} target="_blank">
+              <img className={globalStyles.noSelect} src={data.image} />
+            </a>
+          </div>
+        )}
+        <div className={getHeaderClassNames(
+            data.image !== undefined, footerContent !== undefined
+          )}
+          onClick={handleToggle}
+        >
+          <h3 className={styles.title}>
+            {data.title}
+          </h3>
           <Icon className={styles.arrow} type={IconType.ARROW_HEAD} />
-        }
-        onClick={handleToggle}
-      />
+        </div>
+      </div>
       <div className={styles.bottom}>
         <div className={joinClassNames(styles.drawer, !footerContent ? styles.rounded : '')}>
           <div>
@@ -60,4 +77,4 @@ const Accordion = ({ className, data, toggleCallback, footerContent, children }:
   );
 };
 
-export { Accordion };
+export { Accordion, type AccordionData };
