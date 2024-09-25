@@ -7,8 +7,9 @@ import { joinClassNames } from '../../utils';
 
 type AccordionData = {
   title: string | React.ReactNode;
-  image: string;
-  imageLink: string;
+  image?: string;
+  imageLink?: string;
+  imageAlt?: string;
 };
 
 const getHeaderClassNames = (hasImage: boolean, hasFooter: boolean): string => {
@@ -39,22 +40,16 @@ const Accordion = ({ className, data, toggleCallback, footerContent, children }:
 
   return (
     <div className={joinClassNames(className, isOpen ? styles.open : '', data.image ? styles.roundedImage : '')}>
-      <div className={styles.panel}>
+      <div className={styles.panel} onClick={handleToggle}>
         {data.image && (
           <div className={joinClassNames(styles.imageBorder, data.image ? styles.rounded : '')}>
             <a className={styles.imageBackground} href={data.imageLink} target="_blank">
-              <img className={globalStyles.noSelect} src={data.image} />
+              <img className={globalStyles.noSelect} src={data.image} alt={data.imageAlt} />
             </a>
           </div>
         )}
-        <div className={getHeaderClassNames(
-            data.image !== undefined, footerContent !== undefined
-          )}
-          onClick={handleToggle}
-        >
-          <h3 className={styles.title}>
-            {data.title}
-          </h3>
+        <div className={getHeaderClassNames(data.image !== undefined, footerContent !== undefined)}>
+          <h3>{data.title}</h3>
           <Icon className={styles.arrow} type={IconType.ARROW_HEAD} />
         </div>
       </div>

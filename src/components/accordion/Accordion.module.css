@@ -8,6 +8,7 @@
 
 .panel {
   display: flex;
+  cursor: pointer;
 }
 
 .imageBorder {
@@ -37,7 +38,6 @@
   width: calc(100% - 100px);
   background: var(--main-bg-color);
   transition: 0s border-radius 180ms ease;
-  cursor: pointer;
   padding: 14px;
 }
 
@@ -48,6 +48,7 @@
 
 .header.rounded {
   border-radius: 8px;
+  width: 100%;
 }
 
 .header.roundedRight {
@@ -58,19 +59,21 @@
 .header.roundedTop {
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
+  width: 100%;
 }
 
 .header.roundedTopRight {
   border-top-right-radius: 8px;
 }
 
-.title {
+.header h3 {
   color: white;
   font-size: 16px;
+  margin-right: 14px;
   transition: color 300ms ease;
 }
 
-.open .title {
+.open .header h3 {
   color: var(--accordion-active-color);
 }
 
@@ -188,13 +191,14 @@
     width: 100%;
   }
 
-  .title {
+  .header h3 {
     font-size: 14px;
   }
 
   .imageBorder {
     width: 80px;
-    height: unset;
+    height: initial;
+    border-top-left-radius: 8px;
   }
 
   .imageBackground {

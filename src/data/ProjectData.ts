@@ -7,7 +7,7 @@ import mystics_img from '../assets/projects/mystics.png';
 import { ToolInfoMap as Tool } from './ToolInfo';
 import { CardData } from 'components/card/Card';
 
-export const ProjectData: CardData[] = [
+export const Projects: CardData[] = [
   {
     title: "PowerShell Script Profiler",
     image: it_portal_img,

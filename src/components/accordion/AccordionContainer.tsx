@@ -1,13 +1,12 @@
 import styles from './AccordionContainer.module.css';
 import { useState, useCallback } from 'react';
 import { joinClassNames, ReactCSSVariables, ReactNodeOrNodeProvider, getModifiedReactNode } from '../../utils';
-import { Accordion } from './Accordion';
-import { HeaderPanelData } from '../HeaderPanel';
+import { Accordion, AccordionData } from './Accordion';
 
 interface Props {
   id?: string;
   className?: string;
-  accordionData: HeaderPanelData[];
+  accordionData: AccordionData[];
   gap?: string;
   accordionContent?: ReactNodeOrNodeProvider;
   accordionFooterContent?: ReactNodeOrNodeProvider;

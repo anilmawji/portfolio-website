@@ -1,6 +1,6 @@
 import Page from './Page';
 import globalStyles from '../global.module.css';
-import { BlogData } from '../data/BlogData';
+import { BlogPosts } from '../data/BlogData';
 import CardContainer from '../components/card/CardContainer';
 
 const Blog = () => {
@@ -9,7 +9,7 @@ const Blog = () => {
       <CardContainer
         className={globalStyles.cardContainer}
         title="Featured Posts"
-        cardData={BlogData}
+        cardData={BlogPosts}
         includeReadTime
       />
     </Page>

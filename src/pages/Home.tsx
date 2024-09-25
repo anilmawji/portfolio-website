@@ -4,7 +4,7 @@ import Page from './Page';
 import ParticleCanvas from '../components/canvas/ParticleCanvas';
 import HeroSection from '../components/sections/Hero';
 import CardContainer from '../components/card/CardContainer';
-import { ProjectData } from '../data/ProjectData';
+import { Projects } from '../data/ProjectData';
 import { getCssValue, hexToRgb } from '../utils';
 
 const NEON_GREEN_COLOR = hexToRgb(getCssValue("neon-green"));
@@ -29,7 +29,7 @@ const Home = () => {
             id="projects"
             className={globalStyles.cardContainer}
             title="Projects"
-            cardData={ProjectData}
+            cardData={Projects}
           />
         </div>
       </div>

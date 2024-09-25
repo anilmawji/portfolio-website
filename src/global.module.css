@@ -87,6 +87,7 @@ h1, h2, h3, h4 {
 
 a {
   text-decoration: none;
+  color: white;
 }
 
 .noSelect {  
@@ -172,23 +173,26 @@ a {
   }
 }
 
-.hoverUnderline {
+.hoverUnderline,
+.hoverUnderlineTrigger .hoverUnderlineReceiver {
   position: relative;
   display: inline-block;
 }
   
-.hoverUnderline::before {
+.hoverUnderline::before,
+.hoverUnderlineTrigger .hoverUnderlineReceiver::before {
   content: "";
   position: absolute;
   left: 0;
   bottom: 0;
   width: 0;
   height: 1px;
-  transition: width 150ms ease;
+  transition: width 175ms ease;
   background-color: white; /* Default underline color */
 }
 
-.hoverUnderline:hover::before {
+.hoverUnderline:hover::before,
+.hoverUnderlineTrigger:hover .hoverUnderlineReceiver::before {
   width: 100%;
 }
 

@@ -5,7 +5,7 @@ import starburst_logo from '../assets/logos/starburst-logo.png';
 import { ToolInfoMap as Tool, ToolInfo } from './ToolInfo';
 import { AccordionData } from 'components/accordion/Accordion';
 
-export type JobData = {
+export type ExperienceData = {
   organization: string;
   location: string;
   startDate: string;
@@ -14,35 +14,40 @@ export type JobData = {
   tools: (ToolInfo | string)[];
 };
 
-export const JobHeaderData: AccordionData[] = [
+export const ExperienceHeaders: AccordionData[] = [
   {
     title: "DevSecOps Intern",
     image: canada_logo,
-    imageLink: "https://www.canada.ca/en.html"
+    imageLink: "https://www.canada.ca/en.html",
+    imageAlt: "Canada logo"
   },
   {
     title: "Software Developer Intern",
     image: arcurve_logo,
-    imageLink: "https://www.arcurve.com/"
+    imageLink: "https://www.arcurve.com/",
+    imageAlt: "Arcurve logo"
   },
   {
     title: "IT Coordinator Intern",
     image: arcurve_logo,
-    imageLink: "https://www.arcurve.com/"
+    imageLink: "https://www.arcurve.com/",
+    imageAlt: "Arcurve logo"
   },
   {
     title: "Application Support Analyst",
     image: stampede_logo,
-    imageLink: "https://www.calgarystampede.com/"
+    imageLink: "https://www.calgarystampede.com/",
+    imageAlt: "Calgary Stampede logo"
   },
   {
     title: "Internal Support Specialist",
     image: starburst_logo,
-    imageLink: "https://www.starburst.io/"
+    imageLink: "https://www.starburst.io/",
+    imageAlt: "Starburst Data logo"
   }
 ];
 
-export const JobData: JobData[] = [
+export const Experience: ExperienceData[] = [
   {
     organization: "Government of Canada",
     location: "Ottawa, Ontario",

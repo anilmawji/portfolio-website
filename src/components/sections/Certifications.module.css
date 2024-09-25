@@ -1,4 +1,8 @@
-.title {
+:root {
+  --cert-logo-size: 110px;
+}
+
+.sectionTitle {
   padding: 10px;
   margin-bottom: 20px;
 }
@@ -8,10 +12,61 @@
   gap: 20px;
 }
 
-.cert {
-  min-height: 80px;
+.panel {
+  display: flex;
+  min-height: var(--cert-logo-size);
+  cursor: pointer;
+}
+
+.imageBorder {
+  display: flex;
+  align-items: center;
+  width: var(--cert-logo-size);
+  border-top-left-radius: 999px;
+  border-bottom-left-radius: 999px;
+  background-color: var(--main-bg-color);
+  padding: 2px;
+}
+
+.imageBorder img {
+  width: var(--cert-logo-size);
+  height: var(--cert-logo-size);
+  padding: var(--logo-padding);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
+  width: calc(100% - var(--cert-logo-size));
+  background-color: var(--main-bg-color);
+  padding-left: 14px;
+}
+
+.name {
+  margin-right: 20px;
+}
+
+.name p {
+  text-wrap: pretty, wrap;
+  font-size: 16px;
+}
+
+.icon {
+  margin-top: 6px;
+  margin-right: 30px;
+}
+
+.icon,
+.icon svg {
+  min-width: 30px;
+  min-height: 30px;
+}
+
+.icon svg {
+  fill: #4f4f4f;
 }
 
 .container > :last-child {
@@ -19,5 +74,21 @@
 }
 
 @media screen and (max-width: 660px) {
+  .name p {
+    font-size: 14px;
+  }
 
+  .icon {
+    margin-right: 20px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .header {
+    justify-content: flex-end;
+  }
+
+  .name p {
+    display: none;
+  }
 }

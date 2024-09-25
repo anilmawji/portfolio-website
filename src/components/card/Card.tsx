@@ -8,6 +8,7 @@ import ToolChipContainer from '../../components/text/ToolChipContainer';
 type CardData = {
   title: string;
   image: string;
+  imageAlt?: string;
   date: string;
   time?: string;
   body: string;
@@ -27,7 +28,7 @@ const Card = ({ data, includeReadTime }: Props) => {
 
   return (
     <a className={`${styles.card} ${globalStyles.shadowBottom}`} href={data.link} target="_blank">
-      <img src={data.image} />
+      <img src={data.image} alt={data.imageAlt} />
       <div className={styles.content}>
         <div className={styles.text}>
           <h3 className={styles.title}>
