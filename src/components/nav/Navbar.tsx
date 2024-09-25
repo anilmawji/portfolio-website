@@ -27,7 +27,7 @@ const Navbar = () => {
             <CustomNavLink to="/about#experience" label="Experience" onClick={closeMenu} />
           </li>
           <li>
-            <CustomNavLink to="/about#contact" label="Contact" onClick={closeMenu} />
+            <CustomNavLink to="/contact" label="Contact" onClick={closeMenu} />
           </li>
           <li>
             <CustomNavLink to="/blog#featured" label="Blog" onClick={closeMenu} />

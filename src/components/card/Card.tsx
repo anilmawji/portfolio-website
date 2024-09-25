@@ -1,9 +1,10 @@
 import styles from './Card.module.css';
 import globalStyles from '../../global.module.css';
-import { readingTime } from '../../utils';
+import { calculateReadingTime } from '../../utils';
 import { ToolInfo } from '../../data/ToolInfo';
 import { Icon, IconType } from '../../components/icons/Icon';
 import ToolChipContainer from '../../components/text/ToolChipContainer';
+import { useMemo } from 'react';
 
 type CardData = {
   title: string;
@@ -22,9 +23,11 @@ interface Props extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
 }
 
 const Card = ({ data, includeReadTime }: Props) => {
-  if (includeReadTime) {
-    data.time = readingTime(data.body);
-  }
+  const readingTime = useMemo(() => {
+    return includeReadTime ? (
+      <span> &#8226; {calculateReadingTime(data.body)} read</span>
+    ) : undefined;
+  }, [data.body, includeReadTime]);
 
   return (
     <a className={`${styles.card} ${globalStyles.shadowBottom}`} href={data.link} target="_blank">
@@ -36,9 +39,7 @@ const Card = ({ data, includeReadTime }: Props) => {
             <Icon className={styles.arrow} type={IconType.ARROW_UP_RIGHT} />
           </h3>
           <p className={styles.date}>
-            {data.date} {data.time && (
-              <span>&#8226; {data.time} read</span>
-            )}
+            {data.date}{readingTime}
           </p>
           <p className={`${styles.body} ${styles.multilineTruncate}`}>
             {data.body}

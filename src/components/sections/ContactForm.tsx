@@ -78,7 +78,7 @@ const ContactSection = ({ className }: Props) => {
 
   return (
     <section className={joinClassNames(globalStyles.sectionBlock, className)} id="contact">
-      <h2 className={styles.sectionTitle}>Get in Touch</h2>
+      <h2 className={styles.sectionTitle}>Leave A Message</h2>
       <form className={styles.form} onSubmit={handleSubmit} ref={formRef}>
         <TextField type="text" id="name" placeholder="name" isRequired />
         <TextField type="email" id="email" placeholder="email" isRequired />

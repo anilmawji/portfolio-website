@@ -79,13 +79,6 @@ export function isOverflowing(event: HTMLElement): boolean {
   return event.offsetHeight < event.scrollHeight || event.offsetWidth < event.scrollWidth;
 }
 
-export function readingTime(text: string, wpm: number = 225): string {
-  const words = text.trim().split(/\s+/).length;
-  const time = Math.ceil(words / wpm);
-
-  return time >= 1 ? time.toString() + " min" : "Less than 1 min";
-}
-
 // Utility function that accepts a React node or a function returning a React node.
 // It checks the type of the input:
 //   - If the input is a function, it invokes the function with the provided arguments and returns the resulting node.
@@ -172,6 +165,13 @@ export function rgbLogShade(p: number, c: string): string {
 
 export function toTitleCase(str: string): string {
   return str.length === 0 ? "" : str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+}
+
+export function calculateReadingTime(text: string, wpm: number = 225): string {
+  const words = text.trim().split(/\s+/).length;
+  const time = Math.ceil(words / wpm);
+
+  return time >= 1 ? time.toString() + " min" : "Less than 1 min";
 }
 
 export function removeHash(url: string): string {
