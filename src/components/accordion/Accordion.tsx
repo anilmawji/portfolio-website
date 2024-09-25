@@ -40,7 +40,7 @@ const Accordion = ({ className, data, toggleCallback, footerContent, children }:
 
   return (
     <div className={joinClassNames(className, isOpen ? styles.open : '', data.image ? styles.roundedImage : '')}>
-      <div className={styles.panel} onClick={handleToggle}>
+      <div className={styles.panel} onClick={handleToggle} role="link">
         {data.image && (
           <div className={joinClassNames(styles.imageBorder, data.image ? styles.rounded : '')}>
             <a className={styles.imageBackground} href={data.imageLink} target="_blank">

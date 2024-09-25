@@ -52,10 +52,10 @@ const Footer = () => {
             title={"Navigation"}
             links={{
               "Home": "/#hero",
-              "Portfolio": "/portfolio",
+              "Projects": "/#projects",
               "About": "/about#bio",
               "Experience": "/about#experience",
-              "Contact": "/about#contact",
+              "Contact": "/contact",
               "Blog": "/blog#featured"
             }}
           />
