@@ -3,15 +3,13 @@ import globalStyles from '/src/global.module.scss';
 import portrait from '/src/assets/me.jpg';
 import { StackOverflowCard, SOCardTheme } from '../../components/card/StackOverflowCard';
 import TryHackMeCard from '../../components/card/TryHackMeCard';
-import { Tooltip } from '../../components/text/Tooltip';
+import { Tooltip } from '../text/Tooltip';
 import { Link } from 'react-router-dom';
 import { joinClassNames } from '../../utils';
 
 interface Props {
   className?: string;
 }
-
-
 
 const BioSection = ({ className }: Props) => {
   return (
