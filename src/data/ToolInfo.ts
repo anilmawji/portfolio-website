@@ -49,6 +49,7 @@ export const enum ToolName {
   PULUMI = 'PULUMI',
   PYTHON = 'PYTHON',
   REACT = 'REACT',
+  SASS = 'SASS',
   SCENE_BUILDER = 'SCENE_BUILDER',
   TYPESCRIPT = 'TYPESCRIPT',
   WIRING_PI = 'WIRING_PI'
@@ -77,6 +78,7 @@ export const ToolInfoMap: Record<ToolName, ToolInfo> = {
   [ToolName.JIRA]: newToolInfo('Jira', 24, 104, 219),
   [ToolName.LIGHTSPEED]: newToolInfo('Lightspeed', 238, 81, 82),
   [ToolName.HELM]: newToolInfo('Helm', 15, 32, 137),
+  [ToolName.SASS]: newToolInfo('Sass', 255, 105, 180),
   [ToolName.SCENE_BUILDER]: newToolInfo('Scene Builder', 252, 178, 21),
   [ToolName.JAVASCRIPT]: newToolInfo('JavaScript', 222, 208, 84),
   [ToolName.JUPYTER]: newToolInfo('Jupyter', 243, 119, 38),

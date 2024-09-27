@@ -22,7 +22,7 @@ export const Projects: CardData[] = [
     date: "June 30th, 2024",
     body: "Utilizes a fully custom component library. It's currently being used to showcase my projects, but will eventually be extended to include a tech blog as well!",
     link: "https://github.com/anilmawji/portfolio-site",
-    tags: [Tool.REACT, Tool.TYPESCRIPT, Tool.JAVASCRIPT, Tool.HTML, Tool.CSS, Tool.FIGMA]
+    tags: [Tool.REACT, Tool.TYPESCRIPT, Tool.JAVASCRIPT, Tool.HTML, Tool.CSS, Tool.SASS, Tool.FIGMA]
   },
   {
     title: "HTTP Web Filter",
