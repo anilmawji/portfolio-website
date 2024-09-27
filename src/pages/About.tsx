@@ -1,4 +1,4 @@
-import globalStyles from '../global.module.css';
+import globalStyles from '../global.module.scss';
 import Page from './Page';
 import ExperienceSection from '../components/sections/Experience';
 import CertificationsSection from '../components/sections/Certifications';

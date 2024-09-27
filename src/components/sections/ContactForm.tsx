@@ -1,5 +1,5 @@
 import styles from './ContactForm.module.css';
-import globalStyles from '../../global.module.css';
+import globalStyles from '../../global.module.scss';
 import { useState, useRef, useCallback } from 'react';
 import TextField from '../input/TextField';
 import Button from '../buttons/Button';

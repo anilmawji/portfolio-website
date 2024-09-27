@@ -1,5 +1,5 @@
 import Page from './Page';
-import globalStyles from '../global.module.css';
+import globalStyles from '../global.module.scss';
 import { BlogPosts } from '../data/BlogData';
 import CardContainer from '../components/card/CardContainer';
 

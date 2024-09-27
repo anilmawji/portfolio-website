@@ -1,4 +1,4 @@
-import globalStyles from '../../global.module.css';
+import globalStyles from '../../global.module.scss';
 import { ToolInfo, isToolInfo } from '../../data/ToolInfo';
 import Chip from './Chip';
 import { joinClassNames } from '../../utils';

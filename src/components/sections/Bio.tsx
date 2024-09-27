@@ -1,10 +1,10 @@
 import styles from './Bio.module.css';
-import globalStyles from '../../global.module.css';
+import globalStyles from '../../global.module.scss';
 import portrait from '../../assets/me.jpg';
 import { StackOverflowCard, SOCardTheme } from '../../components/card/StackOverflowCard';
 import TryHackMeCard from '../../components/card/TryHackMeCard';
 import { Tooltip } from '../../components/text/Tooltip';
-import { NavLink } from 'react-router-dom';
+import CustomNavLink from '../../components/nav/CustomNavLink';
 import { joinClassNames } from '../../utils';
 
 interface Props {
@@ -22,15 +22,15 @@ const BioSection = ({ className }: Props) => {
           <p>
             Hi, I'm Anil, a software developer with a strong passion for cyber security.
             <br /><br />
-            My tech journey started like many others&mdash; playing video games as a kid! But one day I stumbled across <a className={globalStyles.hoverUnderline} href="https://en.wikipedia.org/wiki/Cheat_Engine" target="_blank">a fun little program</a> that
-            could be used to break games, and my curiosity for the digital world skyrocketed.
+            My tech journey started like many others&mdash; playing video games as a kid! One day I stumbled across <a className={globalStyles.hoverUnderline} href="https://en.wikipedia.org/wiki/Cheat_Engine" target="_blank">a fun little program</a> that
+            could be used to break games, and my curiosity skyrocketed. I've always loved building things, but from this I learned that I enjoy breaking stuff, too.
             <br /><br />
-            Over time, I've had the privilege of working at <a className={globalStyles.hoverUnderline} href="https://www.starburst.io/" target="_blank">a unicorn start-up</a>, <a className={globalStyles.hoverUnderline} href="https://www.arcurve.com/" target="_blank">a software services company</a> and
+            Since then, I've had the privilege of working at <a className={globalStyles.hoverUnderline} href="https://www.starburst.io/" target="_blank">a unicorn start-up</a>, <a className={globalStyles.hoverUnderline} href="https://www.arcurve.com/" target="_blank">a software services company</a> and
             the <a className={globalStyles.hoverUnderline} href="https://www.canada.ca/en.html" target="_blank">federal government.</a> I'm currently diving into the world of ethical hacking
-            as I work towards earning my <a className={globalStyles.hoverUnderline} href="https://certifications.tcm-sec.com/pjpt/" target="_blank">PJPT certification.</a>
+            as I work towards earning my first <a className={globalStyles.hoverUnderline} href="https://certifications.tcm-sec.com/pjpt/" target="_blank">penetration testing certification.</a>
             <br /><br />
             When I'm not at my computer, I enjoy hiking, swimming and going out for a bite with friends.
-            Feel free to <NavLink className={globalStyles.hoverUnderline} to="/about#contact">reach out</NavLink> if you'd like to chat!
+            I'm always open to meeting new people, so feel free to <CustomNavLink className={`${styles.navlink} ${globalStyles.hoverUnderline}`} label="" to="/contact">reach out!</CustomNavLink>
           </p>
         </div>
       </div>

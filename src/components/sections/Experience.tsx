@@ -1,5 +1,5 @@
 import styles from './Experience.module.css';
-import globalStyles from '../../global.module.css';
+import globalStyles from '../../global.module.scss';
 import { joinClassNames } from '../../utils';
 import { Experience, ExperienceHeaders } from '../../data/ExperienceData';
 import AccordionContainer from '../accordion/AccordionContainer';

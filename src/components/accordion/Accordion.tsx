@@ -1,5 +1,5 @@
 import styles from './Accordion.module.css';
-import globalStyles from '../../global.module.css';
+import globalStyles from '../../global.module.scss';
 import { useCallback } from 'react';
 import useBoolean from '../../hooks/useBoolean';
 import { Icon, IconType } from '../icons/Icon';

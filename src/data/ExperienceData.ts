@@ -1,7 +1,7 @@
-import canada_logo from '../assets/logos/canada-logo.png';
-import arcurve_logo from '../assets/logos/arcurve-logo.png';
-import stampede_logo from '../assets/logos/stampede-logo.png';
-import starburst_logo from '../assets/logos/starburst-logo.png';
+import canada_logo from '../assets/logos/canada.png';
+import arcurve_logo from '../assets/logos/arcurve.png';
+import stampede_logo from '../assets/logos/stampede.png';
+import starburst_logo from '../assets/logos/starburst.png';
 import { ToolInfoMap as Tool, ToolInfo } from './ToolInfo';
 import { AccordionData } from 'components/accordion/Accordion';
 

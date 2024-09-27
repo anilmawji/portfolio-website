@@ -10,7 +10,7 @@ const Chip = ({ label, color = rgb(100, 233, 122) }: Props) => {
   const chipStyle: ReactCSSVariables = {
     '--chip-outline-color': color,
     '--chip-bg-top-color': rgbLinearShade(-0.15, color),
-    '--chip-bg-bottom-color': rgbToRgba(rgbLinearShade(-0.33, color), 0.7),
+    '--chip-bg-bottom-color': rgbToRgba(rgbLinearShade(-0.4, color), 0.7),
     '--chip-text-shadow-color': rgbLinearShade(-0.5, color)
   };
 

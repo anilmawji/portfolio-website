@@ -1,5 +1,5 @@
 import styles from './GlitchedText.module.css';
-import globalStyles from '../../global.module.css';
+import globalStyles from '../../global.module.scss';
 import { joinClassNames, ReactCSSVariables } from '../../utils';
 
 const stackStyle: ReactCSSVariables = {'--stacks': '3'};

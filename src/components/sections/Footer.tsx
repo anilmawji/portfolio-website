@@ -1,5 +1,5 @@
 import styles from './Footer.module.css';
-import globalStyles from '../../global.module.css';
+import globalStyles from '../../global.module.scss';
 import ScrollToButton from '../buttons/ScrollToButton';
 import CustomNavLink from '../nav/CustomNavLink';
 import { Tooltip, TooltipDirection } from '../text/Tooltip';

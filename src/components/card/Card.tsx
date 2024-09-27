@@ -1,5 +1,5 @@
 import styles from './Card.module.css';
-import globalStyles from '../../global.module.css';
+import globalStyles from '../../global.module.scss';
 import { calculateReadingTime } from '../../utils';
 import { ToolInfo } from '../../data/ToolInfo';
 import { Icon, IconType } from '../../components/icons/Icon';
@@ -29,6 +29,10 @@ const Card = ({ data, includeReadTime }: Props) => {
     ) : undefined;
   }, [data.body, includeReadTime]);
 
+  const toolChips = useMemo(() => (
+    <ToolChipContainer className={styles.chips} chipData={data.tags} />
+  ), [data.tags]);
+
   return (
     <a className={`${styles.card} ${globalStyles.shadowBottom}`} href={data.link} target="_blank">
       <img src={data.image} alt={data.imageAlt} />
@@ -45,7 +49,7 @@ const Card = ({ data, includeReadTime }: Props) => {
             {data.body}
           </p>
         </div>
-        <ToolChipContainer className={styles.chips} chipData={data.tags}/>
+        {toolChips}
       </div>
     </a>
   );

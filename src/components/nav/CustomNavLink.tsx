@@ -1,5 +1,4 @@
 import styles from './CustomNavLink.module.css';
-import ClickEventListener from '../ClickEventListener';
 import { Link, LinkProps, useLocation } from 'react-router-dom';
 import { joinClassNames, urlsOnSamePage, isExternalUrl } from '../../utils';
 
@@ -25,10 +24,11 @@ const CustomNavLink = ({ className, to, label, children, onClick, ...restProps }
   }
 
   return (
-    <ClickEventListener trackMouseDown trackTouch>
+    /*<ClickEventListener trackMouseDown trackTouch>*/
+    <div>
       <Link
         to={to}
-        className={joinClassNames(className, to === currentUrl ? 'active' : '')}
+        className={joinClassNames(className, currentUrl === to ? 'active' : '')}
         onClick={handleClick}
         {...restProps}
       >
@@ -36,7 +36,8 @@ const CustomNavLink = ({ className, to, label, children, onClick, ...restProps }
         {children}
       </Link>
       <div className={styles.underline} />
-    </ClickEventListener>
+    </div>
+    /*</ClickEventListener>*/
   );
 }
 

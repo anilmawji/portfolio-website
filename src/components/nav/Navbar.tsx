@@ -1,5 +1,5 @@
 import styles from './Navbar.module.css';
-import globalStyles from '../../global.module.css';
+import globalStyles from '../../global.module.scss';
 import CustomNavLink from './CustomNavLink';
 import HamburgerButton from './HamburgerButton';
 import { Icon, IconType } from '../../components/icons/Icon';
@@ -18,6 +18,9 @@ const Navbar = () => {
             <CustomNavLink to="/#hero" label="Home" onClick={closeMenu} />
           </li>
           <li>
+            <CustomNavLink to="/#skills" label="Skills" onClick={closeMenu} />
+          </li>
+          <li>
             <CustomNavLink to="/#projects" label="Projects" onClick={closeMenu} />
           </li>
           <li>
@@ -27,11 +30,14 @@ const Navbar = () => {
             <CustomNavLink to="/about#experience" label="Experience" onClick={closeMenu} />
           </li>
           <li>
-            <CustomNavLink to="/contact" label="Contact" onClick={closeMenu} />
+            <CustomNavLink to="/about#certs" label="Certifications" onClick={closeMenu} />
           </li>
           <li>
-            <CustomNavLink to="/blog#featured" label="Blog" onClick={closeMenu} />
+            <CustomNavLink to="/contact" label="Contact" onClick={closeMenu} />
           </li>
+          {/* <li>
+            <CustomNavLink to="/blog#featured" label="Blog" onClick={closeMenu} />
+          </li> */}
         </ul>
         <div className={styles.shadow} />
         <a className={styles.resume} href={ResumePdf} target="_blank">

@@ -1,5 +1,5 @@
 import styles from './Page.module.css';
-import globalStyles from '../global.module.css';
+import globalStyles from '../global.module.scss';
 import Footer from '../components/sections/Footer';
 import GlitchedText from '../components/text/GlitchedText';
 import { joinClassNames } from '../utils';
