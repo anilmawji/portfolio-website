@@ -1,7 +1,7 @@
 .container {
   margin-top: 20px;
   margin-bottom: 80px;
-  margin-right: 25%;
+  margin-right: 30%;
 }
 
 .title {
@@ -11,23 +11,23 @@
 .skills {
   display: flex;
   flex-wrap: wrap;
-  gap: 30px;
+  gap: 20px;
 }
 
 .skillBox {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   border-radius: 8px;
   background-color: var(--main-fg-color);
   border: 1px solid var(--main-bg-color);
 }
 
 .icon svg {
-  width: calc(60px + var(--added-skill-icon-size));
-  height: calc(60px + var(--added-skill-icon-size));
+  width: calc(50px + var(--added-skill-icon-size));
+  height: calc(50px + var(--added-skill-icon-size));
 }
 
 @media screen and (max-width: 600px) {
