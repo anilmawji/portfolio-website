@@ -28,7 +28,10 @@ const CustomNavLink = ({ className, to, label, children, onClick, ...restProps }
     <div>
       <Link
         to={to}
-        className={joinClassNames(className, currentUrl === to ? 'active' : '')}
+        className={joinClassNames(
+          className,
+          currentUrl === to || label.toLowerCase() == 'home' && currentUrl == '/' ? 'active' : ''
+        )}
         onClick={handleClick}
         {...restProps}
       >

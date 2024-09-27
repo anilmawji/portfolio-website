@@ -57,6 +57,10 @@
   gap: 30px;
 }
 
+.cheatEngineLink {
+  cursor: url('src/assets/logos/cheat-engine.png'), auto;
+}
+
 @media screen and (max-width: 980px) {
   .bio {
     align-items: center;

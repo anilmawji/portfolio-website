@@ -1,9 +1,9 @@
-import portfolio_img from '../assets/projects/personal-site.png';
-import it_portal_img from '../assets/projects/it-portal.png';
-import traceroute_img from '../assets/projects/traceroute-sim.jpg';
-import proxy_img from '../assets/projects/http-proxy.png';
-import mario_img from '../assets/projects/mario-kart.png';
-import mystics_img from '../assets/projects/mystics.png';
+import portfolio_img from '/src/assets/projects/personal-site.png';
+import it_portal_img from '/src/assets/projects/it-portal.png';
+import traceroute_img from '/src/assets/projects/traceroute-sim.jpg';
+import proxy_img from '/src/assets/projects/http-proxy.png';
+import mario_img from '/src/assets/projects/mario-kart.png';
+import mystics_img from '/src/assets/projects/mystics.png';
 import { ToolInfoMap as Tool } from './ToolInfo';
 import { CardData } from 'components/card/Card';
 

@@ -1,5 +1,5 @@
 import { CardData } from 'components/card/Card';
-import arch_desk from '../assets/arch_desktop.png';
+import arch_desk from '/src/assets/arch_desktop.png';
 
 export const BlogPosts: CardData[] = [
   {

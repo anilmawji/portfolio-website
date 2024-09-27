@@ -1,6 +1,6 @@
 import styles from './Bio.module.css';
-import globalStyles from '../../global.module.scss';
-import portrait from '../../assets/me.jpg';
+import globalStyles from '/src/global.module.scss';
+import portrait from '/src/assets/me.jpg';
 import { StackOverflowCard, SOCardTheme } from '../../components/card/StackOverflowCard';
 import TryHackMeCard from '../../components/card/TryHackMeCard';
 import { Tooltip } from '../../components/text/Tooltip';
@@ -24,7 +24,7 @@ const BioSection = ({ className }: Props) => {
           <p>
             Hi, I'm Anil, a software developer with a strong passion for cyber security.
             <br /><br />
-            My tech journey started like many others&mdash; playing video games as a kid! One day I stumbled across <a className={globalStyles.hoverUnderline} href="https://en.wikipedia.org/wiki/Cheat_Engine" target="_blank">a fun little program</a> that
+            My tech journey started like many others&mdash; playing video games as a kid! One day I stumbled across <a className={`${styles.cheatEngineLink} ${globalStyles.hoverUnderline}`} href="https://en.wikipedia.org/wiki/Cheat_Engine" target="_blank">a fun little program</a> that
             could be used to break games, and my curiosity skyrocketed. I've always loved building things, but from this I learned that I enjoy breaking stuff, too.
             <br /><br />
             Since then, I've had the privilege of working at <a className={globalStyles.hoverUnderline} href="https://www.starburst.io/" target="_blank">a unicorn start-up</a>, <a className={globalStyles.hoverUnderline} href="https://www.arcurve.com/" target="_blank">a software services company</a> and

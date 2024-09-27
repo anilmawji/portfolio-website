@@ -1,6 +1,6 @@
-import security_plus from '../assets/certifications/security-plus.svg';
-import a_plus from '../assets/certifications/a-plus.svg';
-import az_900 from '../assets/certifications/az-900.png';
+import security_plus from '/src/assets/certifications/security-plus.svg';
+import a_plus from '/src/assets/certifications/a-plus.svg';
+import az_900 from '/src/assets/certifications/az-900.png';
 
 export type CertificationData = {
   name: string;
