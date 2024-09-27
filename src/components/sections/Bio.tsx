@@ -4,12 +4,14 @@ import portrait from '../../assets/me.jpg';
 import { StackOverflowCard, SOCardTheme } from '../../components/card/StackOverflowCard';
 import TryHackMeCard from '../../components/card/TryHackMeCard';
 import { Tooltip } from '../../components/text/Tooltip';
-import CustomNavLink from '../../components/nav/CustomNavLink';
+import { Link } from 'react-router-dom';
 import { joinClassNames } from '../../utils';
 
 interface Props {
   className?: string;
 }
+
+
 
 const BioSection = ({ className }: Props) => {
   return (
@@ -30,7 +32,7 @@ const BioSection = ({ className }: Props) => {
             as I work towards earning my first <a className={globalStyles.hoverUnderline} href="https://certifications.tcm-sec.com/pjpt/" target="_blank">penetration testing certification.</a>
             <br /><br />
             When I'm not at my computer, I enjoy hiking, swimming and going out for a bite with friends.
-            I'm always open to meeting new people, so feel free to <CustomNavLink className={`${styles.navlink} ${globalStyles.hoverUnderline}`} label="" to="/contact">reach out!</CustomNavLink>
+            Feel free to <Link className={globalStyles.hoverUnderline} to="/contact" onClick={() => window.scrollTo(0, 0)}>reach out</Link> if you'd  like to chat!
           </p>
         </div>
       </div>

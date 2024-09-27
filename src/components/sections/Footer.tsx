@@ -52,11 +52,13 @@ const Footer = () => {
             title={"Navigation"}
             links={{
               "Home": "/#hero",
+              "Skills": "/#skills",
               "Projects": "/#projects",
               "About": "/about#bio",
               "Experience": "/about#experience",
+              "Certifications": "/about#certs",
               "Contact": "/contact",
-              "Blog": "/blog#featured"
+              // "Blog": "/blog#featured"
             }}
           />
           <FooterItemList

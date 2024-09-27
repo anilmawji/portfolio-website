@@ -15,7 +15,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: var(--tooltip-width);
+  width: var(--tooltip-width); /* Change from var(--tooltip-width) to auto */
+  max-width: 400px; /* Set max width */
   color: white;
   background-color: var(--tooltip-bg-color);
   font-size: 14px;
@@ -30,6 +31,10 @@
   visibility: hidden;
   opacity: 0;
   border: var(--tooltip-border-thickness) solid var(--tooltip-border-color);
+}
+
+.text.singleLine {
+  white-space: nowrap;
 }
 
 .text.show {

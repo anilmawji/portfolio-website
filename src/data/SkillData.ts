@@ -3,6 +3,7 @@ import { IconType } from '../components/icons/Icon';
 export type SkillData = {
   name: string;
   icon: IconType;
+  addedIconSize?: string;
 };
 
 export const Skills: SkillData[] = [
@@ -20,11 +21,13 @@ export const Skills: SkillData[] = [
   },
   {
     name: "HTML5",
-    icon: IconType.HTML
+    icon: IconType.HTML,
+    addedIconSize: "4px"
   },
   {
     name: "CSS",
-    icon: IconType.CSS
+    icon: IconType.CSS,
+    addedIconSize: "4px"
   },
   {
     name: "Sass",

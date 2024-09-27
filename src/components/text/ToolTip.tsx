@@ -26,15 +26,17 @@ interface Props {
   width?: string;
   distance?: string;
   visibilityDelay?: number;
+  fitTextOnSingleLine?: boolean;
   children?: React.ReactNode;
 }
 
 const Tooltip = ({
   text,
   direction = TooltipDirection.BOTTOM,
-  width = 'unset',
+  width = 'auto',
   distance = '16px',
   visibilityDelay = 500,
+  fitTextOnSingleLine,
   children
 }: Props) => {
 
@@ -74,7 +76,8 @@ const Tooltip = ({
         className={joinClassNames(
           styles.text,
           styles[`text${direction}`],
-          isToolTipVisible ? styles.show : ''
+          isToolTipVisible ? styles.show : '',
+          fitTextOnSingleLine ? styles.singleLine : ''
         )}
       >
         {text}
