@@ -1,7 +1,7 @@
 import styles from './Bio.module.css';
 import globalStyles from '/src/global.module.scss';
 import portrait from '/src/assets/me.jpg';
-import { StackOverflowCard, SOCardTheme } from '../../components/card/StackOverflowCard';
+import { StackOverflowCard, SOCardTheme } from '../card/StackOverflowCard';
 import TryHackMeCard from '../../components/card/TryHackMeCard';
 import { Tooltip } from '../text/Tooltip';
 import { Link } from 'react-router-dom';
