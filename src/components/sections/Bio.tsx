@@ -3,7 +3,7 @@ import globalStyles from '/src/global.module.scss';
 import portrait from '/src/assets/me.jpg';
 import { StackOverflowCard, SOCardTheme } from '../card/StackOverflowCard';
 import TryHackMeCard from '../../components/card/TryHackMeCard';
-import { Tooltip } from '../../components/text/Tooltip2';
+import { CustomTooltip } from '../text/CustomTooltip';
 import { Link } from 'react-router-dom';
 import { joinClassNames } from '../../utils';
 
@@ -35,12 +35,12 @@ const BioSection = ({ className }: Props) => {
         </div>
       </div>
       <div className={styles.profiles}>
-        <Tooltip text="My profile at Stack Overflow, a forum for professional and enthusiast programmers" width='100%' visibilityDelay={300}>
+        <CustomTooltip text="My profile at Stack Overflow, a forum for professional and enthusiast programmers" width='100%' visibilityDelay={300}>
           <StackOverflowCard user_id="8902167" theme={SOCardTheme.DARK} />
-        </Tooltip>
-        <Tooltip text="My profile at TryHackMe, a hands-on learning platform for cyber security, all through your browser!" width='100%' visibilityDelay={300}>
+        </CustomTooltip>
+        <CustomTooltip text="My profile at TryHackMe, a hands-on learning platform for cyber security, all through your browser!" width='100%' visibilityDelay={300}>
           <TryHackMeCard username="zxphyr" />
-        </Tooltip>
+        </CustomTooltip>
       </div>
     </section>
   );

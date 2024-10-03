@@ -2,7 +2,7 @@ import styles from './Footer.module.css';
 import globalStyles from '../../global.module.scss';
 import ScrollToButton from '../buttons/ScrollToButton';
 import CustomNavLink from '../nav/CustomNavLink';
-import { Tooltip, TooltipDirection } from '../../components/text/Tooltip2';
+import { CustomTooltip, TooltipDirection } from '../text/CustomTooltip';
 import ResumePdf from '../../assets/anil-mawji-resume-2024.pdf';
 import { isPage } from '../../utils';
 
@@ -37,14 +37,14 @@ const Footer = () => {
   return (
     <footer className={globalStyles.shadowTopLight}>
       <div className={styles.buttonContainer}>
-        <Tooltip text="Back to top" direction={TooltipDirection.TOP} width="90px" distance="22px">
+        <CustomTooltip text="Back to top" direction={TooltipDirection.TOP} width="90px" distance="22px">
           <ScrollToButton
             className={styles.button}
             size={38}
             scrollLocation={0}
             includeRing
           />
-        </Tooltip>
+        </CustomTooltip>
       </div>
       <div className={styles.content}>
         <div className={styles.footerLists}>

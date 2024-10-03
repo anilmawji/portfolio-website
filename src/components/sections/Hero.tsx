@@ -2,7 +2,7 @@ import styles from './Hero.module.css';
 import { Icon, IconType } from '../icons/Icon';
 import GlitchedText from '../text/GlitchedText';
 import ScrollToButton from '../../components/buttons/ScrollToButton';
-import { Tooltip } from '../../components/text/Tooltip2';
+import { CustomTooltip } from '../text/CustomTooltip';
 import { joinClassNames } from '../../utils';
 
 interface Props {
@@ -33,44 +33,44 @@ const HeroSection = ({ className }: Props) => {
           dedicated to crafting secure, resilient solutions for clients
         </div>
         <div className={styles.icons}>
-          <Tooltip text="LinkedIn" distance="20px">
+          <CustomTooltip text="LinkedIn" distance="20px">
             <Icon
               className={`${styles.icon} ${styles.linkedinIcon}`}
               type={IconType.LINKEDIN}
               href="https://ca.linkedin.com/in/anil-mawji"
             />
-          </Tooltip>
-          <Tooltip text="GitHub" distance="20px">
+          </CustomTooltip>
+          <CustomTooltip text="GitHub" distance="20px">
             <Icon
               className={`${styles.icon} ${styles.githubIcon}`}
               type={IconType.GITHUB}
               href="https://github.com/anilmawji"
             />
-          </Tooltip>
-          <Tooltip text="Stack Overflow" distance="20px" width="110px">
+          </CustomTooltip>
+          <CustomTooltip text="Stack Overflow" distance="20px" width="110px">
             <Icon
               className={`${styles.icon} ${styles.soIcon}`}
               type={IconType.STACK_OVERFLOW}
               href="https://stackoverflow.com/users/8902167/anil-m"
             />
-          </Tooltip>
-          <Tooltip text="TryHackMe" distance="20px">
+          </CustomTooltip>
+          <CustomTooltip text="TryHackMe" distance="20px">
             <Icon
               className={`${styles.icon} ${styles.thmIcon}`}
               type={IconType.TRYHACKME}
               href="https://tryhackme.com/p/zxphyr"
             />
-          </Tooltip>
-          <Tooltip text="Hack The Box" distance="20px" width="100px">
+          </CustomTooltip>
+          <CustomTooltip text="Hack The Box" distance="20px" width="100px">
             <Icon
               className={`${styles.icon} ${styles.htbIcon}`}
               type={IconType.HACK_THE_BOX}
               href="https://app.hackthebox.com/profile/2024905/"
             />
-          </Tooltip>
+          </CustomTooltip>
         </div>
         <div className={styles.scrollButtonContainer}>
-          <Tooltip text="Scroll down" width="90px" distance="10px">
+          <CustomTooltip text="Scroll down" width="90px" distance="10px">
             <ScrollToButton
               className={styles.scrollButton}
               size={45}
@@ -79,7 +79,7 @@ const HeroSection = ({ className }: Props) => {
               color="#c6c6c6"
               scrollLocation="/#projects"
             />
-          </Tooltip>
+          </CustomTooltip>
         </div>
       </div>
     </section>

@@ -1,4 +1,4 @@
-import styles from './Tooltip.module.css';
+import styles from './CustomTooltip.module.css';
 import { useState, useRef } from 'react';
 import { joinClassNames, ReactCSSVariables } from '../../utils';
 
@@ -30,7 +30,7 @@ interface Props {
   children?: React.ReactNode;
 }
 
-const Tooltip = ({
+const CustomTooltip = ({
   text,
   direction = TooltipDirection.BOTTOM,
   width = 'auto',
@@ -87,4 +87,4 @@ const Tooltip = ({
   );
 }
 
-export { Tooltip, TooltipDirection };
+export { CustomTooltip, TooltipDirection };

@@ -2,7 +2,7 @@ import styles from './TechnicalSkills.module.css';
 import globalStyles from '../../global.module.scss';
 import { Skills } from '../../data/SkillData';
 import { Icon } from '../icons/Icon';
-import { Tooltip } from '../../components/text/Tooltip2';
+import { CustomTooltip } from '../text/CustomTooltip';
 import { joinClassNames, ReactCSSVariables } from '../../utils';
 
 interface Props {
@@ -20,11 +20,11 @@ const TechnicalSkillsSection = ({ className }: Props) => {
           };
 
           return (
-            <Tooltip key={i} text={data.name} visibilityDelay={250} fitTextOnSingleLine>
+            <CustomTooltip key={i} text={data.name} visibilityDelay={250} fitTextOnSingleLine>
               <div className={`${styles.skillBox} ${globalStyles.shadowBottom}`} style={iconStyle}>
                 <Icon className={styles.icon} type={data.icon} />
               </div>
-            </Tooltip>
+            </CustomTooltip>
           );
         })}
       </div>
