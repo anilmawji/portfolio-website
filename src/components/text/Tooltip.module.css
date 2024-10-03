@@ -4,6 +4,7 @@
   --tooltip-transition: 250ms ease;
   --tooltip-border-color: grey;
   --tooltip-border-thickness: 1px;
+  --tooltip-offset: calc(100% - var(--tooltip-arrow-size) + var(--tooltip-border-thickness));
 }
 
 .tooltip {
@@ -110,21 +111,21 @@
 }
 
 .arrowBottom::before {
-  top: calc(100% - var(--tooltip-arrow-size) + var(--tooltip-border-thickness));
+  top: var(--tooltip-offset);
   border-color: var(--tooltip-border-color) transparent transparent transparent;
 }
 
 .arrowLeft::before {
-  right: calc(100% - var(--tooltip-arrow-size) + var(--tooltip-border-thickness));
+  right: var(--tooltip-offset);
   border-color: transparent var(--tooltip-border-color) transparent transparent;
 }
 
 .arrowTop::before {
-  bottom: calc(100% - var(--tooltip-arrow-size) + var(--tooltip-border-thickness));
+  bottom: var(--tooltip-offset);
   border-color: transparent transparent var(--tooltip-border-color) transparent;
 }
 
 .arrowRight::before {
-  left: calc(100% - var(--tooltip-arrow-size) + var(--tooltip-border-thickness));
+  left: var(--tooltip-offset);
   border-color: transparent transparent transparent var(--tooltip-border-color);
 }
