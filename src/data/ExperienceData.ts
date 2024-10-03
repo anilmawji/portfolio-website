@@ -94,9 +94,9 @@ export const Experience: ExperienceData[] = [
     startDate: "May 2022",
     endDate: "Aug 2022",
     bulletPoints: [
-      "Worked in a team of 5 to program, deploy, and support 75 iOS-based POS systems across Stampede Park",
-      "Remained onsite to troubleshoot payment systems in high-pressure situations with hundreds of customers",
-      "Trained 10 cashiers and bartenders to excel in operating POS equipment"
+      "Worked in a team of 5 to program, deploy, and support 75 iOS-based POS systems across Stampede Park.",
+      "Remained onsite to troubleshoot payment systems in high-pressure situations with hundreds of customers.",
+      "Trained 10 cashiers and bartenders to excel in operating POS equipment."
     ],
     tools: [Tool.MANAGEENGINE, Tool.LIGHTSPEED, Tool.MONERIS]
   },
@@ -106,7 +106,7 @@ export const Experience: ExperienceData[] = [
     startDate: "Jun 2021",
     endDate: "Aug 2021",
     bulletPoints: [
-      "Onboarded 20 new employees by provisioning Okta SSO, updating security permissions, and assigning software licenses",
+      "Onboarded 20 new employees by provisioning Okta SSO, updating security permissions, and assigning software licenses.",
       "Developed knowledge base by writing concise FAQ pages and a comprehensive 8-page macOS troubleshooting guide, reducing the volume of support tickets."
     ],
     tools: [Tool.OKTA, Tool.JIRA]

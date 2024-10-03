@@ -62,11 +62,15 @@ export const Skills: SkillData[] = [
     icon: IconType.AZURE
   },
   {
+    name: "Linux",
+    icon: IconType.LINUX_TUX
+  },
+  {
     name: "Kubernetes",
     icon: IconType.KUBERNETES
   },
   {
     name: "Docker",
     icon: IconType.DOCKER
-  },
+  }
 ];
