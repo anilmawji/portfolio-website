@@ -2,7 +2,7 @@ import styles from './TechnicalSkills.module.css';
 import globalStyles from '../../global.module.scss';
 import { Skills } from '../../data/SkillData';
 import { Icon } from '../icons/Icon';
-import { CustomTooltip } from '../text/CustomTooltip';
+import { CustomTooltip } from '../../components/text/CustomTooltip';
 import { joinClassNames, ReactCSSVariables } from '../../utils';
 
 interface Props {

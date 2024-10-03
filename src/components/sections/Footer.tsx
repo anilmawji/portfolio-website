@@ -2,7 +2,7 @@ import styles from './Footer.module.css';
 import globalStyles from '../../global.module.scss';
 import ScrollToButton from '../buttons/ScrollToButton';
 import CustomNavLink from '../nav/CustomNavLink';
-import { CustomTooltip, TooltipDirection } from '../text/CustomTooltip';
+import { CustomTooltip, TooltipDirection } from '../../components/text/CustomTooltip';
 import ResumePdf from '../../assets/anil-mawji-resume-2024.pdf';
 import { isPage } from '../../utils';
 

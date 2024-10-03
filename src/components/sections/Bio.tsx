@@ -3,7 +3,7 @@ import globalStyles from '/src/global.module.scss';
 import portrait from '/src/assets/me.jpg';
 import { StackOverflowCard, SOCardTheme } from '../card/StackOverflowCard';
 import TryHackMeCard from '../../components/card/TryHackMeCard';
-import { CustomTooltip } from '../text/CustomTooltip';
+import { CustomTooltip } from '../../components/text/CustomTooltip';
 import { Link } from 'react-router-dom';
 import { joinClassNames } from '../../utils';
 
