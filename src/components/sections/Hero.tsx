@@ -2,7 +2,7 @@ import styles from './Hero.module.css';
 import { Icon, IconType } from '../icons/Icon';
 import GlitchedText from '../text/GlitchedText';
 import ScrollToButton from '../../components/buttons/ScrollToButton';
-import { Tooltip } from '../../components/text/Tooltip';
+import { Tooltip } from '../../components/text/Tooltip2';
 import { joinClassNames } from '../../utils';
 
 interface Props {
