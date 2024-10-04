@@ -4,7 +4,6 @@ import CustomNavLink from './CustomNavLink';
 import HamburgerButton from './HamburgerButton';
 import { Icon, IconType } from '../../components/icons/Icon';
 import { useNavMenuContext } from '../../contexts/NavMenuContext';
-import ResumePdf from '../../assets/anil-mawji-resume-2024.pdf';
 
 const Navbar = () => {
   const { isOpen: isMenuOpen, toggle: toggleMenu, close: closeMenu } = useNavMenuContext();
@@ -40,7 +39,7 @@ const Navbar = () => {
           </li> */}
         </ul>
         <div className={styles.shadow} />
-        <a className={styles.resume} href={ResumePdf} target="_blank">
+        <a className={styles.resume} href="https://drive.google.com/file/d/1APe_KQg8gz7xHlVG5HbKEOe0jlU8fhem/view?usp=sharing" target="_blank">
           Resume
           <Icon className={styles.arrow} type={IconType.ARROW_UP_RIGHT} />
         </a>
