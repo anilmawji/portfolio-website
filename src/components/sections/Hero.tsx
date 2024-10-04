@@ -28,9 +28,9 @@ const HeroSection = ({ className }: Props) => {
           Software Developer
         </h2>
         <div className={styles.bio}>
-          Computer Science student at the University of Calgary
+          Upcoming Computer Science graduate from the University of Calgary
           <br />
-          dedicated to crafting secure, resilient solutions for clients
+          dedicated to crafting secure, resilient solutions for clients.
         </div>
         <div className={styles.icons}>
           <CustomTooltip text="LinkedIn" distance="20px">

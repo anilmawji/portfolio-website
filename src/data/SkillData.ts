@@ -38,8 +38,8 @@ export const Skills: SkillData[] = [
     icon: IconType.C_SHARP
   },
   {
-    name: ".NET Core",
-    icon: IconType.DOT_NET_CORE
+    name: ".NET 7.0+",
+    icon: IconType.DOT_NET
   },
   {
     name: "Blazor",

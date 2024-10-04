@@ -58,7 +58,7 @@
 }
 
 .cheatEngineLink {
-  cursor: url('src/assets/logos/cheat-engine.png'), auto;
+  cursor: url('/public/cheatengine.png'), auto;
 }
 
 @media screen and (max-width: 980px) {

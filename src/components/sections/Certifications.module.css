@@ -73,18 +73,15 @@
   .name p {
     font-size: 14px;
   }
-
-  .icon {
-    margin-right: 20px;
-  }
 }
 
+
 @media screen and (max-width: 400px) {
-  .header {
-    justify-content: flex-end;
+  .name {
+    padding-right: 30px;
   }
 
-  .name p {
+  .icon {
     display: none;
   }
 }

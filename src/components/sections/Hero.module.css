@@ -117,10 +117,12 @@
     align-items: center;
     margin-left: 0;
     margin-right: 0;
+    width: unset;
   }
 
   .body {
     margin-left: 0;
+    padding: 20px;
   }
 
   .name {
