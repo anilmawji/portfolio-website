@@ -3,7 +3,6 @@ import globalStyles from '../../global.module.scss';
 import ScrollToButton from '../buttons/ScrollToButton';
 import CustomNavLink from '../nav/CustomNavLink';
 import { CustomTooltip, TooltipDirection } from '../../components/text/CustomTooltip';
-import ResumePdf from '../../assets/anil-mawji-resume-2024.pdf';
 import { isPage } from '../../utils';
 
 interface FooterItemListProps {
@@ -74,7 +73,7 @@ const Footer = () => {
           <FooterItemList
             title={"External Files"}
             links={{
-              "Resume": ResumePdf,
+              "Resume": "https://drive.google.com/file/d/1APe_KQg8gz7xHlVG5HbKEOe0jlU8fhem/view",
               "Website License": "https://github.com/anilmawji/personal-website/blob/main/LICENSE"
             }}
           />

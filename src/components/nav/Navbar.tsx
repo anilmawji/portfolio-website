@@ -39,7 +39,7 @@ const Navbar = () => {
           </li> */}
         </ul>
         <div className={styles.shadow} />
-        <a className={styles.resume} href="https://drive.google.com/file/d/1APe_KQg8gz7xHlVG5HbKEOe0jlU8fhem/view?usp=sharing" target="_blank">
+        <a className={styles.resume} href="https://drive.google.com/file/d/1APe_KQg8gz7xHlVG5HbKEOe0jlU8fhem/view" target="_blank">
           Resume
           <Icon className={styles.arrow} type={IconType.ARROW_UP_RIGHT} />
         </a>
