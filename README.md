@@ -17,16 +17,22 @@
 1. Clone the git repo
 
    ```sh
-   git clone https://github.com/anilmawji/portfolio-website.git && cd portfolio-website
+   git clone https://github.com/anilmawji/portfolio-website.git
    ```
 
-2. Install dependencies
+2. Enter project directory
+
+   ```sh
+   cd portfolio-website
+   ```
+
+4. Install dependencies
 
    ```sh
    npm install
    ```
 
-3. Start development server
+5. Start development server
 
    ```sh
    npm run dev
