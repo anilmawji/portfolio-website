@@ -38,5 +38,5 @@
    npm run dev
    ```
 
-The website will be visible at [http:/localhost:5000/](http://localhost:5000/)
+The website will be visible at [http://localhost:5000/](http://localhost:5000/)
 
