@@ -77,7 +77,7 @@ const HeroSection = ({ className }: Props) => {
               rotation={180}
               hoverColor="white"
               color="#c6c6c6"
-              scrollLocation="/#projects"
+              scrollLocation="/#skills"
             />
           </CustomTooltip>
         </div>

@@ -82,6 +82,8 @@ const Footer = () => {
         <p className={styles.copyright}>
           &copy; 2024 site designed & built by Anil Mawji.
           <br/>
+          Hosting provided by Cloudflare.
+          <br/>
           Super Mario&trade; is a trademark of Nintendo Co., Ltd. which does not sponsor, authorize or endorse this site.
           <br/>
           All other trademarks are the property of their respective owners.

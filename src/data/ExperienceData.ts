@@ -80,7 +80,7 @@ export const Experience: ExperienceData[] = [
     endDate: "Aug 2023",
     bulletPoints: [
       "Collaborated with a colleague to successfully deploy Microsoft Defender for Endpoint to over 300 devices for a key client.",
-      "Raised Microsoft Secure Score by a total of 10% by refining endpoint policies.",
+      "Raised Microsoft Secure Score by a total of 20% by refining endpoint policies.",
       "Created 20 firewall, antivirus and attack surface reduction rules tailored to a client's hybrid cloud environment.",
       "Securely migrated all company secrets to a new secrets manager with a zero-trust model.",
       "Closed 250 helpdesk tickets related to troubleshooting and access control with a 98% success rate.",

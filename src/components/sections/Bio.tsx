@@ -23,13 +23,9 @@ const BioSection = ({ className }: Props) => {
             Hi, I'm Anil, a software developer with a strong interest in cyber security.
             <br /><br />
             My tech journey started like many others&mdash; playing video games as a kid! One day I stumbled across <a className={`${styles.cheatEngineLink} ${globalStyles.hoverUnderline}`} href="https://en.wikipedia.org/wiki/Cheat_Engine" target="_blank">a fun little program</a> that
-            could be used to break games, and my curiosity skyrocketed. I've always loved creating, but from this I learned that I enjoy breaking things, too.
+            could be used to break games, sparking my fascination with the idea of manipulating software to work in unexpected ways. I've always enjoyed building software, but from this, I learned that I also have a passion for dismantling it! Currently, I'm diving into ethical hacking as I work towards earning my first <a className={globalStyles.hoverUnderline} href="https://certifications.tcm-sec.com/pjpt/" target="_blank">penetration testing certification.</a>
             <br /><br />
-            Since then, I've had the privilege of working at <a className={globalStyles.hoverUnderline} href="https://www.starburst.io/" target="_blank">a unicorn start-up</a>, <a className={globalStyles.hoverUnderline} href="https://www.arcurve.com/" target="_blank">a software services company</a> and
-            the <a className={globalStyles.hoverUnderline} href="https://www.canada.ca/en.html" target="_blank">federal government.</a> I'm currently diving into the world of ethical hacking
-            as I work towards earning my first <a className={globalStyles.hoverUnderline} href="https://certifications.tcm-sec.com/pjpt/" target="_blank">penetration testing certification.</a>
-            <br /><br />
-            When I'm not at my computer, I enjoy hiking, swimming and going out for a bite with friends.
+            When I'm not at my computer, I enjoy reading, hiking, and going out for a bite with friends.
             Feel free to <Link className={globalStyles.hoverUnderline} to="/contact" onClick={() => window.scrollTo(0, 0)}>reach out</Link> if you'd  like to chat!
           </p>
         </div>
