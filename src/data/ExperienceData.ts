@@ -55,7 +55,7 @@ export const Experience: ExperienceData[] = [
     endDate: "Aug 2024",
     bulletPoints: [
       "Utilized Azure Kubernetes Service to deploy a custom instance of JupyterHub for the SOC, integrating Entra ID to delegate access effectively.",
-      "Created a CI/CD pipeline to automate upgrades to the Jupyter development & production environments, reducing deployment time by 70%.",
+      "Optimized CI/CD pipelines to automate upgrades to the Jupyter development & production environments, reducing deployment time by 25%.",
       "Wrote Python notebooks to create a dashboard that ingests data from Azure Sentinel and VirusTotal, automating threat discovery and analysis.",
       "Developed a custom solution to secure Kubernetes secrets, ensuring API keys were safely accessible to Jupyter pods."
     ],
