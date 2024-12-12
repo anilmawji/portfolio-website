@@ -1,12 +1,12 @@
 import { Route, Routes } from 'react-router-dom';
-import Navbar from './components/nav/Navbar';
+//import Navbar from './components/nav/Navbar';
 import ScrollToAnchor from './components/nav/ScrollToAnchor';
 import Home from './pages/Home';
 import About from './pages/About';
 import Blog from './pages/Blog';
 import Contact from './pages/Contact'
 import NotFound from './pages/NotFound';
-import { getNumericalCssValue } from './utils';
+//import { getNumericalCssValue } from './utils';
 import { NavMenuProvider } from './contexts/NavMenuContext';
 //import lightStyles from './LightTheme.module.css'
 //import darkStyles from './DarkTheme.module.css'

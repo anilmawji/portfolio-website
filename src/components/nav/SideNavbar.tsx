@@ -4,16 +4,16 @@ import { joinClassNames } from '../../utils';
 import HamburgerButton from './HamburgerButton';
 import { useNavMenuContext } from '../../contexts/NavMenuContext';
 
-const NavButton = () => {
-  return (
-    <button className={styles.button}>
+// const NavButton = () => {
+//   return (
+//     <button className={styles.button}>
 
-    </button>
-  );
-}
+//     </button>
+//   );
+// }
 
 const SideNavbar = () => {
-  const { isOpen: isNavOpen, toggle: toggleMenu, close: closeMenu } = useNavMenuContext();
+  const { isOpen: isNavOpen, toggle: toggleMenu } = useNavMenuContext();
 
   return (
     <>
