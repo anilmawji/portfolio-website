@@ -11,8 +11,8 @@ const About = () => {
         <div className={globalStyles.bio}>
           <BioSection className={globalStyles.glowBorder} />
         </div>
-        <ExperienceSection className={globalStyles.shadowBottom} />
         <CertificationsSection className={globalStyles.shadowBottom} />
+        <ExperienceSection className={globalStyles.shadowBottom} />
       </div>
     </Page>
   );

@@ -1,0 +1,46 @@
+
+$border-thickness: 1px;
+$hamburger-width: 24px;
+$top-nav-thickness: 70px;
+
+.nav {
+  position: fixed;
+  width: 80px;
+  height: 100%;
+  background: var(--main-fg-color);
+  transition: width 250ms ease-in, left 250ms ease-in;
+  display: flex;
+  border-right: $border-thickness solid #303030;
+  z-index: 3;
+}
+
+.nav.open {
+  width: 250px;
+}
+
+.hamburgerContainer {
+  position: fixed;
+  z-index: 4;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (max-width: 640px) {
+  .nav {
+    width: 0;
+    top: $top-nav-thickness;
+    height: calc(100% - $top-nav-thickness);
+  }
+
+  .hamburgerContainer {
+    justify-content: flex-start;
+    width: 100%;
+    height: $top-nav-thickness;
+    padding: calc(($top-nav-thickness - $hamburger-width) / 2);
+    background-color: var(--main-fg-color);
+    border-bottom: $border-thickness solid #303030;
+  }
+}

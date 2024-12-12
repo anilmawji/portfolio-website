@@ -85,7 +85,8 @@
 
 .multilineTruncate {
   display: -webkit-box;
-  -webkit-line-clamp: var(--max-vertical-lines); /* Number of lines of text to show */
+  line-clamp: var(--max-vertical-lines); /* Number of lines of text to show */
+  -webkit-line-clamp: var(--max-vertical-lines);
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;

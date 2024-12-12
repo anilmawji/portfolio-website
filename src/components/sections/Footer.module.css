@@ -3,19 +3,19 @@ footer {
   flex-direction: column;
   align-items: center;
   background: var(--main-fg-color);
-  margin-top: 100px;
   font-size: 14px;
 }
 
 .buttonContainer {
   align-self: center;
   margin-top: 60px;
+  margin-left: var(--side-navbar-thickness);
 }
 
 .content {
   padding: 40px;
   padding-bottom: 10px;
-  margin-left: 20px;
+  margin-left: var(--side-navbar-thickness);
 }
 
 .footerLists {
@@ -70,7 +70,7 @@ footer {
   }
 }
 
-@media screen and (max-width: 600px) {
+/* @media screen and (max-width: 600px) {
   .content {
     margin-left: 0;
   }
@@ -90,4 +90,4 @@ footer {
   .copyright {
     padding: 0;
   }
-}
+} */

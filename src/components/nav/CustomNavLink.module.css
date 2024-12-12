@@ -40,3 +40,4 @@ nav a[class*="active"] ~ .underline2 {
 nav a[class*="active"] ~ .underline {
   width: 100%;
 }
+

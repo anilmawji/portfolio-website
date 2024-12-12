@@ -35,13 +35,14 @@ const CustomTooltip = ({
   direction = TooltipDirection.BOTTOM,
   width = 'auto',
   distance = '16px',
-  visibilityDelay = 500,
+  visibilityDelay = 400,
   fitTextOnSingleLine,
   children
 }: Props) => {
 
   const [isToolTipVisible, setIsTooltipVisible] = useState(false);
   const [visibilityTimer, setVisibilityTimer] = useState<number | null>(null);
+
   const tooltipRef = useRef<HTMLDivElement>(null);
   const tooltipStyle: ReactCSSVariables = {
     '--tooltip-width': width,

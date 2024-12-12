@@ -98,6 +98,7 @@ nav li a {
 
 .arrow svg {
   position: relative;
+  top: 2px;
   width: 18px;
   height: 18px;
   stroke: var(--grey);

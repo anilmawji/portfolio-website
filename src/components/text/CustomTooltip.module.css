@@ -1,7 +1,7 @@
 :root {
   --tooltip-bg-color: var(--main-fg-color);
   --tooltip-arrow-size: 6px;
-  --tooltip-transition: 250ms ease;
+  --tooltip-transition: 200ms ease;
   --tooltip-border-color: grey;
   --tooltip-border-thickness: 1px;
   --tooltip-offset: calc(100% - var(--tooltip-arrow-size) + var(--tooltip-border-thickness));

@@ -11,14 +11,15 @@ import { NavMenuProvider } from './contexts/NavMenuContext';
 //import lightStyles from './LightTheme.module.css'
 //import darkStyles from './DarkTheme.module.css'
 
-const NAVBAR_THICKNESS = getNumericalCssValue("navbar-thickness");
+// const NAVBAR_THICKNESS = getNumericalCssValue("navbar-thickness");
+const NAVBAR_THICKNESS = 80;
 
 const App = () => {
   //const styles = theme === 'light' ? lightStyles : darkStyles;
 
   return (
     <NavMenuProvider>
-      <Navbar />
+      {/* <Navbar /> */}
       <ScrollToAnchor offset={NAVBAR_THICKNESS}/>
       <Routes>
         <Route path="/" element={<Home />} />

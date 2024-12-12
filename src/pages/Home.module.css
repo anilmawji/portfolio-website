@@ -42,8 +42,9 @@
 }
 
 .hero {
-  margin-left: var(--home-margin);
-  margin-top: 70px;
+  position: relative;
+  left: var(--home-margin);
+  top: 100px;
   z-index: 2;
 }
 
@@ -58,17 +59,18 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  margin-top: 160px
+  margin-top: 250px;
 }
 
 @media screen and (max-width: 980px) {
   .hero {
-    margin-left: 8%;
+    left: 8%;
   }
 }
 
 @media screen and (max-width: 600px) {
   .hero {
-    margin-left: 20px;
+    left: 0;
+    top: 50px;
   }
 }

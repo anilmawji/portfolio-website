@@ -48,7 +48,7 @@ const Footer = () => {
       <div className={styles.content}>
         <div className={styles.footerLists}>
           <FooterItemList
-            title={"Navigation"}
+            title={"Quick Links"}
             links={{
               "Home": "/#hero",
               "Skills": "/#skills",

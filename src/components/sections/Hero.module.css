@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column;
   gap: 6px;
-  padding-top: 20px;
   font-size: 38px;
   text-shadow: 2px 2px 2px var(--main-fg-color);
 }
@@ -12,11 +11,6 @@
   font-size: 60px;
   color: var(--neon-green2);
   right: 20px;
-}
-
-.body {
-  position: relative;
-  margin-left: 20px;
 }
 
 .bracket svg {
@@ -47,7 +41,7 @@
 .icons {
   display: flex;
   gap: 20px;
-  margin-top: 14px;
+  padding: 14px 0;
   flex-wrap: wrap;
 }
 
@@ -120,11 +114,6 @@
     width: unset;
   }
 
-  .body {
-    margin-left: 0;
-    padding: 20px;
-  }
-
   .name {
     font-size: 36px;
     text-align: center;
@@ -152,8 +141,7 @@
   .scrollButtonContainer {
     display: flex;
     justify-content: center;
-    margin: 0 auto;
-    margin-top: 30px;
+    padding-top: 20px;
     visibility: visible;
   }
 }

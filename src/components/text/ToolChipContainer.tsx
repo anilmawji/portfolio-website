@@ -12,14 +12,14 @@ const ToolChipContainer = ({ className, chipData }: Props) => {
   return (
     <div className={joinClassNames(globalStyles.chipContainer, className)}>
     {chipData.map((tag, j) => {
-      const isTagATool = isToolInfo(tag);
-        return (
-          <Chip
-            key={j}
-            label={isTagATool ? tag.name : tag}
-            color={isTagATool ? tag.color : undefined}
-          />
-        );
+      return (
+        // If the tag is a tool, give it a custom color, otherwise use the default color
+        isToolInfo(tag) ? (
+          <Chip key={j} label={tag.name} color={tag.color} />
+        ) : (
+          <Chip key={j} label={tag} />
+        )
+      );
     })}
   </div>
   );

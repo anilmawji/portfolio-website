@@ -76,12 +76,14 @@ main {
 }
 
 body {
-  background-color: var(--main-bg-color);
   color: white;
   overflow-x: hidden; /* Disable site-wide horizontal scrolling */
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   font-family: "Aldrich", var(--default-font);
   font-weight: normal;
 }
@@ -131,6 +133,22 @@ a {
     0 -1px 1px var(--box-shadow-color),
     0 -2px 2px var(--box-shadow-color),
     0 -6px 6px var(--box-shadow-color);
+}
+
+.shadowRight {
+  box-shadow:
+    1px 0 1px var(--box-shadow-color),
+    2px 0 2px var(--box-shadow-color),
+    4px 0 4px var(--box-shadow-color),
+    8px 0 8px var(--box-shadow-color),
+    16px 0 16px var(--box-shadow-color);
+}
+
+.shadowRightLight {
+  box-shadow:
+    1px 0 1px var(--box-shadow-color),
+    2px 0 2px var(--box-shadow-color),
+    6px 0 6px var(--box-shadow-color);
 }
 
 .glowBorder::before,

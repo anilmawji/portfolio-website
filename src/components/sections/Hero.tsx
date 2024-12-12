@@ -30,7 +30,7 @@ const HeroSection = ({ className }: Props) => {
         <div className={styles.bio}>
           Upcoming Computer Science graduate from the University of Calgary
           <br />
-          dedicated to crafting secure, resilient solutions for clients.
+          Dedicated to crafting secure, resilient solutions for clients
         </div>
         <div className={styles.icons}>
           <CustomTooltip text="LinkedIn" distance="20px">
